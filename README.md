@@ -25,7 +25,7 @@
 
 * **Introduction and Background**: 
   * [*Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead*](https://www.nature.com/articles/s42256-019-0048-x) 
-  * **[Responsible Artificial Intelligence](https://www.springer.com/gp/book/9783030303709)** - Sections: 2.1-2.5, Chapter 7
+  * **[Responsible Artificial Intelligence](https://www.springer.com/gp/book/9783030303709)** - Sections 2.1-2.5, Chapter 7
   
 * **Interpretable Machine Learning Techniques**:
   * **Interpretable Machine Learning** - [Chapter 4](https://christophm.github.io/interpretable-ml-book/simple.html)
