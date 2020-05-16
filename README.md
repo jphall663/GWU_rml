@@ -1,6 +1,8 @@
 # Responsible Machine Learning
 #### GWU DNSC 6290
 
+![A responsible machine learning workingflow](/img/rml_diagram_no_hilite.png)
+
 ## Course Outline
 * Lecture 1: Interpretable Machine Learning Models
 * Lecture 2: Post-hoc Explanation
