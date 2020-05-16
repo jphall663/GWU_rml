@@ -30,7 +30,7 @@
 * **Interpretable Machine Learning Techniques**:
   * **Interpretable Machine Learning** - [Chapter 4](https://christophm.github.io/interpretable-ml-book/simple.html)
   * [*Accurate Intelligible Models with Pairwise Interactions*](http://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf)
-  * [*This Looks Like That: Deep Learning forInterpretable Image Recognition*](https://arxiv.org/pdf/1806.10574.pdf)
+  * [*This Looks Like That: Deep Learning for Interpretable Image Recognition*](https://arxiv.org/pdf/1806.10574.pdf)
   
 ## Lecture 2: Post-hoc Explanation 
 
