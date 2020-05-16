@@ -16,6 +16,22 @@
 
 ## Lecture 1: Interpretable Machine Learning Models
 
+### Class Materials
+* [Syllabus]()
+* [Lecture Notes]()
+* [Software Examples]()
+
+### Suggested Reading
+
+* **Introduction and Background**: 
+  * [*Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead*](https://www.nature.com/articles/s42256-019-0048-x) 
+  * **[Responsible Artificial Intelligence](https://www.springer.com/gp/book/9783030303709)** - Sections: 2.1-2.5, Chapter 7
+  
+* **Interpretable Machine Learning Techniques**:
+  * **Interpretable Machine Learning** - [Chapter 4](https://christophm.github.io/interpretable-ml-book/simple.html)
+  * [*Accurate Intelligible Models with Pairwise Interactions*](http://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf)
+  * [*This Looks Like That: Deep Learning forInterpretable Image Recognition*](https://arxiv.org/pdf/1806.10574.pdf)
+  
 ## Lecture 2: Post-hoc Explanation 
 
 ## Lecture 3: Discrimination Testing and Remediation 
