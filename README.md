@@ -1,4 +1,5 @@
-## Welcome to GitHub Pages
+## Welcome to Responsible Machine Learning
+#### GWU DNSC 6290 
 
 You can use the [editor on GitHub](https://github.com/jphall663/GWU_rml/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
