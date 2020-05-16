@@ -19,7 +19,7 @@
 ### Class Materials
 * [Syllabus]()
 * [Lecture Notes]()
-* [Software Examples]()
+* Software Examples:
 
 ### Suggested Reading
 
