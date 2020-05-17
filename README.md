@@ -16,10 +16,15 @@
 
 ## Lecture 1: Interpretable Machine Learning Models
 
+![Histogram, partial dependence, and ICE for a monotonic GBM and a credit card customer's most recent repayment status](/img/lecture_1.png)
+
+
+**Source:** [Building from Penalized GLM to Monotonic GBM]()
+
 ### Class Materials
 * [Syllabus]()
 * [Lecture Notes]()
-* Software Examples:
+* Software Example:[Building from Penalized GLM to Monotonic GBM]()
 
 ### Suggested Reading
 
