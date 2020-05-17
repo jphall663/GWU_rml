@@ -36,22 +36,28 @@
 
 1. Install [Git](https://git-scm.com/downloads).
 
-2. Clone this repository with the examples.</br>
+2. Clone this repository with the examples
+
 `$ git clone https://github.com/jphall663/GWU_rml.git`
 
 3. Install Anaconda Python 5.1.0 from the [Anaconda archives](https://repo.continuum.io/archive/) and add it to your system path.
 
-4. Change directories into the cloned repository.</br>
+4. Change directories into the cloned repository
+
 `$ cd GWU_rml`
 
-5. Create a Python 3.6 virtual environment.</br>
+5. Create a Python 3.6 virtual environment
+
 `$ virtualenv -p /path/to/anaconda3/bin/python3.6 env_rml`
 
-6. Activate the virtual environment.</br>
+6. Activate the virtual environment
+
 `$ source env_rml/bin/activate`
 
-7. Install the correct packages for the example notebooks.</br>
+7. Install the correct packages for the example notebooks
+
 `$ pip install -r requirements.txt`
 
-8. Start Jupyter.</br>
+8. Start Jupyter
+
 `$ jupyter notebook`
