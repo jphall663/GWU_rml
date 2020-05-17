@@ -28,9 +28,7 @@
 * Python [explainable boosting machine (EBM)/GA2M](https://github.com/interpretml/interpret)
 * R [`gam`](https://cran.r-project.org/web/packages/gam/index.html)
 * `h2o` [penalized GLM](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/glm.html) (R and Python)
-* Monotonic gradient boosting machine (GBM):
-  * [`h2o`](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/algo-params/monotone_constraints.html) (R and Python)
-  * [`xgboost`](https://xgboost.readthedocs.io/en/latest/tutorials/monotonic.html) (R and Python)
+* Monotonic gradient boosting machine (GBM): [`h2o`](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/algo-params/monotone_constraints.html) and [`xgboost`](https://xgboost.readthedocs.io/en/latest/tutorials/monotonic.html) (R and Python)
 * R [`rpart`](https://cran.r-project.org/web/packages/rpart/index.html)
 * Python [`skope-rules`](https://github.com/scikit-learn-contrib/skope-rules)
 
