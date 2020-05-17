@@ -32,12 +32,26 @@
   * [*Accurate Intelligible Models with Pairwise Interactions*](http://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf)
   * [*This Looks Like That: Deep Learning for Interpretable Image Recognition*](https://arxiv.org/pdf/1806.10574.pdf)
   
-## Lecture 2: Post-hoc Explanation 
+## Using Class Software Resources
 
-## Lecture 3: Discrimination Testing and Remediation 
+1. Install [Git](https://git-scm.com/downloads).
 
-## Lecture 4: Machine Learning Security
+2. Clone this repository with the examples.</br>
+`$ git clone https://github.com/jphall663/GWU_rml.git`
 
-## Lecture 5: Machine Learning Model Debugging
+3. Install Anaconda Python 5.1.0 from the [Anaconda archives](https://repo.continuum.io/archive/) and add it to your system path.
 
-## Lecture 6: Responsible Machine Learning Best Practices
+4. Change directories into the cloned repository.</br>
+`$ cd GWU_rml`
+
+5. Create a Python 3.6 virtual environment.</br>
+`$ virtualenv -p /path/to/anaconda3/bin/python3.6 env_rml`
+
+6. Activate the virtual environment.</br>
+`$ source env_rml/bin/activate`
+
+7. Install the correct packages for the example notebooks.</br>
+`$ pip install -r requirements.txt`
+
+8. Start Jupyter.</br>
+`$ jupyter notebook`
