@@ -3,8 +3,7 @@
 
 ![A responsible machine learning workingflow](/img/rml_diagram_no_hilite.png)
 
-
-**Source:** [*Information*, 11(3) (March 2020)](https://www.mdpi.com/2078-2489/11/3)
+<sub><sup>**Source:** [*Information*, 11(3) (March 2020)](https://www.mdpi.com/2078-2489/11/3)</sup></sub>
 
 ## Course Outline
 * Lecture 1: Interpretable Machine Learning Models
@@ -18,13 +17,23 @@
 
 ![Histogram, partial dependence, and ICE for a monotonic GBM and a credit card customer's most recent repayment status](/img/lecture_1.png)
 
-
 <sub><sup>**Source:** [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)</sup></sub>
 
 ### Class Materials
 * [Syllabus]()
 * [Lecture Notes]()
 * Software Example: [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)
+
+### Suggested Software
+* Python [explainable boosting machine (EBM)/GA2M](https://github.com/interpretml/interpret)
+* R [`gam`](https://cran.r-project.org/web/packages/gam/index.html)
+* `h2o` [penalized GLM](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/glm.html) (R and Python)
+* Monotonic gradient boosting machine (GBM):
+  * [`h2o`](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/algo-params/monotone_constraints.html) (R and Python)
+  * [`xgboost`](https://xgboost.readthedocs.io/en/latest/tutorials/monotonic.html) (R and Python)
+* R [`rpart`](https://cran.r-project.org/web/packages/rpart/index.html)
+* Python [`skope-rules`](https://github.com/scikit-learn-contrib/skope-rules)
+
 
 ### Suggested Reading
 
