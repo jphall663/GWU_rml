@@ -1,7 +1,7 @@
 # Responsible Machine Learning
 #### GWU DNSC 6290
 
-![A responsible machine learning workingflow](/img/rml_diagram_no_hilite.png)
+![A responsible machine learning workingflow](/img/rml_diagram_no_hilite_inv.png)
 <sub><sup>**Source:** [*Information*, 11(3) (March 2020)](https://www.mdpi.com/2078-2489/11/3)</sup></sub>
 
 ## Course Outline
@@ -14,7 +14,7 @@
 
 ## Lecture 1: Interpretable Machine Learning Models
 
-![Histogram, partial dependence, and ICE for a monotonic GBM and a credit card customer's most recent repayment status](/img/lecture_1.png)
+![Histogram, partial dependence, and ICE for a monotonic GBM and a credit card customer's most recent repayment status](/img/lecture_1_inv.png)
 <sub><sup>**Source:** [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)</sup></sub>
 
 ### Class Materials
