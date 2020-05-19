@@ -17,12 +17,14 @@
 ![Histogram, partial dependence, and ICE for a monotonic GBM and a credit card customer's most recent repayment status](/img/lecture_1.png)
 <sub><sup>**Source:** [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)</sup></sub>
 
-### Class Materials
+### Lecture 1 Class Materials
+
 * [Syllabus](rml_syllabus_summer_2020.pdf)
 * [Lecture Notes](tex/lecture_1.pdf)
 * Software Example: [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)
 
-### Suggested Software
+### Lecture 1 Suggested Software
+
 * Python [explainable boosting machine (EBM)/GA2M](https://github.com/interpretml/interpret)
 * R [`gam`](https://cran.r-project.org/web/packages/gam/index.html)
 * `h2o` [penalized GLM](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/glm.html) (R and Python)
@@ -31,7 +33,7 @@
 * Python [`skope-rules`](https://github.com/scikit-learn-contrib/skope-rules)
 
 
-### Suggested Reading
+### Lecture 1 Suggested Reading
 
 * **Introduction and Background**: 
   * [*Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead*](https://www.nature.com/articles/s42256-019-0048-x) 
