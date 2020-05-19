@@ -1,3 +1,9 @@
+% TODO: abbreviations
+% TODO: deeper XNN case study
+% TODO: Diversity of models, models fade from interpretable to black-box
+% TODO: business uses of interpretable models
+% TODO: plurals
+
 \documentclass[11pt,aspectratio=169,hyperref={colorlinks}]{beamer}
 
 \usetheme{Singapore}
@@ -32,7 +38,7 @@
 
 \setbeamertemplate{bibliography item}{}
 \renewcommand*{\bibfont}{\scriptsize}
-\addbibresource{main.bib}
+\addbibresource{lecture_1.bib}
 
 \setbeamerfont{caption}{size=\footnotesize}
 \setbeamertemplate{frametitle continuation}{}
@@ -205,7 +211,7 @@
 			\begin{equation}
 				\label{eq:shap_contrib}
 				\begin{aligned}
-					\phi_{j} = \underbrace{\sum_{S \subseteq \mathcal{P} \setminus \{j\}}\frac{|S|!(\mathcal{P} -|S| -1)!}{\mathcal{P}!}}_\text{weighted average over all subsets}\underbrace{(S \cup \{j\}) - g_x(S)]}_{g\text{ "without" }x_j}
+					\phi_{j} = \underbrace{\sum_{S \subseteq \mathcal{P} \setminus \{j\}}\frac{|S|!(\mathcal{P} -|S| -1)!}{\mathcal{P}!}}_\text{weighted average over all subsets in \textbf{X}}\underbrace{(S \cup \{j\}) - g_x(S)]}_{g\text{ "without" }x_j}
 				\end{aligned}
 			\end{equation}
 			
@@ -221,23 +227,30 @@
 		\begin{frame}
 		
 			\frametitle{Partial Dependence and ICE}			
-			
+
 			\begin{itemize}
-			\item{Partial dependence (PD) plots are a widely-used method for describing the average predictions of a complex model across some partition of dataset for some interesting input feature (cite this - Friedman, Hastie, and Tibshirani, 2001)}
-			\item{Individual conditional expectation (ICE) plots are a newer method that describes the local behavior of a complex model for a single input feature for each instances.  PD and ICE can be combined in the same plot to compensate for known weaknesses of partial dependence, to identify the interactions of the prediction model, and to create a holistic portrait of the predictions of a complex model for some input feature (cite)}
-			\item{In simplier terms, the "PD plot is the average of all the ICE plot lines"}
+
+			\item Following \cite{esl}, a single feature $X_j \in \mathbf{X}$ and its complement set $\mathbf{X}_{(-j)} \in \mathbf{X}$ (where $X_j \cup \mathbf{X}_{(-j)} = \mathbf{X}$) is considered. $\text{PD}(X_j, g)$ for a given feature $X_j$ is estimated as the average output of the learned function $g(\mathbf{X})$ when all the components of $X_j$ are set to a constant $x \in \mathcal{X}$ and $\mathbf{X}_{(-j)}$ is left unchanged.
+
+			\item $\text{ICE}(x_j, \mathbf{x}, g)$ for a given instance $\mathbf{x}$ and feature $x_j$ is estimated as the output of $g(\mathbf{x})$ when $x_j$ is set to a constant $x \in \mathcal{X}$ and all other features $\mathbf{x} \in \mathbf{X}_{(-j)}$ are left untouched. Partial dependence and ICE curves are usually plotted over some set of constants $x \in \mathcal{X}$ (\cite{ice_plots}). 
+
 			\end{itemize} 			
 					
 		\end{frame}		
 		
 		\begin{frame}
 		
-			\frametitle{GBM and Monotonic GBM}			
+			\frametitle{Gradient Boosting Machine}			
 				  			
-			\begin{itemize}
-			\item{Gradient Boosting Machine (GBM)is a type of ensemble decision tree model (sequential) that is fitted by minimizing a loss function averaged over a training data}
-			\item{The MGBMs constrain typical GBM training to consider only tree splits that obey user-defined positive and negative monotonicity constraints, with respect to each input feature and a target feature, independently}
-			\end{itemize}
+			\begin{equation}
+			\begin{aligned}\label{eq:gbm}
+			g^{\text{GBM}}(\mathbf{x}) &= \sum_{b=0}^{B-1} T_b\left(\mathbf{x}; \Theta\right)
+			\end{aligned}
+			\end{equation}
+			
+			\vspace{20pt}
+			
+			A GBM is a sequential combination of decision trees, $T_b$, where $T_0$ is trained to predict $\mathbf{y}$, but all subsequent $T$ are trained to reduce the errors of $T_{b-1}$.
 			
 		\end{frame}	
 				
@@ -246,16 +259,33 @@
 %-------------------------------------------------------------------------------
 	
 		\subsection*{}
+
+
+		\begin{frame}
 	
-		\begin{frame}[allowframebreaks]
+		\frametitle{Anatomy of Elastic Net Regression: L1 and L2 Penalty}	
+				
+		Same basic functional form as more traditional linear models, e.g. ...
+				
+		\begin{equation}
+			\begin{aligned}\label{eq:gbm}
+			g^{\text{GLM}}(\mathbf{x}) &= \beta_0 + \beta_1 x_0 + \beta_2 x_1 + \dots + \beta_P x_{P-1}
+			\end{aligned}
+		\end{equation}	
+		
+		\vspace{10pt}... but more robust to correlation, wide data, and outliers.
+		
+		\end{frame}
+
+		\begin{frame}
 		
 			\frametitle{Anatomy of Elastic Net Regression: L1 and L2 Penalty}			
-		Iteratively Resweighted Least Square method with generalized Ridge (L2) and LASSOS (L1) penalty terms: 
+		Iteratively reweighted least squares (IRLS) method with ridge ($L_2$) and LASSO ($L_1$) penalty terms: 
 			
 			\begin{equation}
 				\label{eq:Elastic_Net}
 				\begin{aligned}
-				\tilde{\beta}= \underset{\beta}{min}\Big\{ \mathcolorbox{red}{ \underbrace{\sum_{i=1}^{N}(y_i-\beta_0-\sum_{j=1}^{p} x_{ij} \beta_j)^2}_\text{1}} + \mathcolorbox{red}{\underbrace{\lambda}_\text{2}} \sum_{j=1}^{p} ( \mathcolorbox{red}{\underbrace{\alpha}_\text{3}} \mathcolorbox{red}{\underbrace{\beta_j^2}_\text{4}} + (1-\mathcolorbox{red}{\underbrace{\alpha}_\text{3}}) \mathcolorbox{red}{\underbrace{|\beta_j|}_\text{5}}) \Big\}
+				\tilde{\beta}= \underset{\beta}{min}\Big\{ \mathcolorbox{red}{ \underbrace{\sum_{i=0}^{N-1}(y_i-\beta_0-\sum_{j=1}^{P-1} x_{ij} \beta_{j})^2}_\text{1}} + \mathcolorbox{red}{\underbrace{\lambda}_\text{2}} \sum_{j=1}^{P-1} ( \mathcolorbox{red}{\underbrace{\alpha}_\text{3}} \mathcolorbox{red}{\underbrace{\beta_j^2}_\text{4}} + (1-\mathcolorbox{red}{\underbrace{\alpha}_\text{3}}) \mathcolorbox{red}{\underbrace{|\beta_{j}|}_\text{5}}) \Big\}
 				\end{aligned}
 			\end{equation}		
 			
@@ -264,18 +294,20 @@
 				\item{1: Least square minimization}
 				\item{2: Controls magnitude of penalties}
 				\item{3: Tunes balane between L1 and L2}
-				\item{4: L2/Ridge penalty term}
-				\item{5: L1/LASSO penalty term}}
+				\item{4: $L_2$/Ridge penalty term}
+				\item{5: $L_1$/LASSO penalty term}}
 			\end{itemize}
 						
-			\framebreak
+		\end{frame}
+	
+		\begin{frame}
 			
 			\textbf{Graphical Illustration of Shrinkage/Regularization Method:} 
 			
 			\begin{figure}[htb]
 				\begin{center}
-					\includegraphics[height=150pt]{../img/L1L2_penalty_diagram.PNG}
-					\label{fig:L1 and L2 Penalty Illustration}
+					\includegraphics[height=150pt]{../img/L1L2_penalty_diagram.png}
+					\label{fig:L1L2}
 				\end{center}
 			\end{figure}
 								
@@ -289,11 +321,47 @@
 	
 	\begin{frame}
 	
-		\frametitle{Monotonic GBM: Shapley Value}
-		
-		\textbf{MGBM and Shapley Value - insert content heres}
+		\frametitle{Monotonic GBM (\cite{rml_workflow})}
+
+			MGBMs constrain typical GBM training to consider only tree splits that obey user-defined positive and negative monotone constraints, with respect to each input feature, $X_j$, and a target feature, $\mathbf{y}$, independently. An MGBM remains an additive combination of $B$ trees trained by gradient boosting, $T_b$, and each tree learns a set of splitting rules that respect monotone constraints,  $\Theta^\text{mono}_b$. A trained MGBM model, $g^{\text{MGBM}}$, takes the form:
+			
+			\begin{equation}
+			\begin{aligned}\label{eq:gbm}
+			g^{\text{MGBM}}(\mathbf{x}) &= \sum_{b=0}^{B-1} T_b\left(\mathbf{x}; \Theta^\text{mono}_b\right)
+			\end{aligned}
+			\end{equation}
 		
 	\end{frame}
+
+
+	\begin{frame}
+	
+	\frametitle{Monotone Constraints for GBM (\cite{rml_workflow})}
+	
+		\begin{enumerate}\scriptsize
+			\item For the first and highest split in $T_b$ involving $X_j$, any $\theta_{b,j,0}$ resulting in $T(x_j; \theta_{b,j,0}) = \{w_{b,j,0,L}, w_{b,j,0,R}\}$ where $w_{b,j,0,L} > w_{b,j,0,R}$, is not considered. 
+			\item For any subsequent left child node involving $X_j$, any $\theta_{b,j, k\ge1}$ resulting in $T(x_j; \theta_{b,j,k\ge1}) = \{w_{b,j,k\ge1,L}, w_{b,j,k\ge1,R}\}$ where $w_{b,j,k\ge1,L} > w_{b,j,k\ge1,R}$, is not considered.
+			\item Moreover, for any subsequent left child node involving $X_j$, $T(x_j; \theta_{b,j,k\ge1}) = \{w_{b,j,k\ge1,L}, w_{b,j,k\ge1,R}\}$, $\{w_{b,j,k\ge1,L}, w_{b,j,k\ge1,R}\}$ are bound by the associated $\theta_{b,j,k-1}$ set of node weights, $\{w_{b,j,k-1,L}, w_{b,j,k-1, R}\}$, such that $ \{w_{b,j,k\ge1,L}, w_{b,j,k\ge1,R}\} < \frac{w_{b,j,k-1,L} + w_{b,j,k-1,R}}{2}$.
+			\item (1) and (2) are also applied to all right child nodes, except that for right child nodes $ w_{b,j,k,L} \le w_{b,j,k,R}$ and $\{w_{b,j,k\ge1,L}, w_{b,j,k\ge1,R}\} \ge \frac{w_{b,j,k-1,L} + w_{b,j,k-1,R}}{2}$.
+		\end{enumerate}
+	
+	Note that $g^{\text{MGBM}}(\mathbf{x})$ is an addition of each full $T_b$ prediction, with the application of a monotonic logit or softmax link function for classification problems. Moreover, each tree's root node corresponds to some constant node weight that by definition obeys monotonicity constraints, $ T(x^{\alpha}_j; \theta_{b,0}) = T(x^{\beta}_j; \theta_{b,0}) = w_{b,0}$. 
+	
+	\end{frame}
+
+	\begin{frame}
+	
+			\textbf{Partial Dependence and ICE:}
+
+			\begin{figure}[htb]
+				\begin{center}
+					\includegraphics[height=150pt]{../img/mort_mgbm_glob_pdp_ice.png}
+					\label{fig:mgbm}
+				\end{center}
+			\end{figure}
+	
+	\end{frame}
+
 
 
 %-------------------------------------------------------------------------------
@@ -304,13 +372,21 @@
 		
 		\begin{frame}
 		
-			\frametitle{Other Methods}		
+			\frametitle{A Burgeoning Ecosystem of Interpretable Machine Learning Models}		
 			
 			\begin{itemize}
-				\item{GA2M/EBM}
-				\item{XNN}
-				\item{Scalable Bayesian Rulest List(C. Rudin)}
-				\item{CORELS(C. Rudin)}
+				\item Generalized additive model (GAM) (\cite{esl})
+				\item GA2M/Explainable boosting machine (EBM) (\cite{ga2m})
+				\item Explainable Neural Network (XNN) (\cite{wf_xnn})
+				\item Rudin group: 
+				\begin{itemize}
+					\item \textit{This looks like that} deep learning (\cite{this_looks_like_that})
+					\item Scalable Bayesian rule list (\cite{sbrl}) 
+					\item Optimal sparse decision tree (\cite{osdt})
+					\item Supersparse linear integer models (\cite{slim})
+					\item and more ... 
+				\end{itemize}
+				\item RuleFit (\cite{rulefit})
 			\end{itemize}
 		
 		\end{frame}
@@ -323,16 +399,6 @@
 	\begin{frame}[t, allowframebreaks]
 	
 		\frametitle{References}	
-		
-			\textbf{Link 1:}\\
-			\small{\url{https://github.com/jphall663/}}
-			
-			\vspace{10pt}
-			
-			\textbf{Link 2:}\\
-			\small{\url{https://www.h2o.ai}}
-			
-		\framebreak		
 		
 		\printbibliography
 		

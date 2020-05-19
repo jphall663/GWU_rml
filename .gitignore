@@ -3,3 +3,15 @@ env_rml
 .ipynb_checkpoints
 __pycache__
 tests/out*
+*-blx.bib
+*.aux
+*.bbl
+*.blg
+*.log
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+
