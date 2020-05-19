@@ -19,7 +19,7 @@
 
 ### Class Materials
 * [Syllabus]()
-* [Lecture Notes]()
+* [Lecture Notes](tex/lecture_1.pdf)
 * Software Example: [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)
 
 ### Suggested Software
