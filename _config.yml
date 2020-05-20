@@ -1,7 +1,9 @@
 theme: jekyll-theme-minimal
 
-title: GWU_rml
 logo: img/gwu_logo.png
-description: 
+
+title: GWU_rml
+
+description: Materials for a technical, nuts-and-bolts course about increasing transparency, fairness, security and privacy in machine learning.
 show_downloads: true
 google_analytics:
