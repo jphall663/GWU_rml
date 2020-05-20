@@ -1,5 +1,5 @@
 ![A responsible machine learning workingflow](/img/rml_diagram_no_hilite.png)
-##### A Responsible Machine Learning Workflow Diagram
+### A Responsible Machine Learning Workflow Diagram
 <sub><sup>**Source:** [*Information*, 11(3) (March 2020)](https://www.mdpi.com/2078-2489/11/3)</sup></sub>
 
 ## GWU_DNSC 6290: Course Outline
