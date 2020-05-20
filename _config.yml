@@ -1,5 +1,6 @@
 theme: jekyll-theme-minimal
 title: Responsible Machine Learning
 logo: img/gwu_logo.png
+description: 
 show_downloads: true
 google_analytics:
