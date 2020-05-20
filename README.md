@@ -1,10 +1,9 @@
 # Responsible Machine Learning
-#### GWU DNSC 6290
 
 ![A responsible machine learning workingflow](/img/rml_diagram_no_hilite.png)
 <sub><sup>**Source:** [*Information*, 11(3) (March 2020)](https://www.mdpi.com/2078-2489/11/3)</sup></sub>
 
-## Course Outline
+## GWU_DNSC 6290: Course Outline
 
 Materials for a technical, nuts-and-bolts course about increasing transparency, fairness, security and privacy in machine learning.
 
