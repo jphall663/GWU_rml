@@ -1,4 +1,4 @@
-# Responsible Machine Learning
+# A Responsible Machine Learning Workflow
 
 ![A responsible machine learning workingflow](/img/rml_diagram_no_hilite.png)
 <sub><sup>**Source:** [*Information*, 11(3) (March 2020)](https://www.mdpi.com/2078-2489/11/3)</sup></sub>
