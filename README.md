@@ -5,6 +5,9 @@
 <sub><sup>**Source:** [*Information*, 11(3) (March 2020)](https://www.mdpi.com/2078-2489/11/3)</sup></sub>
 
 ## Course Outline
+
+Materials for a technical, nuts-and-bolts course about increasing transparency, fairness, security and privacy in machine learning.
+
 * Lecture 1: Interpretable Machine Learning Models
 * Lecture 2: Post-hoc Explanation
 * Lecture 3: Discrimination Testing and Remediation
@@ -50,14 +53,16 @@
 
 2. Clone this repository with the examples: `$ git clone https://github.com/jphall663/GWU_rml.git`
 
-3. Install Anaconda Python 5.1.0 from the [Anaconda archives](https://repo.continuum.io/archive/) and add it to your system path.
+3. Install Anaconda Python 5.1.0 from the [Anaconda archives](https://repo.continuum.io/archive/) and *add it to your system path.*
 
-4. Change directories into the cloned repository: `$ cd GWU_rml`
+4. Install `virtualenv`: `$ pip install virtualenv` 
 
-5. Create a Python 3.6 virtual environment: `$ virtualenv -p /path/to/anaconda3/bin/python3.6 env_rml`
+5. Change directories into the cloned repository: `$ cd GWU_rml`
 
-6. Activate the virtual environment: `$ source env_rml/bin/activate`
+6. Create a Python 3.6 virtual environment: `$ virtualenv -p /path/to/anaconda3/bin/python3.6 env_rml`
 
-7. Install the correct packages for the example notebooks: `$ pip install -r requirements.txt`
+7. Activate the virtual environment: `$ source env_rml/bin/activate`
 
-8. Start Jupyter: `$ jupyter notebook`
+8. Install the correct packages for the example notebooks: `$ pip install -r requirements.txt`
+
+9. Start Jupyter: `$ jupyter notebook`
