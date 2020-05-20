@@ -1,9 +1,4 @@
 theme: jekyll-theme-minimal
 
-title: false
-description: false
-
-logo: img/gwu_logo.png
-
 show_downloads: true
 google_analytics:
