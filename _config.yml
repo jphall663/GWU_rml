@@ -1,5 +1,6 @@
-theme: jekyll-theme-minimal
 title: Responsible Machine Learning
+Description: werwer
 logo: img/gwu_logo.png
 show_downloads: true
 google_analytics:
+theme: jekyll-theme-minimal
