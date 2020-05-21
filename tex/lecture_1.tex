@@ -1,8 +1,4 @@
-% TODO: abbreviations
 % TODO: deeper XNN case study
-% TODO: Diversity of models, models fade from interpretable to black-box
-% TODO: business uses of interpretable models
-% TODO: plurals
 
 \documentclass[11pt,aspectratio=169,hyperref={colorlinks}]{beamer}
 
@@ -32,7 +28,7 @@
 %-------------------------------------------------------------------------------
 
 % OwlGreen - customized to make the header violet color
-\definecolor{OwlGreen}{RGB}{ 51, 0, 102}
+\definecolor{OwlGreen}{RGB}{51, 0, 102}
 
 %-------------------------------------------------------------------------------
 
@@ -98,7 +94,7 @@
 					\item{Individual or group (no more than 4 members)}
 					\item Select team members ASAP
 				\end{itemize}
-			\item \href{}{Syllabus}
+			\item \href{https://github.com/jphall663/GWU_rml/blob/master/rml_syllabus_summer_2020.pdf}{Syllabus}
 			\item{Webex office hours: Thurs. 5-6 pm or by appointment}
 			\item{Class resources: \url{https://jphall663.github.io/GWU_rml/}}	
 		\end{itemize}		
@@ -171,7 +167,7 @@
 			\textbf{Models}
 
 			\begin{itemize}
-				\item A type of machine learning model $g$, selected from a hypothesis set $\mathcal{H}$, is trained to represent an unknown signal-generating function $f$ observed as  $\mathbf{X}$ with labels $\mathbf{Y}$ using a training algorithm $\mathcal{A}$: 
+				\item A type of machine learning (ML) model $g$, selected from a hypothesis set $\mathcal{H}$, is trained to represent an unknown signal-generating function $f$ observed as  $\mathbf{X}$ with labels $\mathbf{Y}$ using a training algorithm $\mathcal{A}$: 
 		$ \mathbf{X}, \mathbf{Y} \xrightarrow{\mathcal{A}} g$, such that $g \approx f$.
 				\item $g$ generates learned output responses on the input dataset $g(\mathbf{X}) = \mathbf{\hat{Y}}$, and on the general input space $g(\mathcal{X}) = \mathcal{\hat{Y}}$.
 				\item The model to be explained, tested for discrimination, or debugged is denoted as $g$.
@@ -230,7 +226,7 @@
 
 			\begin{itemize}
 
-			\item Following \cite{esl}, a single feature $X_j \in \mathbf{X}$ and its complement set $\mathbf{X}_{(-j)} \in \mathbf{X}$ (where $X_j \cup \mathbf{X}_{(-j)} = \mathbf{X}$) is considered. $\text{PD}(X_j, g)$ for a given feature $X_j$ is estimated as the average output of the learned function $g(\mathbf{X})$ when all the components of $X_j$ are set to a constant $x \in \mathcal{X}$ and $\mathbf{X}_{(-j)}$ is left unchanged.
+			\item Following \citet{esl} a single input feature, $X_j \in \mathbf{X}$, and its complement set, $\mathbf{X}_{\mathcal{P} \setminus \{j\}} \in \mathbf{X}$, where $X_j \cup \mathbf{X}_{\mathcal{P} \setminus \{j\}} = \mathbf{X}$ is considered. $\text{PD}(X_j, g)$ for a given feature $X_j$ is estimated as the average output of the learned function $g(\mathbf{X})$ when all the components of $X_j$ are set to a constant $x \in \mathcal{X}$ and $\mathbf{X}_{(-j)}$ is left unchanged.
 
 			\item $\text{ICE}(x_j, \mathbf{x}, g)$ for a given instance $\mathbf{x}$ and feature $x_j$ is estimated as the output of $g(\mathbf{x})$ when $x_j$ is set to a constant $x \in \mathcal{X}$ and all other features $\mathbf{x} \in \mathbf{X}_{(-j)}$ are left untouched. Partial dependence and ICE curves are usually plotted over some set of constants $x \in \mathcal{X}$ (\cite{ice_plots}). 
 
@@ -253,6 +249,24 @@
 			A GBM is a sequential combination of decision trees, $T_b$, where $T_0$ is trained to predict $\mathbf{y}$, but all subsequent $T$ are trained to reduce the errors of $T_{b-1}$.
 			
 		\end{frame}	
+	
+		\begin{frame}
+	
+			\frametitle{Interpretable Machine Learning Models}			
+			
+			\cite{been_kim1} define interpretable as, ``the ability to explain or to present in understandable terms to a human.''
+			
+			\vspace{10pt}
+			
+			There are many types of interpretable ML models. Interpretability is not an on-and-off switch. Some might be directly interpretable to non-technical consumers. Some are only interpretable to highly-skilled data scientists. 
+			
+			\vspace{10pt}
+			
+			Interpretable models are crucial for documentation, explanation of predictions to consumers, finding and fixing discrimination, and debugging problems in modeling pipelines. Simply put, \textbf{it is very difficult to mitigate risks you don't understand}.
+			
+			
+		\end{frame}	
+			
 				
 %-------------------------------------------------------------------------------
 	\section{Penalized GLM}
@@ -263,9 +277,9 @@
 
 		\begin{frame}
 	
-		\frametitle{Anatomy of Elastic Net Regression: L1 and L2 Penalty}	
+		\frametitle{Anatomy of Elastic Net Regression}	
 				
-		Same basic functional form as more traditional linear models, e.g. ...
+		Generalized linear models (GLM) have the same basic functional form as more traditional linear models, e.g. ...
 				
 		\begin{equation}
 			\begin{aligned}\label{eq:gbm}
@@ -273,7 +287,7 @@
 			\end{aligned}
 		\end{equation}	
 		
-		\vspace{10pt}... but more robust to correlation, wide data, and outliers.
+		\vspace{10pt}... but are more robust to correlation, wide data, and outliers.
 		
 		\end{frame}
 
@@ -291,9 +305,9 @@
 			
 			\begin{itemize}
 			\scriptsize{
-				\item{1: Least square minimization}
+				\item{1: Least squares minimization}
 				\item{2: Controls magnitude of penalties}
-				\item{3: Tunes balane between L1 and L2}
+				\item{3: Tunes balance between L1 and L2}
 				\item{4: $L_2$/Ridge penalty term}
 				\item{5: $L_1$/LASSO penalty term}}
 			\end{itemize}
@@ -323,7 +337,7 @@
 	
 		\frametitle{Monotonic GBM (\cite{rml_workflow})}
 
-			MGBMs constrain typical GBM training to consider only tree splits that obey user-defined positive and negative monotone constraints, with respect to each input feature, $X_j$, and a target feature, $\mathbf{y}$, independently. An MGBM remains an additive combination of $B$ trees trained by gradient boosting, $T_b$, and each tree learns a set of splitting rules that respect monotone constraints,  $\Theta^\text{mono}_b$. A trained MGBM model, $g^{\text{MGBM}}$, takes the form:
+			Monotonic GBM (MGBM) constrain typical GBM training to consider only tree splits that obey user-defined positive and negative monotone constraints, with respect to each input feature, $X_j$, and a target feature, $\mathbf{y}$, independently. An MGBM remains an additive combination of $B$ trees trained by gradient boosting, $T_b$, and each tree learns a set of splitting rules that respect monotone constraints,  $\Theta^\text{mono}_b$. A trained MGBM model, $g^{\text{MGBM}}$, takes the form:
 			
 			\begin{equation}
 			\begin{aligned}\label{eq:gbm}
@@ -391,6 +405,19 @@
 		
 		\end{frame}
 		
+%-------------------------------------------------------------------------------
+\section{Acknowledgments}
+%--------------------------------------------------------------------------
+
+\subsection*{}
+
+\begin{frame}[t]
+	
+	\frametitle{Acknowledgments}		
+	
+	Thanks to Lisa Song for her continued assistance in developing these course materials. 
+	
+\end{frame}
 		
 %-------------------------------------------------------------------------------
 %	References

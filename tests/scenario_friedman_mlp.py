@@ -1,6 +1,5 @@
 # Trains a simple NN on the Friedman data
 
-
 # Python imports
 import json
 import keras
