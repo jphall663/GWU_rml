@@ -1,3 +1,4 @@
+% TODO: links in ecosystem models
 % TODO: deeper XNN case study
 
 \documentclass[11pt,aspectratio=169,hyperref={colorlinks}]{beamer}
@@ -51,8 +52,19 @@
 
 %-------------------------------------------------------------------------------
 
+\usepackage{epigraph}
+% \epigraphsize{\small}% Default
+\setlength\epigraphwidth{14cm}
+\setlength\epigraphrule{0pt}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\makeatother
+
+%-------------------------------------------------------------------------------
+
 \author{Patrick Hall}
-\title{Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
+\title{Introduction to Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
 \subtitle{Lecture 1: Interpretable Machine Learning Models}
 \institute{The George Washington University}
 \date{\today}
@@ -123,69 +135,92 @@
 %-------------------------------------------------------------------------------
 	
 		\subsection*{}
-			
+
 		\begin{frame}
-		
-			\frametitle{A Responsible Machine Learning Workflow\footnote{\href{https://www.mdpi.com/2078-2489/11/3/137/htm}{\textit{A Responsible Machine Learning Workflow}}}}
+	
+			\frametitle{Responsible Artificial Intelligence}
+	
+			\epigraph{“Responsible Artificial Intelligence is about human responsibility for the development of intelligent systems along fundamental human principles and values, to ensure human-flourishing and well-being in a sustainable world.”}{--- \textup{Virginia Dignum}, \textbf{Responsible Artificial Intelligence}}
+	
+		\end{frame}		
+
+		\begin{frame}
+	
+			\frametitle{What About Machine Learning?}
 			
 			\begin{figure}[htb]
 				\begin{center}
-					\includegraphics[height=150pt]{../img/rml_diagram_lec1_hilite.png}
-					\label{fig:blueprint}
+					\includegraphics[height=150pt]{../img/cs_stat.png}
+					\label{fig:cs_stat}
+				\end{center}
+			\end{figure}		
+			
+		\end{frame}	
+
+		\begin{frame}
+		
+			\frametitle{A Responsible Machine Learning Workflow}
+			
+			\begin{figure}[htb]
+				\begin{center}
+					\includegraphics[height=150pt]{../img/rml_diagram_no_hilite.png}\\\vspace{5pt}
+					\label{fig:blueprint_nohl}
+					\scriptsize{\textbf{Source:} \href{https://www.mdpi.com/2078-2489/11/3/137/htm}{\textit{A Responsible Machine Learning Workflow}}.}
+				\end{center}
+			\end{figure}
+		
+		\end{frame}
+		
+		\begin{frame}
+	
+			\frametitle{A Responsible ML Workflow: Interpretable Models}		
+			
+			\begin{figure}[htb]
+				\begin{center}
+					\includegraphics[height=150pt]{../img/rml_diagram_lec1_hilite.png}\\\vspace{5pt}
+					\label{fig:blueprint_l1hl}
+					\scriptsize{\textbf{Source:} \href{https://www.mdpi.com/2078-2489/11/3/137/htm}{\textit{A Responsible Machine Learning Workflow}}.}
 				\end{center}
 			\end{figure}		
 					
 		\end{frame}					
 
-		% fix/simplify
-		\begin{frame}[allowframebreaks]
+		\begin{frame}
+	
+			\frametitle{Interpretable ML Models}			
 			
-			\frametitle{Notation}
-		
-			\textbf{Spaces} 
- 
-			\begin{itemize}
-				\item Input features come from the set $\mathcal{X}$ contained in a \textit{P}-dimensional input space, $\mathcal{X} \subset \mathbb{R}^P$.  An arbitrary, potentially unobserved, or future instance of $\mathcal{X}$ is denoted $\mathbf{x}$, $\mathbf{x} \in \mathcal{X}$.
-				\item Labels corresponding to instances of $\mathcal{X}$ come from the set $\mathcal{Y}$.
-				\item Learned output responses come from the set $\mathcal{\hat{Y}}$.
-			\end{itemize}	
-	
-			\framebreak	
-	
-			\textbf{Datasets} 
-
-			\begin{itemize}
-				\item The input dataset $\mathbf{X}$ is composed of observed instances of the set $\mathcal{X}$ with a corresponding dataset of labels $\mathbf{Y}$, observed instances of the set $\mathcal{Y}$. 
-				\item Each $i$-th observation of $\mathbf{X}$ is denoted as\\ $\mathbf{x}^{(i)} = $  
-		$[x_0^{(i)}, x_1^{(i)}, \dots, x_{\textit{P}-1}^{(i)}]$, with corresponding $i$-th labels in $\mathbf{Y}, \mathbf{y}^{(i)}$, and corresponding predictions in $\mathbf{\hat{Y}}, \mathbf{\hat{y}}^{(i)}$.
-				\item $\mathbf{X}$ and $\mathbf{Y}$ consist of $N$ tuples of observations:\\ $[(\mathbf{x}^{(0)},\mathbf{y}^{(0)}), (\mathbf{x}^{(1)},\mathbf{y}^{(1)}), \dots,(\mathbf{x}^{(N-1)},\mathbf{y}^{(N-1)})]$.
-				\item Each $j$-th input column vector of $\mathbf{X}$ is denoted as $X_j = [x_{j}^{(0)}, x_{j}^{(1)}, \dots, x_{j}^{(N-1)}]^T$.
-			\end{itemize}	 
-	
-			\framebreak
-				
-			\textbf{Models}
-
-			\begin{itemize}
-				\item A type of machine learning (ML) model $g$, selected from a hypothesis set $\mathcal{H}$, is trained to represent an unknown signal-generating function $f$ observed as  $\mathbf{X}$ with labels $\mathbf{Y}$ using a training algorithm $\mathcal{A}$: 
-		$ \mathbf{X}, \mathbf{Y} \xrightarrow{\mathcal{A}} g$, such that $g \approx f$.
-				\item $g$ generates learned output responses on the input dataset $g(\mathbf{X}) = \mathbf{\hat{Y}}$, and on the general input space $g(\mathcal{X}) = \mathcal{\hat{Y}}$.
-				\item The model to be explained, tested for discrimination, or debugged is denoted as $g$.
-			\end{itemize}
-		
-		\end{frame}
-
+			\small
+			
+			\cite{been_kim1}, define interpretable as, ``the ability to explain or to present in understandable terms to a human.''
+			
+			\vspace{10pt}
+			
+			There are many types of interpretable ML models. Some might be directly interpretable to non-technical consumers. Some are only interpretable to highly-skilled data scientists. Interpretability is not an on-and-off switch.
+			
+			\vspace{10pt}
+			
+			Interpretable models are crucial for documentation, explanation of predictions to consumers, finding and fixing discrimination, and debugging other problems in ML modeling pipelines. Simply put, \textbf{it is very difficult to mitigate risks you don't understand}.
+			
+			\vspace{10pt}
+			
+			There is not necessarily a trade-off between accuracy and interpretability, especially for structured data.
+			
+			\normalsize
+			
+			
+		\end{frame}	
 
 		\begin{frame}
 		
 			\frametitle{Background}		
 			
-			We will frequently refer to following terms and definitions today: \\			
+			We will frequently refer to the following terms and definitions today: \\			
 			
 			\begin{itemize}
+				\item{Notation}
 				\item{Pearson correlation}
 					\begin{itemize}
-						\item{Measurement of the linear relationship between two input $X_j$; values between -1 and +1, including 0.}
+						\item{Measurement of the linear relationship between two input $X_j$ features; takes on values between -1 and +1, including 0.}
 					\end{itemize}
 				\item{Shapley value}
 				\item{Partial dependence and individual conditional expectation (ICE)}
@@ -193,10 +228,47 @@
 			\end{itemize}			
 		
 		\end{frame}
-		
+
+		\begin{frame}[allowframebreaks]
+	
+			\frametitle{Background: Notation}
+			
+			\textbf{Spaces} 
+			
+			\begin{itemize}
+				\item Input features come from the set $\mathcal{X}$ contained in a \textit{P}-dimensional input space, $\mathcal{X} \subset \mathbb{R}^P$.  An arbitrary, potentially unobserved, or future instance of $\mathcal{X}$ is denoted $\mathbf{x}$, $\mathbf{x} \in \mathcal{X}$.
+				\item Labels corresponding to instances of $\mathcal{X}$ come from the set $\mathcal{Y}$.
+				\item Learned output responses come from the set $\mathcal{\hat{Y}}$.
+			\end{itemize}	
+			
+			\framebreak	
+			
+			\textbf{Datasets} 
+			
+			\begin{itemize}
+				\item The input dataset $\mathbf{X}$ is composed of observed instances of the set $\mathcal{X}$ with a corresponding dataset of labels $\mathbf{Y}$, observed instances of the set $\mathcal{Y}$. 
+				\item Each $i$-th observation of $\mathbf{X}$ is denoted as\\ $\mathbf{x}^{(i)} = $  
+				$[x_0^{(i)}, x_1^{(i)}, \dots, x_{\textit{P}-1}^{(i)}]$, with corresponding $i$-th labels in $\mathbf{Y}, \mathbf{y}^{(i)}$, and corresponding predictions in $\mathbf{\hat{Y}}, \mathbf{\hat{y}}^{(i)}$.
+				\item $\mathbf{X}$ and $\mathbf{Y}$ consist of $N$ tuples of observations:\\ $[(\mathbf{x}^{(0)},\mathbf{y}^{(0)}), (\mathbf{x}^{(1)},\mathbf{y}^{(1)}), \dots,(\mathbf{x}^{(N-1)},\mathbf{y}^{(N-1)})]$.
+				\item Each $j$-th input column vector of $\mathbf{X}$ is denoted as $X_j = [x_{j}^{(0)}, x_{j}^{(1)}, \dots, x_{j}^{(N-1)}]^T$.
+			\end{itemize}	 
+			
+			\framebreak
+			
+			\textbf{Models}
+			
+			\begin{itemize}
+				\item A type of machine learning (ML) model $g$, selected from a hypothesis set $\mathcal{H}$, is trained to represent an unknown signal-generating function $f$ observed as  $\mathbf{X}$ with labels $\mathbf{Y}$ using a training algorithm $\mathcal{A}$: 
+				$ \mathbf{X}, \mathbf{Y} \xrightarrow{\mathcal{A}} g$, such that $g \approx f$.
+				\item $g$ generates learned output responses on the input dataset $g(\mathbf{X}) = \mathbf{\hat{Y}}$, and on the general input space $g(\mathcal{X}) = \mathcal{\hat{Y}}$.
+				\item The model to be explained, tested for discrimination, or debugged is denoted as $g$.
+			\end{itemize}
+			
+		\end{frame}
+
 		\begin{frame}
 		
-			\frametitle{Shapley Value}	
+			\frametitle{Background: Shapley Value}	
 			
 			Shapley explanations, including TreeSHAP and even certain implementations of LIME, are a class of additive, locally accurate feature contribution measures with long-standing theoretical support (\cite{shapley}). 
 
@@ -222,7 +294,7 @@
 		
 		\begin{frame}
 		
-			\frametitle{Partial Dependence and ICE}			
+			\frametitle{Background: Partial Dependence and ICE}			
 
 			\begin{itemize}
 
@@ -236,7 +308,7 @@
 		
 		\begin{frame}
 		
-			\frametitle{Gradient Boosting Machine}			
+			\frametitle{Background: Gradient Boosting Machine}			
 				  			
 			\begin{equation}
 			\begin{aligned}\label{eq:gbm}
@@ -249,25 +321,7 @@
 			A GBM is a sequential combination of decision trees, $T_b$, where $T_0$ is trained to predict $\mathbf{y}$, but all subsequent $T$ are trained to reduce the errors of $T_{b-1}$.
 			
 		\end{frame}	
-	
-		\begin{frame}
-	
-			\frametitle{Interpretable Machine Learning Models}			
-			
-			\cite{been_kim1} define interpretable as, ``the ability to explain or to present in understandable terms to a human.''
-			
-			\vspace{10pt}
-			
-			There are many types of interpretable ML models. Interpretability is not an on-and-off switch. Some might be directly interpretable to non-technical consumers. Some are only interpretable to highly-skilled data scientists. 
-			
-			\vspace{10pt}
-			
-			Interpretable models are crucial for documentation, explanation of predictions to consumers, finding and fixing discrimination, and debugging problems in modeling pipelines. Simply put, \textbf{it is very difficult to mitigate risks you don't understand}.
-			
-			
-		\end{frame}	
-			
-				
+					
 %-------------------------------------------------------------------------------
 	\section{Penalized GLM}
 %-------------------------------------------------------------------------------
@@ -389,18 +443,18 @@
 			\frametitle{A Burgeoning Ecosystem of Interpretable Machine Learning Models}		
 			
 			\begin{itemize}
-				\item Generalized additive model (GAM) (\cite{esl})
-				\item GA2M/Explainable boosting machine (EBM) (\cite{ga2m})
-				\item Explainable Neural Network (XNN) (\cite{wf_xnn})
+				\item \href{https://www.r-bloggers.com/generalized-additive-models}{Generalized additive model} (GAM) (\cite{esl})
+				\item \href{http://www.cs.cornell.edu/~yinlou/projects/gam/}{GA2M} / \href{https://github.com/interpretml/interpret/}{Explainable boosting machine} (EBM) (\cite{ga2m})
+				\item \href{https://www.mdpi.com/2078-2489/11/3/137}{Explainable Neural Network} (XNN) (\cite{wf_xnn})
 				\item Rudin group: 
 				\begin{itemize}
-					\item \textit{This looks like that} deep learning (\cite{this_looks_like_that})
+					\item href{\textit{This looks like that} deep learning}{https://www.youtube.com/watch?v=k3IQnRsl9U4} (\cite{this_looks_like_that})
 					\item Scalable Bayesian rule list (\cite{sbrl}) 
 					\item Optimal sparse decision tree (\cite{osdt})
 					\item Supersparse linear integer models (\cite{slim})
 					\item and more ... 
 				\end{itemize}
-				\item RuleFit (\cite{rulefit})
+				\item \href{https://christophm.github.io/interpretable-ml-book/rulefit.html}{RuleFit} (\cite{rulefit})
 			\end{itemize}
 		
 		\end{frame}
