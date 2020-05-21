@@ -64,3 +64,5 @@ Materials for a technical, nuts-and-bolts course about increasing transparency, 
 8. Install the correct packages for the example notebooks: `$ pip install -r requirements.txt`
 
 9. Start Jupyter: `$ jupyter notebook`
+
+10. When you are finished, deactivate the environment: `$ deactivate`.
