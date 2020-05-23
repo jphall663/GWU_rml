@@ -22,6 +22,7 @@ Materials for a technical, nuts-and-bolts course about increasing transparency, 
 
 * [Syllabus](rml_syllabus_summer_2020.pdf)
 * [Lecture Notes](tex/lecture_1.pdf)
+* [Lecture Video](https://www.youtube.com/watch?v=AJS1_2DIbjo)
 * Software Example: [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)
 
 ### Lecture 1 Suggested Software
