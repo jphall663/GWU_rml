@@ -46,7 +46,7 @@ Materials for a technical, nuts-and-bolts course about increasing transparency, 
   * [*Accurate Intelligible Models with Pairwise Interactions*](http://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf)
   * [*This Looks Like That: Deep Learning for Interpretable Image Recognition*](https://arxiv.org/pdf/1806.10574.pdf)
 
-* Links from Lecture
+* **Links from Lecture**
   * [Tay (bot)](https://en.wikipedia.org/wiki/Tay_(bot))
   * [New York Regulator Probes UnitedHealth Algorithm for Racial Bias](https://www.wsj.com/articles/new-york-regulator-probes-unitedhealth-algorithm-for-racial-bias-11572087601)
   * [When a Computer Program Keeps You in Jail](https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html)
