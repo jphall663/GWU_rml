@@ -13,6 +13,9 @@ Materials for a technical, nuts-and-bolts course about increasing transparency, 
 * Lecture 5: Machine Learning Model Debugging
 * Lecture 6: Responsible Machine Learning Best Practices
 
+
+Corrections or suggestions? Please file a [GitHub issue](https://github.com/jphall663/GWU_rml/issues/new).
+
 ## Lecture 1: Interpretable Machine Learning Models
 
 ![Histogram, partial dependence, and ICE for a monotonic GBM and a credit card customer's most recent repayment status](/img/lecture_1.png)
