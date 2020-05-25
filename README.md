@@ -37,7 +37,6 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * R [`rpart`](https://cran.r-project.org/web/packages/rpart/index.html)
 * Python [`skope-rules`](https://github.com/scikit-learn-contrib/skope-rules)
 
-
 ### Lecture 1 Suggested Reading
 
 * **Introduction and Background**: 
@@ -55,6 +54,60 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [When a Computer Program Keeps You in Jail](https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html)
   * [When an Algorithm Helps Send You to Prison](https://www.nytimes.com/2017/10/26/opinion/algorithm-compas-sentencing-bias.html)
 
+## Lecture 1: Interpretable Machine Learning Models
+
+![Histogram, partial dependence, and ICE for a monotonic GBM and a credit card customer's most recent repayment status](/img/lecture_1.png)
+<sub><sup>**Source:** [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)</sup></sub>
+
+### Lecture 1 Class Materials
+
+* [Syllabus](rml_syllabus_summer_2020.pdf)
+* [Lecture Notes](tex/lecture_1.pdf)
+* [Lecture Video](https://www.youtube.com/watch?v=AJS1_2DIbjo)
+* Software Example: [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)
+
+### Lecture 1 Suggested Software
+
+* Python [explainable boosting machine (EBM)/GA2M](https://github.com/interpretml/interpret)
+* R [`gam`](https://cran.r-project.org/web/packages/gam/index.html)
+* `h2o` [penalized GLM](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/glm.html) (R and Python)
+* Monotonic gradient boosting machine (GBM): [`h2o`](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/algo-params/monotone_constraints.html) and [`xgboost`](https://xgboost.readthedocs.io/en/latest/tutorials/monotonic.html) (R and Python)
+* R [`rpart`](https://cran.r-project.org/web/packages/rpart/index.html)
+* Python [`skope-rules`](https://github.com/scikit-learn-contrib/skope-rules)
+
+## Lecture 2: Post-hoc Explanation
+
+![A decision tree surrogate model forms a flow chart of a more complex monotonic GBM](/img/lecture_2.png)
+<sub><sup>**Source:** [Global and Local Explanations of Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb)</sup></sub>
+
+### Lecture 2 Suggested Reading
+
+* **Introduction and Background**: 
+  * **[Proposed Guidelines for the Responsible Use of Explainable Machine Learning](https://arxiv.org/pdf/1906.03533.pdf)
+  * **[Responsible Artificial Intelligence](https://www.springer.com/gp/book/9783030303709)** - Chapter 4
+  
+* **Post-hoc Explanation Techniques**:
+  * **Interpretable Machine Learning** - [Chapter 5](https://christophm.github.io/interpretable-ml-book/agnostic.html) and [Chapter 6](https://christophm.github.io/interpretable-ml-book/example-based.html)
+  * [*Towards a Better Understanding of Gradient-based Attribution Methods for Deep Neural Networks*](https://arxiv.org/pdf/1711.06104.pdf)
+
+* **Links from Lecture**
+
+### Lecture 2 Class Materials
+
+* [Lecture Notes](tex/lecture_2.pdf) (draft)
+* [Lecture Video]() (cuurently unavailable)
+* Software Example: [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) (draft)
+
+### Lecture 2 Suggested Software
+* Python:
+  * [`alibi`](https://github.com/SeldonIO/alibi)
+  * [`interpret`](https://github.com/interpretml/interpret)
+  * [`shap`](https://github.com/slundberg/shap)
+  * [`tf-explain`](https://github.com/sicara/tf-explain)
+* R:
+  * [`DALEX`](https://github.com/ModelOriented/DALEX)
+  * [`iml`](https://github.com/christophM/iml)
+   
 ## Using Class Software Resources
 
 1. Install [Git](https://git-scm.com/downloads), [Graphviz](https://www.graphviz.org/) and Java. They must all be *added to your system path.*
