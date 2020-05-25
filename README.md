@@ -56,7 +56,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ## Lecture 2: Post-hoc Explanation
 
 ![A decision tree surrogate model forms a flow chart of a more complex monotonic GBM](/img/lecture_2.png)
-<sub><sup>**Source:** [Global and Local Explanations of Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb)</sup></sub>
+<sub><sup>**Source:** [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb)</sup></sub>
 
 ### Lecture 2 Suggested Reading
 
