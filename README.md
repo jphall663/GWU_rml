@@ -47,7 +47,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [*Accurate Intelligible Models with Pairwise Interactions*](http://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf)
   * [*This Looks Like That: Deep Learning for Interpretable Image Recognition*](https://arxiv.org/pdf/1806.10574.pdf)
 
-* **Links from Lecture**
+* **Links from Lecture**:
   * [Tay (bot)](https://en.wikipedia.org/wiki/Tay_(bot))
   * [New York Regulator Probes UnitedHealth Algorithm for Racial Bias](https://www.wsj.com/articles/new-york-regulator-probes-unitedhealth-algorithm-for-racial-bias-11572087601)
   * [When a Computer Program Keeps You in Jail](https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html)
@@ -68,7 +68,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * **Interpretable Machine Learning** - [Chapter 5](https://christophm.github.io/interpretable-ml-book/agnostic.html) and [Chapter 6](https://christophm.github.io/interpretable-ml-book/example-based.html)
   * [*Towards a Better Understanding of Gradient-based Attribution Methods for Deep Neural Networks*](https://arxiv.org/pdf/1711.06104.pdf)
 
-* **Links from Lecture**
+* **Links from Lecture**:
 
 ### Lecture 2 Class Materials
 
