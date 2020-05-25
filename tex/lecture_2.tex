@@ -1,31 +1,23 @@
-% TODO
-% confirm max. points lost method
+\documentclass[11pt,aspectratio=169,hyperref={colorlinks}]{beamer}
 
-
-\documentclass[11pt,
-			   %10pt, 
-               %hyperref={colorlinks},
-               aspectratio=169,
-               hyperref={colorlinks}
-               ]{beamer}
 \usetheme{Singapore}
-\usecolortheme[snowy, cautious]{owl}
+
+\usecolortheme[snowy]{owl}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[american]{babel}
 \usepackage{graphicx}
 \usepackage{hyperref}
-
 \hypersetup{
     colorlinks=true,
-    urlcolor=[rgb]{1,0,1},
-    linkcolor=[rgb]{1,0,1}}
-\definecolor{magenta}{RGB}{255, 0, 255}
-
+    urlcolor=[rgb]{0,0,0.61},
+    linkcolor=[rgb]{0,0,0.61}}
+ 
+    
+%\usepackage[natbib=true,style=authoryear,backend=bibtex,useprefix=true]{biblatex}
+\usepackage{blindtext}
 \usepackage[natbib=true,style=numeric,backend=bibtex,useprefix=true]{biblatex}
-
-\definecolor{OwlGreen}{RGB}{75,0,130} % easier to see
 \setbeamertemplate{bibliography item}{\insertbiblabel}
 \setbeamerfont{caption}{size=\footnotesize}
 \setbeamertemplate{frametitle continuation}{}
@@ -50,11 +42,80 @@
 \patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
 \makeatother
 
-\author{\copyright\hspace{1pt}Patrick Hall\thanks{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author and H2O.ai.}}}
-\title{Proposed Guidelines for Responsible Use\\of Explainable Machine Learning}
-\institute{\href{https://www.h2o.ai}{H\textsubscript{2}O.ai}}
+%-------------------------------------------------------------------------------
+
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{soul}
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+%-------------------------------------------------------------------------------
+
+% OwlGreen - customized to make the header violet color
+\definecolor{OwlGreen}{RGB}{51,0,102}
+%\definecolor{magenta}{RGB}{248,206,204}
+\definecolor{fuschia}{RGB}{255,0,255}
+
+
+\usepackage{xcolor, soul}
+\sethlcolor{magenta}
+
+%-------------------------------------------------------------------------------
+
+\setbeamertemplate{bibliography item}{}
+\renewcommand*{\bibfont}{\scriptsize}
+\addbibresource{main.bib}
+
+\setbeamerfont{caption}{size=\footnotesize}
+\setbeamertemplate{frametitle continuation}{}
+\setcounter{tocdepth}{1}
+
+%-------------------------------------------------------------------------------
+
+\usenavigationsymbolstemplate{}
+\setbeamertemplate{footline}{%
+    \raisebox{5pt}{\makebox{\hfill\makebox[20pt]{\color{gray}
+          \scriptsize\insertframenumber}}}\hspace*{5pt}}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%-------------------------------------------------------------------------------
+
+\usepackage[natbib=true,style=numeric,backend=bibtex,useprefix=true]{biblatex}
+
+%\definecolor{OwlGreen}{RGB}{75,0,130} % easier to see
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamerfont{caption}{size=\footnotesize}
+\setbeamertemplate{frametitle continuation}{}
+
+\setcounter{tocdepth}{1}
+\renewcommand*{\bibfont}{\scriptsize}
+\addbibresource{lecture_2_DRAFT.bib}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\usenavigationsymbolstemplate{}
+\setbeamertemplate{footline}{%
+    \raisebox{5pt}{\makebox{\hfill\makebox[20pt]{\color{gray}
+          \scriptsize\insertframenumber}}}\hspace*{5pt}}
+
+\usepackage{epigraph}
+% \epigraphsize{\small}% Default
+\setlength\epigraphwidth{14cm}
+\setlength\epigraphrule{0pt}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\makeatother
+
+
+\author{Patrick Hall}
+\title{Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
+\subtitle{Lecture 2:  Post-hoc Explanations}
+\institute{The George Washington University}
 \date{\today}
-\subject{}
+
+
 
 \begin{document}
 	
@@ -74,7 +135,37 @@
 	\section{Introduction}
 %-------------------------------------------------------------------------------
 
-	\subsection*{} % just for progress indicator
+	
+		\subsection*{} %just for progress indicator
+			
+		\begin{frame}
+		
+			\frametitle{A Responsible Machine Learning Workflow\footnote{\href{https://www.mdpi.com/2078-2489/11/3/137/htm}{\textit{A Responsible Machine Learning Workflow}}}}
+			
+			\begin{figure}[htb]
+				\begin{center}
+					\includegraphics[height=150pt]{../img/rml_diagram_lec2_hilite.png}
+					\label{fig:blueprint}
+				\end{center}
+			\end{figure}		
+					
+		\end{frame}					
+
+
+		\begin{frame}[allowframebreaks]
+			
+			\frametitle{Lecture 2 Agenda}
+ 
+			\begin{itemize}
+				\item{Overview of Explainable ML}
+				\item{Understanding and Trust}
+				\item{The Dark Side}
+				\item{Surrogates}
+				\item{High Stakes Applications}
+			\end{itemize}
+				
+		\end{frame}
+
 
 	\begin{frame}[t]
 		
@@ -161,7 +252,7 @@
 
 	\begin{frame}
 	
-		\frametitle{Proposed Guidelines for Responsible Use}
+		\frametitle{Guidelines for Responsible Use of Explainable ML}
 		
 		\begin{enumerate}\Large
 			\item \textbf{Use explainable ML to enhance understanding.}
@@ -180,7 +271,7 @@
 
 	\begin{frame}
 	
-		\frametitle{\textbf{Guideline 1}: Use Explainable ML to Enhance Understanding}
+		\frametitle{Use Explainable ML to \textbf{Enhance Understanding}}
 		
 		\Large
 		
@@ -196,7 +287,7 @@
 
 	\begin{frame}[label={no_trust}]
 	
-		\frametitle{Understanding Without Trust}
+		\frametitle{Understanding \textbf{Without} Trust}
 		
 					\begin{columns}
 				
@@ -221,7 +312,7 @@
 	
 	\begin{frame}
 	
-		\frametitle{Trust Without Understanding}
+		\frametitle{Trust \textbf{Without} Understanding}
 		\Large
 		Years before reliable explanation techniques were widely acknowledged and available, black-box predictive models, such as autoencoder and MLP neural networks, were used for fraud detection in the financial services industry (\citet{gopinathan1998fraud}). When these models performed well, they were trusted.\footnote{\tiny{For example: \url{https://www.sas.com/en_ph/customers/hsbc.html}, \url{https://www.kdnuggets.com/2011/03/sas-patent-fraud-detection.html}}.} However, they were not explainable or well-understood by contemporary standards.  
 
@@ -236,7 +327,7 @@
 
 	\begin{frame}
 	
-		\frametitle{\textbf{Guideline 2}: Learn How Explainable ML is Used for Nefarious Purposes}	
+		\frametitle{Explainable ML Can be Used for \textbf{Nefarious Purposes}}	
 		\Large
 		When unintentionally misused, explainable ML can act as a faulty safeguard for potentially harmful black-boxes.\\
 		\vspace{10pt}
@@ -250,12 +341,12 @@
 
 	\begin{frame}
 	
-		\frametitle{ML Hacking}
+		\frametitle{\textit{\textbf{AI Incident}}: ML Hacking}
 		
 \footnotesize{Many ML hacks use, or are exacerbated by, explainable ML techniques.}\footnote{\tiny{See \url{https://github.com/jphall663/secure_ML_ideas} for full size image and more information.}}
 				\begin{figure}
 					\begin{center}
-						\includegraphics[height=160pt]{../img/cheatsheet.png}
+						\includegraphics[height=160pt]{../img/cheatsheet_blue.png}
 					\end{center}
 				\end{figure}	
 				\normalsize
@@ -264,7 +355,7 @@
 	
 	\begin{frame}
 	
-		\frametitle{\large{\textbf{Corollary 2.1}: White-hat Attacks Can Crack Potentially Harmful Black-boxes}}
+		\frametitle{\large{\textbf{Case 1}: White-hat Attacks Can Crack Potentially Harmful Black-boxes}}
 		\large
 		The flip-side of the dark side is community oversight of black-boxes.\\
 		\vspace{10pt}
@@ -279,7 +370,7 @@
 	
 	\begin{frame}[label={not_frontline}]
 	
-		\frametitle{\textbf{Corollary 2.2}: Explanation \textbf{\textit{is Not}} a Front Line Fairness Tool}
+		\frametitle{\textbf{Case 2}: Explanation \textbf{\textit{is Not}} a Front Line Fairness Tool}
 		\large
 		Use fairness tools, e.g. ...
 		\vspace{5pt}
@@ -305,7 +396,7 @@
 
 	\begin{frame}
 	
-		\frametitle{Surrogate Models}
+		\frametitle{What are Surrogate Models?}
 		\large
 		Models of models (i.e. surrogate models, compressed models, extracted models) can be helpful explanatory or modeling tools, but they can also be approximate, low-fidelity explainers.\\
 		\vspace{10pt}
@@ -317,7 +408,7 @@
 	
 	\begin{frame}[t]
 	
-		\frametitle{\textbf{Guideline 3}: Augment Surrogate Models with Direct Explanations}	
+		\frametitle{Augment \textbf{Surrogate Models} with \textbf{Direct Explanations}}	
 	
 		\begin{columns}
 				
@@ -339,13 +430,13 @@
 
 	\begin{frame}[t, label={lime}]
 	
-		\frametitle{\textbf{Corollary 3.1}: Augment LIME with Direct Explanations}
+		\frametitle{\textbf{Example}: Augment LIME with Direct Explanations}
 	
 		\begin{columns}
 				
 			\column{0.5\linewidth}
 			\centering			
-			\includegraphics[height=0.6\linewidth, width=.95\linewidth]{../img/shap.png}\\
+			\includegraphics[height=0.6\linewidth, width=.95\linewidth]{../img/shap_blue.png}\\
   			\tiny{Locally accurate Shapley contributions for a high risk individual's probability of default as predicted by a simple decision tree model, $g_{\text{tree}}$. See slide~\ref{dt} for a directed graph representation of $g_{\text{tree}}$}.
 
 			\hspace{5pt}
@@ -389,11 +480,11 @@
 
 	\begin{frame}
 	
-		\frametitle{\normalsize{\textbf{Guideline 4}: Use Highly Transparent Mechanisms for High Stakes Applications}}
+		\frametitle{Use Highly Transparent Mechanisms for \textbf{High Stakes Applications}}
 		\vspace{2pt}
-		\centering{\includegraphics[scale=0.09]{../img/rml_diagram_no_hilite.png}}\\
+		\centering{\includegraphics[scale=0.09]{../img/rml_diagram_lec2_hilite.png}}\\
 		\vspace{5pt}
-		\scriptsize{A diagram of a proposed workflow in which explanations (highlighted in \textcolor{magenta}{fuschia}) are used along with interpretable models, disparate impact analysis and remediation techniques, and other review and appeal mechanisms to create a fair, accountable, and transparent ML system.}
+		\scriptsize{A diagram of a proposed workflow in which \colorbox{pink}{explanations} are used along with interpretable models, disparate impact analysis and remediation techniques, and other review and appeal mechanisms to create a fair, accountable, and transparent ML system.}
 	
 	\end{frame}
 
@@ -401,7 +492,7 @@
 
 % XNN
 
-		\frametitle{\large{\textbf{Corollary 4.1}: Use Interpretable Models for High Stakes Applications (\citet{please_stop})}}
+		\frametitle{\normalsize{\textbf{Case 1}: Use \textbf{Interpretable Models} for High Stakes Applications (\citet{please_stop})}}
 		
 		In addition to penalized GLM, decision trees, and conventional rule-based models, many other types of accurate and interpretable models are available today, e.g. ...
 		
@@ -420,7 +511,7 @@
 
 	\begin{frame}[label={dt}]
 	
-		\frametitle{\large{\textbf{Corollary 4.2}: Explanations and Interpretable Models are Not Mutually Exclusive}}
+		\frametitle{\textbf{Case 2}: Explanations and Interpretable Models are Not Mutually Exclusive}
 		
 		\begin{columns}
 				
@@ -428,13 +519,13 @@
 			\centering		
 			\includegraphics[height=.45\linewidth, width=1.15\linewidth]{../img/dt.png}\\
 			\vspace{5pt}
-  			\tiny{Simple decision tree, $g_{\text{tree}}$, trained on the UCI credit card data to predict default with validation AUC of 0.74. The decision policy for high risk individuals is highlighted in \textcolor{magenta}{fuschia}.}
+  			\tiny{Simple decision tree, $g_{\text{tree}}$, trained on the UCI credit card data to predict default with validation AUC of 0.74. The decision policy for high risk individuals is highlighted in \textcolor{fuschia}{fuschia}.}
 
 			\hspace{50pt}
 			\column{.4\textwidth}
 			\centering
 			\vspace{2pt}\\
-  			\includegraphics[height=.5\linewidth, width=.8\linewidth]{../img/shap.png}\\
+  			\includegraphics[height=.5\linewidth, width=.8\linewidth]{../img/shap_blue.png}\\
   			\vspace{5pt}
   			\tiny{Locally accurate Shapley contributions for the highlighted individual's probability of default. See slide \ref{lime} for LIMEs for the high risk customers in $g_{\text{tree}}$.}
 
@@ -465,7 +556,7 @@
 	
 	\begin{frame}[t]
 	
-		\frametitle{\large{\textbf{Corollary 4.3}: Explanation and Fairness Techniques are Not Mutually Exclusive}}
+		\frametitle{\large{\textbf{Case 3}: Explanation and Fairness Techniques are Not Mutually Exclusive}}
 		
 		\begin{table}
 			\centering
