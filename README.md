@@ -58,6 +58,23 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ![A decision tree surrogate model forms a flow chart of a more complex monotonic GBM](/img/lecture_2.png)
 <sub><sup>**Source:** [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb)</sup></sub>
 
+### Lecture 2 Class Materials
+
+* [Lecture Notes](tex/lecture_2.pdf) (draft)
+* [Lecture Video]() (currently unavailable)
+* Software Example: [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) (draft)
+
+### Lecture 2 Suggested Software
+
+* Python:
+  * [`alibi`](https://github.com/SeldonIO/alibi)
+  * [`interpret`](https://github.com/interpretml/interpret)
+  * [`shap`](https://github.com/slundberg/shap)
+  * [`tf-explain`](https://github.com/sicara/tf-explain)
+* R:
+  * [`DALEX`](https://cran.r-project.org/web/packages/DALEX/index.html)
+  * [`iml`](https://cran.r-project.org/web/packages/iml/index.html)
+  
 ### Lecture 2 Suggested Reading
 
 * **Introduction and Background**: 
@@ -70,21 +87,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 * **Links from Lecture**:
 
-### Lecture 2 Class Materials
 
-* [Lecture Notes](tex/lecture_2.pdf) (draft)
-* [Lecture Video]() (currently unavailable)
-* Software Example: [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) (draft)
-
-### Lecture 2 Suggested Software
-* Python:
-  * [`alibi`](https://github.com/SeldonIO/alibi)
-  * [`interpret`](https://github.com/interpretml/interpret)
-  * [`shap`](https://github.com/slundberg/shap)
-  * [`tf-explain`](https://github.com/sicara/tf-explain)
-* R:
-  * [`DALEX`](https://cran.r-project.org/web/packages/DALEX/index.html)
-  * [`iml`](https://cran.r-project.org/web/packages/iml/index.html)
    
 ## Using Class Software Resources
 
