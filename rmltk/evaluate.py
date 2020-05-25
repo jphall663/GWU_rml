@@ -32,6 +32,7 @@ All aspects of rmltk are based on public ideas, e.g.:
 # TODO: unit tests
 # TODO: model documentation
 # TODO: CV metrics for all measures, not just accuracy
+# TODO: Multi-threading for cv rank?
 
 
 def cv_model_rank(valid, seed_, model_name_list, nfolds=5):
