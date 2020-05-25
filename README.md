@@ -62,7 +62,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 * **Introduction and Background**: 
   * [*Proposed Guidelines for the Responsible Use of Explainable Machine Learning*](https://arxiv.org/pdf/1906.03533.pdf)
-  * [**Responsible Artificial Intelligence**](https://www.springer.com/gp/book/9783030303709)** - Chapter 4
+  * [**Responsible Artificial Intelligence**](https://www.springer.com/gp/book/9783030303709) - Chapter 4
   
 * **Post-hoc Explanation Techniques**:
   * **Interpretable Machine Learning** - [Chapter 5](https://christophm.github.io/interpretable-ml-book/agnostic.html) and [Chapter 6](https://christophm.github.io/interpretable-ml-book/example-based.html)
