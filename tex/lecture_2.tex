@@ -24,7 +24,7 @@
 
 \setcounter{tocdepth}{1}
 \renewcommand*{\bibfont}{\scriptsize}
-\addbibresource{lecture_2_DRAFT.bib}
+\addbibresource{lecture_2.bib}
 
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
@@ -53,8 +53,9 @@
 
 % OwlGreen - customized to make the header violet color
 \definecolor{OwlGreen}{RGB}{51,0,102}
-%\definecolor{magenta}{RGB}{248,206,204}
+\definecolor{magenta}{RGB}{248,206,204}
 \definecolor{fuschia}{RGB}{255,0,255}
+\definecolor{blue}{RGB}{0,0,156}
 
 
 \usepackage{xcolor, soul}
@@ -271,23 +272,23 @@
 
 	\begin{frame}
 	
-		\frametitle{Use Explainable ML to \textbf{Enhance Understanding}}
+		\frametitle{1: Use Explainable ML to \textbf{Enhance Understanding}}
 		
-		\Large
-		
-		Explanations enhance understanding \textbf{directly}, and increase trust as a \textbf{side-effect}.\\
-		\vspace{10pt}
-		Models can be \textbf{understood and not trusted}, and \textbf{trusted but not understood}.\\
-		\vspace{10pt}
-		Explanations \textbf{alone} are neither necessary nor sufficient for trust.\\
-		\vspace{10pt}
-		Good explanations \textbf{enable human appeal} of model decisions.
+		\begin{itemize}\Large
+			\item{Explanations enhance understanding \textbf{directly}, and increase trust as a \textbf{side-effect}.}
+			\vspace{10pt}
+			\item{Models can be \textbf{understood and not trusted}, and \textbf{trusted but not understood}.}
+			\vspace{10pt}
+			\item{Explanations \textbf{alone} are neither necessary nor sufficient for trust.}
+			\vspace{10pt}
+			\item{Good explanations \textbf{enable human appeal} of model decisions.}
+		\end{itemize}
 		
 	\end{frame}
 
 	\begin{frame}[label={no_trust}]
 	
-		\frametitle{Understanding \textbf{Without} Trust}
+		\frametitle{Understanding Without Trust}
 		
 					\begin{columns}
 				
@@ -312,7 +313,7 @@
 	
 	\begin{frame}
 	
-		\frametitle{Trust \textbf{Without} Understanding}
+		\frametitle{Trust Without Understanding}
 		\Large
 		Years before reliable explanation techniques were widely acknowledged and available, black-box predictive models, such as autoencoder and MLP neural networks, were used for fraud detection in the financial services industry (\citet{gopinathan1998fraud}). When these models performed well, they were trusted.\footnote{\tiny{For example: \url{https://www.sas.com/en_ph/customers/hsbc.html}, \url{https://www.kdnuggets.com/2011/03/sas-patent-fraud-detection.html}}.} However, they were not explainable or well-understood by contemporary standards.  
 
@@ -327,7 +328,7 @@
 
 	\begin{frame}
 	
-		\frametitle{Explainable ML Can be Used for \textbf{Nefarious Purposes}}	
+		\frametitle{2: Explainable ML Can be Used for \textbf{Nefarious Purposes}}	
 		\Large
 		When unintentionally misused, explainable ML can act as a faulty safeguard for potentially harmful black-boxes.\\
 		\vspace{10pt}
@@ -355,7 +356,7 @@
 	
 	\begin{frame}
 	
-		\frametitle{\large{\textbf{Case 1}: White-hat Attacks Can Crack Potentially Harmful Black-boxes}}
+		\frametitle{\large{\textbf{Case 2.1}: White-hat Attacks Can Crack Potentially Harmful Black-boxes}}
 		\large
 		The flip-side of the dark side is community oversight of black-boxes.\\
 		\vspace{10pt}
@@ -370,7 +371,7 @@
 	
 	\begin{frame}[label={not_frontline}]
 	
-		\frametitle{\textbf{Case 2}: Explanation \textbf{\textit{is Not}} a Front Line Fairness Tool}
+		\frametitle{\textbf{Case 2.2}: Explanation \textbf{\textit{is Not}} a Front Line Fairness Tool}
 		\large
 		Use fairness tools, e.g. ...
 		\vspace{5pt}
@@ -397,18 +398,19 @@
 	\begin{frame}
 	
 		\frametitle{What are Surrogate Models?}
-		\large
-		Models of models (i.e. surrogate models, compressed models, extracted models) can be helpful explanatory or modeling tools, but they can also be approximate, low-fidelity explainers.\\
-		\vspace{10pt}
-		Much work in explainable ML has been directed toward improving the fidelity and usefulness of surrogate models (e.g., \citet{dt_surrogate2}, \citet{viper}, \citet{dt_surrogate1}, \citet{lime-sup}, \citet{anchors}, \citet{wf_xnn})\\
-		\vspace{10pt}
-		\textbf{\textit{(BUT many explainable ML techniques have nothing to do with surrogate models!)}}
+		\begin{itemize}\large
+			\item{Models of models (i.e. surrogate models, compressed models, extracted models) can be helpful explanatory or modeling tools, but they can also be approximate, low-fidelity explainers.}
+			\vspace{10pt}
+			\item{Much work in explainable ML has been directed toward improving the fidelity and usefulness of surrogate models (e.g., \citet{dt_surrogate2}, \citet{viper}, \citet{dt_surrogate1}, \citet{lime-sup}, \citet{anchors}, \citet{wf_xnn})}
+			\vspace{10pt}
+			\item{\textbf{\textit{HOWEVER, many explainable ML techniques have nothing to do with surrogate models!}}}
+		\end{itemize}
 		
 	\end{frame}
 	
 	\begin{frame}[t]
 	
-		\frametitle{Augment \textbf{Surrogate Models} with \textbf{Direct Explanations}}	
+		\frametitle{3: Augment \textbf{Surrogate Models} with \textbf{Direct Explanations}}	
 	
 		\begin{columns}
 				
@@ -430,7 +432,7 @@
 
 	\begin{frame}[t, label={lime}]
 	
-		\frametitle{\textbf{Example}: Augment LIME with Direct Explanations}
+		\frametitle{\textbf{Example 3.1}: Augment LIME with Direct Explanations}
 	
 		\begin{columns}
 				
@@ -480,7 +482,7 @@
 
 	\begin{frame}
 	
-		\frametitle{Use Highly Transparent Mechanisms for \textbf{High Stakes Applications}}
+		\frametitle{4: Use Highly Transparent Mechanisms for \textbf{High Stakes Applications}}
 		\vspace{2pt}
 		\centering{\includegraphics[scale=0.09]{../img/rml_diagram_lec2_hilite.png}}\\
 		\vspace{5pt}
@@ -492,7 +494,7 @@
 
 % XNN
 
-		\frametitle{\normalsize{\textbf{Case 1}: Use \textbf{Interpretable Models} for High Stakes Applications (\citet{please_stop})}}
+		\frametitle{\normalsize{\textbf{Case 4.1}: Use \textbf{Interpretable Models} for High Stakes Applications (\citet{please_stop})}}
 		
 		In addition to penalized GLM, decision trees, and conventional rule-based models, many other types of accurate and interpretable models are available today, e.g. ...
 		
@@ -511,7 +513,7 @@
 
 	\begin{frame}[label={dt}]
 	
-		\frametitle{\textbf{Case 2}: Explanations and Interpretable Models are Not Mutually Exclusive}
+		\frametitle{\normalsize\textbf{Case 4.2}: Explanations and Interpretable Models are \textbf{Not Mutually Exclusive}}
 		
 		\begin{columns}
 				
@@ -556,7 +558,7 @@
 	
 	\begin{frame}[t]
 	
-		\frametitle{\large{\textbf{Case 3}: Explanation and Fairness Techniques are Not Mutually Exclusive}}
+		\frametitle{\large{\textbf{Case 4.3}: Explanation and Fairness Techniques are \textbf{Not Mutually Exclusive}}}
 		
 		\begin{table}
 			\centering
@@ -567,9 +569,9 @@
 				\hline	
 				\texttt{single} & 0.89 & 1.03 & 0.99 & 1.03 & 0.85 & 1.01 \\
 				\hline	
-				\texttt{divorced} & 1.01 & 0.93 & 0.81 & 0.96 & \textcolor{magenta}{1.25} & 1.22 \\
+				\texttt{divorced} & 1.01 & 0.93 & 0.81 & 0.96 & \textcolor{fuschia}{1.25} & 1.22 \\
 				\hline
-				\texttt{other} & \textcolor{magenta}{0.26} & 1.12 & \textcolor{magenta}{0.62} & 1.17 & \textcolor{magenta}{0} & \textcolor{magenta}{1.44} \\
+				\texttt{other} & \textcolor{fuschia}{0.26} & 1.12 & \textcolor{fuschia}{0.62} & 1.17 & \textcolor{fuschia}{0} & \textcolor{fuschia}{1.44} \\
 				\hline	
 			\end{tabular}
 		\end{table}
