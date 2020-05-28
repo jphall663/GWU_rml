@@ -146,7 +146,7 @@ brew cask install adoptopenjdk8
 
 8. Start Jupyter: `$ jupyter notebook`
 
-9. When you are finished, deactivate the environment: `$ deactivate`.
+9. When you are finished, deactivate the environment: `$ deactivate`
 
 If you get stuck, try this link: [Mac Setup: Virtualenv](https://sourabhbajaj.com/mac-setup/Python/virtualenv.html).
 
