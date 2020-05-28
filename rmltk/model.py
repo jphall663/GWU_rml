@@ -38,7 +38,7 @@ All aspects of rmltk are based on public ideas, e.g.:
 # TODO: model documentation
 
 
-def glm_grid(x_names, y_name, htrain, hvalid, seed_):
+def glm_grid(x_names, y_name, htrain, hvalid, seed_, weight=None):
 
     """ Wrapper function for penalized GLM with alpha and lambda search.
 
@@ -47,6 +47,7 @@ def glm_grid(x_names, y_name, htrain, hvalid, seed_):
     :param htrain: Training H2OFrame.
     :param hvalid: Validation H2OFrame.
     :param seed_: Random seed for better reproducibility.
+    :param weight:
     :return: Best H2OGeneralizedLinearEstimator.
     """
 
@@ -69,6 +70,7 @@ def glm_grid(x_names, y_name, htrain, hvalid, seed_):
                x=x_names,
                training_frame=htrain,
                validation_frame=hvalid,
+               weights_column=weight,
                seed=seed_)
 
     # select best model from grid search
@@ -78,7 +80,7 @@ def glm_grid(x_names, y_name, htrain, hvalid, seed_):
     return best_model
 
 
-def gbm_grid(x_names, y_name, htrain, hvalid, seed_,
+def gbm_grid(x_names, y_name, htrain, hvalid, seed_, weight=None,
              monotone_constraints_=None, hyper_params_=None,
              search_criteria_=None):
 
@@ -91,6 +93,7 @@ def gbm_grid(x_names, y_name, htrain, hvalid, seed_,
     :param htrain: Training H2OFrame.
     :param hvalid: Validation H2OFrame.
     :param seed_: Random seed for better reproducibility.
+    :parem weight:
     :param monotone_constraints_: Dictionary of monotonicity constraints (optional).
     :param hyper_params_: Dictionary of hyperparamters over which to search (optional).
     :param search_criteria_: Dictionary of criterion for grid search (optional).
@@ -125,6 +128,7 @@ def gbm_grid(x_names, y_name, htrain, hvalid, seed_,
                training_frame=htrain,
                validation_frame=hvalid,
                stopping_rounds=5,
+               weights_column=weight,
                seed=seed_)
 
     # select best model from grid search
