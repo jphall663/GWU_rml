@@ -91,7 +91,9 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
    
 ## Using Class Software Resources
 
-1. Install [Git](https://git-scm.com/downloads), [Graphviz](https://www.graphviz.org/) and Java. They must all be *added to your system path.*
+### Ubuntu Linux
+
+1. Install [Git](https://git-scm.com/downloads) (`$ sudo apt-get install git`), [Graphviz](https://www.graphviz.org/) (`$ sudo apt-get install graphviz`) and Java (`$ sudo apt-get install openjdk-8-jdk`). They must all be *added to your system path.*
 
 2. Clone this repository with the examples: `$ git clone https://github.com/jphall663/GWU_rml.git`
 
@@ -101,7 +103,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 5. Change directories into the cloned repository: `$ cd GWU_rml`
 
-6. Create a Python 3.6 virtual environment: `$ virtualenv -p /path/to/anaconda3/bin/python3.6 env_rml` (`/path/to/anaconda3/bin/python3.6` is not a real path. You must replace it with the path to `python3.6` on your system. For Windows users this is often in the `Anaconda3/Scripts` directory. If you get stuck, try these links: [Pip and Virtualenv on Windows](https://programwithus.com/learn-to-code/Pip-and-virtualenv-on-Windows/), [Mac Setup: Virtualenv](https://sourabhbajaj.com/mac-setup/Python/virtualenv.html). )
+6. Create a Python 3.6 virtual environment: `$ virtualenv -p /path/to/anaconda3/bin/python3.6 env_rml` (`/path/to/anaconda3/bin/python3.6` is not a real path. You must replace it with the path to `python3.6` on your system. For Windows users this is often in the `Anaconda3/Scripts` directory.
 
 7. Activate the virtual environment: `$ source env_rml/bin/activate`
 
@@ -110,3 +112,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 9. Start Jupyter: `$ jupyter notebook`
 
 10. When you are finished, deactivate the environment: `$ deactivate`.
+
+### Windows and Mac 
+
+If you get stuck, try these links: [Pip and Virtualenv on Windows](https://programwithus.com/learn-to-code/Pip-and-virtualenv-on-Windows/), [Mac Setup: Virtualenv](https://sourabhbajaj.com/mac-setup/Python/virtualenv.html). 
