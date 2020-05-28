@@ -113,6 +113,21 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 10. When you are finished, deactivate the environment: `$ deactivate`.
 
-### Windows and Mac 
+### Mac
+
+**Preliminaries:**
+
+* Install [`homebrew`](https://brew.sh/): `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
+
+* Install Java:
+
+```brew tap adoptopenjdk/openjdk
+brew cask install adoptopenjdk8```
+
+* [Install Mac command line developer tools](https://www.cnet.com/how-to/install-command-line-developer-tools-in-os-x/)
+
+
+
+### Windows and Mac Troubleshooting 
 
 If you get stuck, try these links: [Pip and Virtualenv on Windows](https://programwithus.com/learn-to-code/Pip-and-virtualenv-on-Windows/), [Mac Setup: Virtualenv](https://sourabhbajaj.com/mac-setup/Python/virtualenv.html). 
