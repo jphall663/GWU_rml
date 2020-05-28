@@ -97,13 +97,13 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 2. Clone this repository with the examples: `$ git clone https://github.com/jphall663/GWU_rml.git`
 
-3. Install Anaconda Python 5.1.0 from the [Anaconda archives](https://repo.continuum.io/archive/) and *add it to your system path.*
+3. Install Anaconda Python 5.1.0 from the [Anaconda archives](https://repo.continuum.io/archive/) (Anaconda3-5.1.0-Linux-x86_64.sh) and *add it to your system path.* (This means when you type `$ python` at the command prompt, you will start a Python 3.6 session.)
 
 4. Install `virtualenv`: `$ pip install virtualenv` 
 
 5. Change directories into the cloned repository: `$ cd GWU_rml`
 
-6. Create a Python 3.6 virtual environment: `$ virtualenv -p /path/to/anaconda3/bin/python3.6 env_rml` (`/path/to/anaconda3/bin/python3.6` is not a real path. You must replace it with the path to `python3.6` on your system. For Windows users this is often in the `Anaconda3/Scripts` directory.)
+6. Create a Python 3.6 virtual environment: `$ virtualenv -p /path/to/anaconda3/bin/python3.6 env_rml` 
 
 7. Activate the virtual environment: `$ source env_rml/bin/activate`
 
@@ -121,13 +121,35 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 * Install Java:
 
-```brew tap adoptopenjdk/openjdk
-brew cask install adoptopenjdk8```
+```
+brew tap adoptopenjdk/openjdk
+brew cask install adoptopenjdk8
+```
 
 * [Install Mac command line developer tools](https://www.cnet.com/how-to/install-command-line-developer-tools-in-os-x/)
 
+* Install Git: `$ brew install git`
 
+1. Clone this repository with the examples: `$ git clone https://github.com/jphall663/GWU_rml.git`
 
-### Windows and Mac Troubleshooting 
+2. Install Anaconda Python 5.1.0 from the [Anaconda archives](https://repo.continuum.io/archive/) (Anaconda3-5.1.0-MacOSX-x86_64.pkg) and *add it to your system path.* (This means when you type `$ python` at the command prompt, you will start a Python 3.6 session. You should probably check for a line like this `export PATH="/Users/phall/anaconda/bin:$PATH"` in your `.bash_profile` file. You may also need to close and restart your terminal session.)
 
-If you get stuck, try these links: [Pip and Virtualenv on Windows](https://programwithus.com/learn-to-code/Pip-and-virtualenv-on-Windows/), [Mac Setup: Virtualenv](https://sourabhbajaj.com/mac-setup/Python/virtualenv.html). 
+3. Install `virtualenv`: `$ pip install virtualenv` 
+ 
+4. Change directories into the cloned repository: `$ cd GWU_rml`
+
+5. `$ virtualenv -p /path/to/anaconda3/bin/python3.6 env_rml` (`/path/to/anaconda3/bin/python3.6` is not a real path. You must replace it with the path to `python3.6` on your system. This can be as simple as `$ virtualenv -p python3.6 env_rml`.) 
+
+6. Activate the virtual environment: `$ source env_rml/bin/activate`
+
+7. Install the correct packages for the example notebooks: `$ pip install -r requirements.txt`
+
+8. Start Jupyter: `$ jupyter notebook`
+
+9. When you are finished, deactivate the environment: `$ deactivate`.
+
+If you get stuck, try this link: [Mac Setup: Virtualenv](https://sourabhbajaj.com/mac-setup/Python/virtualenv.html).
+
+### Windows Troubleshooting 
+
+If you get stuck, try this link: [Pip and Virtualenv on Windows](https://programwithus.com/learn-to-code/Pip-and-virtualenv-on-Windows/).
