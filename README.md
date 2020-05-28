@@ -67,6 +67,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 2 Suggested Software
 
 * Python:
+  * [allennlp](https://github.com/allenai/allennlp)
   * [`alibi`](https://github.com/SeldonIO/alibi)
   * [`interpret`](https://github.com/interpretml/interpret)
   * [`shap`](https://github.com/slundberg/shap)
@@ -90,28 +91,6 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
    
 ## Using Class Software Resources
-
-### Ubuntu Linux
-
-1. Install [Git](https://git-scm.com/downloads) (`$ sudo apt-get install git`), [Graphviz](https://www.graphviz.org/) (`$ sudo apt-get install graphviz`) and Java (`$ sudo apt-get install openjdk-8-jdk`). They must all be *added to your system path.*
-
-2. Clone this repository with the examples: `$ git clone https://github.com/jphall663/GWU_rml.git`
-
-3. Install Anaconda Python 5.1.0 from the [Anaconda archives](https://repo.continuum.io/archive/) (Anaconda3-5.1.0-Linux-x86_64.sh) and *add it to your system path.* (This means when you type `$ python` at the command prompt, you will start a Python 3.6 session.)
-
-4. Install `virtualenv`: `$ pip install virtualenv` 
-
-5. Change directories into the cloned repository: `$ cd GWU_rml`
-
-6. Create a Python 3.6 virtual environment: `$ virtualenv -p /path/to/anaconda3/bin/python3.6 env_rml` 
-
-7. Activate the virtual environment: `$ source env_rml/bin/activate`
-
-8. Install the correct packages for the example notebooks: `$ pip install -r requirements.txt`
-
-9. Start Jupyter: `$ jupyter notebook`
-
-10. When you are finished, deactivate the environment: `$ deactivate`.
 
 ### Mac
 
@@ -150,6 +129,41 @@ brew cask install adoptopenjdk8
 
 If you get stuck, try this link: [Mac Setup: Virtualenv](https://sourabhbajaj.com/mac-setup/Python/virtualenv.html).
 
-### Windows Troubleshooting 
+### Ubuntu
 
-If you get stuck, try this link: [Pip and Virtualenv on Windows](https://programwithus.com/learn-to-code/Pip-and-virtualenv-on-Windows/).
+1. Install [Git](https://git-scm.com/downloads) (`$ sudo apt-get install git`), [Graphviz](https://www.graphviz.org/) (`$ sudo apt-get install graphviz`) and Java (`$ sudo apt-get install openjdk-8-jdk`). They must all be *added to your system path.*
+
+2. Clone this repository with the examples: `$ git clone https://github.com/jphall663/GWU_rml.git`
+
+3. Install Anaconda Python 5.1.0 from the [Anaconda archives](https://repo.continuum.io/archive/) (Anaconda3-5.1.0-Linux-x86_64.sh) and *add it to your system path.* (This means when you type `$ python` at the command prompt, you will start a Python 3.6 session.)
+
+4. Install `virtualenv`: `$ pip install virtualenv` 
+
+5. Change directories into the cloned repository: `$ cd GWU_rml`
+
+6. Create a Python 3.6 virtual environment: `$ virtualenv -p /path/to/anaconda3/bin/python3.6 env_rml` 
+
+7. Activate the virtual environment: `$ source env_rml/bin/activate`
+
+8. Install the correct packages for the example notebooks: `$ pip install -r requirements.txt`
+
+9. Start Jupyter: `$ jupyter notebook`
+
+10. When you are finished, deactivate the environment: `$ deactivate`.
+
+### Windows
+
+**Preliminaries:**
+
+* Install [Git](https://git-scm.com/download/win)
+* Install [Java](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) (jdk-8u251-windows-x64.exe)
+
+Open your git terminal.
+
+1. Clone this repository with the examples: `$ git clone https://github.com/jphall663/GWU_rml.git`
+2. Install Anaconda Python 5.1.0 from the [Anaconda archives](https://repo.continuum.io/archive/) (Anaconda3-5.1.0-Windows-x86_64.exe).
+3. Install `h2o`: `$ /c/path/to/Anaconda3/Scripts/pip install h2o==3.26.0.3` (This is not a real path. You must replace it with the location of `Anaconda3/Scripts/pip` on your computer.)
+4. Install `pandas`: `$ /c/path/to/Anaconda3/Scripts/pip install pandas==0.23.4`
+5. Install `shap:` `$ /c/path/to/Anaconda3/Scripts/conda install -c conda-forge shap`
+6. Install Graphviz: `$ /c/path/to/Anaconda3/Scripts/pip install graphviz`
+7. Run Jupyter: `$ /c/path/to/Anaconda3/Scripts/jupyter-notebook`
