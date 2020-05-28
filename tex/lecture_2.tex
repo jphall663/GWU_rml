@@ -14,27 +14,30 @@
     urlcolor=[rgb]{0,0,0.61},
     linkcolor=[rgb]{0,0,0.61}}
  
+%-------------------------------------------------------------------------------
     
-%\usepackage[natbib=true,style=authoryear,backend=bibtex,useprefix=true]{biblatex}
-\usepackage{blindtext}
 \usepackage[natbib=true,style=numeric,backend=bibtex,useprefix=true]{biblatex}
 \setbeamertemplate{bibliography item}{\insertbiblabel}
 \setbeamerfont{caption}{size=\footnotesize}
 \setbeamertemplate{frametitle continuation}{}
-
-\setcounter{tocdepth}{1}
 \renewcommand*{\bibfont}{\scriptsize}
 \addbibresource{lecture_2.bib}
 
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+%-------------------------------------------------------------------------------
 
+\setcounter{tocdepth}{1}
+
+%-------------------------------------------------------------------------------
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 \usenavigationsymbolstemplate{}
 \setbeamertemplate{footline}{%
     \raisebox{5pt}{\makebox{\hfill\makebox[20pt]{\color{gray}
           \scriptsize\insertframenumber}}}\hspace*{5pt}}
 
+%-------------------------------------------------------------------------------
+
 \usepackage{epigraph}
-% \epigraphsize{\small}% Default
 \setlength\epigraphwidth{14cm}
 \setlength\epigraphrule{0pt}
 \usepackage{etoolbox}
@@ -56,8 +59,6 @@
 \definecolor{magenta}{RGB}{248,206,204}
 \definecolor{fuschia}{RGB}{255,0,255}
 \definecolor{blue}{RGB}{0,0,156}
-
-
 \usepackage{xcolor, soul}
 \sethlcolor{magenta}
 
@@ -65,7 +66,6 @@
 
 \setbeamertemplate{bibliography item}{}
 \renewcommand*{\bibfont}{\scriptsize}
-\addbibresource{main.bib}
 
 \setbeamerfont{caption}{size=\footnotesize}
 \setbeamertemplate{frametitle continuation}{}
@@ -81,34 +81,6 @@
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 %-------------------------------------------------------------------------------
-
-\usepackage[natbib=true,style=numeric,backend=bibtex,useprefix=true]{biblatex}
-
-%\definecolor{OwlGreen}{RGB}{75,0,130} % easier to see
-\setbeamertemplate{bibliography item}{\insertbiblabel}
-\setbeamerfont{caption}{size=\footnotesize}
-\setbeamertemplate{frametitle continuation}{}
-
-\setcounter{tocdepth}{1}
-\renewcommand*{\bibfont}{\scriptsize}
-\addbibresource{lecture_2_DRAFT.bib}
-
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-
-\usenavigationsymbolstemplate{}
-\setbeamertemplate{footline}{%
-    \raisebox{5pt}{\makebox{\hfill\makebox[20pt]{\color{gray}
-          \scriptsize\insertframenumber}}}\hspace*{5pt}}
-
-\usepackage{epigraph}
-% \epigraphsize{\small}% Default
-\setlength\epigraphwidth{14cm}
-\setlength\epigraphrule{0pt}
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
-\makeatother
-
 
 \author{Patrick Hall}
 \title{Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
@@ -151,22 +123,6 @@
 			\end{figure}		
 					
 		\end{frame}					
-
-
-		\begin{frame}[allowframebreaks]
-			
-			\frametitle{Lecture 2 Agenda}
- 
-			\begin{itemize}
-				\item{Overview of Explainable ML}
-				\item{Understanding and Trust}
-				\item{The Dark Side}
-				\item{Surrogates}
-				\item{High Stakes Applications}
-			\end{itemize}
-				
-		\end{frame}
-
 
 	\begin{frame}[t]
 		
@@ -213,6 +169,204 @@
 		\end{itemize}\normalsize
 			
 	\end{frame}
+
+	%-------------------------------------------------------------------------------
+	\section{Techniques}
+	%-------------------------------------------------------------------------------
+	
+	\subsection*{} % just for progress indicator
+
+
+	\begin{frame}
+	
+		\frametitle{Shapley Value}	
+	
+		Shapley explanations, including TreeSHAP and even certain implementations of LIME, are a class of additive, locally accurate feature contribution measures with long-standing theoretical support (\cite{shapley}). 
+	
+		\vspace{8pt}
+	
+		For some observation $\mathbf{x} \in \mathcal{X}$, Shapley explanations take the form:
+	
+		\begin{equation}
+		\label{eq:shap_contrib}
+		\begin{aligned}
+		\phi_{j} = \underbrace{\sum_{S \subseteq \mathcal{P} \setminus \{j\}}\frac{|S|!(\mathcal{P} -|S| -1)!}{\mathcal{P}!}}_\text{weighted average over all subsets in \textbf{X}}\underbrace{(S \cup \{j\}) - g_x(S)]}_{g\text{ "without" }x_j}
+		\end{aligned}
+		\end{equation}
+		
+		\begin{equation}
+		\label{eq:shap_additive}
+		\begin{aligned}
+		g(\mathbf{x}) = \phi_0 + \sum_{j=0}^{j=\mathcal{P} - 1} \phi_j \mathbf{z}_j
+		\end{aligned}
+		\end{equation}
+	
+	\end{frame}
+
+	\begin{frame}[t]
+	
+		\frametitle{Surrogate Decision Trees (DT)}
+		
+		\begin{figure}[htb]
+			\begin{center}
+				\includegraphics[height=90pt]{../img/dt_surrogate.png}
+				\label{fig:dt_surrogate}
+				\caption{$h_{\text{tree}}$ for Taiwanese credit card data \cite{uci}, and for machine-learned GBM response function $g$.}
+			\end{center}
+		\end{figure}
+		
+		\vspace{-20 pt}
+		
+		\begin{itemize}
+			
+			\item Given a learned function $g$ and set of predictions $g(\mathbf{X})$, a surrogate DT can be trained: $ \mathbf{X}, g(\mathbf{X}) \xrightarrow{\mathcal{A}_{\text{surrogate}}} h_{\text{tree}}$.
+			
+			\item $h_{\text{tree}}$ displays a low-fidelity, high-interpretability flow chart of $g$'s decision making process, and important features and interactions in $g$.	
+			
+		\end{itemize}
+		
+	\end{frame}
+	
+	\begin{frame}
+		
+		\frametitle{Surrogate Decision Trees (DT)}
+		
+		\begin{itemize}
+			
+			\item Always use error measures to assess the trustworthiness of $h_{\text{tree}}$.
+			
+			\item Prescribed methods (\cite{dt_surrogate1}; \cite{dt_surrogate2}) for training $h_{\text{tree}}$ do exist. In practice, straightforward cross-validation approaches are typically sufficient. 
+			
+			\item Comparing cross-validated training error to traditional training error can give an indication of the stability of the single tree model, $h_{\text{tree}}$.
+			
+			\item Hu et al. (\citeyear{lime-sup}) use local linear surrogate models, $h_{\text{GLM}}$, in $h_{\text{tree}}$ leaf nodes to increase overall surrogate model fidelity while also retaining a high degree of interpretability.
+			
+		\end{itemize}
+	
+	\end{frame}
+
+	\begin{frame}
+
+		\frametitle{Local Interpretable Model-agnostic Explanations (LIME)}
+		
+		Ribeiro, Singh, and Guestrin (\citeyear{lime}) define LIME for some observation $\mathbf{x} \in \mathcal{X}$:
+		
+		\begin{equation*}
+		\begin{aligned}
+		\underset{h \in \mathcal{H}}{\arg\min}\:\mathcal{L}(g, h, \pi_{\mathbf{X}}) + \Omega(h)
+		\end{aligned}
+		\end{equation*}
+		
+		Here $g$ is the function to be explained, $h$ is an interpretable surrogate model of $g$, often a linear model $h_{GLM}$, $\pi_{\mathbf{X}}$ is a weighting function over the domain of $g$, and $\Omega(h)$ limits the complexity of $h$.
+		
+		\vspace{5pt}
+		
+		Typically, $h_{GLM}$ is constructed such that $\mathbf{X}^{(*)}, g({X}^{(*)}) \xrightarrow{\mathcal{A}_{\text{surrogate}}} h_{\text{GLM}}$, where $\mathbf{X}^{(*)}$ is a generated sample, $\pi_{\mathbf{X}}$ weighs $\mathbf{X}^{(*)}$ samples by their Euclidean similarity to $\mathbf{x}$, local feature importance is estimated using $\beta_j x_j$, and $L_1$ regularization is used to induce a simplified, sparse $h_{GLM}$. 		
+
+
+	\end{frame}
+
+	\begin{frame}
+		
+		\frametitle{Local Interpretable Model-agnostic Explanations (LIME)}
+		
+		\begin{itemize}
+			
+			\item LIME is ideal for creating low-fidelity, highly interpretable explanations for non-DT models and for neural network models trained on unstructured data, e.g. deep learning.
+			
+			\item Always use regression fit measures to assess the trustworthiness of LIMEs.
+			
+			\item LIME can be difficult to deploy, but there are highly deployable variants. (\cite{lime-sup}; \cite{h2o_mli_booklet})
+			
+			\item Local feature importance values are offsets from a local intercept.
+			
+			\begin{itemize}
+				
+				\item Note that the intercept in LIME can account for the most important local phenomena.
+				
+				\item Generated LIME samples can contain large proportions of out-of-range data that can lead to unrealistic intercept values. 
+				
+			\end{itemize}
+			
+		\end{itemize}
+		
+	\end{frame}
+
+	\begin{frame}[t]
+		
+		\begin{itemize}
+			
+			\item To increase the fidelity of LIMEs, try LIME on discretized input features and on manually constructed interactions.
+			
+			\item Use cross-validation to construct standard deviations or even confidence intervals for local feature importance values.
+			
+			\item LIME can fail, particularly in the presence of extreme nonlinearity or high-degree interactions.
+			
+		\end{itemize}
+		
+	\end{frame}
+
+	\begin{frame}
+	
+		\frametitle{Partial Dependence (PD) and Individual Conditional Expectation (ICE)}
+		
+		\vspace{-10 pt}
+		
+		\begin{itemize}
+			
+			\item Following Friedman, Hastie, and Tibshirani (\citeyear{esl}) a single feature $X_j \in \mathbf{X}$ and its complement set $X_{(-j)} \in \mathbf{X}$ (where $X_j \cup X_{(-j)} = \mathbf{X}$) is considered.
+			
+			\item $\text{PD}(X_j, g)$ for a given feature $X_j$ is estimated as the average output of the learned function $g$ when all the components of $X_j$ are set to a constant $x \in \mathcal{X}$ and $X_{(-j)}$ is left untouched.
+			
+			\item $\text{ICE}(X_j, \mathbf{x}^{(i)}, g)$ for a given observation $\mathbf{x}^{(i)}$ and feature $X_j$ is estimated as the output of the learned function $g$ when $x^{(i)}_j$ is set to a constant $x \in \mathcal{X}$ and $\mathbf{x}^{(i)} \in X_{(-j)}$ are left untouched.
+			
+			\item PD and ICE curves are usually plotted over some set of interesting constants $x \in \mathcal{X}$. 
+			
+		\end{itemize}
+		
+	\end{frame}
+	
+	\begin{frame}[t]
+		
+		\frametitle{Partial Dependence (PD) and Individual Conditional Expectation (ICE)}
+		
+		\begin{figure}[htb]
+			\begin{center}
+				\includegraphics[height=100pt]{../img/pdp_ice.png}
+				\label{fig:pdp_ice}
+				\caption{PD and ICE curves for $ X_j = \text{num}_9$, for known signal generating function $f(\mathbf{X}) = \text{num} _1 * \text{num}_4 + |\text{num}_8| * \text{num}_9^2 + e$, and for machine-learned GBM response function $g$.}
+			\end{center}
+		\end{figure}
+		
+		\vspace{-10pt}
+		
+		Overlaying PD and ICE curves is a succinct method for describing global and local prediction behavior and can be used to detect interactions. (\cite{ice_plots}) 
+		
+	\end{frame}
+
+	\begin{frame}[t]
+		
+		\frametitle{Partial Dependence (PD) and Individual Conditional Expectation (ICE)}
+		
+		\vspace{-20pt}
+		
+		\begin{figure}[htb]
+			\begin{center}
+				\label{fig:dt_surrogate_pdp_ice}
+				\includegraphics[height=95pt]{../img/dt_surrogate2_pdp_ice2.png}
+				\caption{Surrogate DT, PD, and ICE curves for $ X_j = \text{num}_9$, for known signal generating function $f(\mathbf{X}) = \text{num} _1 * \text{num}_4 + |\text{num}_8| * \text{num}_9^2 + e$, and for machine-learned GBM response function $g$.}
+			\end{center}
+		\end{figure}
+		
+		Combining Surrogate DT models with PD and ICE curves is a convenient method for detecting, confirming, and understanding important interactions. 
+		
+	\end{frame}
+
+	%-------------------------------------------------------------------------------
+	\section{Why?}
+	%-------------------------------------------------------------------------------
+	
+	\subsection*{} % just for progress indicator
 
 	\begin{frame}
 	
@@ -394,19 +548,6 @@
 %-------------------------------------------------------------------------------
 
 	\subsection*{} % just for progress indicator
-
-	\begin{frame}
-	
-		\frametitle{What are Surrogate Models?}
-		\begin{itemize}\large
-			\item{Models of models (i.e. surrogate models, compressed models, extracted models) can be helpful explanatory or modeling tools, but they can also be approximate, low-fidelity explainers.}
-			\vspace{10pt}
-			\item{Much work in explainable ML has been directed toward improving the fidelity and usefulness of surrogate models (e.g., \citet{dt_surrogate2}, \citet{viper}, \citet{dt_surrogate1}, \citet{lime-sup}, \citet{anchors}, \citet{wf_xnn})}
-			\vspace{10pt}
-			\item{\textbf{\textit{HOWEVER, many explainable ML techniques have nothing to do with surrogate models!}}}
-		\end{itemize}
-		
-	\end{frame}
 	
 	\begin{frame}[t]
 	
@@ -593,7 +734,7 @@
 		
 		Some of the best engineers, researchers, and business leaders in the world!\\
 		\vspace{10pt}
-		Christoph Molnar, Doug Deloy, Josephine Wang, Kerry O'Shea, Ladislav Ligart, Leland Wilkinson, Mark Chan, Martin Dvorak, Mateusz Dymczyk, Megan and Michal Kurka, Mike Williams, Navdeep Gill, Pramit Choudhary, Przemyslaw Biecek, Sameer Singh, Sri Ambati, Wen Phan, Zac Taschdjian\footnote{\tiny{My world anyway ... and in alphabetical order by first name.}}
+		Christoph Molnar, Doug Deloy, Josephine Wang, Kerry O'Shea, Ladislav Ligart, Leland Wilkinson, Mark Chan, Martin Dvorak, Mateusz Dymczyk, Megan and Michal Kurka, Mike Williams, Navdeep Gill, Pramit Choudhary, Przemyslaw Biecek, Sameer Singh, Sri Ambati, Wen Phan, Zac Taschdjian, and Lisa Song.\footnote{\tiny{My world anyway ... and in alphabetical order by first name.}}
 
 	\end{frame}	
 			
@@ -606,9 +747,6 @@
 	
 		\frametitle{References}	
 		
-			This presentation:\\
-			\scriptsize{\url{https://www.github.com/jphall663/kdd_2019}}\\
-			\vspace{10pt}
 			\normalsize Code examples for this presentation:\\
 			\scriptsize{\url{https://www.github.com/jphall663/interpretable_machine_learning_with_python}}\\
 			\noindent\scriptsize{\url{https://www.github.com/jphall663/responsible_xai}}\\

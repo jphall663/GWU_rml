@@ -110,7 +110,11 @@ def pd_ice(x_name, valid, model, resolution=20, bins=None):
 
     # model predictions
     # probably assumes binary classification
-    temp_df['partial_dependence'] = model.predict(h2o.H2OFrame(temp_df))['p1'].as_data_frame()
+
+    temp_p = model.predict(h2o.H2OFrame(temp_df))
+    temp_df['partial_dependence'] = temp_p['p1'].as_data_frame()
+
+    del temp_p
 
     return pd.DataFrame(temp_df[[x_name, 'partial_dependence']].groupby([x_name]).mean()).reset_index()
 
