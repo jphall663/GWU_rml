@@ -138,7 +138,7 @@ brew cask install adoptopenjdk8
  
 4. Change directories into the cloned repository: `$ cd GWU_rml`
 
-5. `$ virtualenv -p /path/to/anaconda3/bin/python3.6 env_rml` (`/path/to/anaconda3/bin/python3.6` is not a real path. You must replace it with the path to `python3.6` on your system. This can be as simple as `$ virtualenv -p python3.6 env_rml`.) 
+5. Create a Python 3.6 virtual environment: `$ virtualenv -p /path/to/anaconda3/bin/python3.6 env_rml` (`/path/to/anaconda3/bin/python3.6` is not a real path. You must replace it with the path to `python3.6` on your system. This can be as simple as `$ virtualenv -p python3.6 env_rml`.) 
 
 6. Activate the virtual environment: `$ source env_rml/bin/activate`
 
