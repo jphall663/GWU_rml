@@ -150,20 +150,3 @@ If you get stuck, try this link: [Mac Setup: Virtualenv](https://sourabhbajaj.co
 9. Start Jupyter: `$ jupyter notebook`
 
 10. When you are finished, deactivate the environment: `$ deactivate`.
-
-### Windows
-
-**Preliminaries:**
-
-* Install [Git](https://git-scm.com/download/win)
-* Install [Java](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) (jdk-8u251-windows-x64.exe)
-
-Open your git terminal.
-
-1. Clone this repository with the examples: `$ git clone https://github.com/jphall663/GWU_rml.git`
-2. Install Anaconda Python 5.1.0 from the [Anaconda archives](https://repo.continuum.io/archive/) (Anaconda3-5.1.0-Windows-x86_64.exe).
-3. Install `h2o`: `$ /c/path/to/Anaconda3/Scripts/pip install h2o==3.26.0.3` (This is not a real path. You must replace it with the location of `Anaconda3/Scripts/pip` on your computer.)
-4. Install `pandas`: `$ /c/path/to/Anaconda3/Scripts/pip install pandas==0.23.4`
-5. Install `shap:` `$ /c/path/to/Anaconda3/Scripts/conda install -c conda-forge shap`
-6. Install Graphviz: `$ /c/path/to/Anaconda3/Scripts/pip install graphviz`
-7. Run Jupyter: `$ /c/path/to/Anaconda3/Scripts/jupyter-notebook`
