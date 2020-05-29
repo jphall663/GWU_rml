@@ -60,14 +60,13 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ### Lecture 2 Class Materials
 
-* [Lecture Notes](tex/lecture_2.pdf) (draft)
+* [Lecture Notes](tex/lecture_2.pdf) 
 * [Lecture Video]() (currently unavailable)
-* Software Example: [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) (draft)
-
+* Software Example: [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) 
 ### Lecture 2 Suggested Software
 
 * Python:
-  * [allennlp](https://github.com/allenai/allennlp)
+  * [`allennlp`](https://github.com/allenai/allennlp)
   * [`alibi`](https://github.com/SeldonIO/alibi)
   * [`interpret`](https://github.com/interpretml/interpret)
   * [`shap`](https://github.com/slundberg/shap)
@@ -87,8 +86,13 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [*Towards a Better Understanding of Gradient-based Attribution Methods for Deep Neural Networks*](https://arxiv.org/pdf/1711.06104.pdf)
 
 * **Links from Lecture**:
-
-
+  * [On the Art and Science of Explainable Machine Learning](https://arxiv.org/pdf/1810.02909.pdf)
+  * [Access Denied: Faulty Automated Background Checks Freeze Out Renters](https://themarkup.org/locked-out/2020/05/28/access-denied-faulty-automated-background-checks-freeze-out-renters)
+  * [ML Attack Cheatsheet](https://github.com/jphall663/secure_ML_ideas/blob/master/img/cheatsheet.png)
+  * [Debugging Machine Learning Via Model Assertions](https://cs.stanford.edu/~matei/papers/2019/debugml_model_assertions.pdf)
+  * [Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
+  * [Gender Shades](http://gendershades.org/)
+  * [Explainable Neural Networks based on Additive Index Models](https://arxiv.org/pdf/1806.01933.pdf)
    
 ## Using Class Software Resources
 
