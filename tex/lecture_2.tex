@@ -190,7 +190,7 @@
 		\begin{equation}
 		\label{eq:shap_contrib}
 		\begin{aligned}
-		\phi_{j} = \underbrace{\sum_{S \subseteq \mathcal{P} \setminus \{j\}}\frac{|S|!(\mathcal{P} -|S| -1)!}{\mathcal{P}!}}_\text{weighted average over all subsets in \textbf{X}}\underbrace{(S \cup \{j\}) - g_x(S)]}_{g\text{ "without" }x_j}
+		\phi_{j} = \underbrace{\sum_{S \subseteq \mathcal{P} \setminus \{j\}}\frac{|S|!(\mathcal{P} -|S| -1)!}{\mathcal{P}!}}_\text{weighted average over all subsets in \textbf{X}}\underbrace{[(S \cup \{j\}) - g_x(S)]}_{g\text{ "without" }x_j}
 		\end{aligned}
 		\end{equation}
 		
@@ -376,7 +376,7 @@
 		\begin{itemize}
 			\item Human learning from machine learning
 			\item Human appeal of automated decisions
-			\item Regulatory compliance\footnote{\tiny{In the U.S., interpretable models, explanations, and the model documentation they enable may be required under the Civil Rights Acts of 1964 and 1991, the Americans with Disabilities Act, the Genetic Information Nondiscrimination Act, the Health Insurance Portability and Accountability Act, the Equal Credit Opportunity Act, the Fair Credit Reporting Act, the Fair Housing Act, Federal Reserve SR 11-7, and the European Union (EU) Greater Data Privacy Regulation (GDPR) Article 22 \cite{ff_interpretability}.}}
+			\item Regulatory compliance\footnote{\tiny{In the U.S., interpretable models, explanations, and the model documentation they enable may be required under the Civil Rights Acts of 1964 and 1991, the Americans with Disabilities Act, the Genetic Information Nondiscrimination Act, the Health Insurance Portability and Accountability Act, the Equal Credit Opportunity Act, the Fair Credit Reporting Act, the Fair Housing Act, Federal Reserve SR 11-7, and the European Union (EU) General Data Protection Regulation (GDPR) Article 22 \cite{ff_interpretability}.}}
 			\item White-hat hacking and security audits of ML models
 		\end{itemize}
 		\vspace{10pt}

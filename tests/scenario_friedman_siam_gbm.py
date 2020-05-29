@@ -14,7 +14,7 @@ import h2o
 from rmltk import model
 
 # global training constants
-EPOCHS = 20
+EPOCHS = 50
 PATIENCE = 5
 SEED = 33333
 
