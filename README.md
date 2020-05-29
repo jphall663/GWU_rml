@@ -61,7 +61,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 2 Class Materials
 
 * [Lecture Notes](tex/lecture_2.pdf) 
-* [Lecture Video](https://www.youtube.com/watch?v=AYomYeLTGkw) (currently unavailable)
+* [Lecture Video](https://www.youtube.com/watch?v=AYomYeLTGkw)
 * Software Example: [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) 
 ### Lecture 2 Suggested Software
 
