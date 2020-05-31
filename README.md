@@ -83,7 +83,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   
 * **Post-hoc Explanation Techniques**:
   * **Interpretable Machine Learning** - [Chapter 5](https://christophm.github.io/interpretable-ml-book/agnostic.html) and [Chapter 6](https://christophm.github.io/interpretable-ml-book/example-based.html)
-  * [*Towards a Better Understanding of Gradient-based Attribution Methods for Deep Neural Networks*](https://arxiv.org/pdf/1711.06104.pdf)
+  * [*Toward Better Understanding of Gradient-based Attribution Methods for Deep Neural Networks*](https://arxiv.org/pdf/1711.06104.pdf)
 
 * **Links from Lecture**:
   * [On the Art and Science of Explainable Machine Learning](https://arxiv.org/pdf/1810.02909.pdf)
