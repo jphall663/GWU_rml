@@ -188,6 +188,111 @@ def cv_model_rank_select(valid, seed_, train_results, model_prefix,
             'METRICS': best_model_frame}
 
 
+def get_prauc(frame, y, yhat, pos=1, neg=0, res=0.01):
+
+    """ Calculates precision, recall, and f1 for a pandas dataframe of y and yhat values.
+
+    Args:
+        frame: Pandas dataframe of actual (y) and predicted (yhat) values.
+        y: Name of actual value column.
+        yhat: Name of predicted value column.
+        pos: Primary target value, default 1.
+        neg: Secondary target value, default 0.
+        res: Resolution by which to loop through cutoffs, default 0.01.
+
+    Returns:
+        Pandas dataframe of precision, recall, and f1 values.
+    """
+
+    frame_ = frame.copy(deep=True)  # don't destroy original data
+    dname = 'd_' + str(y)  # column for predicted decisions
+    eps = 1e-20  # for safe numerical operations
+
+    # init p-r roc frame
+    prauc_frame = pd.DataFrame(columns=['cutoff', 'recall', 'precision', 'f1'])
+
+    # loop through cutoffs to create p-r roc frame
+    for cutoff in np.arange(0, 1 + res, res):
+        # binarize decision to create confusion matrix values
+        frame_[dname] = np.where(frame_[yhat] > cutoff, 1, 0)
+
+        # calculate confusion matrix values
+        tp = frame_[(frame_[dname] == pos) & (frame_[y] == pos)].shape[0]
+        fp = frame_[(frame_[dname] == pos) & (frame_[y] == neg)].shape[0]
+        fn = frame_[(frame_[dname] == neg) & (frame_[y] == pos)].shape[0]
+
+        # calculate precision, recall, and f1
+        recall = (tp + eps) / ((tp + fn) + eps)
+        precision = (tp + eps) / ((tp + fp) + eps)
+        f1 = 2 / ((1 / (recall + eps)) + (1 / (precision + eps)))
+
+        # add new values to frame
+        prauc_frame = prauc_frame.append({'cutoff': cutoff,
+                                          'recall': recall,
+                                          'precision': precision,
+                                          'f1': f1},
+                                         ignore_index=True)
+
+    # housekeeping
+    del frame_
+
+    return prauc_frame
+
+
+def get_youdens_j(frame, y, yhat, pos=1, neg=0, res=0.01):
+
+    """ Calculates TPR, TNR, and Youden's J for a Pandas DataFrame of actual (_y_name) and predicted (_yhat_name) values
+        to select best cutoff for AUC-optimized classifier.
+
+        :param frame: Pandas DataFrame of actual (_y_name) and predicted (_yhat_name) values.
+        :param y: Name of actual value column.
+        :param yhat: Name of predicted value column.
+        :param pos: Primary target value, default 1.
+        :param neg: Secondary target value, default 0.
+        :param res: Resolution by which to loop through cutoffs, default 0.01.
+        :return: Pandas DataFrame of sensitivity, specificity, and Youden's J values.
+
+    """
+
+    frame_ = frame.copy(deep=True)  # don't destroy original data
+    dname = 'd_' + str(y)  # column for predicted decisions
+    eps = 1e-20  # for safe numerical operations
+
+    # init j_frame
+    j_frame = pd.DataFrame(columns=['cutoff', 'TPR', 'TNR', 'J'])
+
+    # loop through cutoffs to create j_frame
+    for cutoff in np.arange(0, 1 + res, res):
+
+        # binarize decision to create confusion matrix values
+        frame_[dname] = np.where(frame_[yhat] > cutoff, 1, 0)
+
+        # calculate confusion matrix values
+        tp = frame_[(frame_[dname] == pos) & (frame_[y] == pos)].shape[0]
+        fp = frame_[(frame_[dname] == pos) & (frame_[y] == neg)].shape[0]
+        tn = frame_[(frame_[dname] == neg) & (frame_[y] == neg)].shape[0]
+        fn = frame_[(frame_[dname] == neg) & (frame_[y] == pos)].shape[0]
+
+        # calculate precision, recall, and Youden's J
+        tpr = (tp + eps) / ((tp + fn) + eps)
+        tnr = (tn + eps) / ((tn + fp) + eps)
+        fnr = 1 - tnr
+        j = tpr + tnr - 1
+
+        # add new values to frame
+        j_frame = j_frame.append({'cutoff': cutoff,
+                                  'TPR': tpr,
+                                  'TNR': tnr,
+                                  'FNR': fnr,
+                                  'J': j},
+                                 ignore_index=True)
+
+    # housekeeping
+    del frame_
+
+    return j_frame
+
+
 def get_confusion_matrix(valid, y_name, yhat_name, by=None, level=None, cutoff=0.5):
 
     """ Creates confusion matrix from pandas DataFrame of y and yhat values, can be sliced
@@ -199,8 +304,8 @@ def get_confusion_matrix(valid, y_name, yhat_name, by=None, level=None, cutoff=0
         :param by: By variable to slice frame before creating confusion matrix, default None.
         :param level: Value of by variable to slice frame before creating confusion matrix, default None.
         :param cutoff: Cutoff threshold for confusion matrix, default 0.5.
-
         :return: Confusion matrix as pandas DataFrame.
+
     """
 
     # determine levels of target (y) variable
