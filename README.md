@@ -55,7 +55,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [When a Computer Program Keeps You in Jail](https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html)
   * [When an Algorithm Helps Send You to Prison](https://www.nytimes.com/2017/10/26/opinion/algorithm-compas-sentencing-bias.html)
 
-
+***
 
 ## Lecture 2: Post-hoc Explanation
 
@@ -98,37 +98,50 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [Gender Shades](http://gendershades.org/)
   * [Explainable Neural Networks based on Additive Index Models](https://arxiv.org/pdf/1806.01933.pdf)
 
-
+***
 
 ## Lecture 3: Discrimination Testing and Remediation
 
 ![Two hundred neural networks from a random grid search trained on the UCI Credit Card Default dataset](/img/lecture_3.png)
 <sub><sup>**Source:** [Lecture 3 Notes](tex/lecture_3.pdf)</sup></sub>
 
-
 ### Lecture 3 Class Materials
 
-* [Lecture Notes]() 
+* [Lecture Notes](tex/lecture_3.pdf) 
 * [Lecture Video]()
 * Software Example: [Testing a Constrained Model for Discrimination and Remediating Discovered Discrimination](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_3.ipynb) 
 
 ### Lecture 3 Suggested Software
 
-* Python:
+Python:
+
   * [`aequitas`](https://github.com/dssg/aequitas)
   * [`AIF360`](https://github.com/IBM/AIF360)
   * [`Themis`](https://github.com/LASER-UMASS/Themis)
   
 ### Lecture 3 Suggested Reading
 
-* **Introduction and Background**: 
+* **Introduction and Background**:
+
+  * **Fairness and Machine Learning** - [Introduction](https://fairmlbook.org/introduction.html)
+  * [*Fairness Through Awareness*](https://arxiv.org/pdf/1104.3913.pdf)
   
 * **Discrimination Testing and Remediation Techniques**:
 
+  * [*Certifying and Removing Disparate Impact*](https://arxiv.org/pdf/1412.3756.pdf)
+  * [*Data Preprocessing Techniques for Classification Without
+Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8.pdf)  
+  * [*Decision Theory for Discrimination-aware Classification*](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.722.3030&rep=rep1&type=pdf)
+  * [*Fairness Beyond Disparate Treatment & Disparate Impact: Learning Classification Without Disparate Mistreatment*](https://arxiv.org/pdf/1610.08452.pdf)
+  * [*Learning Fair Representations*](http://proceedings.mlr.press/v28/zemel13.pdf)
+  * [*Mitigating Unwanted Biases with Adversarial Learning*](https://dl.acm.org/doi/pdf/10.1145/3278721.3278779)
+  
+  Fairness Beyond Disparate Treatment & Disparate Impact: Learning Classification Without Disparate Mistreatment
+  
 * **Links from Lecture 3**:
 
-   
-   
+***   
+ 
 ## Using Class Software Resources
 
 ### Mac
