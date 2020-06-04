@@ -1,7 +1,4 @@
-\documentclass[11pt,
-               		aspectratio=169,
-               		hyperref={colorlinks}
-               		]{beamer}
+\documentclass[11pt,aspectratio=169,hyperref={colorlinks}]{beamer}
 \usetheme{Singapore}
 \usecolortheme[snowy, cautious]{owl}
 
@@ -12,12 +9,16 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    urlcolor=[rgb]{1,0,1},
-    linkcolor=[rgb]{1,0,1}}
+    urlcolor=[rgb]{0,0,0.61},
+    linkcolor=[rgb]{0,0,0.61}}
 \usepackage[natbib=true,style=numeric,backend=bibtex,useprefix=true]{biblatex}
-\usepackage{blindtext}
 
-\definecolor{OwlGreen}{RGB}{75,0,130} 
+%\usepackage{blindtext}
+
+%----------------------------------------------------------------------------------
+\definecolor{OwlGreen}{RGB}{51,0,102} 
+%----------------------------------------------------------------------------------
+
 \setbeamertemplate{bibliography item}{}
 \setbeamerfont{caption}{size=\footnotesize}
 \setbeamertemplate{frametitle continuation}{}
@@ -32,13 +33,14 @@
 
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
-\author{\copyright\hspace{1pt}Patrick Hall}
-\title{Discrimination in Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author and H2O.ai.}}\footnote{\tiny{This presentation is not, and should not be construed as, legal advice or requirements for regulatory compliance.}}}
-\subtitle{\scriptsize{}}
-%\logo{\includegraphics[height=8pt]{img/h2o_logo.png}}
-\institute{\href{https://www.h2o.ai}{H\textsubscript{2}O.ai}}
+%------------------------------------------------------------------------------------------
+
+\author{Patrick Hall}
+\title{Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
+\subtitle{Lecture 3:  Fairness}
+\institute{The George Washington University}
 \date{\today}
-\subject{Subject}
+
 
 \begin{document}
 	
@@ -52,11 +54,26 @@
 		
 	\end{frame}
 
+
 %-------------------------------------------------------------------------------
-	\section{Why?}
+	\section{Introduction}
 %-------------------------------------------------------------------------------
 
 		\subsection*{}
+
+		\begin{frame}
+		
+			\frametitle{A Responsible Machine Learning Workflow\footnote{\href{https://www.mdpi.com/2078-2489/11/3/137/htm}{\textit{A Responsible Machine Learning Workflow}}}}
+			
+			\begin{figure}[htb]
+				\begin{center}
+					\includegraphics[height=150pt]{../img/rml_diagram_lec3_hilite.png}
+					\label{fig:blueprint}
+				\end{center}
+			\end{figure}		
+					
+		\end{frame}	
+
 
 		\begin{frame}				
 		
@@ -64,15 +81,18 @@
 			
 			\begin{itemize}
 				\Large
-				\item \textbf{Reputational risk}: Upon encountering a perceived unethical ML system, 34\% of consumers are likely to, ``stop interacting with the company.''\footnote{\scriptsize{See: \href{https://www.capgemini.com/research/why-addressing-ethical-questions-in-ai-will-benefit-organizations/}{Why addressing ethical questions in AI will benefit organizations}.}}
+				\item \textbf{Reputational risk}: 
+					\begin{itemize}
+						\Large
+						\item{\normalsize{Upon encountering a perceived unethical ML system, 34\% of consumers are likely to, ``stop interacting with the company.''\footnote{\scriptsize{See: \href{https://www.capgemini.com/research/why-addressing-ethical-questions-in-ai-will-benefit-organizations/}{Why addressing ethical questions in AI will benefit organizations}.}}}}
+					\end{itemize}
 				\item Non-compliance fines and litigation costs.
 				\item Responsible practice of ML. 
 			\end{itemize}
 			
 		\end{frame}
-		
-		\subsection*{}
-		
+
+
 		\begin{frame}
 		
 			\frametitle{Elements of Responsible Practice of ML}
@@ -85,9 +105,8 @@
 		
 		\end{frame}
 
-
 %-------------------------------------------------------------------------------
-	\section{What?}
+	\section{Discrimination \& Bias}
 %-------------------------------------------------------------------------------
 	
 		\subsection*{}
@@ -99,7 +118,10 @@
 			\begin{itemize}
 			\Large
 			\item Almost all data, statistical models, and machine learning (ML) models encode different types of \textit{bias}, i.e., systematic misrepresentations of reality.\\
-			\item Sometimes, bias is helpful, e.g. shrunken, robust $\beta_j$ coefficients in penalized linear models.\\
+			\item Sometimes, bias is helpful.
+				\begin{itemize}
+					\Large
+					\item{shrunken and robust $\beta_j$ coefficients in penalized linear models}				\end{itemize}
 			\item Other types of bias might be unwanted, unhelpful, or illegal discrimination. 
 			\end{itemize}
 					
@@ -107,19 +129,24 @@
 		
 		\subsection*{}
 		
-		\begin{frame}				
+		\begin{frame}[allowframebreaks]{Title}				
 		
 			\frametitle{What is Discrimination in ML?}
-					
-			\scriptsize			
-			\noindent In some applications\footnote{\tiny{e.g., Under the Equal Credit Opportunity Act (ECOA), as implemented by Regulation B, and the Fair Credit Reporting Act (FCRA})}, model predictions should \textit{ideally} be independent of demographic group membership.\\
+						
+			\noindent In some applications\footnote{\small{e.g., Under the Equal Credit Opportunity Act (ECOA), as implemented by Regulation B, and the Fair Credit Reporting Act (FCRA})}, model predictions should \textbf{\textit{ideally}} be independent of demographic group membership.\\
 			\vspace{5pt}
 			\noindent In these applications, a model exhibits discrimination if:
 			\begin{enumerate}
 				\item Demographic group membership is not independent of the likelihood of receiving a favorable or accurate model prediction.
 				\item Membership in a \textit{subset} of a demographic group is not independent of the likelihood of receiving a favorable or accurate model prediction (i.e., \textit{local bias}).\cite{hall2019guidelines}
 			\end{enumerate}
-			\noindent Several forms of discrimination may manifest in ML, including:
+		\end{frame}
+		
+		\begin{frame}
+		
+			\frametitle{What is Discrimination in ML?}	
+			
+			\noindent \Large Several forms of discrimination may manifest in ML, including:
 			\begin{itemize}
 				\item Overt discrimination, i.e. \textit{disparate treatment}.
 				\item Unintentional discrimination, i.e. \textit{disparate impact} (DI).
@@ -162,24 +189,26 @@
 		
 		\begin{frame}				
 		
-			\frametitle{What is Discrimination in ML?}
+			\frametitle{Common Metrics of Discrimination in ML}
 			
-			Many kinds of group disparities can be measured, e.g.:\\
+			Common metrics of \textbf{\textit{group}} disparities:\\
 			\begin{itemize}
 				\item Accuracy disparity: $\frac{\text{accuracy}_p}{\text{accuracy}_r}$
-				\item Adverse impact ratio: $\frac{\text{\% accepted}_p }{ \text{\% accepted}_r}$
+				\item Adverse impact ratio: $\frac{\text{\% accepted}_p }{ \text{\% accepted}_r}$ 
 				\item Marginal effect: $\text{\% accepted}_p - \text{\% accepted}_r$
 				\item Standardized mean difference: $\frac{\bar{\hat{y}}_p - \bar{\hat{y}}_r}{\sigma_{\hat{y}}}$
 			\end{itemize}
-			\noindent where, $p \equiv \text{protected group}$ and $r \equiv \text{reference group}$ (often white males),\\
+			\noindent 
+			\scriptsize where, $p \equiv \text{protected group}$ and $r \equiv \text{reference group}$ (often white males),\\
 			\vspace{5pt}
 			$\text{\% accepted}_\text{group} = 100 \cdot \frac{\text{tn}_\text{group}~+~\text{fn}_\text{group}}{N_\text{group}}$, and $\text{accuracy}_\text{group} = \frac{\text{tp}_\text{group}~+~\text{tn}_\text{group}}{N_\text{group}}$.\textsuperscript{$\mathparagraph$}\\
 			\vspace{10pt}
-			Local bias is much trickier to measure ... and often an unmitigated risk for consumer-facing ML systems.
+			\normalsize
+			\textbf{\textit{Local bias}} is much trickier to measure and often an unmitigated risk for consumer-facing ML systems.
 		\end{frame}		
 
 %-------------------------------------------------------------------------------
-	\section{How?}
+	\section{Remediation}
 %-------------------------------------------------------------------------------
 	
 		\subsection*{}
@@ -187,26 +216,36 @@
 		\begin{frame}			
 		
 			\frametitle{How to Fix Discrimination in ML?}
-			\scriptsize
-			\noindent \textbf{Fix the process}: ensure diversity of experience in design, training, and review of ML systems.\\
-			\noindent \textbf{Fix the data}:
-			\begin{itemize}\scriptsize
+			\Large \noindent 
+			\textbf{Fix the process}: ensure diversity of experience in design, training, and review of ML systems.\\
+			\noindent 
+			\textbf{Fix the data}:
+			\begin{itemize}
 				\item Collect demographically representative training data.
 				\item Select features judiciously, e.g. using \texttt{time\_on\_file} as an input variable as opposed to \texttt{bankruptcy\_flag}.\textsuperscript{$\mathparagraph$}
 				\item Sample and reweigh training data to minimize discrimination.\cite{kamiran2012data}
 			\end{itemize}
-			\noindent \textbf{Fix the model}:
-			\begin{itemize}\scriptsize
+			
+		\end{frame}	
+		
+			
+		\begin{frame}			
+		
+			\frametitle{How to Fix Discrimination in ML?}			
+			
+			\noindent 
+			\textbf{Fix the model}:
+			\begin{itemize}
 				\item Consider fairness metrics when selecting hyperparameters and cutoff thresholds.
 				\item Train fair models directly:
-				\begin{itemize}\scriptsize
+				\begin{itemize}
 					\item Learning fair representations (LFR) and adversarial de-biasing.\cite{zemel2013learning}, \cite{zhang2018mitigating}
 					\item Use dual objective functions that consider both accuracy and fairness metrics.
 				\end{itemize}
 				\item Edit model mechanisms to ensure less biased predictions, e.g. with \href{https://github.com/interpretml/interpret}{GA2M} models.
 			\end{itemize}		
 			\noindent \textbf{Fix the predictions}: 
-			\begin{itemize}\scriptsize
+			\begin{itemize}
 				\item Balance model predictions, e.g. reject-option classification.\cite{kamiran2012decision}	
 				\item Correct or override predictions with model assertions or appeal mechansims.\cite{hall2019guidelines}, \cite{kangdebugging}
 			\end{itemize}

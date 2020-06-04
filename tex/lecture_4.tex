@@ -14,19 +14,20 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    urlcolor=[rgb]{1,0,1},
-    linkcolor=[rgb]{1,0,1}}
+    urlcolor=[rgb]{0,0,0.61},
+    linkcolor=[rgb]{0,0,0.61}}
+
+%------------------------------------------------------------------------------
 
 \usepackage[natbib=true,style=numeric,backend=bibtex,useprefix=true]{biblatex}
-
 %\setbeamercolor*{bibliography entry title}{fg=black}
 %\setbeamercolor*{bibliography entry location}{fg=black}
 %\setbeamercolor*{bibliography entry note}{fg=black}
-\definecolor{OwlGreen}{RGB}{75,0,130} % easier to see
 \setbeamertemplate{bibliography item}{\insertbiblabel}
 \setbeamerfont{caption}{size=\footnotesize}
 \setbeamertemplate{frametitle continuation}{}
 
+\definecolor{OwlGreen}{RGB}{51,0,102} % easier to see
 \setcounter{tocdepth}{1}
 \renewcommand*{\bibfont}{\scriptsize}
 \addbibresource{lecture_4.bib}
@@ -37,12 +38,14 @@
 \setbeamertemplate{footline}{%
     \raisebox{5pt}{\makebox{\hfill\makebox[20pt]{\color{gray}
           \scriptsize\insertframenumber}}}\hspace*{5pt}}
-
-\author{\copyright\hspace{1pt}Patrick Hall\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author and H2O.ai.}}}
-\title{Machine Learning Models as an Attack Surface}
-\institute{\href{https://www.h2o.ai}{H\textsubscript{2}O.ai}}
+          
+          
+\author{Patrick Hall}
+\title{Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
+\subtitle{Lecture 4:  Security}
+\institute{The George Washington University}
 \date{\today}
-\subject{Security of Machine Learning Models}
+
 
 \begin{document}
 	
@@ -55,22 +58,58 @@
 		\tableofcontents{}
 		
 	\end{frame}
-
+	
+	
 %-------------------------------------------------------------------------------
-	\section{Why?}
+	\section{Overview}
 %-------------------------------------------------------------------------------
-
-	\begin{frame}
+		\subsection{Workflow} %just for progress indicator
+			
+		\begin{frame}
 		
-		\frametitle{Why Attack Machine Learning Models?}
-Hackers, malicious or extorted insiders, and their criminal associates or organized extortionists, seek to:
-			\begin{itemize}
-				\item induce beneficial outcomes from a predictive or pattern recognition model or induce negative outcomes for others. %(loans, insurance policies, jobs, favorable criminal risk assessments, or others)
-				\item commit corporate espionage.
-				\item steal intellectual property including models and data.
-			\end{itemize}	
-		\end{frame}
+			\frametitle{A Responsible Machine Learning Workflow\footnote{\href{https://www.mdpi.com/2078-2489/11/3/137/htm}{\textit{A Responsible Machine Learning Workflow}}}}
+			
+			\begin{figure}[htb]
+				\begin{center}
+					\includegraphics[height=150pt]{../img/rml_diagram_lec4_hilite.png}
+					\label{fig:blueprint}
+				\end{center}
+			\end{figure}		
+					
+		\end{frame}	
 
+
+		\subsection{Why Attack}
+
+		\begin{frame}
+		
+			\frametitle{Why Attack Machine Learning Models?}
+Hackers, malicious or extorted insiders, and their criminal associates or organized extortionists, seek to:
+				\begin{itemize}
+					\item induce beneficial outcomes from a predictive or pattern recognition model or induce negative outcomes for others. %(loans, insurance policies, jobs, favorable criminal risk assessments, or others)
+					\item commit corporate espionage.
+					\item steal intellectual property including models and data.
+				\end{itemize}	
+			\end{frame}
+
+
+		\subsection{Types of Attack} %just for progress indicator
+			
+		\begin{frame}
+		
+			\frametitle{Types of Security Risks and Attacks}
+			
+			\begin{itemize}
+				\Large
+				\item{Data Poisoning}
+				\item{Backdoors and Watermarks}
+				\item{Surrogate Model Inversion}
+				\item{Membership Inference}
+				\item{Adversarial Example}
+				\item{Impersonation Attacks}
+			\end{itemize}		
+					
+		\end{frame}	
 %-------------------------------------------------------------------------------
 	\section{Attacks}
 %-------------------------------------------------------------------------------
