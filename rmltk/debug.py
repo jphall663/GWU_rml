@@ -1,3 +1,5 @@
+import pandas as pd
+
 """
 
 Copyright 2020 - Patrick Hall (jphall@gwu.edu) 
@@ -30,6 +32,76 @@ All aspects of rmltk are based on public ideas, e.g.:
 # TODO: additional discrimination metrics
 # TODO: model documentation
 # TODO: CV metrics for all measures, not just accuracy
+
+# represent metrics as dictionary for use later
+METRIC_DICT = {
+
+#### overall performance
+'Prevalence': '(tp + fn) / (tp + tn +fp + fn)', # how much default actually happens for this group
+'Accuracy':       '(tp + tn) / (tp + tn + fp + fn)', # how often the model predicts default and non-default correctly for this group
+
+#### predicting default will happen
+# (correctly)
+'True Positive Rate': 'tp / (tp + fn)',  # out of the people in the group *that did* default, how many the model predicted *correctly* would default
+'Precision':          'tp / (tp + fp)',  # out of the people in the group the model *predicted* would default, how many the model predicted *correctly* would default
+
+#### predicting default won't happen
+# (correctly)
+'Specificity':              'tn / (tn + fp)', # out of the people in the group *that did not* default, how many the model predicted *correctly* would not default
+'Negative Predicted Value': 'tn / (tn + fn)', # out of the people in the group the model *predicted* would not default, how many the model predicted *correctly* would not default
+
+#### analyzing errors - type I
+# false accusations
+'False Positive Rate':  'fp / (tn + fp)', # out of the people in the group *that did not* default, how many the model predicted *incorrectly* would default
+'False Discovery Rate': 'fp / (tp + fp)', # out of the people in the group the model *predicted* would default, how many the model predicted *incorrectly* would default
+
+#### analyzing errors - type II
+# costly ommisions
+'False Negative Rate': 'fn / (tp + fn)', # out of the people in the group *that did* default, how many the model predicted *incorrectly* would not default
+'False Omissions Rate':'fn / (tn + fn)'  # out of the people in the group the model *predicted* would not default, how many the model predicted *incorrectly* would not default
+}
+
+
+def get_metrics_ratios(cm_dict, _control_level):
+
+    """ Calculates confusion matrix metrics in METRIC_DICT for each level of demographic feature.
+    Tightly coupled to cm_dict.
+
+    :param cm_dict: Dictionary of Pandas confusion matrices, one matrix for each level.
+    :param _control_level: Control level in cm_dict.
+    :return: Tuple, Pandas frame of metrics for each level of demographic feature, Pandas frame of ratio metrics for
+             each level of demographic feature.
+
+    """
+
+    levels = sorted(list(cm_dict.keys()))
+
+    eps = 1e-20  # for safe numerical operations
+
+    # init return frames
+    metrics_frame = pd.DataFrame(index=levels)  # frame for metrics
+
+    # nested loop through:
+    # - levels
+    # - metrics
+    for level in levels:
+
+        for metric in METRIC_DICT.keys():
+
+            # parse metric expressions into executable Pandas statements
+            expression = METRIC_DICT[metric].replace('tp', 'cm_dict[level].iat[0, 0]') \
+                                            .replace('fp', 'cm_dict[level].iat[0, 1]') \
+                                            .replace('fn', 'cm_dict[level].iat[1, 0]') \
+                                            .replace('tn', 'cm_dict[level].iat[1, 1]')
+
+            # dynamically evaluate metrics to avoid code duplication
+            metrics_frame.loc[level, metric] = eval(expression)
+
+    # calculate metric ratios
+    ratios_frame = (metrics_frame.loc[:, :] + eps) / (metrics_frame.loc[_control_level, :] + eps)
+    ratios_frame.columns = [col + ' Ratio' for col in ratios_frame.columns]
+
+    return metrics_frame, ratios_frame
 
 
 def air(cm_dict, reference, protected):
@@ -121,3 +193,4 @@ def smd(valid, x_name, yhat_name, reference, protected):
     print(yhat_name.title() + ' std. dev.:  %.2f' % sigma)
 
     return (protected_yhat_mean - reference_yhat_mean) / sigma
+
