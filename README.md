@@ -15,6 +15,8 @@ Materials for a technical, nuts-and-bolts course about increasing transparency, 
 
 Corrections or suggestions? Please file a [GitHub issue](https://github.com/jphall663/GWU_rml/issues/new).
 
+***
+
 ## Lecture 1: Interpretable Machine Learning Models
 
 ![Histogram, partial dependence, and ICE for a monotonic GBM and a credit card customer's most recent repayment status](/img/lecture_1.png)
@@ -52,6 +54,8 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [New York Regulator Probes UnitedHealth Algorithm for Racial Bias](https://www.wsj.com/articles/new-york-regulator-probes-unitedhealth-algorithm-for-racial-bias-11572087601)
   * [When a Computer Program Keeps You in Jail](https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html)
   * [When an Algorithm Helps Send You to Prison](https://www.nytimes.com/2017/10/26/opinion/algorithm-compas-sentencing-bias.html)
+
+
 
 ## Lecture 2: Post-hoc Explanation
 
@@ -93,6 +97,33 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
   * [Gender Shades](http://gendershades.org/)
   * [Explainable Neural Networks based on Additive Index Models](https://arxiv.org/pdf/1806.01933.pdf)
+
+
+
+## Lecture 3: Discrimination Testing and Remediation
+
+### Lecture 3 Class Materials
+
+* [Lecture Notes]() 
+* [Lecture Video]()
+* Software Example: [Testing a Constrained Model for Discrimination and Remediating Discovered Discrimination](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_3.ipynb) 
+
+### Lecture 3 Suggested Software
+
+* Python:
+  * [`aequitas`](https://github.com/dssg/aequitas)
+  * [`AIF360`](https://github.com/IBM/AIF360)
+  * [`Themis`](https://github.com/LASER-UMASS/Themis)
+  
+### Lecture 3 Suggested Reading
+
+* **Introduction and Background**: 
+  
+* **Post-hoc Explanation Techniques**:
+
+* **Links from Lecture**:
+
+   
    
 ## Using Class Software Resources
 
