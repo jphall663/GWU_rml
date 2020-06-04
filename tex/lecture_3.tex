@@ -13,8 +13,6 @@
     linkcolor=[rgb]{0,0,0.61}}
 \usepackage[natbib=true,style=numeric,backend=bibtex,useprefix=true]{biblatex}
 
-%\usepackage{blindtext}
-
 %----------------------------------------------------------------------------------
 \definecolor{OwlGreen}{RGB}{51,0,102} 
 %----------------------------------------------------------------------------------
@@ -26,18 +24,20 @@
 \renewcommand*{\bibfont}{\scriptsize}
 \addbibresource{lecture_3.bib}
 
+%------------------------------------------------------------------------------------------
+
 \usenavigationsymbolstemplate{}
 \setbeamertemplate{footline}{%
     \raisebox{5pt}{\makebox{\hfill\makebox[20pt]{\color{gray}
           \scriptsize\insertframenumber}}}\hspace*{5pt}}
 
+%------------------------------------------------------------------------------------------
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-
 %------------------------------------------------------------------------------------------
 
 \author{Patrick Hall}
 \title{Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
-\subtitle{Lecture 3:  Fairness}
+\subtitle{Lecture 3: Discrimination Testing and Remediation}
 \institute{The George Washington University}
 \date{\today}
 
@@ -74,39 +74,21 @@
 					
 		\end{frame}	
 
-
 		\begin{frame}				
 		
-			\frametitle{Why Care About Discrimination in ML?}
+			\frametitle{Why Care About Discrimination in Machine Learning?}
 			
 			\begin{itemize}
 				\Large
-				\item \textbf{Reputational risk}: 
-					\begin{itemize}
-						\Large
-						\item{\normalsize{Upon encountering a perceived unethical ML system, 34\% of consumers are likely to, ``stop interacting with the company.''\footnote{\scriptsize{See: \href{https://www.capgemini.com/research/why-addressing-ethical-questions-in-ai-will-benefit-organizations/}{Why addressing ethical questions in AI will benefit organizations}.}}}}
-					\end{itemize}
-				\item Non-compliance fines and litigation costs.
-				\item Responsible practice of ML. 
+				\item \textbf{Responsible practice of machine learning (ML)}: ML can affect millions of people! \cite{obermeyer2019dissecting}
+				\item \textbf{Discrimination is often illegal (in the U.S.)}: Non-compliance fines and litigation costs.
+				\item \textbf{Reputational risk}: Upon encountering a perceived unethical ML system, 34\% of consumers are likely to, ``stop interacting with the company.''\footnote{\scriptsize{See: \href{https://www.capgemini.com/research/why-addressing-ethical-questions-in-ai-will-benefit-organizations/}{Why addressing ethical questions in AI will benefit organizations}.}}
 			\end{itemize}
 			
 		\end{frame}
 
-
-		\begin{frame}
-		
-			\frametitle{Elements of Responsible Practice of ML}
-		
-		  	\begin{figure}[htb]
-    				\begin{center}
-      					\includegraphics[height=180pt]{../img/trust_understanding.png}
-    				\end{center}
-  			\end{figure}
-		
-		\end{frame}
-
 %-------------------------------------------------------------------------------
-	\section{Discrimination \& Bias}
+	\section{Bias and Discrimination}
 %-------------------------------------------------------------------------------
 	
 		\subsection*{}
@@ -116,82 +98,101 @@
 			\frametitle{What Is Bias?}			
 					
 			\begin{itemize}
-			\Large
-			\item Almost all data, statistical models, and machine learning (ML) models encode different types of \textit{bias}, i.e., systematic misrepresentations of reality.\\
-			\item Sometimes, bias is helpful.
+			\item Almost \textit{all} data, statistical models, and ML models encode different types of \textit{bias}, i.e., \textbf{systematic misrepresentations of reality}.\\
+			\item Sometimes, bias is \textit{helpful}.
 				\begin{itemize}
-					\Large
-					\item{shrunken and robust $\beta_j$ coefficients in penalized linear models}				\end{itemize}
-			\item Other types of bias might be unwanted, unhelpful, or illegal discrimination. 
+					\item{Shrunken and robust $\beta_j$ coefficients in penalized linear models.}	\end{itemize}
+			\item Other types of bias can be unwanted, unhelpful, discriminatory, or illegal. 
+			\item Many instances of discrimination in ML arise from sociologically biased data collection, labeling, or storage processes.
 			\end{itemize}
 					
 		\end{frame}					
 		
-		\subsection*{}
-		
-		\begin{frame}[allowframebreaks]{Title}				
-		
+		\begin{frame}				
+			
 			\frametitle{What is Discrimination in ML?}
-						
-			\noindent In some applications\footnote{\small{e.g., Under the Equal Credit Opportunity Act (ECOA), as implemented by Regulation B, and the Fair Credit Reporting Act (FCRA})}, model predictions should \textbf{\textit{ideally}} be independent of demographic group membership.\\
+			
+			\noindent In many applications\footnote{\small{e.g., Under the Equal Credit Opportunity Act (ECOA), as implemented by Regulation B, and the Fair Credit Reporting Act (FCRA})}, model predictions should \textbf{\textit{ideally}} be independent of demographic group membership.\\
 			\vspace{5pt}
 			\noindent In these applications, a model exhibits discrimination if:
 			\begin{enumerate}
 				\item Demographic group membership is not independent of the likelihood of receiving a favorable or accurate model prediction.
-				\item Membership in a \textit{subset} of a demographic group is not independent of the likelihood of receiving a favorable or accurate model prediction (i.e., \textit{local bias}).\cite{hall2019guidelines}
+				\item Membership in a \textit{subset} of a demographic group is not independent of the likelihood of receiving a favorable or accurate model prediction (i.e., \textit{local or individual discrimination}).\cite{hall2019guidelines}
 			\end{enumerate}
+		
 		\end{frame}
 		
 		\begin{frame}
 		
-			\frametitle{What is Discrimination in ML?}	
+			\frametitle{What Kinds of Discrimination Occur in ML?}	
 			
 			\noindent \Large Several forms of discrimination may manifest in ML, including:
 			\begin{itemize}
-				\item Overt discrimination, i.e. \textit{disparate treatment}.
-				\item Unintentional discrimination, i.e. \textit{disparate impact} (DI).
-				\item Discrimination in ML may or may not be illegal, depending on how it arises and applicable discrimination laws.\cite{hall2019guidelines}
+				
+				\item Group disparities: 
+				
+				\begin{itemize}
+				
+					\item Overt discrimination against groups, i.e., \textit{disparate treatment}.
+					
+					% More careful definition: Disparate treatment occurs when a lender treats a (potential) customer differently based on a prohibited basis, such as the person’s age, gender, or race.
+					
+					\item Unintentional discrimination against groups, i.e., \textit{disparate impact} (DI).
+					
+					% More careful definition: Disparate impact occurs when a protected class experiences a larger share of less favorable outcomes as a result of an otherwise non-discriminatory and legitimate decision-making process. Disparate impact is not necessarily a violation of law and may be justified by a “business necessity,” such as cost or profitability. However, there may still be a violation if the lenders could have used an alternative policy or practice that had a less discriminatory effect.
+					
+					% All DI is discrimination, I'm not sure that all discrimination is DI.
+				
+				\end{itemize}
+				
+				\item Local or individual discrimination.
+				
 			\end{itemize}
-		\end{frame}		
+		
+		\end{frame}			
 		
 		\begin{frame}				
 		
-			\frametitle{What is Discrimination in ML?}
+			\frametitle{How Does Discrimination Arise in ML?}
 			
 			\noindent Discrimination originates from training data:\\
 			\begin{itemize}
-				\item Incomplete or inaccurate data, particularly under-representation of minorities, e.g. \href{http://gendershades.org/}{Gender Shades}\cite{gender_shades}.
-				\item Accurate but differing patterns of causation, correlation, or dependency between demographic groups and past outcomes, e.g. traditional FICO credit scores.\footnote{\scriptsize{See: \href{https://www.youtube.com/watch?v=rToFuhI6Nlw}{Responsible Data Science: Identifying and Fixing Biased AI}.}}
-				\item Explicit encoding of historical social biases into training data, e.g. criminal records.\textsuperscript{$\mathparagraph$}
+				\item Incomplete or inaccurate data, e.g., under-representation of minorities. See \href{http://gendershades.org/}{Gender Shades} \cite{gender_shades}.
+				\item Accurate but differing patterns of causation, correlation, or dependency between demographic groups and past outcomes, e.g., traditional FICO credit scores.\footnote{\scriptsize{See: \href{https://www.youtube.com/watch?v=rToFuhI6Nlw}{Responsible Data Science: Identifying and Fixing Biased AI}.}}
+				\item Explicit encoding of historical social biases into training data, e.g., criminal records.\textsuperscript{$\mathparagraph$}
 			\end{itemize}
 
 		\end{frame}
 
 		\begin{frame}				
 		
-			\frametitle{What is Discrimination in ML?}
+			\frametitle{How Does Discrimination Arise in ML?}
 			
 			ML models can perpetuate or exacerbate discrimination.\\
 			\vspace{10pt}
-			\noindent \textbf{Group disparities}, i.e. different or inaccurate treatment of entire demographic groups:\\
+			\noindent \textbf{Group disparities}, i.e., different or inaccurate treatment of entire demographic groups:\\
 			\begin{itemize}
-				\item Learning different correlations between demographic groups and favorable model outcomes, i.e. \textit{adverse impact}.
-				\item Exhibiting different accuracies across demographic groups, i.e. \textit{differential validity}.\textsuperscript{$\mathparagraph$}
+				\item Learning different correlations between demographic groups and favorable model outcomes, i.e., \textit{DI}.
+				\item Exhibiting different accuracies across demographic groups, i.e., \textit{differential validity}.\textsuperscript{$\mathparagraph$}
 			\end{itemize}
 			\vspace{5pt}
-			\noindent \textbf{Locally}, i.e. different or inaccurate treatment of similar individuals:\\
+			\noindent \textbf{Locally}, i.e., different or inaccurate treatment of similar individuals:\\
 			\begin{itemize}
 				\item Local response function or decision boundary form. 
-				\item Capacity to form local complex or latent demographic proxies.
+				\item Capacity to form local complex demographic proxies on a row-by-row basis.
 			\end{itemize}
 							
 		\end{frame}
-		
+
+%-------------------------------------------------------------------------------
+	\section{Testing for Discrimination in ML}
+%-------------------------------------------------------------------------------
+
 		\begin{frame}				
 		
 			\frametitle{Common Metrics of Discrimination in ML}
 			
-			Common metrics of \textbf{\textit{group}} disparities:\\
+			Common metrics for DI and \textbf{\textit{group}} disparities:\\
 			\begin{itemize}
 				\item Accuracy disparity: $\frac{\text{accuracy}_p}{\text{accuracy}_r}$
 				\item Adverse impact ratio: $\frac{\text{\% accepted}_p }{ \text{\% accepted}_r}$ 
@@ -199,13 +200,43 @@
 				\item Standardized mean difference: $\frac{\bar{\hat{y}}_p - \bar{\hat{y}}_r}{\sigma_{\hat{y}}}$
 			\end{itemize}
 			\noindent 
-			\scriptsize where, $p \equiv \text{protected group}$ and $r \equiv \text{reference group}$ (often white males),\\
+			\scriptsize{where, $p \equiv \text{protected group}$ and $r \equiv \text{reference group}$ (often white males).}\\
 			\vspace{5pt}
-			$\text{\% accepted}_\text{group} = 100 \cdot \frac{\text{tn}_\text{group}~+~\text{fn}_\text{group}}{N_\text{group}}$, and $\text{accuracy}_\text{group} = \frac{\text{tp}_\text{group}~+~\text{tn}_\text{group}}{N_\text{group}}$.\textsuperscript{$\mathparagraph$}\\
-			\vspace{10pt}
-			\normalsize
-			\textbf{\textit{Local bias}} is much trickier to measure and often an unmitigated risk for consumer-facing ML systems.
-		\end{frame}		
+			\normalsize{There are many other, sometimes conflicting, mathematical definitions of discrimination. 
+				See \href{https://www.youtube.com/watch?v=wqamrPkF5kk}{21 Definitions of Fairness and Their Politics}.}
+			
+		\end{frame}
+	
+		\begin{frame}				
+	
+			\frametitle{Additional Considerations for Discrimination Testing}
+	
+			\begin{itemize}
+				
+				\item Local discrimination, i.e., the model treats a small number of similar people differently. 
+				
+				\begin{itemize}
+					\item Search around probability thresholds.
+					\item Adversarial models.
+				\end{itemize}
+			
+				\item Post-hoc explanation to understand drivers of discrimination:
+				\begin{itemize}
+					
+					\item To be conducted after discrimination is confirmed by standard tests.
+					
+					\item Be aware of: 
+					\begin{itemize}
+						\item No demographic features in model.
+						\item Fairwashing \cite{fair_washing} and scaffolding \cite{scaffolding}. 
+					\end{itemize}
+				
+				\end{itemize}
+	
+			\end{itemize}
+	
+		\end{frame}
+	
 
 %-------------------------------------------------------------------------------
 	\section{Remediation}
@@ -217,12 +248,13 @@
 		
 			\frametitle{How to Fix Discrimination in ML?}
 			\Large \noindent 
-			\textbf{Fix the process}: ensure diversity of experience in design, training, and review of ML systems.\\
+			\textbf{Fix organizational processes}: Lecture 6\\
 			\noindent 
 			\textbf{Fix the data}:
 			\begin{itemize}
 				\item Collect demographically representative training data.
-				\item Select features judiciously, e.g. using \texttt{time\_on\_file} as an input variable as opposed to \texttt{bankruptcy\_flag}.\textsuperscript{$\mathparagraph$}
+				\item Label and annotate data carefully.
+				\item Select features judiciously.
 				\item Sample and reweigh training data to minimize discrimination.\cite{kamiran2012data}
 			\end{itemize}
 			
@@ -242,17 +274,25 @@
 					\item Learning fair representations (LFR) and adversarial de-biasing.\cite{zemel2013learning}, \cite{zhang2018mitigating}
 					\item Use dual objective functions that consider both accuracy and fairness metrics.
 				\end{itemize}
-				\item Edit model mechanisms to ensure less biased predictions, e.g. with \href{https://github.com/interpretml/interpret}{GA2M} models.
+				\item Edit model mechanisms to ensure less biased predictions, e.g., with \href{https://github.com/interpretml/interpret}{GA2M/EBM} models.
 			\end{itemize}		
 			\noindent \textbf{Fix the predictions}: 
 			\begin{itemize}
-				\item Balance model predictions, e.g. reject-option classification.\cite{kamiran2012decision}	
+				\item Balance model predictions, e.g., reject-option classification.\cite{kamiran2012decision}	
 				\item Correct or override predictions with model assertions or appeal mechansims.\cite{hall2019guidelines}, \cite{kangdebugging}
 			\end{itemize}
 			
 		\end{frame}
-		
-		\subsection*{}
+	
+		\begin{frame}
+	
+			\frametitle{How to Fix Discrimination in ML?}		
+			\centering
+			Consider discrimination measures during model selection.\\
+			\vspace{10pt}
+			{\includegraphics[scale=0.09]{../img/lecture_3.png}}
+			
+		\end{frame}	
 		
 		\begin{frame}
 		
@@ -260,7 +300,7 @@
 			\centering
 			As part of a responsible ML workflow.\\
 			\vspace{10pt}
-			{\includegraphics[scale=0.08]{../img/blueprint.png}}
+			{\includegraphics[scale=0.08]{../img/rml_diagram_no_hilite.png}}
 			
 		\end{frame}		
 		
@@ -273,8 +313,11 @@
 	\begin{frame}
 	
 		\frametitle{Acknowledgements}
-		This presentation borrows heavily from the expertise of Nicholas Schmidt and Bryce Stephens of \href{https://www.bldsllc.com/}{BLDS, LLC}, a leading fair lending compliance firm.
 		
+		This presentation borrows heavily from the expertise of Nicholas Schmidt and Bryce Stephens of \href{https://www.bldsllc.com/}{BLDS, LLC}, a leading fair lending compliance firm.\\
+		\vspace{10pt}		
+		Thanks to Lisa Song for her continued assistance in developing these course materials. 
+
 	\end{frame}	
 	
 %-------------------------------------------------------------------------------
