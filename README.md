@@ -108,7 +108,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 3 Class Materials
 
 * [Lecture Notes](tex/lecture_3.pdf) 
-* [Lecture Video]()
+* [Lecture Video](https://youtu.be/9kn1_E88wDA)
 * Software Example: [Testing a Constrained Model for Discrimination and Remediating Discovered Discrimination](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_3.ipynb) 
 
 ### Lecture 3 Suggested Software
@@ -137,8 +137,6 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
   * [*Mitigating Unwanted Biases with Adversarial Learning*](https://dl.acm.org/doi/pdf/10.1145/3278721.3278779)
   
   Fairness Beyond Disparate Treatment & Disparate Impact: Learning Classification Without Disparate Mistreatment
-  
-* **Links from Lecture 3**:
 
 ***   
  
