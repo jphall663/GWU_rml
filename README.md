@@ -135,8 +135,6 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
   * [*Fairness Beyond Disparate Treatment & Disparate Impact: Learning Classification Without Disparate Mistreatment*](https://arxiv.org/pdf/1610.08452.pdf)
   * [*Learning Fair Representations*](http://proceedings.mlr.press/v28/zemel13.pdf)
   * [*Mitigating Unwanted Biases with Adversarial Learning*](https://dl.acm.org/doi/pdf/10.1145/3278721.3278779)
-  
-  Fairness Beyond Disparate Treatment & Disparate Impact: Learning Classification Without Disparate Mistreatment
 
 ***   
  
