@@ -309,7 +309,7 @@ def get_png(model_id):
     _ = subprocess.call(png_args)
 
 
-def get_cv_dt(x_names, y_names, frame, model_id, seed_, title):
+def get_cv_dt(x_names, y_names, train, model_id, seed_, title, valid=None):
 
     """ Utility function to train decision trees.
 
@@ -334,7 +334,10 @@ def get_cv_dt(x_names, y_names, frame, model_id, seed_, title):
                                     model_id=model_id)  # gives MOJO artifact a recognizable name
 
     # train single tree model
-    tree.train(x=x_names, y=y_names, training_frame=h2o.H2OFrame(frame))
+    if valid is not None:
+        tree.train(x=x_names, y=y_names, training_frame=h2o.H2OFrame(train), validation_frame=h2o.H2OFrame(valid))
+    else:
+        tree.train(x=x_names, y=y_names, training_frame=h2o.H2OFrame(train))
 
     # persist MOJO (compiled Java representation of trained model)
     # from which to generate plot of tree
