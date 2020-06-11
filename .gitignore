@@ -16,5 +16,5 @@ tests/out*
 *.synctex.gz
 *.toc
 best_mgbm*
-black_box*
-extracted_dt*
+stolen_dt*
+
