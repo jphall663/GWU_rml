@@ -42,7 +42,7 @@
           
 \author{Patrick Hall}
 \title{Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
-\subtitle{Lecture 4:  Security}
+\subtitle{Lecture 4: Machine Learning Security}
 \institute{The George Washington University}
 \date{\today}
 
@@ -86,8 +86,9 @@
 			\frametitle{Why Attack Machine Learning Models?}
 Hackers, malicious or extorted insiders, and their criminal associates or organized extortionists, seek to:
 				\begin{itemize}
-					\item induce beneficial outcomes from a predictive or pattern recognition model or induce negative outcomes for others. %(loans, insurance policies, jobs, favorable criminal risk assessments, or others)
+					\item cause commercial or social chaos.
 					\item commit corporate espionage.
+					\item induce beneficial outcomes from a predictive or pattern recognition model or induce negative outcomes for others. %(loans, insurance policies, jobs, favorable criminal risk assessments, or others)
 					\item steal intellectual property including models and data.
 				\end{itemize}	
 			\end{frame}
@@ -99,15 +100,33 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 		
 			\frametitle{Types of Security Risks and Attacks}
 			
-			\begin{itemize}
-				\Large
-				\item{Data Poisoning}
-				\item{Backdoors and Watermarks}
-				\item{Surrogate Model Inversion}
-				\item{Membership Inference}
-				\item{Adversarial Example}
-				\item{Impersonation Attacks}
-			\end{itemize}		
+		
+				\begin{columns}[t]
+
+					\column{0.5\linewidth}
+					This lecture will focus on:
+					\begin{itemize}
+						\item Data poisoning
+						\item Backdoors and watermarks
+						\item Surrogate model inversion
+						\item Membership inference
+						\item Adversarial examples
+						\item Impersonation 
+						\item General concerns						
+					\end{itemize}	
+
+					\column{0.5\linewidth}
+					Additional considerations:
+					\begin{itemize}
+						\item Deep fakes
+						\item Transfer learning Trojans	
+						\item Training data breaches				
+					\end{itemize}
+
+				\end{columns}
+
+
+		
 					
 		\end{frame}	
 %-------------------------------------------------------------------------------
@@ -151,9 +170,9 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 				
 				\begin{itemize}
 					\item \textbf{Disparate impact analysis}: Use tools like \href{https://github.com/dssg/aequitas}{aequitas}, \href{https://github.com/IBM/AIF360}{AIF360}, or your own fair lending tools, to look for discrimination in your model’s predictions. 
-					\item \textbf{Fair or private models}: E.g. learning fair representations (LFR), private aggregation of teacher ensembles (PATE) \cite{pate}, \cite{lfr}.
+					\item \textbf{Fair or private models}: E.g., learning fair representations (LFR), private aggregation of teacher ensembles (PATE) \cite{pate}, \cite{lfr}.
 					\item \textbf{Reject on negative impact (RONI) analysis}: See: \textit{\citefield{security_of_ml}{title}} \cite{security_of_ml}. 		
-					\item \textbf{Residual analysis}: especially for large positive deviance residuals.
+					\item \textbf{Residual analysis}: especially those that indicate unexpected beneficial predictions.
 					\item \textbf{Self-reflection}: Score your models on your employees, consultants, and contractors and look for anomalously beneficial predictions.
 				\end{itemize}	
 			\end{frame}
@@ -168,8 +187,8 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 				\begin{itemize}
 				\Large
 				\item Hackers gain unauthorized access to your production scoring code \\ OR ...
-				\item Malicious or extorted data science or IT insiders change your production scoring code
-				\item{Also adding a backdoor that can be exploited using water-marked data}
+				\item Malicious or extorted data science or IT insiders change your production scoring code and ...
+				\item add a backdoor that can be exploited using special water-marked data.
 				\end{itemize}	
 			\end{frame}
 		
@@ -208,7 +227,7 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 				
 Due to lax security or a distributed attack on your model API or other model endpoint, hackers or competitors simulate data, submit it, receive predictions, and train a surrogate model between their simulated data and your model predictions. This surrogate can ...
 				\begin{itemize}
-				\item expose your proprietary business logic, i.e. ``model stealing'' \cite{model_stealing}. 
+				\item expose your proprietary business logic, i.e., ``model stealing'' \cite{model_stealing}. 
 				\item reveal sensitive aspects of your training data. 
 				\item be the first stage of a membership inference attack (see Slide \ref{slide:membership}).
 				\item be a test-bed for adversarial example attacks (see Slide \ref{slide:adversary}). 
@@ -367,7 +386,7 @@ Bad actors learn ...
 					\Large
 					\item \textbf{Authentication}: See Slide \ref{slide:inversion_defense}. 
 					\item \textbf{Disparate impact analysis}: See Slide \ref{slide:data_poisoning_defense}.
-					\item \textbf{Model monitoring}: Watch for too many similar predictions in real-time. Watch for too many similar input rows in real-time.
+					\item \textbf{Model monitoring}: Watch for duplicate (or more) predictions in real-time. Watch for duplicate (or more) similar input rows in real-time.
 				\end{itemize}
 				
 			\end{frame}
@@ -383,7 +402,7 @@ Bad actors learn ...
 				\begin{itemize}
 					\item \textbf{Black-box models}: Over time a motivated, malicious actor could learn more about your own black-box model than you know and use this knowledge imbalance to attack your model \cite{papernot2018marauder}.
 					\item \textbf{Black-hat eXplainable AI (XAI)}:  While XAI can enable human learning from machine learning, regulatory compliance, and appeal of automated decisions, it can also make ML hacks easier and more damaging \cite{shokri2019privacy}.
-					\item \textbf{Distributed-denial-of-service (DDOS) attacks}: Like any other public-facing service, your model could be attacked with a DDOS attack.  
+					\item \textbf{Standard attacks}: Like any other public-facing IT service, your model could be exposed to well-known risks such as DDOS or man-in-the-middle attacks.  
 					\item \textbf{Distributed systems and models}: Data and code spread over many machines provides a larger, more complex attack surface for a malicious actor.
 					\item \textbf{Package dependencies}: Any package your modeling pipeline is dependent on could potentially be hacked to conceal an attack payload.
 				\end{itemize}
@@ -395,48 +414,52 @@ Bad actors learn ...
 		\subsection{General Solutions}
 %-------------------------------------------------------------------------------
 	
-			\begin{frame}[t, allowframebreaks]	
+			\begin{frame}[t]	
 		
 				\frametitle{General Solutions}	
-				%\footnotesize
+				\scriptsize
 				\small
 				\begin{itemize}
 					\item \textbf{Authenticated access and prediction throttling}: for prediction APIs and other model endpoints.
 					\item \textbf{Benchmark models}: Compare complex model predictions to less complex (and hopefully less hackable) model predictions. For traditional, low signal-to-noise data mining problems, predictions should not be too different. If they are, investigate them.
-					\item \textbf{Encrypted, differentially private, or federated training data}: Properly implemented, these technologies can thwart many types of attacks. Improperly implemented, they simply create a broader attack surface or hinder forensic efforts.
+					\item \textbf{PETs: Encryption, differential privacy, or federated learning}: Properly implemented, these technologies can thwart many types of attacks.
+					\item \textbf{Incident response plans}: Be prepared for ML systems to fail or be attacked.
 					\item \textbf{Interpretable, fair, or private models}: In addition to models like LFR and PATE, also checkout \href{https://github.com/h2oai/h2o-3/blob/master/h2o-py/demos/H2O_tutorial_gbm_monotonicity.ipynb}{monotonic GBMs}, \href{https://christophm.github.io/interpretable-ml-book/rulefit.html}{Rulefit}, \href{https://github.com/IBM/AIF360}{AIF360}, and the \href{https://users.cs.duke.edu/~cynthia/code.html}{Rudin group} at Duke.
 				\end{itemize}
 			\end{frame}
 			
 			\begin{frame}
 				\frametitle{General Solutions}
-				\normalsize
+				\scriptsize
 				\begin{itemize}
 					%\framebreak
 					\item \textbf{Model documentation, management, and monitoring}:
-						\begin{itemize}
+						\begin{itemize}\scriptsize
 							\item Take an inventory of your predictive models. 
 							\item Document production models well-enough that a new employee can diagnose whether their current behavior is notably different from their intended behavior. 
 							\item Know who trained what model, on what data, and when.
 							\item Monitor and investigate the inputs and predictions of deployed models on live data.	
 						\end{itemize}
 					\item \textbf{Model debugging and testing, and white-hat hacking}: Test your models for accuracy, fairness, and privacy before deploying them. Train white-hat surrogate models and apply XAI techniques to them to see what hackers can see. 
+					\item \textbf{Robust ML}: Researchers are developing new ML training approaches that create models which are more difficult to attack. 
 					\item \textbf{System monitoring and profiling}: Use a meta anomaly detection system on your entire production modeling system’s operating statistics — e.g. number of predictions in some time period, latency, CPU, memory and disk loads, number of concurrent users, etc. — then closely monitor for anomalies.
 				\end{itemize}
 				\normalsize
 			\end{frame}
 
 %-------------------------------------------------------------------------------
-		\subsection{Low-Risk ML Blueprint}
+		\subsection{General Solutions}
 %-------------------------------------------------------------------------------
 
 		\begin{frame}
 		
-			\frametitle{A Blueprint for Low-Risk Machine Learning \footnote{See: \url{ https://github.com/jphall663/hc_ml} for more information.} }		
+			\frametitle{General Solutions}
+			
+			As part of a responsible ML workflow.		
 			
 			\begin{figure}[htb]
 				\begin{center}
-					\includegraphics[height=140pt]{../img/blueprint.png}
+					\includegraphics[height=140pt]{../img/rml_diagram_no_hilite.png}
 				\end{center}
 			\end{figure}	
 
@@ -467,23 +490,7 @@ Bad actors learn ...
 
 	\begin{frame}[t, allowframebreaks]
 	
-		\frametitle{References}	
-		
-			This presentation:\\
-			\footnotesize{\url{https://github.com/jphall663/secure_ML_ideas}}\normalsize
-			
-			\vspace{10pt}
-		
-			\textit{Proposals for Model Vulnerability and Security}:\\
-			\footnotesize{\url{https://www.oreilly.com/ideas/proposals-for-model-vulnerability-and-security}}\normalsize
-			
-			\vspace{10pt}
-			
-			\textit{Can Your Machine Learning Model Be Hacked?!}:\\
-			\footnotesize{\url{https://www.h2o.ai/blog/can-your-machine-learning-model-be-hacked/}}
-			
-		
-		\framebreak		
+		\frametitle{References}		
 		
 		\printbibliography
 		
