@@ -162,6 +162,7 @@ Python:
 * **Introduction and Background**:
 
   * [*A Marauder’s Map of Security and Privacy in Machine Learning*](https://arxiv.org/pdf/1811.01134.pdf)
+  * [BIML Interactive Machine Learning Risk Framework](https://berryvilleiml.com/interactive/)
   * [*The Security of Machine Learning*](https://people.eecs.berkeley.edu/~adj/publications/paper-files/SecML-MLJ2010.pdf)
   * [*Proposals for model vulnerability and security*](https://www.oreilly.com/content/proposals-for-model-vulnerability-and-security/)
 
