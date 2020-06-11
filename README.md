@@ -137,7 +137,45 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
   * [*Mitigating Unwanted Biases with Adversarial Learning*](https://dl.acm.org/doi/pdf/10.1145/3278721.3278779)
 
 ***   
- 
+
+## Lecture 4: 
+
+![A cheatsheet for ML attacks](img/cheatsheet_blue.png)
+<sub><sup>**Source:** [Secure Machine Learning Ideas](https://github.com/jphall663/secure_ML_ideas)</sup></sub>
+
+### Lecture 4 Class Materials
+
+* [Lecture Notes](tex/lecture_4.pdf) (draft)
+* [Lecture Video]()
+* Software Example: [Attacking a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_4.ipynb) 
+
+### Lecture 4 Suggested Software
+
+Python:
+
+  * [`cleverhans`](https://github.com/tensorflow/cleverhans)
+  * [`foolbox`](https://github.com/bethgelab/foolbox)
+  * [`robustness`](https://github.com/MadryLab/robustness)
+  
+### Lecture 4 Suggested Reading
+
+* **Introduction and Background**:
+
+  * [*A Marauder’s Map of Security and Privacy in Machine Learning*](https://arxiv.org/pdf/1811.01134.pdf)
+  * [BIML Interactive Machine Learning Risk Framework](https://berryvilleiml.com/interactive/)
+  * [*The Security of Machine Learning*](https://people.eecs.berkeley.edu/~adj/publications/paper-files/SecML-MLJ2010.pdf)
+  * [*Proposals for model vulnerability and security*](https://www.oreilly.com/content/proposals-for-model-vulnerability-and-security/)
+
+  
+* **Machine Learning Attacks**:
+
+  * [*Membership Inference Attacks Against Machine Learning Models*](https://arxiv.org/pdf/1610.05820.pdf)
+  * [*Stealing Machine Learning Models via Prediction APIs*](https://arxiv.org/pdf/1609.02943.pdf)
+  * [*Model Inversion Attacks that Exploit Confidence Information and Basic Countermeasures*](https://dl.acm.org/doi/pdf/10.1145/2810103.2813677)
+  * [*Hacking Smart Machines with Smarter Ones: How to Extract Meaningful Data from Machine Learning Classifiers*](https://arxiv.org/pdf/1306.4447.pdf)
+
+***   
+
 ## Using Class Software Resources
 
 ### Mac
