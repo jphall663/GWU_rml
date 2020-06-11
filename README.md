@@ -145,7 +145,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 ### Lecture 4 Class Materials
 
-* [Lecture Notes](tex/lecture_4.pdf) (draft)
+* [Lecture Notes](tex/lecture_4.pdf)
 * [Lecture Video]()
 * Software Example: [Attacking a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_4.ipynb) 
 
