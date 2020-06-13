@@ -146,7 +146,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 ### Lecture 4 Class Materials
 
 * [Lecture Notes](tex/lecture_4.pdf)
-* [Lecture Video]()
+* [Lecture Video](https://youtu.be/sdZ1udX6d6c)
 * Software Example: [Attacking a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_4.ipynb) 
 
 ### Lecture 4 Suggested Software
@@ -173,6 +173,10 @@ Python:
   * [*Stealing Machine Learning Models via Prediction APIs*](https://arxiv.org/pdf/1609.02943.pdf)
   * [*Model Inversion Attacks that Exploit Confidence Information and Basic Countermeasures*](https://dl.acm.org/doi/pdf/10.1145/2810103.2813677)
   * [*Hacking Smart Machines with Smarter Ones: How to Extract Meaningful Data from Machine Learning Classifiers*](https://arxiv.org/pdf/1306.4447.pdf)
+
+* **Links from Lecture 4**:
+  * [*A Plea for Simplicity*](https://www.schneier.com/essays/archives/1999/11/a_plea_for_simplicit.html)
+  * [*Privacy Risks of Explaining Machine Learning Models*](https://arxiv.org/pdf/1907.00164.pdf)
 
 ***   
 
