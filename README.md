@@ -240,3 +240,7 @@ If you get stuck, try this link: [Mac Setup: Virtualenv](https://sourabhbajaj.co
 9. Start Jupyter: `$ jupyter notebook`
 
 10. When you are finished, deactivate the environment: `$ deactivate`.
+
+***
+
+Some materials Copyright Patrick Hall and the H2O.ai team 2017-2020.  
