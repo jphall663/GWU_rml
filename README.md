@@ -180,7 +180,7 @@ Python:
 
 ***   
 
-## Lecture 5: 
+## Lecture 5: Machine Learning Model Debugging
 
 ![Residuals for an important feature betray a serious problem in a machine learning model.](img/lecture_5.png)
 <sub><sup>**Source:** [Real-World Strategies for Model Debugging](https://towardsdatascience.com/strategies-for-model-debugging-aa822f1097ce)</sup></sub>
