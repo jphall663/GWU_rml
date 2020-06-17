@@ -194,7 +194,7 @@ Python:
 ### Lecture 5 Suggested Software
 
 * [`DALEX`](https://cran.r-project.org/web/packages/DALEX/index.html) (R)
-* [`SAlib`](https://github.com/tensorflow/cleverhans) (Python)
+* [`SALib`](https://github.com/SALib/SALib) (Python)
 * [`themis-ml`](https://github.com/cosmicBboy/themis-ml) (Python)
 * [`What-if Tool`](https://pair-code.github.io/what-if-tool/index.html#about) (Browser)
   
