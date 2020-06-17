@@ -196,7 +196,7 @@ Python:
 * [`DALEX`](https://cran.r-project.org/web/packages/DALEX/index.html) (R)
 * [`SALib`](https://github.com/SALib/SALib) (Python)
 * [`themis-ml`](https://github.com/cosmicBboy/themis-ml) (Python)
-* [`What-if Tool`](https://pair-code.github.io/what-if-tool/index.html#about) (Browser)
+* [`What-if Tool`](https://pair-code.github.io/what-if-tool/index.html) (Browser)
   
   
 ### Lecture 5 Suggested Reading
