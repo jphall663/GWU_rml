@@ -180,6 +180,37 @@ Python:
 
 ***   
 
+## Lecture 5: 
+
+![Residuals for an important feature betray a serious problem in a machine learning model.](img/lecture_5.png)
+<sub><sup>**Source:** [Real-World Strategies for Model Debugging](https://towardsdatascience.com/strategies-for-model-debugging-aa822f1097ce)</sup></sub>
+
+### Lecture 5 Class Materials
+
+* [Lecture Notes](tex/lecture_5.pdf)
+* [Lecture Video]()
+* Software Example: [Debugging a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_5.ipynb) 
+
+### Lecture 5 Suggested Software
+
+* [`DALEX`](https://cran.r-project.org/web/packages/DALEX/index.html) (R)
+* [`SAlib`](https://github.com/tensorflow/cleverhans) (Python)
+* [`themis-ml`](https://github.com/cosmicBboy/themis-ml) (Python)
+* [`What-if Tool`](https://pair-code.github.io/what-if-tool/index.html#about) (Browser)
+  
+  
+### Lecture 5 Suggested Reading
+
+* **Introduction and Background**:
+
+  * [Debugging Machine Learning Models](https://debug-ml-iclr2019.github.io/)
+  * [*Why you should care about debugging machine learning models*](https://www.oreilly.com/radar/why-you-should-care-about-debugging-machine-learning-models/)
+  * [*Real-World Strategies for Model Debugging*](https://towardsdatascience.com/strategies-for-model-debugging-aa822f1097ce)
+
+* **Links from Lecture 5**:
+
+***   
+
 ## Using Class Software Resources
 
 ### Mac
