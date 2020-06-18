@@ -37,11 +37,22 @@
     \raisebox{5pt}{\makebox{\hfill\makebox[20pt]{\color{gray}
           \scriptsize\insertframenumber}}}\hspace*{5pt}}
           
+          
+%-------------------------------------------------------------------------------
+
+\usepackage{epigraph}
+\setlength\epigraphwidth{14cm}
+\setlength\epigraphrule{0pt}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
+\makeatother
+
 %--------------------------------------------------------------------------------------------
           
 \author{Patrick Hall}
 \title{Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
-\subtitle{Lecture 5: Model Debugging}
+\subtitle{Lecture 5: Machine Learning Model Debugging}
 \institute{The George Washington University}
 \date{\today}
 
@@ -62,7 +73,8 @@
 %-------------------------------------------------------------------------------
 	\section{Overview}
 %-------------------------------------------------------------------------------
-		\subsection{Workflow} %just for progress indicator
+
+		\subsection*{} %just for progress indicator
 			
 		\begin{frame}
 		
@@ -77,9 +89,6 @@
 					
 		\end{frame}	
 
-
-		\subsection{What?}
-
 		\begin{frame}
 		
 			\frametitle{What is Model Debugging?}
@@ -92,20 +101,19 @@
 			\end{itemize}
 		
 		\end{frame}
-		
-		\subsection{Trust and Understanding}
-	
-			\begin{frame}[t]
 
-  				\frametitle{Trust and Understanding}
-          
-  				\begin{figure}[htb]
-    				\begin{center}
-      					\includegraphics[height=130pt]{../img/trust_understanding.png}
-    				\end{center}
-  			\end{figure}
-  
-  			Trust and understanding in machine learning are different but complementary goals, and they are technically feasible \textit{today}.
+	
+		\begin{frame}[t]
+
+ 				\frametitle{Trust and Understanding}
+      
+ 				\begin{figure}
+   				\begin{center}
+     					\includegraphics[height=130pt]{../img/trust_understanding.png}
+   				\end{center}
+ 				\end{figure}
+
+ 			Trust and understanding in machine learning are different but complementary goals, and they are technically feasible \textit{today}.
     
 		\end{frame}
 
@@ -114,8 +122,39 @@
 %-------------------------------------------------------------------------------
 
 %-------------------------------------------------------------------------------
-		\subsection{Inadequate Assessment}
+		\subsection*{}
 %-------------------------------------------------------------------------------	
+
+			\begin{frame}
+				
+				\frametitle{Reminder: What is Machine Learning?}
+				
+					\begin{center}
+						\includegraphics[height=110pt]{../img/ml.jpeg}\\
+						From: \href{https://www.manning.com/books/deep-learning-with-python}{Deep Learning with Python}.
+					\end{center}
+
+			\end{frame}
+
+
+			\begin{frame}
+				
+				\frametitle{Why Debug?}
+				
+				\begin{itemize}
+					
+					\item Machine learning models can discriminate, leak private data, get hacked or make silly mistakes.
+					
+					\item Machine learning pipelines are not magically immune from the bugs and security vulnerabilities that affect all other software.
+					
+					\item AI incidents can cause harm to organizations, consumers, and the public.
+			
+				\end{itemize}
+			
+			\epigraph{“If builders built houses the way programmers built programs, the first woodpecker to come along would destroy civilization.”}{--- \textup{\href{https://en.wikiquote.org/wiki/Gerald_Weinberg}{Gerald Weinberg}}}
+				
+			\end{frame}
+
 
 			\begin{frame}
 
@@ -161,10 +200,6 @@
 							
 			\end{frame}
 
-%-------------------------------------------------------------------------------
-		\subsection{Inaccuracy}
-%-------------------------------------------------------------------------------
-
 			\begin{frame}
 		
 				\frametitle{Why Debug: Inaccuracy}
@@ -181,7 +216,7 @@
 						\vspace{11pt}
 						\column{0.5\linewidth}
 						\centering
-						\includegraphics[height=118pt]{../img/resid.png}\\
+						\includegraphics[height=118pt]{../img/lecture_5.png}\\
 						\vspace{7pt}
 						\tiny{$g_{\text{mono}}$ also struggles to predict default for favorable statuses, $-2  \leq \texttt{PAY\_0}  < 2$, and often cannot predict on-time payment\\when recent payments are late, $\text{PAY\_0} \geq 2$}.
 				
@@ -189,36 +224,29 @@
 					\normalsize
 			
 			\end{frame}
-	
-%-------------------------------------------------------------------------------
-		\subsection{Sociological Biases}
-%-------------------------------------------------------------------------------	
-	
+		
 			\begin{frame}[label={slide:disp}]
 		
-				\frametitle{Why Debug: Sociological Biases}
+				\frametitle{Why Debug: Discrimination}
 		
-				\footnotesize{Machine learning models can perpetuate \textbf{sociological biases} \cite{barocas-hardt-narayanan}.}
+				\footnotesize{Machine learning models can perpetuate \textbf{sociological discrimination} \cite{barocas-hardt-narayanan}.}
 				\vspace{10pt}	
 				\begin{figure}
 					\begin{center}
 						\includegraphics[height=100pt]{../img/di.png}
 					\end{center}
 				\end{figure}
-				\center{\scriptsize{Group disparity metrics are out-of-range for $g_{\text{mono}}$ across different marital statuses.\\This \textit{does not} address localized instances of discrimination.}}
+				\center{\scriptsize{Group disparity metrics are out-of-range for $g_{\text{mono}}$ across different marital statuses.}}
 				\normalsize
 		
 			\end{frame}
-	
-%-------------------------------------------------------------------------------
-		\subsection{Security Vulnerabilities}
-%-------------------------------------------------------------------------------	
+		
 % Hackers, competitors, or malicious or extorted insiders can manipulate model outcomes, steal models, and steal data!
 			\begin{frame}[t]
 		
 				\frametitle{Why Debug: Security Vulnerabilities}
 		
-				\footnotesize{Machine learning models can have \textbf{security vulnerabilities} \cite{security_of_ml}, \cite{membership_inference}, \cite{model_stealing}}.\footnote{\tiny{See \url{https://github.com/jphall663/secure_ML_ideas} for full size image and more information.}}
+				\footnotesize{Machine learning models have \textbf{security vulnerabilities} \cite{security_of_ml}, \cite{membership_inference}, \cite{model_stealing}}.\footnote{\tiny{See \url{https://github.com/jphall663/secure_ML_ideas} for full size image and more information.}}
 				\begin{figure}[]
 					\begin{center}
 						\includegraphics[height=135pt]{../img/cheatsheet_blue.png}
@@ -244,7 +272,7 @@
 				\footnotesize{As part of a holistic, low-risk approach to machine learning}.\footnote{\tiny{See \url{https://github.com/jphall663/hc_ml} for more information.}}
 				\begin{figure}
 					\begin{center}
-						\includegraphics[height=170pt]{../img/blueprint.png}
+						\includegraphics[height=140pt]{../img/rml_diagram_no_hilite.png}
 					\end{center}
 				\end{figure}	
 				\normalsize
@@ -454,23 +482,28 @@
 			\end{frame}
 
 
-%-------------------------------------------------------------------------------
-	\section{References}
-%-------------------------------------------------------------------------------
-% which code for which slide
 
-	\subsection{}
+%-------------------------------------------------------------------------------
+	\section{Acknowledgements} 
+%-------------------------------------------------------------------------------
 
-	\begin{frame}[t, allowframebreaks]
+		\begin{frame}
+			
+			\frametitle{Acknowledgments}
+			
+				Thanks to Lisa Song for her continued assistance in developing these course materials.\\
+				\vspace{10pt}
+				Some materials \copyright\hspace{1pt}Patrick Hall and the H2O.ai team 2017-2020.  
+			
+		\end{frame}	
+
+		\begin{frame}[t, allowframebreaks]
 	
-		\frametitle{References}	
-		
-			This presentation:\\
-			{\url{https://www.github.com/jphall663/jsm_2019}}\\
-			\vspace{10pt}
-			\normalsize Code examples for this presentation:\\
-			{\url{https://www.github.com/jphall663/interpretable_machine_learning_with_python}}\\
-			\noindent{\url{https://www.github.com/jphall663/responsible_xai}}
+			\frametitle{References}	
+
+			Advanced code examples for this presentation:\\
+			\small{\url{https://www.github.com/jphall663/interpretable_machine_learning_with_python}}\\
+			\noindent \small{\url{https://www.github.com/jphall663/responsible_xai}}
 								
 		\framebreak		
 		
