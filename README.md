@@ -209,6 +209,21 @@ Python:
 
 * **Links from Lecture 5**:
 
+  * [Testing and Debugging in Machine Learning (Google)](https://developers.google.com/machine-learning/testing-debugging)
+  * AI Incidents (not already linked above):
+    * [Self-Driving Uber Car Kills Pedestrian in Arizona, Where Robots Roam](https://www.nytimes.com/2018/03/19/technology/uber-driverless-fatality.html)
+    * [The Woz tweets on Apple and Goldman Sachs](https://twitter.com/stevewoz/status/1193424787248279552)
+    * [Suckers List: How Allstate’s Secret Auto Insurance Algorithm Squeezes Big Spenders](https://themarkup.org/allstates-algorithm/2020/02/25/car-insurance-suckers-list)
+    * [A.C.L.U. Accuses Clearview AI of Privacy ‘Nightmare Scenario’](https://www.nytimes.com/2020/05/28/technology/clearview-ai-privacy-lawsuit.html)
+    * [Government’s Use of Algorithm Serves Up False Fraud Charges](https://undark.org/2020/06/01/michigan-unemployment-fraud-algorithm/)
+    * [Microsoft's robot editor confuses mixed-race Little Mix singers](https://www.theguardian.com/technology/2020/jun/09/microsofts-robot-journalist-confused-by-mixed-race-little-mix-singers)
+    * [Welfare surveillance system violates human rights, Dutch court rules](https://www.theguardian.com/technology/2020/feb/05/welfare-surveillance-system-violates-human-rights-dutch-court-rules)
+  * [*Intelligible Models for HealthCare: Predicting Pneumonia Risk and Hospital 30-day Readmission*](http://people.dbmi.columbia.edu/noemie/papers/15kdd.pdf)
+  ![Excerpt from *Intelligible Models for HealthCare: Predicting Pneumonia Risk and Hospital 30-day Readmission*](img/asthama_pneumonia.png)
+    
+    
+    
+    
 ***   
 
 ## Using Class Software Resources
