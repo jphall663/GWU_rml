@@ -67,6 +67,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Lecture Notes](tex/lecture_2.pdf) 
 * [Lecture Video](https://www.youtube.com/watch?v=29wcG5wlRDw)
 * Software Example: [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) 
+
 ### Lecture 2 Suggested Software
 
 * Python:
@@ -188,7 +189,7 @@ Python:
 ### Lecture 5 Class Materials
 
 * [Lecture Notes](tex/lecture_5.pdf)
-* [Lecture Video]()
+* [Lecture Video](https://youtu.be/5jIghE4aEiY)
 * Software Example: [Debugging a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_5.ipynb) 
 
 ### Lecture 5 Suggested Software
