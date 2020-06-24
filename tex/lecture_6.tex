@@ -14,15 +14,16 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    urlcolor=[rgb]{1,0,1},
-    linkcolor=[rgb]{1,0,1}}
-
+    urlcolor=[rgb]{0,0,0.61},
+    linkcolor=[rgb]{0,0,0.61}}
+\definecolor{magenta}{RGB}{255, 0, 255}
+     
 \usepackage[natbib=true,style=authoryear,backend=bibtex,useprefix=true]{biblatex}
 
 %\setbeamercolor*{bibliography entry title}{fg=black}
 %\setbeamercolor*{bibliography entry location}{fg=black}
 %\setbeamercolor*{bibliography entry note}{fg=black}
-\definecolor{OwlGreen}{RGB}{75,0,130} % easier to see
+\definecolor{OwlGreen}{RGB}{51,0,102} % easier to see
 \setbeamertemplate{bibliography item}{}
 \setbeamerfont{caption}{size=\footnotesize}
 \setbeamertemplate{frametitle continuation}{}
@@ -37,10 +38,13 @@
     \raisebox{5pt}{\makebox{\hfill\makebox[20pt]{\color{gray}
           \scriptsize\insertframenumber}}}\hspace*{5pt}}
 
+          
 \author{Patrick Hall}
-\title{Lecture 6: Responsible Machine Learning Best Practices\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
+\title{Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
+\subtitle{Lecture 6: ML Best Practices}
 \institute{The George Washington University}
 \date{\today}
+
 
 \begin{document}
 	
@@ -54,33 +58,37 @@
 		
 	\end{frame}
 
+	
+	
+	\begin{frame}
+		
+		\frametitle{Preface}			
+			
+		This mid-level technical document provides a basic blueprint for combining innovations in AutoML, regulation-compliant predictive modeling, and machine learning research in the sub-disciplines of fairness, interpretable models, post-hoc explanations, privacy and security to create a low-risk machine learning framework.\\
+			
+		\vspace{10pt}			
+			
+		This document presents potential technical solutions to the \textbf{intersectional} harms posed by opaqueness, inaccuracy, social bias, or security vulnerabilities in machine learning.
+			
+		\vspace{10pt}
+			
+		Racism, sexism, cyber-crime and other issues discussed in this document have not been solved, and likely cannot be solved, by technology alone.  
+			
+	\end{frame}					
+		
 %-------------------------------------------------------------------------------
 	\section{Blueprint}
-%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------		
+	\subsection{}
 	
-		\begin{frame}
-		
-			\frametitle{Preface}			
-			
-			This mid-level technical document provides a basic blueprint for combining innovations in AutoML, regulation-compliant predictive modeling, and machine learning research in the sub-disciplines of fairness, interpretable models, post-hoc explanations, privacy and security to create a low-risk machine learning framework.\\
-			
-			\vspace{10pt}			
-			
-			This document presents potential technical solutions to the \textbf{intersectional} harms posed by opaqueness, inaccuracy, social bias, or security vulnerabilities in machine learning.
-			
-			\vspace{10pt}
-			
-			Racism, sexism, cyber-crime and other issues discussed in this document have not been solved, and likely cannot be solved, by technology alone.  
-			
-		\end{frame}					
-		
 		\begin{frame}				
-		
-			\frametitle{Blueprint\footnote{\tiny{This blueprint does not address ETL workflows.}}}
+			%A Responsible Machine Learning Workflow
+			\frametitle{Responsible ML Blueprint\footnote{\tiny{This blueprint does not address ETL workflows.}}}
 							
 			\begin{figure}[htb]
 				\begin{center}
-					\includegraphics[height=150pt]{../img/blueprint.png}
+					%\includegraphics[height=150pt]{../img/blueprint.png}
+					\includegraphics[height=150pt]{../img/rml_diagram_no_hilite.png}
 					\label{fig:blueprint}
 				\end{center}
 			\end{figure}		
@@ -90,6 +98,7 @@
 %-------------------------------------------------------------------------------
 	\section{EDA}
 %-------------------------------------------------------------------------------
+		\subsection{EDA}
 	
 		\begin{frame}
 		
@@ -154,7 +163,8 @@
 %-------------------------------------------------------------------------------
 	\section{Benchmark}
 %-------------------------------------------------------------------------------
-	
+	\subsection{Benchmark Diagram}		
+		
 		\begin{frame}
 		
 			\frametitle{Establish Benchmarks}		
@@ -237,8 +247,8 @@
 	
 					\column{0.5\linewidth}
 					\centering
-					\includegraphics[height=120pt]{../img/im.png}
-				
+					%\includegraphics[height=120pt]{../img/im.png}
+				    \includegraphics[height=120pt]{../img/rml_diagram_lec1_hilite.png}
 					\column{0.5\linewidth}
 					\vspace{-5pt}
 					\small
@@ -425,7 +435,7 @@
 			
 				\begin{figure}[htb]
 					\begin{center}
-						\includegraphics[height=160pt]{../img/cheatsheet.png}
+						\includegraphics[height=160pt]{../img/cheatsheet_blue.png}
 					\end{center}
 				\end{figure}	
 			\end{frame}
@@ -459,6 +469,8 @@
 		
 %-------------------------------------------------------------------------------
 	\section{Risk}
+	
+		\subsection{}
 %-------------------------------------------------------------------------------
 
 		\begin{frame}
@@ -478,6 +490,8 @@
 
 %-------------------------------------------------------------------------------
 	\section{Review}
+	
+		\subsection{}
 %-------------------------------------------------------------------------------
 
 		\begin{frame}
@@ -503,6 +517,8 @@
 
 %-------------------------------------------------------------------------------
 	\section{Deployment}
+	
+		\subsection{}
 %-------------------------------------------------------------------------------
 
 		\begin{frame}
@@ -529,9 +545,12 @@
 
 %-------------------------------------------------------------------------------
 	\section{Appeal}
+	
+		\subsection{}
 %-------------------------------------------------------------------------------
 
 		\begin{frame}	
+		
 			\frametitle{Human Appeal}		
 			
 			\begin{figure}[htb]
@@ -547,6 +566,8 @@
 		
 %-------------------------------------------------------------------------------
 	\section{Decommission}
+	
+		\subsection{}
 %-------------------------------------------------------------------------------
 
 		\begin{frame}	
@@ -565,12 +586,14 @@
 
 
 %-------------------------------------------------------------------------------
-	\section{Causality?}
+	\section{Causality}
+	
+		\subsection{}
 %-------------------------------------------------------------------------------
 
 		\begin{frame}
 		
-			\frametitle{Causality?}	
+			\frametitle{Causality}	
 			
 			\begin{columns}
 	
@@ -591,6 +614,8 @@
 
 %-------------------------------------------------------------------------------
 	\section{Iterate}
+		
+		\subsection{}
 %-------------------------------------------------------------------------------
 
 		\begin{frame}	
