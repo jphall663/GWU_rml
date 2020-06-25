@@ -41,7 +41,7 @@
           
 \author{Patrick Hall}
 \title{Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
-\subtitle{Lecture 6: ML Best Practices}
+\subtitle{Lecture 6: Responsible Machine Learning Best Practices}
 \institute{The George Washington University}
 \date{\today}
 
@@ -58,75 +58,49 @@
 		
 	\end{frame}
 
-	
-	
-	\begin{frame}
-		
-		\frametitle{Preface}			
-			
-		This mid-level technical document provides a basic blueprint for combining innovations in AutoML, regulation-compliant predictive modeling, and machine learning research in the sub-disciplines of fairness, interpretable models, post-hoc explanations, privacy and security to create a low-risk machine learning framework.\\
-			
-		\vspace{10pt}			
-			
-		This document presents potential technical solutions to the \textbf{intersectional} harms posed by opaqueness, inaccuracy, social bias, or security vulnerabilities in machine learning.
-			
-		\vspace{10pt}
-			
-		Racism, sexism, cyber-crime and other issues discussed in this document have not been solved, and likely cannot be solved, by technology alone.  
-			
-	\end{frame}					
-		
-%-------------------------------------------------------------------------------
-	\section{Blueprint}
-%-------------------------------------------------------------------------------		
-	\subsection{}
-	
-		\begin{frame}				
-			%A Responsible Machine Learning Workflow
-			\frametitle{Responsible ML Blueprint\footnote{\tiny{This blueprint does not address ETL workflows.}}}
-							
-			\begin{figure}[htb]
-				\begin{center}
-					%\includegraphics[height=150pt]{../img/blueprint.png}
-					\includegraphics[height=150pt]{../img/rml_diagram_no_hilite.png}
-					\label{fig:blueprint}
-				\end{center}
-			\end{figure}		
-		
-		\end{frame}
+	%-------------------------------------------------------------------------------
+	\section{Technical Solutions}
+	%-------------------------------------------------------------------------------
 
-%-------------------------------------------------------------------------------
-	\section{EDA}
-%-------------------------------------------------------------------------------
-		\subsection{EDA}
-	
-		\begin{frame}
+		\subsection*{}
 		
-			\frametitle{EDA and Data Visualization}		
+			\begin{frame}				
+				%A Responsible Machine Learning Workflow
+				\frametitle{Responsible ML Blueprint\footnote{\tiny{This blueprint does not address ETL workflows.}}}
+								
+				\begin{figure}[htb]
+					\begin{center}
+						%\includegraphics[height=150pt]{../img/blueprint.png}
+						\includegraphics[height=150pt]{../img/rml_diagram_no_hilite.png}
+						\label{fig:blueprint}
+					\end{center}
+				\end{figure}		
 			
-			\begin{columns}
-	
-				\column{0.5\linewidth}
-				\centering
-				\includegraphics[height=120pt]{../img/eda.png}
+			\end{frame}
+		
+			\begin{frame}
+			
+				\frametitle{EDA and Data Visualization}		
 				
-				\column{0.5\linewidth}
-				\vspace{-5pt}
-				\begin{itemize}
-					\item Know thy data.
-					%\item \textbf{Automation} implemented in Driverless AI as AutoViz.
-					\item OSS: \href{http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/aggregator.html}{H2O-3 Aggregator}
-					\item References: \citefield{wilkinson2018visualizing}{title}; \citefield{wilkinson2006grammar}{title}
-				\end{itemize}
-				
-			\end{columns}
+				\begin{columns}
 		
-		\end{frame}
-		
-%-------------------------------------------------------------------------------
-		\subsection{My Favorites}
-%-------------------------------------------------------------------------------		
-		
+					\column{0.5\linewidth}
+					\centering
+					\includegraphics[height=120pt]{../img/eda.png}
+					
+					\column{0.5\linewidth}
+					\vspace{-5pt}
+					\begin{itemize}
+						\item Know thy data.
+						%\item \textbf{Automation} implemented in Driverless AI as AutoViz.
+						\item OSS: \href{http://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/aggregator.html}{H2O-3 Aggregator}
+						\item References: \citefield{wilkinson2018visualizing}{title}; \citefield{wilkinson2006grammar}{title}
+					\end{itemize}
+					
+				\end{columns}
+			
+			\end{frame}
+					
 			\begin{frame}
 
 				\frametitle{Interlude: My Favorite Visualizations}		
@@ -159,36 +133,22 @@
 				\footnotesize{Both of these images capture high-dimensional datasets in just two dimensions.}
 		
 			\end{frame}
-
-%-------------------------------------------------------------------------------
-	\section{Benchmark}
-%-------------------------------------------------------------------------------
-	\subsection{Benchmark Diagram}		
-		
-		\begin{frame}
-		
-			\frametitle{Establish Benchmarks}		
-
-			\begin{figure}[htb]
-				\begin{center}
-					\includegraphics[height=135pt]{../img/bench.png}
-				\end{center}
-			\end{figure}	
-
-			\vspace{-10pt}
-			\scriptsize{Establishing reproducible benchmarks from which to gauge improvements in accuracy, fairness, interpretability or privacy is crucial for good (``data'') science and for compliance. }
-		
-		\end{frame}
-
-
-%-------------------------------------------------------------------------------
-	\section{Training}
-%-------------------------------------------------------------------------------
-
-%-------------------------------------------------------------------------------
-		\subsection{Feature Engineering}
-%-------------------------------------------------------------------------------
-
+	
+			\begin{frame}
+			
+				\frametitle{Establish Benchmarks}		
+	
+				\begin{figure}[htb]
+					\begin{center}
+						\includegraphics[height=135pt]{../img/bench.png}
+					\end{center}
+				\end{figure}	
+	
+				\vspace{-10pt}
+				\scriptsize{Establishing reproducible benchmarks from which to gauge improvements in accuracy, fairness, interpretability or privacy is crucial for good (``data'') science and for compliance. }
+			
+			\end{frame}
+	
 			\begin{frame}
 		
 				\frametitle{Manual, Private, Sparse or Straightforward Feature Engineering }		
@@ -209,11 +169,7 @@
 				\end{columns}		
 		
 			\end{frame}
-	
-%-------------------------------------------------------------------------------
-		\subsection{Preprocessing}
-%-------------------------------------------------------------------------------	
-	
+		
 			\begin{frame}
 		
 				\frametitle{Preprocessing for Fairness, Privacy or Security}		
@@ -234,11 +190,7 @@
 				\end{columns}			
 			
 			\end{frame}
-			
-%-------------------------------------------------------------------------------
-		\subsection{Interpretable Models}
-%-------------------------------------------------------------------------------			
-			
+				
 			\begin{frame}
 		
 				\frametitle{Constrained, Fair, Interpretable, Private or Simple Models}		
@@ -248,7 +200,7 @@
 					\column{0.5\linewidth}
 					\centering
 					%\includegraphics[height=120pt]{../img/im.png}
-				    \includegraphics[height=120pt]{../img/rml_diagram_lec1_hilite.png}
+	    			\includegraphics[height=120pt]{../img/rml_diagram_lec1_hilite.png}
 					\column{0.5\linewidth}
 					\vspace{-5pt}
 					\small
@@ -261,15 +213,7 @@
 				\end{columns}			
 			
 			\end{frame}
-
-%-------------------------------------------------------------------------------
-	\section{Post-Hoc Analysis}
-%-------------------------------------------------------------------------------
-
-%-------------------------------------------------------------------------------
-		\subsection{Calibration}
-%-------------------------------------------------------------------------------			
-
+	
 			\begin{frame}
 		
 				\frametitle{Prediction Calibration}		
@@ -290,11 +234,7 @@
 				\end{columns}			
 
 			\end{frame}
-
-%-------------------------------------------------------------------------------
-		\subsection{Model Assessment}
-%-------------------------------------------------------------------------------			
-
+	
 			\begin{frame}
 		
 				\frametitle{Traditional Model Assessment and Diagnostics}		
@@ -309,11 +249,7 @@
 			\scriptsize{Residual analysis, Q-Q plots, AUC and lift curves etc. confirm model is accurate and meets assumption criteria.}
 		
 			\end{frame}
-
-%-------------------------------------------------------------------------------
-		\subsection{Post-hoc Explanations}
-%-------------------------------------------------------------------------------			
-			
+					
 			\begin{frame}
 		
 				\frametitle{Post-hoc Explanations}		
@@ -337,7 +273,7 @@
 				\end{columns}
 		
 			\end{frame}
-
+	
 			\begin{frame}
 		
 				\frametitle{Interlude: The Time--Tested Shapley Value}		
@@ -355,56 +291,7 @@
 				\end{enumerate}
 			
 			\end{frame}
-			
-			
-			\begin{frame}
-		
-				\frametitle{Interlude: Explaining Why Not to Trust}		
-			
-
-				\begin{columns}
 	
-					\column{0.5\linewidth}
-					\centering
-					\includegraphics[height=140pt]{../img/resid.png}
-					
-					\tiny{These residuals show a problematic pattern in predictions related to the most important feature, \texttt{PAY\_0}.}
-				
-					\column{0.5\linewidth}
-					
-					\centering
-					\includegraphics[height=132pt]{../img/global_shap.png}
-					
-					\tiny{This model over-emphasizes the most important feature, \texttt{PAY\_0}.}
-				
-				\end{columns}
-			
-				\vspace{10pt}
-			
-				\centering
-				\footnotesize{While this model is \textit{explainable}, it's probably not \textit{trustworthy}.}
-			
-			\end{frame}
-			
-			\begin{frame}[t]
-
-  				\frametitle{Interlude: Trust and Understanding}
-          
-  				\begin{figure}[htb]
-    					\begin{center}
-      						\includegraphics[height=150pt]{../img/trust_understanding.png}
-    					\end{center}
-  				\end{figure}
-  
-  				\vspace{-5pt}
-  				\scriptsize{Trust and understanding in machine learning are different but complementary goals, and they are technically feasible \textit{today}}.
-    
-		\end{frame}
-
-%-------------------------------------------------------------------------------
-		\subsection{Model Debugging}
-%-------------------------------------------------------------------------------	
-
 			\begin{frame}
 		
 				\frametitle{Model Debugging for Accuracy, Privacy or Security}		
@@ -440,202 +327,204 @@
 				\end{figure}	
 			\end{frame}
 			
-
-%-------------------------------------------------------------------------------
-		\subsection{Post-hoc Disparate Impact Remediation}
-%-------------------------------------------------------------------------------					
-		
-		\begin{frame}		
-		
-			\frametitle{Post-hoc Disparate Impact Assessment and Remediation}		
+			\begin{frame}		
 			
-			\begin{columns}
-	
-				\column{0.5\linewidth}
-				\centering
-				\includegraphics[height=120pt]{../img/fair.png}
+				\frametitle{Post-hoc Disparate Impact Assessment and Remediation}		
 				
-				\column{0.5\linewidth}
-				\vspace{-5pt}
-				\begin{itemize}
-					\item Social bias testing should include group fairness tests and should attempt to consider individual fairness. 
-					\item OSS: \href{https://github.com/dssg/aequitas}{aequitas}, IBM \href{https://github.com/IBM/AIF360}{AIF360}, \href{https://github.com/LASER-UMASS/Themis}{themis}
-					\item References: \citefield{dwork2012fairness}{title}; \citefield{kamiran2012decision}{title}; \citefield{hardt2016equality}{title}; \citefield{feldman2015certifying}{title} 
-				\end{itemize}
-				
-			\end{columns}
+				\begin{columns}
 		
-		\end{frame}
-		
-%-------------------------------------------------------------------------------
-	\section{Risk}
-	
-		\subsection{}
-%-------------------------------------------------------------------------------
-
-		\begin{frame}
-		
-			\frametitle{Quantify and Plan for Risk}	
+					\column{0.5\linewidth}
+					\centering
+					\includegraphics[height=120pt]{../img/fair.png}
+					
+					\column{0.5\linewidth}
+					\vspace{-5pt}
+					\begin{itemize}
+						\item Social bias testing should include group fairness tests and should attempt to consider individual fairness. 
+						\item OSS: \href{https://github.com/dssg/aequitas}{aequitas}, IBM \href{https://github.com/IBM/AIF360}{AIF360}, \href{https://github.com/LASER-UMASS/Themis}{themis}
+						\item References: \citefield{dwork2012fairness}{title}; \citefield{kamiran2012decision}{title}; \citefield{hardt2016equality}{title}; \citefield{feldman2015certifying}{title} 
+					\end{itemize}
+					
+				\end{columns}
 			
-			\begin{figure}[htb]
-				\begin{center}
-					\includegraphics[height=135pt]{../img/risk.png}
+			\end{frame}
+	
+			\begin{frame}
+			
+				\frametitle{Quantify and Plan for Risk}	
+				
+				\begin{figure}[htb]
+					\begin{center}
+						\includegraphics[height=135pt]{../img/risk.png}
+						\end{center}
+					\end{figure}	
+	
+				\vspace{-10pt}
+				\scriptsize{Your model will be wrong. Stake-holders need to understand and be prepared for the human and financial costs of these wrong decisions.}	
+					
+			\end{frame}
+	
+			\begin{frame}
+			
+				\frametitle{Human Review and Documentation}		
+				
+				\begin{columns}
+		
+					\column{0.5\linewidth}
+					\centering
+					\includegraphics[height=120pt]{../img/hr.png}
+					
+					\column{0.5\linewidth}
+					\vspace{-5pt}
+					\begin{itemize}
+						\item Reference: \citefield{model_cards}{title}
+						\item Documentation of considered alternative approaches typically necessary for compliance.
+					\end{itemize}
+					
+				\end{columns}
+			
+			\end{frame}
+	
+			\begin{frame}
+	
+				\frametitle{Deployment, Management and Monitoring}		
+				
+				\begin{columns}
+		
+					\column{0.5\linewidth}
+					\centering
+					\includegraphics[height=120pt]{../img/deploy.png}
+					
+					\column{0.5\linewidth}
+					\vspace{-5pt}
+					\begin{itemize}
+						\item Monitor models for accuracy, disparate impact, privacy violations or security vulnerabilities in real-time; track model and data lineage.
+						\item OSS: \href{https://github.com/mlflow/mlflow}{mlflow}, \href{https://github.com/mitdbg/modeldb}{modeldb}, \href{https://github.com/EthicalML/awesome-machine-learning-operations}{awesome-machine-learning-ops metalist}
+						\item Reference: \citefield{vartak2016m}{title}
+					\end{itemize}
+					
+				\end{columns}
+			
+			\end{frame}
+
+			\begin{frame}
+	
+				\frametitle{Kill Switches}	
+				
+				\begin{figure}[htb]
+					\begin{center}
+						\includegraphics[height=135pt]{../img/kill.png}
 					\end{center}
 				\end{figure}	
-
-			\vspace{-10pt}
-			\scriptsize{Your model will be wrong. Stake-holders need to understand and be prepared for the human and financial costs of these wrong decisions.}	
 				
-		\end{frame}
-
-%-------------------------------------------------------------------------------
-	\section{Review}
+				\vspace{-10pt}
+				\scriptsize{Being able to quickly turn off a misbehaving ML system is crucially important. This requires technical and organizational considerations. E.g., how much revenue is lost each minute a model is disabled?}	
+				
+				
+			\end{frame}
 	
-		\subsection{}
-%-------------------------------------------------------------------------------
-
-		\begin{frame}
-		
-			\frametitle{Human Review and Documentation}		
+			\begin{frame}	
 			
-			\begin{columns}
+				\frametitle{Human Appeal}		
+				
+				\begin{figure}[htb]
+					\begin{center}
+						\includegraphics[height=135pt]{../img/ha.png}
+					\end{center}
+				\end{figure}	
 	
-				\column{0.5\linewidth}
+				%\vspace{-10pt}
+				\footnotesize{\textit{Very} important, may require custom implementation for each deployment environment? Related problems exist \href{https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html}{\textit{today}}}.
+	
+			\end{frame}
+	
+			\begin{frame}	
+				\frametitle{Decommission Model}		
+				
+				\begin{figure}[htb]
+					\begin{center}
+						\includegraphics[height=135pt]{../img/zde.png}
+					\end{center}
+				\end{figure}	
+	
+				%\vspace{-10pt}
+				\footnotesize{When a model becomes absolutely or relatively inaccurate, unfair, or insecure it must be taken out of service, but saved in an executable and reproducible manner.}
+	
+			\end{frame}
+	
+			\begin{frame}
+			
+				\frametitle{Causality?}	
+				
+				\begin{columns}
+		
+					\column{0.5\linewidth}
+					\centering
+					\includegraphics[height=120pt]{../img/cause.png}
+					
+					\column{0.5\linewidth}
+					\begin{itemize}
+						\item Root cause analysis: can root causes be identified, verified? Formalized into model architecture? 
+						\item OSS: \href{https://github.com/microsoft/dowhy}{dowhy}, \href{https://docs.pymc.io/}{pymc3}
+						\item References: \citefield{pearl2018book}{title}; \citefield{salvatier2016probabilistic}{title}
+					\end{itemize}
+					
+				\end{columns}
+				
+			\end{frame}
+	
+			\begin{frame}	
+	
+				\frametitle{Iterate: Use Gained Knowledge to Improve Accuracy, Fairness, Interpretability, Privacy or Security}		
+				
+				\begin{figure}[htb]
+					\begin{center}
+						\includegraphics[height=135pt]{../img/iter.png}
+						\label{fig:blueprint}
+					\end{center}
+				\end{figure}	
+	
 				\centering
-				\includegraphics[height=120pt]{../img/hr.png}
-				
-				\column{0.5\linewidth}
-				\vspace{-5pt}
-				\begin{itemize}
-					\item Reference: \citefield{model_cards}{title}
-					\item Documentation of considered alternative approaches typically necessary for compliance.
-				\end{itemize}
-				
-			\end{columns}
-		
-		\end{frame}
-
-%-------------------------------------------------------------------------------
-	\section{Deployment}
-	
-		\subsection{}
-%-------------------------------------------------------------------------------
-
-		\begin{frame}
-
-			\frametitle{Deployment, Management and Monitoring}		
+				Improvements, KPIs should not be restricted to accuracy alone.
 			
-			\begin{columns}
+			\end{frame}
+
+	%-------------------------------------------------------------------------------
+	\section{Process Solutions}
+	%-------------------------------------------------------------------------------
+
+		\begin{frame}[t, allowframebreaks]
 	
-				\column{0.5\linewidth}
-				\centering
-				\includegraphics[height=120pt]{../img/deploy.png}
+			\frametitle{Process Solutions}
+			
+			\begin{itemize}
 				
-				\column{0.5\linewidth}
-				\vspace{-5pt}
-				\begin{itemize}
-					\item Monitor models for accuracy, disparate impact, privacy violations or security vulnerabilities in real-time; track model and data lineage.
-					\item OSS: \href{https://github.com/mlflow/mlflow}{mlflow}, \href{https://github.com/mitdbg/modeldb}{modeldb}, \href{https://github.com/EthicalML/awesome-machine-learning-operations}{awesome-machine-learning-ops metalist}
-					\item Reference: \citefield{vartak2016m}{title}
-				\end{itemize}
+				\item \textbf{Bug Bounties}: Offer rewards to the broader community to find all kinds of problems (discrimination, opacity, vulnerabilities, privacy harms, etc.) in your organization's public-facing ML systems. 
 				
-			\end{columns}
-		
-		\end{frame}
-
-%-------------------------------------------------------------------------------
-	\section{Appeal}
-	
-		\subsection{}
-%-------------------------------------------------------------------------------
-
-		\begin{frame}	
-		
-			\frametitle{Human Appeal}		
-			
-			\begin{figure}[htb]
-				\begin{center}
-					\includegraphics[height=135pt]{../img/ha.png}
-				\end{center}
-			\end{figure}	
-
-			%\vspace{-10pt}
-			\footnotesize{\textit{Very} important, may require custom implementation for each deployment environment? Related problems exist \href{https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html}{\textit{today}}}.
-
-		\end{frame}
-		
-%-------------------------------------------------------------------------------
-	\section{Decommission}
-	
-		\subsection{}
-%-------------------------------------------------------------------------------
-
-		\begin{frame}	
-			\frametitle{Decommission Model}		
-			
-			\begin{figure}[htb]
-				\begin{center}
-					\includegraphics[height=135pt]{../img/zde.png}
-				\end{center}
-			\end{figure}	
-
-			%\vspace{-10pt}
-			\footnotesize{When a model becomes absolutely or relatively inaccurate, unfair, or insecure it must be taken out of service, but saved in an executable and reproducible manner.}
-
-		\end{frame}
-
-
-%-------------------------------------------------------------------------------
-	\section{Causality}
-	
-		\subsection{}
-%-------------------------------------------------------------------------------
-
-		\begin{frame}
-		
-			\frametitle{Causality}	
-			
-			\begin{columns}
-	
-				\column{0.5\linewidth}
-				\centering
-				\includegraphics[height=120pt]{../img/cause.png}
+				\item \textbf{Data and AI Principles}: Devise central tenants for how your organization will handle ethical, political, and legal issues related to data and ML.
 				
-				\column{0.5\linewidth}
-				\begin{itemize}
-					\item Root cause analysis: can root causes be identified, verified? Formalized into model architecture? 
-					\item OSS: \href{https://github.com/microsoft/dowhy}{dowhy}, \href{https://docs.pymc.io/}{pymc3}
-					\item References: \citefield{pearl2018book}{title}; \citefield{salvatier2016probabilistic}{title}
-				\end{itemize}
+				\item \textbf{Diversity of Experience}: Ensure data and ML teams are staffed with individuals that can share different demographic, technical, and professional perspectives. 
 				
-			\end{columns}
+				\item \textbf{Domain Expertise}: Success in ML almost always requires input from humans with deep understanding of the problem domain.  
+				
+				\item \textbf{Effective Challenge and Human Review}: Nearly all aspects of ML workflows should involve challenges and questioning from group members. This can be in the form of human interrogation of ML-related processes or in the form of challenger models. 
+				
+				\item \textbf{Incident Response Plans}: Complex ML systems \textit{will} fail. Being prepared for failures or attacks can be the difference between a major incident and a minor disruption.
+				
+				\item \textbf{Legal Privilege}: Consider use of privilege to minimize risk when dealing with ML-related legal and compliance issues. 
+				
+				\item \textbf{Model Risk Management}: The established practice of model risk management can be expanded outside of financial services.
+				
+				\item \textbf{Red-teaming}: Establish a group or hire third-parties to act as adversaries and find problems (discrimination, opacity, vulnerabilities, privacy harms, etc.) in your organization's public-facing ML systems.
+				
+			\end{itemize}
 			
-		\end{frame}
-
-%-------------------------------------------------------------------------------
-	\section{Iterate}
-		
-		\subsection{}
-%-------------------------------------------------------------------------------
-
-		\begin{frame}	
-
-			\frametitle{Iterate: Use Gained Knowledge to Improve Accuracy, Fairness, Interpretability, Privacy or Security}		
 			
-			\begin{figure}[htb]
-				\begin{center}
-					\includegraphics[height=135pt]{../img/iter.png}
-					\label{fig:blueprint}
-				\end{center}
-			\end{figure}	
+		\end{frame}	
 
-			\centering
-			Improvements, KPIs should not be restricted to accuracy alone.
-		
-		\end{frame}
 
 %-------------------------------------------------------------------------------
-%	\section{Questions}
+%	\subsection{Questions}
 %------------------------------------------------------------------------------
 
 %		\begin{frame}
@@ -657,17 +546,7 @@
 	\begin{frame}[t, allowframebreaks]
 	
 		\frametitle{References}	
-		
-			\textbf{These slides:}\\
-			\small{\url{https://github.com/jphall663/hc_ml}}
-			
-			\vspace{10pt}
-			
-			\textbf{"Awesome" Machine Learning Interpretability Resource List:}\\
-			\small{\url{https://github.com/jphall663/awesome-machine-learning-interpretability}}
-		
-		\framebreak		
-		
+				
 		\printbibliography
 		
 	\end{frame}
