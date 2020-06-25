@@ -1,7 +1,3 @@
-![A responsible machine learning workingflow](/img/rml_diagram_no_hilite.png)
-
-<sub><sup>A Responsible Machine Learning Workflow Diagram. **Source:** [*Information*, 11(3) (March 2020)](https://www.mdpi.com/2078-2489/11/3).</sup></sub>
-
 ## GWU_DNSC 6290: Course Outline
 
 Materials for a technical, nuts-and-bolts course about increasing transparency, fairness, security and privacy in machine learning.
@@ -221,9 +217,29 @@ Python:
     * [Welfare surveillance system violates human rights, Dutch court rules](https://www.theguardian.com/technology/2020/feb/05/welfare-surveillance-system-violates-human-rights-dutch-court-rules)
   * [*Intelligible Models for HealthCare: Predicting Pneumonia Risk and Hospital 30-day Readmission*](http://people.dbmi.columbia.edu/noemie/papers/15kdd.pdf)
   ![Excerpt from *Intelligible Models for HealthCare: Predicting Pneumonia Risk and Hospital 30-day Readmission*](img/asthama_pneumonia.png)
-    
-    
-    
+
+***   
+
+## Lecture 6: Responsible Machine Learning Best Practices 
+ 
+![A responsible machine learning workingflow](/img/rml_diagram_no_hilite.png)
+
+<sub><sup>A Responsible Machine Learning Workflow Diagram. **Source:** [*Information*, 11(3) (March 2020)](https://www.mdpi.com/2078-2489/11/3).</sup></sub>
+
+### Lecture 6 Class Materials
+
+* [Lecture Notes](tex/lecture_6.pdf)
+* [Lecture Video]()  
+
+### Lecture 6 Suggested Software
+
+* [Awesome Machine Learning Interpretability](https://github.com/jphall663/awesome-machine-learning-interpretability)
+
+### Lecture 6 Suggested Reading
+
+* [Eight Principles of Responsible Machine Learning](https://ethical.institute/principles.html)
+* [Principles for Accountable Algorithms and a Social Impact Statement for Algorithms](https://www.fatml.org/resources/principles-for-accountable-algorithms)
+* [Responsible AI Practices](https://ai.google/responsibilities/responsible-ai-practices/)
     
 ***   
 
