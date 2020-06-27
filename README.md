@@ -229,7 +229,7 @@ Python:
 ### Lecture 6 Class Materials
 
 * [Lecture Notes](tex/lecture_6.pdf)
-* [Lecture Video]()  
+* [Lecture Video](https://youtu.be/M71lQomKb-s)  
 
 ### Lecture 6 Suggested Software
 
