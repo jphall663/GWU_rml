@@ -237,10 +237,20 @@ Python:
 
 ### Lecture 6 Suggested Reading
 
-* [Eight Principles of Responsible Machine Learning](https://ethical.institute/principles.html)
-* [Principles for Accountable Algorithms and a Social Impact Statement for Algorithms](https://www.fatml.org/resources/principles-for-accountable-algorithms)
-* [Responsible AI Practices](https://ai.google/responsibilities/responsible-ai-practices/)
+* **Introduction and Background**:
+
+  * [Eight Principles of Responsible Machine Learning](https://ethical.institute/principles.html)
+  * [Principles for Accountable Algorithms and a Social Impact Statement for Algorithms](https://www.fatml.org/resources/principles-for-accountable-algorithms)
+  * [Responsible AI Practices](https://ai.google/responsibilities/responsible-ai-practices/)
     
+* **Links from Lecture 6**:
+
+  * [Example Model Card](https://modelcards.withgoogle.com/object-detection)
+  * Autoencoder Visualizations:
+    * [*Reducing the Dimensionality of Data with Neural Networks*](https://www.cs.toronto.edu/~hinton/science.pdf)
+    * [DNSC 6279 Autoencoder Example](https://github.com/jphall663/GWU_data_mining/blob/master/05_neural_networks/src/py_part_5_MNIST_autoencoder.ipynb)
+
+
 ***   
 
 ## Using Class Software Resources
