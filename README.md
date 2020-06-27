@@ -249,6 +249,7 @@ Python:
   * Autoencoder Visualizations:
     * [*Reducing the Dimensionality of Data with Neural Networks*](https://www.cs.toronto.edu/~hinton/science.pdf)
     * [DNSC 6279 Autoencoder Example](https://nbviewer.jupyter.org/github/jphall663/GWU_data_mining/blob/master/05_neural_networks/src/py_part_5_MNIST_autoencoder.ipynb)
+  * [Network Graph Example](https://github.com/jphall663/corr_graph)
 
 
 ***   
