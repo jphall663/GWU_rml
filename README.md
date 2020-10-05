@@ -135,7 +135,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 ***   
 
-## Lecture 4: 
+## Lecture 4: Machine Learning Security
 
 ![A cheatsheet for ML attacks](img/cheatsheet_blue.png)
 <sub><sup>**Source:** [Secure Machine Learning Ideas](https://github.com/jphall663/secure_ML_ideas)</sup></sub>
