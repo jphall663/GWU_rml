@@ -22,7 +22,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 * [Syllabus](rml_syllabus_summer_2020.pdf)
 * [Lecture Notes](tex/lecture_1.pdf)
-* [Lecture Video](https://www.youtube.com/watch?v=AJS1_2DIbjo)
+* Lecture Video - please email instructor: jphall@gwu.edu.
 * Software Example: [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)
 
 ### Lecture 1 Suggested Software
@@ -61,7 +61,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 2 Class Materials
 
 * [Lecture Notes](tex/lecture_2.pdf) 
-* [Lecture Video](https://www.youtube.com/watch?v=29wcG5wlRDw)
+* Lecture Video - please email instructor: jphall@gwu.edu.
 * Software Example: [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) 
 
 ### Lecture 2 Suggested Software
@@ -105,7 +105,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 3 Class Materials
 
 * [Lecture Notes](tex/lecture_3.pdf) 
-* [Lecture Video](https://youtu.be/9kn1_E88wDA)
+* Lecture Video - please email instructor: jphall@gwu.edu.
 * Software Example: [Testing a Constrained Model for Discrimination and Remediating Discovered Discrimination](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_3.ipynb) 
 
 ### Lecture 3 Suggested Software
@@ -135,7 +135,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 ***   
 
-## Lecture 4: 
+## Lecture 4: Machine Learning Security
 
 ![A cheatsheet for ML attacks](img/cheatsheet_blue.png)
 <sub><sup>**Source:** [Secure Machine Learning Ideas](https://github.com/jphall663/secure_ML_ideas)</sup></sub>
@@ -143,7 +143,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 ### Lecture 4 Class Materials
 
 * [Lecture Notes](tex/lecture_4.pdf)
-* [Lecture Video](https://youtu.be/sdZ1udX6d6c)
+* Lecture Video - please email instructor: jphall@gwu.edu.
 * Software Example: [Attacking a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_4.ipynb) 
 
 ### Lecture 4 Suggested Software
@@ -185,7 +185,7 @@ Python:
 ### Lecture 5 Class Materials
 
 * [Lecture Notes](tex/lecture_5.pdf)
-* [Lecture Video](https://youtu.be/5jIghE4aEiY)
+* Lecture Video - please email instructor: jphall@gwu.edu.
 * Software Example: [Debugging a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_5.ipynb) 
 
 ### Lecture 5 Suggested Software
@@ -229,7 +229,7 @@ Python:
 ### Lecture 6 Class Materials
 
 * [Lecture Notes](tex/lecture_6.pdf)
-* [Lecture Video](https://youtu.be/M71lQomKb-s)  
+* Lecture Video - please email instructor: jphall@gwu.edu.
 
 ### Lecture 6 Suggested Software
 
