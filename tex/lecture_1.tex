@@ -96,18 +96,18 @@
 		\begin{itemize}
 			\item{Grading:}
 				\begin{itemize}
-					\item{$\frac{1}{3}$ Participation}
-					\item{$\frac{1}{3}$ Project GitHub or Kaggle kernel}
+					\item{$\frac{1}{3}$ Weekly Assignments}
+					\item{$\frac{1}{3}$ GitHub or Kaggle kernel model card (\cite{model_cards})}
                     \item{$\frac{1}{3}$ Public Kaggle leaderboard score}
 				\end{itemize}
 			\item{Project:}	
 				\begin{itemize}
 					\item{Kaggle competition using techniques from class}
 					\item{Individual or group (no more than 4 members)}
-					\item Select team members ASAP
+					\item Groups randomly assigned by instructor, with consideration of time zone
 				\end{itemize}
-			\item \href{https://github.com/jphall663/GWU_rml/blob/master/rml_syllabus_summer_2020.pdf}{Syllabus}
-			\item{Webex office hours: Thurs. 5-6 pm or by appointment}
+			\item{Syllabus}
+			\item{Webex office hours: ??}
 			\item{Class resources: \url{https://jphall663.github.io/GWU_rml/}}	
 		\end{itemize}		
 			
@@ -191,7 +191,7 @@
 			
 			\small
 			
-			\cite{been_kim1}, define interpretable as, ``the ability to explain or to present in understandable terms to a human.''
+			\cite{been_kim1}, define interpretable as, ``the ability to explain or to present in understandable terms to a human.'' Later \cite{broniatowski2021psychological} used Fuzzy-Trace theory to link \textit{interpretability} to high-level contextualization based on purpose, values, and preferences, versus low-level technical \textit{explanations}. 
 			
 			\vspace{10pt}
 			
@@ -217,14 +217,9 @@
 			We will frequently refer to the following terms and definitions today: \\			
 			
 			\begin{itemize}
-				\item{Notation}
-				\item{Pearson correlation}
-					\begin{itemize}
-						\item{Measurement of the linear relationship between two input $X_j$ features; takes on values between -1 and +1, including 0.}
-					\end{itemize}
-				\item{Shapley value}
-				\item{Partial dependence and individual conditional expectation (ICE)}
-				\item{Gradient boosting machine (GBM)}
+				\item{\textbf{Pearson correlation}: Measurement of the linear relationship between two input $X_j$ features; takes on values between -1 and +1, including 0.}
+				\item{\textbf{Shapley value}: a quantity, based in Game Theory, that accurately decomposes the outcomes of complex systems, like ML models, into individual components.}
+				\item{\textbf{Partial dependence and individual conditional expectation (ICE)}: Visualizations of the behavior of $X_j$ under some model $g$.}
 			\end{itemize}			
 		
 		\end{frame}
@@ -265,63 +260,63 @@
 			\end{itemize}
 			
 		\end{frame}
-
-		\begin{frame}
-		
-			\frametitle{Background: Shapley Value}	
-			
-			Shapley explanations, including TreeSHAP and even certain implementations of LIME, are a class of additive, locally accurate feature contribution measures with long-standing theoretical support (\cite{shapley}). 
-
-			\vspace{8pt}
-			
-			For some observation $\mathbf{x} \in \mathcal{X}$, Shapley explanations take the form:
-			
-			\begin{equation}
-				\label{eq:shap_contrib}
-				\begin{aligned}
-					\phi_{j} = \underbrace{\sum_{S \subseteq \mathcal{P} \setminus \{j\}}\frac{|S|!(\mathcal{P} -|S| -1)!}{\mathcal{P}!}}_\text{weighted average over all subsets in \textbf{X}}\underbrace{[(S \cup \{j\}) - g_x(S)]}_{g\text{ "without" }x_j}
-				\end{aligned}
-			\end{equation}
-			
-			\begin{equation}
-				\label{eq:shap_additive}
-				\begin{aligned}
-					g(\mathbf{x}) = \phi_0 + \sum_{j=0}^{j=\mathcal{P} - 1} \phi_j \mathbf{z}_j
-				\end{aligned}
-			\end{equation}
-			
-		\end{frame}
-		
-		\begin{frame}
-		
-			\frametitle{Background: Partial Dependence and ICE}			
-
-			\begin{itemize}
-
-			\item Following \citet{esl} a single input feature, $X_j \in \mathbf{X}$, and its complement set, $\mathbf{X}_{\mathcal{P} \setminus \{j\}} \in \mathbf{X}$, where $X_j \cup \mathbf{X}_{\mathcal{P} \setminus \{j\}} = \mathbf{X}$ is considered. $\text{PD}(X_j, g)$ for a given feature $X_j$ is estimated as the average output of the learned function $g(\mathbf{X})$ when all the components of $X_j$ are set to a constant $x \in \mathcal{X}$ and $\mathbf{X}_{(-j)}$ is left unchanged.
-
-			\item $\text{ICE}(x_j, \mathbf{x}, g)$ for a given instance $\mathbf{x}$ and feature $x_j$ is estimated as the output of $g(\mathbf{x})$ when $x_j$ is set to a constant $x \in \mathcal{X}$ and all other features $\mathbf{x} \in \mathbf{X}_{(-j)}$ are left untouched. Partial dependence and ICE curves are usually plotted over some set of constants $x \in \mathcal{X}$ (\cite{ice_plots}). 
-
-			\end{itemize} 			
-					
-		\end{frame}		
-		
+	
 		\begin{frame}
 		
 			\frametitle{Background: Gradient Boosting Machine}			
-				  			
+			
 			\begin{equation}
 			\begin{aligned}\label{eq:gbm}
 			g^{\text{GBM}}(\mathbf{x}) &= \sum_{b=0}^{B-1} T_b\left(\mathbf{x}; \Theta\right)
 			\end{aligned}
 			\end{equation}
-			
+		
 			\vspace{20pt}
-			
+		
 			A GBM is a sequential combination of decision trees, $T_b$, where $T_0$ is trained to predict $\mathbf{y}$, but all subsequent $T$ are trained to reduce the errors of $T_{b-1}$.
-			
+		
 		\end{frame}	
-					
+
+		%\begin{frame}
+		%
+		%	\frametitle{Background: Shapley Value}	
+		%	
+		%	Shapley explanations, including TreeSHAP and even certain implementations of LIME, are a class of additive, locally accurate feature contribution measures with long-standing theoretical support (\cite{shapley}). 
+		%
+		%	\vspace{8pt}
+		%	
+		%	For some observation $\mathbf{x} \in \mathcal{X}$, Shapley explanations take the form:
+		%	
+		%	\begin{equation}
+		%		\label{eq:shap_contrib}
+		%		\begin{aligned}
+		%			\phi_{j} = \underbrace{\sum_{S \subseteq \mathcal{P} \setminus \{j\}}\frac{|S|!(\mathcal{P} -|S| -1)!}{\mathcal{P}!}}_\text{weighted average over all subsets in \textbf{X}}\underbrace{[(S \cup \{j\}) - g_x(S)]}_{g\text{ "without" }x_j}
+		%		\end{aligned}
+		%	\end{equation}
+		%	
+		%	\begin{equation}
+		%		\label{eq:shap_additive}
+		%		\begin{aligned}
+		%			g(\mathbf{x}) = \phi_0 + \sum_{j=0}^{j=\mathcal{P} - 1} \phi_j \mathbf{z}_j
+		%		\end{aligned}
+		%	\end{equation}
+			
+		%\end{frame}
+		
+		%\begin{frame}
+		%
+		%	\frametitle{Background: Partial Dependence and ICE}			
+		%
+		%	\begin{itemize}
+		%
+		%	\item Following \citet{esl} a single input feature, $X_j \in \mathbf{X}$, and its complement set, $\mathbf{X}_{\mathcal{P} \setminus \{j\}} \in \mathbf{X}$, where $X_j \cup \mathbf{X}_{\mathcal{P} \setminus \{j\}} = \mathbf{X}$ is considered. $\text{PD}(X_j, g)$ for a given feature $X_j$ is estimated as the average output of the learned function $g(\mathbf{X})$ when all the components of $X_j$ are set to a constant $x \in \mathcal{X}$ and $\mathbf{X}_{(-j)}$ is left unchanged.
+		%
+		%	\item $\text{ICE}(x_j, \mathbf{x}, g)$ for a given instance $\mathbf{x}$ and feature $x_j$ is estimated as the output of $g(\mathbf{x})$ when $x_j$ is set to a constant $x \in \mathcal{X}$ and all other features $\mathbf{x} \in \mathbf{X}_{(-j)}$ are left untouched. Partial dependence and ICE curves are usually plotted over some set of constants $x \in \mathcal{X}$ (\cite{ice_plots}). 
+		%
+		%	\end{itemize} 			
+		%			
+		%\end{frame}		
+							
 %-------------------------------------------------------------------------------
 	\section{Penalized GLM}
 %-------------------------------------------------------------------------------
@@ -380,7 +375,49 @@
 			\end{figure}
 								
 		\end{frame}				
+
+%-------------------------------------------------------------------------------
+	\section{GAMs and EBMs}
+%-------------------------------------------------------------------------------
+
+	\subsection*{}
+
+	\begin{frame}
 		
+		\frametitle{Generalized Additive Models and Explainable Boosting Machines}
+		
+		\small
+		
+		Generalized additive models (GAMs, \cite{esl}) extend GLMs by allowing an arbitrary function for each $X_j$: 	
+		
+		\begin{equation}
+			\begin{aligned}\label{eq:gam}
+			g^{\text{GAM}}(\mathbf{x}) &= \beta_0 + \beta_1 g_0(x_0) + \beta_2 g_1(x_1) + \dots + \beta_P g_{p-1}(x_{P-1})
+			\end{aligned}
+		\end{equation}	
+		
+		GAMs use spline approaches to fit each $g_j$.\\
+		\vspace{10pt}
+		Later \cite{ga2m} introduced an efficient technique for finding interaction terms ($\beta_{jk} g_{(j-1)(k-1)}(x_j \cdot x_k)$) to include in GAMs. This highly accurate technique was given the acronym GA2M.\\
+		\vspace{10pt}
+		Recently Microsoft Research introduced the Explainable Boosting Machine (EBM) in the \href{https://github.com/interpretml/interpret/}{interpret} package, in which GBMs are used to fit each $g_j$ and $g_{jk}$. Higher order interactions are allowed, but used infrequently in practice. \\
+		\vspace{10pt}
+		Because each input feature, or combination thereof, is treated separately and in an additive fashion, interpretability is very high. 
+		
+	\end{frame}
+
+	\begin{frame}
+	
+		\frametitle{Generalized Additive Models and Explainable Boosting Machines}
+		
+		\begin{figure}[htb]
+			\begin{center}
+				\includegraphics[height=190pt]{../img/ebm.png}
+				\label{fig:ebm}
+			\end{center}
+		\end{figure}
+	
+	\end{frame}
 %-------------------------------------------------------------------------------
 	\section{Monotonic GBM}
 %-------------------------------------------------------------------------------
@@ -433,7 +470,7 @@
 
 
 %-------------------------------------------------------------------------------
-	\section{A Burgeoning Ecosystem}
+	\section{An Ecosystem}
 %--------------------------------------------------------------------------
 			
 		\subsection*{}
@@ -443,8 +480,6 @@
 			\frametitle{A Burgeoning Ecosystem of Interpretable Machine Learning Models}		
 			
 			\begin{itemize}
-				\item \href{https://www.r-bloggers.com/generalized-additive-models}{Generalized additive model} (GAM) (\cite{esl})
-				\item \href{http://www.cs.cornell.edu/~yinlou/projects/gam/}{GA2M} / \href{https://github.com/interpretml/interpret/}{Explainable boosting machine} (EBM) (\cite{ga2m})
 				\item \href{https://www.mdpi.com/2078-2489/11/3/137}{Explainable Neural Network} (XNN) (\cite{wf_xnn})
 				\item Rudin group: 
 				\begin{itemize}
@@ -454,12 +489,44 @@
 					\item Supersparse linear integer models (\cite{slim})
 					\item and more ... 
 				\end{itemize}
+				\item \href{https://github.com/scikit-learn-contrib/skope-rules}{rpart}
 				\item \href{https://christophm.github.io/interpretable-ml-book/rulefit.html}{RuleFit} (\cite{rulefit})
+				\item \href{https://github.com/scikit-learn-contrib/skope-rules}{skope rules}
 			\end{itemize}
 		
 		\end{frame}
+
+
+%--------------------------------------------------------------------------
+	\section{Model Selection}
+%--------------------------------------------------------------------------
+
+	\subsection*{}
+	
+	\begin{frame}
+	
+		\frametitle{Model Selection}		
+	
+	\begin{columns}
 		
-%-------------------------------------------------------------------------------
+		\column{0.5\linewidth}
+		\begin{itemize}
+			\item Generally speaking, standard ML evaluation -- including Kaggle leaderboards, are poor ways to assess ML model performance.
+			\item However, \cite{caruana2004kdd} puts forward a robust model evaluation and selection technique based on cross-validation and ranking. 
+		\end{itemize}
+	
+		\column{0.6\linewidth}
+		\centering
+		\includegraphics[height=130pt]{../img/cv_ranking.png}\vspace{5pt}
+		\scriptsize{Three models are ranked across different metrics and folds. The model with the highest rank, on average, across metrics and folds is the best model, \texttt{gbm11} in this case.}
+		
+
+		
+	\end{columns}
+	
+\end{frame}	
+
+%--------------------------------------------------------------------------
 \section{Acknowledgments}
 %--------------------------------------------------------------------------
 
@@ -469,7 +536,7 @@
 	
 	\frametitle{Acknowledgments}		
 	
-	Thanks to Lisa Song for her continued assistance in developing these course materials.\\
+	Thanks to Lisa Song for her assistance in developing these course materials.\\
 	\vspace{10pt}
 	Some materials \copyright\hspace{1pt}Patrick Hall and the H2O.ai team 2017-2020. 
 	

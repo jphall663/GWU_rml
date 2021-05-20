@@ -1,5 +1,6 @@
 env
 env_rml
+env_ebm
 .idea
 .ipynb_checkpoints
 __pycache__
