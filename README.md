@@ -20,10 +20,12 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ### Lecture 1 Class Materials
 
-* [Syllabus](rml_syllabus_summer_2020.pdf)
+* [Syllabus](https://github.com/jphall663/GWU_rml/blob/master/Syllabus%20-%20PH%20-%20Responsible%20Machine%20Learning%20-%20MSBA%20-%20v3.pdf)
 * [Lecture Notes](tex/lecture_1.pdf)
 * Lecture Video - please email instructor: jphall@gwu.edu.
-* Software Example: [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)
+* Software Example:
+  * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)
+  * [Simple Explainable Boosting Machine Example](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1_ebm_example.ipynb)
 
 ### Lecture 1 Suggested Software
 
@@ -46,10 +48,6 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [*This Looks Like That: Deep Learning for Interpretable Image Recognition*](https://arxiv.org/pdf/1806.10574.pdf)
 
 * **Links from Lecture 1**:
-  * [Tay (bot)](https://en.wikipedia.org/wiki/Tay_(bot))
-  * [New York Regulator Probes UnitedHealth Algorithm for Racial Bias](https://www.wsj.com/articles/new-york-regulator-probes-unitedhealth-algorithm-for-racial-bias-11572087601)
-  * [When a Computer Program Keeps You in Jail](https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html)
-  * [When an Algorithm Helps Send You to Prison](https://www.nytimes.com/2017/10/26/opinion/algorithm-compas-sentencing-bias.html)
 
 ***
 
