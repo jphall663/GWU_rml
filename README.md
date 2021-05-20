@@ -85,13 +85,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [*Towards Better Understanding of Gradient-based Attribution Methods for Deep Neural Networks*](https://arxiv.org/pdf/1711.06104.pdf)
 
 * **Links from Lecture 2**:
-  * [On the Art and Science of Explainable Machine Learning](https://arxiv.org/pdf/1810.02909.pdf)
-  * [Access Denied: Faulty Automated Background Checks Freeze Out Renters](https://themarkup.org/locked-out/2020/05/28/access-denied-faulty-automated-background-checks-freeze-out-renters)
-  * [ML Attack Cheatsheet](https://github.com/jphall663/secure_ML_ideas/blob/master/img/cheatsheet.png)
-  * [Debugging Machine Learning Via Model Assertions](https://cs.stanford.edu/~matei/papers/2019/debugml_model_assertions.pdf)
-  * [Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
-  * [Gender Shades](http://gendershades.org/)
-  * [Explainable Neural Networks based on Additive Index Models](https://arxiv.org/pdf/1806.01933.pdf)
+
 
 ***
 
@@ -170,8 +164,6 @@ Python:
   * [*Hacking Smart Machines with Smarter Ones: How to Extract Meaningful Data from Machine Learning Classifiers*](https://arxiv.org/pdf/1306.4447.pdf)
 
 * **Links from Lecture 4**:
-  * [*A Plea for Simplicity*](https://www.schneier.com/essays/archives/1999/11/a_plea_for_simplicit.html)
-  * [*Privacy Risks of Explaining Machine Learning Models*](https://arxiv.org/pdf/1907.00164.pdf)
 
 ***   
 
@@ -204,18 +196,6 @@ Python:
 
 * **Links from Lecture 5**:
 
-  * [Testing and Debugging in Machine Learning (Google)](https://developers.google.com/machine-learning/testing-debugging)
-  * AI Incidents (not already linked above):
-    * [Self-Driving Uber Car Kills Pedestrian in Arizona, Where Robots Roam](https://www.nytimes.com/2018/03/19/technology/uber-driverless-fatality.html)
-    * [The Woz tweets on Apple and Goldman Sachs](https://twitter.com/stevewoz/status/1193424787248279552)
-    * [Suckers List: How Allstate’s Secret Auto Insurance Algorithm Squeezes Big Spenders](https://themarkup.org/allstates-algorithm/2020/02/25/car-insurance-suckers-list)
-    * [A.C.L.U. Accuses Clearview AI of Privacy ‘Nightmare Scenario’](https://www.nytimes.com/2020/05/28/technology/clearview-ai-privacy-lawsuit.html)
-    * [Government’s Use of Algorithm Serves Up False Fraud Charges](https://undark.org/2020/06/01/michigan-unemployment-fraud-algorithm/)
-    * [Microsoft's robot editor confuses mixed-race Little Mix singers](https://www.theguardian.com/technology/2020/jun/09/microsofts-robot-journalist-confused-by-mixed-race-little-mix-singers)
-    * [Welfare surveillance system violates human rights, Dutch court rules](https://www.theguardian.com/technology/2020/feb/05/welfare-surveillance-system-violates-human-rights-dutch-court-rules)
-  * [*Intelligible Models for HealthCare: Predicting Pneumonia Risk and Hospital 30-day Readmission*](http://people.dbmi.columbia.edu/noemie/papers/15kdd.pdf)
-  ![Excerpt from *Intelligible Models for HealthCare: Predicting Pneumonia Risk and Hospital 30-day Readmission*](img/asthama_pneumonia.png)
-
 ***   
 
 ## Lecture 6: Responsible Machine Learning Best Practices 
@@ -242,12 +222,6 @@ Python:
   * [Responsible AI Practices](https://ai.google/responsibilities/responsible-ai-practices/)
     
 * **Links from Lecture 6**:
-
-  * [Example Model Card](https://modelcards.withgoogle.com/object-detection)
-  * [Network Graph Example](https://github.com/jphall663/corr_graph)
-  * Autoencoder Visualizations:
-    * [*Reducing the Dimensionality of Data with Neural Networks*](https://www.cs.toronto.edu/~hinton/science.pdf)
-    * [DNSC 6279 Autoencoder Example](https://nbviewer.jupyter.org/github/jphall663/GWU_data_mining/blob/master/05_neural_networks/src/py_part_5_MNIST_autoencoder.ipynb)
 
 
 ***   
