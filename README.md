@@ -23,10 +23,11 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Syllabus](https://github.com/jphall663/GWU_rml/blob/master/Syllabus%20-%20PH%20-%20Responsible%20Machine%20Learning%20-%20MSBA%20-%20v3.pdf)
 * [Lecture Notes](tex/lecture_1.pdf)
 * Lecture Video - please email instructor: jphall@gwu.edu.
-* Software Example:
+* [Assignment 1](https://github.com/jphall663/GWU_rml/blob/master/assignments/tex/assignment_1.pdf) 
+* Software Examples:
   * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)
   * [Simple Explainable Boosting Machine Example](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1_ebm_example.ipynb)
- * [Assignment 1](https://github.com/jphall663/GWU_rml/blob/master/assignments/tex/assignment_1.pdf)
+
 
 ### Lecture 1 Suggested Software
 
