@@ -26,6 +26,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * Software Example:
   * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)
   * [Simple Explainable Boosting Machine Example](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1_ebm_example.ipynb)
+ * [Assignment 1](https://github.com/jphall663/GWU_rml/blob/master/assignments/tex/assignment_1.pdf)
 
 ### Lecture 1 Suggested Software
 
