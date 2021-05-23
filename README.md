@@ -22,7 +22,6 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 * [Syllabus](https://github.com/jphall663/GWU_rml/blob/master/Syllabus%20-%20PH%20-%20Responsible%20Machine%20Learning%20-%20MSBA%20-%20v3.pdf)
 * [Lecture Notes](tex/lecture_1.pdf)
-* Lecture Video - please email instructor: jphall@gwu.edu.
 * [Assignment 1](https://github.com/jphall663/GWU_rml/blob/master/assignments/tex/assignment_1.pdf) 
 * Software Examples:
   * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb)
@@ -63,7 +62,6 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 2 Class Materials
 
 * [Lecture Notes](tex/lecture_2.pdf) 
-* Lecture Video - please email instructor: jphall@gwu.edu.
 * Software Example: [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) 
 
 ### Lecture 2 Suggested Software
@@ -101,7 +99,6 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 3 Class Materials
 
 * [Lecture Notes](tex/lecture_3.pdf) 
-* Lecture Video - please email instructor: jphall@gwu.edu.
 * Software Example: [Testing a Constrained Model for Discrimination and Remediating Discovered Discrimination](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_3.ipynb) 
 
 ### Lecture 3 Suggested Software
@@ -139,7 +136,6 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 ### Lecture 4 Class Materials
 
 * [Lecture Notes](tex/lecture_4.pdf)
-* Lecture Video - please email instructor: jphall@gwu.edu.
 * Software Example: [Attacking a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_4.ipynb) 
 
 ### Lecture 4 Suggested Software
@@ -179,7 +175,6 @@ Python:
 ### Lecture 5 Class Materials
 
 * [Lecture Notes](tex/lecture_5.pdf)
-* Lecture Video - please email instructor: jphall@gwu.edu.
 * Software Example: [Debugging a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_5.ipynb) 
 
 ### Lecture 5 Suggested Software
@@ -211,7 +206,6 @@ Python:
 ### Lecture 6 Class Materials
 
 * [Lecture Notes](tex/lecture_6.pdf)
-* Lecture Video - please email instructor: jphall@gwu.edu.
 
 ### Lecture 6 Suggested Software
 
