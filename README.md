@@ -20,7 +20,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ### Lecture 1 Class Materials
 
-* [Syllabus](https://github.com/jphall663/GWU_rml/blob/master/Syllabus%20-%20PH%20-%20Responsible%20Machine%20Learning%20-%20MSBA%20-%20v3.pdf)
+* [Syllabus](https://raw.githubusercontent.com/jphall663/GWU_rml/master/Syllabus_PH_Responsible_Machine_Learning_MSBA_v4.pdf)
 * [Lecture Notes](tex/lecture_1.pdf)
 * [Assignment 1](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_1.pdf) 
 * Software Examples:
