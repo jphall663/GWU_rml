@@ -128,7 +128,7 @@
 		
 		\frametitle{What is an Explanation in Machine Learning (ML)?}
 		
-		\epigraph{“A collection of visual and/or interactive artifacts that provide a user with sufficient description of the model behavior to accurately perform tasks like evaluation, trusting, predicting, or improving the model.”}{--- \textup{Sameer Singh}, UCI}		
+		\epigraph{“An explanation of a model result is a description of how a model’s outcome came to be.”}{--- \textup{David Broniatowski}, GWU\\\href{https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=931426}{Psychological {F}oundations of {E}xplainability and {I}nterpretability in {A}rtificial {I}ntelligence} \cite{broniatowski2021psychological}}		
 		
 		\scriptsize Variously defined along with aliases or similar concepts:
 		\begin{itemize}\scriptsize
@@ -456,7 +456,7 @@
 						\vspace{10pt}
 						\column{0.6\linewidth}
 						\centering
-						\includegraphics[height=130pt]{../img/resid.png}\\
+						\includegraphics[height=130pt]{../img/lecture_5.png}\\
 						\vspace{5pt}
 						\tiny{$g_{\text{mono}}$ also struggles to predict default for favorable statuses, $-2  \leq \texttt{PAY\_0}  < 2$, and often cannot predict on-time payment when recent payments are late, $\text{PAY\_0} \geq 2$}.
 				
@@ -501,7 +501,7 @@
 \footnotesize{Many ML hacks use, or are exacerbated by, explainable ML techniques.}\footnote{\tiny{See \url{https://github.com/jphall663/secure_ML_ideas} for full size image and more information.}}
 				\begin{figure}
 					\begin{center}
-						\includegraphics[height=160pt]{../img/cheatsheet_blue.png}
+						\includegraphics[height=160pt]{../img/Attack_Cheat_Sheet.png}
 					\end{center}
 				\end{figure}	
 				\normalsize
@@ -697,30 +697,47 @@
 			
 	\end{frame}
 	
-	\begin{frame}[t]
+	\begin{frame}
 	
 		\frametitle{\large{\textbf{Case 4.3}: Explanation and Fairness Techniques are \textbf{Not Mutually Exclusive}}}
 		
-		\begin{table}
-			\centering
-			\scriptsize
-			\begin{tabular}{ | p{1.2cm} | p{1.1cm} | p{1.3cm} | p{1.2cm}| p{1.2cm} | p{1.2cm} | p{1.2cm} | p{1.2cm} | }
-				\hline
-				& Adverse\newline Impact\newline Disparity & Accuracy Disparity & TPR\newline Disparity & TNR\newline Disparity & FPR\newline Disparity & FNR\newline Disparity \\ 
-				\hline	
-				\texttt{single} & 0.89 & 1.03 & 0.99 & 1.03 & 0.85 & 1.01 \\
-				\hline	
-				\texttt{divorced} & 1.01 & 0.93 & 0.81 & 0.96 & \textcolor{fuschia}{1.25} & 1.22 \\
-				\hline
-				\texttt{other} & \textcolor{fuschia}{0.26} & 1.12 & \textcolor{fuschia}{0.62} & 1.17 & \textcolor{fuschia}{0} & \textcolor{fuschia}{1.44} \\
-				\hline	
-			\end{tabular}
-		\end{table}
-		\tiny{Basic group disparity metrics across different marital statuses for monotonically constrained GBM model, $g_{\text{mono}}$, trained on the UCI credit card dataset.	 See slide \ref{no_trust} for global Shapley feature importance for $g_{\text{mono}}$ and slide \ref{not_frontline} for an important note about explanation and fairness techniques.}\\
-		\vspace{5pt}\footnotesize
-		Many fairness toolkits are available today: \href{https://github.com/dssg/aequitas}{aequitas}, \href{https://github.com/IBM/AIF360}{AIF360}, \href{https://github.com/LASER-UMASS/Themis}{Themis}, \href{https://github.com/cosmicBboy/themis-ml}{themis-ml}.\\
-		\vspace{5pt}
-		Traditional disparate impact testing tools are best-suited for constrained models because average group metrics cannot reliably identify local instances of discrimination that can occur when using complex, unconstrained models.   
+		
+				\begin{columns}
+			
+					\column{0.5\linewidth}
+					\includegraphics[height=.8\linewidth]{../img/fi_shortfall.png}\\
+					\vspace{5pt}
+					\scriptsize{ML model input features plotted by Shapley importance and shortfall to equality -- a basic fairness metric.}
+		
+		%\begin{table}
+		%	\centering
+		%	\scriptsize
+		%	\begin{tabular}{ | p{1.2cm} | p{1.1cm} | p{1.3cm} | p{1.2cm}| p{1.2cm} | p{1.2cm} | p{1.2cm} | p{1.2cm} | }
+		%		\hline
+		%		& Adverse\newline Impact\newline Disparity & Accuracy Disparity & TPR\newline Disparity & TNR\newline Disparity & FPR\newline Disparity & FNR\newline Disparity \\ 
+		%		\hline	
+		%		\texttt{single} & 0.89 & 1.03 & 0.99 & 1.03 & 0.85 & 1.01 \\
+		%		\hline	
+		%		\texttt{divorced} & 1.01 & 0.93 & 0.81 & 0.96 & \textcolor{fuschia}{1.25} & 1.22 \\
+		%		\hline
+		%		\texttt{other} & \textcolor{fuschia}{0.26} & 1.12 & \textcolor{fuschia}{0.62} & 1.17 & \textcolor{fuschia}{0} & \textcolor{fuschia}{1.44} \\
+		%		\hline	
+		%	\end{tabular}
+		%\end{table}
+		%\tiny{Basic group disparity metrics across different marital statuses for monotonically constrained GBM model, $g_{\text{mono}}$, trained on the UCI credit card dataset.	 See slide \ref{no_trust} for global Shapley feature importance for $g_{\text{mono}}$ and slide \ref{not_frontline} for an important note about explanation and fairness techniques.}\\
+		%\vspace{5pt}\footnotesize
+
+		
+				\column{0.5\linewidth}
+				Many fairness toolkits are available today: \href{https://github.com/dssg/aequitas}{aequitas}, \href{https://github.com/IBM/AIF360}{AIF360}, \href{https://github.com/LASER-UMASS/Themis}{Themis}, \href{https://github.com/cosmicBboy/themis-ml}{themis-ml}.\\
+				\vspace{5pt}
+				These can be mixed with explanation techniques, such as Shapley values, to great benefit. See  \href{https://bit.ly/2R3dXlu}{
+					Explaining quantitative measures of fairness} for an example. 
+				\\
+				\vspace{5pt}
+				Traditional disparate impact testing tools are best-suited for constrained models because average group metrics cannot reliably identify local instances of discrimination that can occur when using complex, unconstrained models.   
+				
+			\end{columns}
 	
 	\end{frame}
 
