@@ -33,63 +33,33 @@
 
 \maketitle
 
-\noindent In Assignment 2, you will work with your group to analyze and explain interpretable machine learning (ML) models following the instructions below. A \href{https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/assignment_2/assign_2_template.ipynb?flush_cache=true}{template} has been provided as an example of how to train and compare a few different interpretable models. For those of you who use Python virtual environments, a basic \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/requirements.txt}{\texttt{requirements.txt}} file is also available for the template.\\
+\noindent In Assignment 2, you will work with your group to analyze and explain interpretable machine learning (ML) models following the instructions below. A \href{https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/assignment_2/assign_2_template.ipynb?flush_cache=true}{template} has been provided as an example of how to explain and compare a few different interpretable models. For those of you who use Python virtual environments, a basic \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/requirements.txt}{\texttt{requirements.txt}} file is also available for the template.\\
+
+\noindent For each section below, you should be trying to think through whether the explanatory results make sense from a domain knowledge perspective, as well as the differences between your models and if those are logical and/or informative.\\
 
 \noindent Please let me know immediately if you find typos or mistakes in this assignment or related materials. 
 
-\section{Download Data.}
+\section{Calculate and Plot Global Feature Importance.}\label{global_fi}
 
-Download Home Mortgage Disclosure Act (HMDA) data as zip files from \href{https://github.com/jphall663/GWU_rml/tree/master/assignments/data}{this folder} in the class repository. The folder includes two data files:
+Use regression coefficients, Shapley values, or other reputable techniques to calculate global feature importance for your models. The template uses coefficients from the elastic net GLM -- extracted in cell 12, Shapley values for the monotonic GBM -- calculated in cell 19--20, and local feature scores for the EBM -- extracted in cells 27--28, to create global feature importance. (Depending on your package version, \texttt{interpret} can calculate these quantities much more directly using the \texttt{predict\_and\_explain()} function.) Plot these values as bar charts, ideally comparing how your models treat input features differently, as in cell 30 of the template.\\
 
-\begin{itemize}
-	\item \texttt{hmda\_train\_preprocessed.zip} -- Zipped CSV HMDA \textit{labeled} training data.
-	\item \texttt{hmda\_test\_preprocessed.zip} -- Zipped CSV HMDA \textit{unlabeled} test data.
-\end{itemize}
+\section{Calculate and Plot Local Feature Importance.}
 
-\noindent Later you will score the unlabeled test data with your models and submit these scores as part of your assignment deliverable. See cell 3 in the template.
+Using approaches similar to those in Section \ref{global_fi}, calculate local feature importance for your models at three percentiles of predicted probability. Cell 10 of the template provides a simple function for calculating percentiles, and percentiles for each models' predictions are found in cells 11, 18, and 26.\\
 
-\section{Load and Explore Data.}
+\noindent Calculate local feature importance for the individuals at the 10\textsuperscript{th}, 50\textsuperscript{th}, and 90\textsuperscript{th} percentiles of predicted probability. Local feature importance for these individuals is calculated in cells 13, 21, and 29 of the template. Once you have local feature importance values, plot them to compare how your models treat similar individuals. Cell 31 of the template shows a comparison of local feature importance values across the three percentiles and three models.
 
-Load the data into modeling software. Training data contains 160338 rows and 23 columns. Test data contains 19831 rows and 22 columns. The features to use for Assignment 1 are as follows:
+\section{Calculate and Plot Feature Behavior.}
 
-\begin{itemize}\small
-\item \texttt{high\_priced}: Binary target, whether (1) or not (0) the annual percentage rate (APR) charged for a mortgage is 150 basis points (1.5\%) or more above a survey-based estimate of similar mortgages. (High-priced mortgages are legal, but somewhat punitive to borrowers. High-priced mortgages often fall on the shoulders of minority home owners, and are one of many issues that perpetuates a massive disparity in overall wealth between different demographic groups in the US.)
-\item \texttt{conforming}: Binary numeric input, whether the mortgage conforms to normal standards (1), or whether the loan is different (0), e.g., jumbo, HELOC, reverse mortgage, etc.
-\item \texttt{debt\_to\_income\_ratio\_std}: Numeric input, standardized debt-to-income ratio for mortgage applicants. 
-\item \texttt{debt\_to\_income\_ratio\_missing}: Binary numeric input, missing marker (1) for \texttt{debt\_to\_income\_ratio\_std}.
-\item \texttt{income\_std}: Numeric input, standardized income for mortgage applicants. 
-\item \texttt{loan\_amount\_std}: Numeric input, standardized amount of the mortgage for applicants. 
-\item \texttt{intro\_rate\_period\_std}: Numeric input, standardized introductory rate period for mortgage applicants.
-\item \texttt{loan\_to\_value\_ratio\_std}: Numeric input, ratio of the mortgage size to the value of the property for mortgage applicants. 
-\item \texttt{no\_intro\_rate\_period\_std}: Binary numeric input, whether or not a mortgage does not include an introductory rate period.
-\item \texttt{property\_value\_std}: Numeric input, value of the mortgaged property. 
-\item \texttt{term\_360}: Binary numeric input, whether the mortgage is a standard 360 month mortgage (1) or a different type of mortgage (0).
-\end{itemize}
-
-\noindent See cell 4 in the template for modeling roles.\\
-
-\noindent This data contains no major quality issues, so no preprocessing is required. Please familiarize yourself with the data using basic exploration techniques -- see cells 5--6 in the template. You may optionally try to improve your model with feature engineering or other preprocessing approaches.\\
-
-\noindent Training data should be used to create training and validation partitions. Test data will only be used to evaluate your models by the instructor. See cell 7 in the template.
-
-\section{Train Interpretable Models}
-
-Train at least two types of interpretable models, ensuring best practices like reproducibility, validation-based early-stopping, and grid search are used. (Scikit-learn does not necessarily make applying such best practices easy.) You are encouraged to try packages like \href{https://docs.h2o.ai/h2o/latest-stable/h2o-docs/downloading.html}{\texttt{h2o}}, \href{https://github.com/interpretml/interpret}{\texttt{interpret}}, and \href{https://xgboost.readthedocs.io/en/latest/install.html}{\texttt{XGBoost}}, but you may use any standard modeling approach, as long as it is interpretable and you will be able to apply explanation, discrimination testing and remediation, and model debugging approaches in coming weeks.\\
-
-\noindent The template contains examples for elastic net logistic regression using \texttt{h2o} (see cells 8--10), monotonic gradient boosting machines (GBM) using \texttt{XGBoost} (see cells 12--14), and explainable boosting machines (EBM) using \texttt{interpret} (see cells 16--18). 
+To enable analysis of feature behavior under each model, the template calculates partial dependence for each main effect feature for each model. (You may optionally plot interaction contour or surface plots for any interaction features, likely discovered by EBM.) You may follow this example or use additional techniques, such as ALE, ICE, or feature scores in EBM. Cell 32 of the template defines a function for partial dependence and cells 33-34 calculate and display the main effect feature behavior across the three models. 
 
 \section{Submit Code Results}
 
-Your deliverable for this assignment has two parts. Each part is worth 5 points. 
+Your deliverable for this assignment is to update your group's GitHub repository to reflect this explanatory analysis. Global and local feature importance plots for all models and features are worth 3 pts. and feature behavior plots for all models and features are worth 4 pts., for a total of 10 pts.\\
 
-\begin{itemize}
-	\item You must check in your code to a public GitHub repository by the deadline below. Code should be available as a commented script, Jupyter notebook, R markdown or other polished and professional format. 
-	\item You must create submission files with output probabilities for each row of the test data. The submission file should have one column named \texttt{phat}. Each model should have a separate submission file named using a \texttt{<group\_indentifier>\_<model\_type>.csv} convention, similar to the \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/ph_best_glm.csv}{example submission file}. See cells 11, 15, and 19 for examples of writing submission files. Your group's submission will be ranked using the cross-validated ranking method discussed during Lecture 1. The remaining five points for the assignment will be issued based on this ranking. You will have opportunities to increase your rank each week of the class. 
-\end{itemize}
+\noindent \textbf{Your deliverables are due Sunday, June 6\textsuperscript{th}, at 11:59:59 PM ET.}\\
 
-\noindent \textbf{Your deliverables are due Sunday, May 30\textsuperscript{th}, at 11:59:59 PM ET.}\\
-
-\noindent Please send an email to \href{mailto:jphall@gwu.edu}{\texttt{jphall@gwu.edu}} by that deadline with the link to your group's GitHub page and with your zipped submission files. 
+\noindent Note that you may also Assignment 1 scores throughout the Summer I Session to improve your ranking, your Assignment 1 grade, and your final project grade.
 
 \end{document}
 
