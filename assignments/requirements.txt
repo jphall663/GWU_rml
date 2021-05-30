@@ -4,5 +4,6 @@ interpret
 numpy
 pandas
 matplotlib
+sklearn
 seaborn
 xgboost 
