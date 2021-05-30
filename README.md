@@ -63,6 +63,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 * [Lecture Notes](tex/lecture_2.pdf) 
 * Software Example: [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) 
+* [Assignment 1](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_2.pdf) 
 
 ### Lecture 2 Suggested Software
 
@@ -85,9 +86,6 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * **Post-hoc Explanation Techniques**:
   * **Interpretable Machine Learning** - [Chapter 5](https://christophm.github.io/interpretable-ml-book/agnostic.html) and [Chapter 6](https://christophm.github.io/interpretable-ml-book/example-based.html)
   * [*Towards Better Understanding of Gradient-based Attribution Methods for Deep Neural Networks*](https://arxiv.org/pdf/1711.06104.pdf)
-
-* **Links from Lecture 2**:
-
 
 ***
 
