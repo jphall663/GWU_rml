@@ -103,7 +103,7 @@
 				\begin{itemize}
 					\item{Shrunken and robust $\beta_j$ coefficients in penalized linear models.}	\end{itemize}
 			\item Other types of bias can be unwanted, unhelpful, discriminatory, or illegal. 
-			\item Many instances of discrimination in ML arise from sociologically biased data collection, labeling, or storage processes.
+			\item Many instances of discrimination in ML arise from sociologically biased experimental design, data collection, labeling, or storage processes.
 			\end{itemize}
 					
 		\end{frame}					
@@ -133,7 +133,7 @@
 				
 				\begin{itemize}
 				
-					\item Overt discrimination against groups, i.e., \textit{disparate treatment}.
+					\item Overt discrimination against groups, i.e., \textit{disparate treatment} (DT).
 					
 					% More careful definition: Disparate treatment occurs when a lender treats a (potential) customer differently based on a prohibited basis, such as the person’s age, gender, or race.
 					
@@ -142,6 +142,8 @@
 					% More careful definition: Disparate impact occurs when a protected class experiences a larger share of less favorable outcomes as a result of an otherwise non-discriminatory and legitimate decision-making process. Disparate impact is not necessarily a violation of law and may be justified by a “business necessity,” such as cost or profitability. However, there may still be a violation if the lenders could have used an alternative policy or practice that had a less discriminatory effect.
 					
 					% All DI is discrimination, I'm not sure that all discrimination is DI.
+					
+					\item Differing quality across demographic groups, i.e., \textit{differential validity}.
 				
 				\end{itemize}
 				
@@ -152,14 +154,19 @@
 		\end{frame}			
 		
 		\begin{frame}				
-		
+			
 			\frametitle{How Does Discrimination Arise in ML?}
+			
+			\noindent Discrimination originates from poor experimental design:\\
+			\begin{itemize}
+				\item Asking biased questions, e.g., “can a face predict trustworthiness?”, “can demographics predict creditworthiness?”
+				\item Modeling biased phenomenon, e.g., healthcare spending vs. healthcare need. 
+			\end{itemize}
 			
 			\noindent Discrimination originates from training data:\\
 			\begin{itemize}
 				\item Incomplete or inaccurate data, e.g., under-representation of minorities. See \href{http://gendershades.org/}{Gender Shades} \cite{gender_shades}.
-				\item Accurate but differing patterns of causation, correlation, or dependency between demographic groups and past outcomes, e.g., traditional FICO credit scores.\footnote{\scriptsize{See: \href{https://www.youtube.com/watch?v=rToFuhI6Nlw}{Responsible Data Science: Identifying and Fixing Biased AI}.}}
-				\item Explicit encoding of historical social biases into training data, e.g., criminal records.\textsuperscript{$\mathparagraph$}
+				\item Accurate but differing patterns of causation, correlation, or dependency between demographic groups and past outcomes, e.g., traditional FICO credit scores.\footnote{\scriptsize{See: \url{https://shiftprocessing.com/credit-score/\#race}}}
 			\end{itemize}
 
 		\end{frame}
@@ -172,6 +179,7 @@
 			\vspace{10pt}
 			\noindent \textbf{Group disparities}, i.e., different or inaccurate treatment of entire demographic groups:\\
 			\begin{itemize}
+				\item Including direct or proxy identifiers for demographic group membership, i.e., \textit{DT}.
 				\item Learning different correlations between demographic groups and favorable model outcomes, i.e., \textit{DI}.
 				\item Exhibiting different accuracies across demographic groups, i.e., \textit{differential validity}.\textsuperscript{$\mathparagraph$}
 			\end{itemize}
@@ -194,7 +202,7 @@
 			
 			Common metrics for DI and \textbf{\textit{group}} disparities:\\
 			\begin{itemize}
-				\item Differential validity: $\frac{\text{accuracy}_p}{\text{accuracy}_r}$
+				\item Differential validity: $\frac{\text{quality}_p}{\text{quality}_r}$
 				\item Adverse impact ratio: $\frac{\text{\% accepted}_p }{ \text{\% accepted}_r}$ 
 				\item Marginal effect: $\text{\% accepted}_p - \text{\% accepted}_r$
 				\item Standardized mean difference: $\frac{\bar{\hat{y}}_p - \bar{\hat{y}}_r}{\sigma_{\hat{y}}}$
@@ -216,6 +224,7 @@
 				\item Local discrimination, i.e., the model treats a small number of similar people differently. 
 				
 				\begin{itemize}
+					\item Constrain problematic interactions.
 					\item Search around probability thresholds.
 					\item Adversarial models.
 				\end{itemize}
