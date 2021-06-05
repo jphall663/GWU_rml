@@ -101,6 +101,14 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Lecture Notes](tex/lecture_3.pdf) 
 * Software Example: [Testing a Constrained Model for Discrimination and Remediating Discovered Discrimination](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_3.ipynb) 
 
+* **Links from Lecture 3**:
+  * [_Model Cards for Model Reporting_](https://arxiv.org/pdf/1810.03993.pdf)
+  * [Example Model Cards](https://modelcards.withgoogle.com/model-reports)
+  * [GPT-2 Model Card](https://github.com/openai/gpt-2/blob/master/model_card.md) (see also: [_AI deemed ‘too dangerous to release’ makes it out into the world_](https://www.independent.co.uk/life-style/gadgets-and-tech/news/ai-artificial-intelligence-dangerous-text-gpt-2-elon-musk-a9192121.html))
+  * [_Millions of black people affected by racial bias in health-care algorithms_](https://www.nature.com/articles/d41586-019-03228-6)
+  * [_Insurer’s Use of AI to Study Claims Provokes Uproar After Tweet_](https://www.bloomberg.com/news/articles/2021-05-26/lemonade-s-use-of-ai-to-study-claims-brings-uproar-after-tweet)
+  * []()
+
 ### Lecture 3 Suggested Software
 
 Python:
