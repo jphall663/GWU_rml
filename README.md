@@ -24,7 +24,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Lecture Notes](tex/lecture_1.pdf)
 * [Assignment 1](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_1.pdf) 
   * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb)
-  * [Full evaluations results](https://github.com/jphall663/GWU_rml/blob/master/assignments/model_eval_2021_06_01_13_29_10.csv)
+  * [Full evaluations results](https://github.com/jphall663/GWU_rml/blob/master/assignments/model_eval_2021_06_06_13_43_40.csv)
 * Software Examples:
   * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb?flush_cache=true)
   * [Simple Explainable Boosting Machine Example](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1_ebm_example.ipynb?flush_cache=true)
@@ -125,6 +125,15 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
   * [*Fairness Beyond Disparate Treatment & Disparate Impact: Learning Classification Without Disparate Mistreatment*](https://arxiv.org/pdf/1610.08452.pdf)
   * [*Learning Fair Representations*](http://proceedings.mlr.press/v28/zemel13.pdf)
   * [*Mitigating Unwanted Biases with Adversarial Learning*](https://dl.acm.org/doi/pdf/10.1145/3278721.3278779)
+
+* **Links from Lecture 3**:
+  * [_Model Cards for Model Reporting_](https://arxiv.org/pdf/1810.03993.pdf)
+  * [Example Model Cards](https://modelcards.withgoogle.com/model-reports)
+  * [GPT-2 Model Card](https://github.com/openai/gpt-2/blob/master/model_card.md) (see also: [_AI deemed ‘too dangerous to release’ makes it out into the world_](https://www.independent.co.uk/life-style/gadgets-and-tech/news/ai-artificial-intelligence-dangerous-text-gpt-2-elon-musk-a9192121.html))
+  * [_Millions of black people affected by racial bias in health-care algorithms_](https://www.nature.com/articles/d41586-019-03228-6)
+  * [_Insurer’s Use of AI to Study Claims Provokes Uproar After Tweet_](https://www.bloomberg.com/news/articles/2021-05-26/lemonade-s-use-of-ai-to-study-claims-brings-uproar-after-tweet)
+  * [Analytics Edge and Data Ethics (DNSC 3288W) Fairness Notes](https://docs.google.com/presentation/d/1KOzva9WvZxlWV_5Ocltot9S5tVu5iVvA_pIdQ0DcRKM/edit) (You may need to request access.)
+  * [Dealing with Bias and Fairness in AI/ML/Data Science Systems](https://docs.google.com/presentation/d/17o_NzplYua5fcJFuGcy1V1-5GFAHk7oHAF4dN44NkUE/edit)
 
 ***   
 
