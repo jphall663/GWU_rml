@@ -140,8 +140,8 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 ## Lecture 4: Machine Learning Security
 
-![A cheatsheet for ML attacks](img/Attack_Cheat_sheet.png)
-<sub><sup>**Source:** [Secure Machine Learning Ideas](https://github.com/jphall663/secure_ML_ideas)</sup></sub>
+![A cheatsheet for ML attacks](img/Attack_Cheat_Sheet.png)
+<sub><sup>**Source:** [Responsible Machine Learning](https://resources.oreilly.com/examples/0636920415947/blob/master/Attack_Cheat_Sheet.png)</sup></sub>
 
 ### Lecture 4 Class Materials
 
