@@ -140,7 +140,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 ## Lecture 4: Machine Learning Security
 
-![A cheatsheet for ML attacks](img/cheatsheet_blue.png)
+![A cheatsheet for ML attacks](img/Attack_Cheat_sheet.png)
 <sub><sup>**Source:** [Secure Machine Learning Ideas](https://github.com/jphall663/secure_ML_ideas)</sup></sub>
 
 ### Lecture 4 Class Materials
@@ -174,6 +174,9 @@ Python:
   * [*Hacking Smart Machines with Smarter Ones: How to Extract Meaningful Data from Machine Learning Classifiers*](https://arxiv.org/pdf/1306.4447.pdf)
 
 * **Links from Lecture 4**:
+  * [BIML Interactive Risk Tool](https://berryvilleiml.com/interactive/)
+  * [Mitre Adversarial Threat Matrix](https://github.com/mitre/advmlthreatmatrix)
+  * [Robust ML](https://www.robust-ml.org/)    
 
 ***   
 
