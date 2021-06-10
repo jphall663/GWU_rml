@@ -41,7 +41,7 @@
           
           
 \author{Patrick Hall}
-\title{Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
+\title{Responsible Machine Learning}
 \subtitle{Lecture 4: Machine Learning Security}
 \institute{The George Washington University}
 \date{\today}
@@ -118,6 +118,7 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 					\column{0.5\linewidth}
 					Additional considerations:
 					\begin{itemize}
+						\item Attacks on explanations/fairwashing
 						\item Deep fakes
 						\item Transfer learning Trojans	
 						\item Training data breaches				
@@ -129,6 +130,64 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 		
 					
 		\end{frame}	
+	
+%-------------------------------------------------------------------------------
+	\section{The Basics}
+%-------------------------------------------------------------------------------	
+	
+	\subsection*{}
+	\begin{frame}
+		
+		\frametitle{The Adversarial Mindset}
+			
+		\LARGE{\textbf{Your ML is not perfect. It can break. It might be broken now. It might be losing money or hurting people. If you somehow made a perfect ML, bad actors can still ruin it!}}
+			
+	\end{frame}	
+	
+	\subsection*{}
+	\begin{frame}
+		
+		\frametitle{The CIA Triad}
+		
+		Security goals and failures are usually defined in terms of the confidentiality, integrity, and availability (CIA) triad.
+		
+		\begin{itemize}
+			\item \textbf{Confidentiality}: System data and information must only be accessed by authorized users.
+			\item \textbf{Integrity}: System data and information must remain accurate and up-to-date.
+			\item \textbf{Availability}: System data and information must be available how and when authorized users need it.
+		\end{itemize}
+
+	\end{frame}	
+
+	\subsection*{}
+	\begin{frame}
+		
+		\frametitle{Security Basics}
+		
+		\begin{itemize}
+			\item \textbf{Access Control}: The less people that access sensitive resources the better.
+			\item \textbf{Bug Bounties}: When organizations offer monetary rewards to the public for finding vulnerabilities.
+			\item \textbf{Incident Response Plan}: Have incident response plans in place for mission-critical IT infrastructure to quickly address any failures or attacks.
+			\item \textbf{Routine Backups}: Backup important files on a frequent and routine basis to protect against both accidental and malicious data loss.	
+			\item \textbf{Least Privilege}: Ensuring all personnel -- even “rockstar” data scientists and ML engineers -- receive the absolute minimum IT system permissions.
+		\end{itemize}
+
+	\end{frame}
+
+	\subsection*{}
+	\begin{frame}
+	
+	\frametitle{Security Basics}
+	
+	\begin{itemize}			
+			\item \textbf{Passwords and Authentication}: Use strong passwords, multi-factor authentication, and other authentication methods to ensure access controls and permissions are preserved. Use a password manager!!
+			\item \textbf{Physical Media}: Avoid the use of physical storage media for sensitive projects if at all possible. 
+			\item \textbf{Red-teaming}: Systems should be tested by experts under adversarial conditions.
+			\item \textbf{Third Parties}: Building an AI system typically requires code, data, and personnel from outside your organization. Sadly, each new entrant to the build out increases your risk. 
+			\item \textbf{Version and Environment Control} To ensure basic security, you'll need to know which changes were made to what files, when and by whom.
+		\end{itemize}
+		
+	\end{frame}
 %-------------------------------------------------------------------------------
 	\section{Attacks}
 %-------------------------------------------------------------------------------
@@ -158,9 +217,11 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 			
 				\begin{figure}[htb]
 					\begin{center}
-						\includegraphics[height=150pt]{../img/poison.png}
+						\includegraphics[height=150pt]{../img/poisoning.png}
 					\end{center}
-				\end{figure}	
+				\end{figure}
+			
+			\centering{\tiny{\textbf{Source}: \url{https://resources.oreilly.com/examples/0636920415947/blob/master/Attack_Cheat_Sheet.png}}}
 		
 			\end{frame}
 		
@@ -173,6 +234,7 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 					\item \textbf{Fair or private models}: E.g., learning fair representations (LFR), private aggregation of teacher ensembles (PATE) \cite{pate}, \cite{lfr}.
 					\item \textbf{Reject on negative impact (RONI) analysis}: See: \textit{\citefield{security_of_ml}{title}} \cite{security_of_ml}. 		
 					\item \textbf{Residual analysis}: especially those that indicate unexpected beneficial predictions.
+					\item \textbf{Robust ML}: ML designed to handle outliers and attacks.
 					\item \textbf{Self-reflection}: Score your models on your employees, consultants, and contractors and look for anomalously beneficial predictions.
 				\end{itemize}	
 			\end{frame}
@@ -198,9 +260,11 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 			
 				\begin{figure}[htb]
 					\begin{center}
-						\includegraphics[height=150pt]{../img/watermark.PNG}
+						\includegraphics[height=150pt]{../img/backdoor.png}
 					\end{center}
 				\end{figure}	
+			
+				\centering{\tiny{\textbf{Source}: \url{https://resources.oreilly.com/examples/0636920415947/blob/master/Attack_Cheat_Sheet.png}}}
 
 			\end{frame}
 		
@@ -241,9 +305,11 @@ Due to lax security or a distributed attack on your model API or other model end
 			
 				\begin{figure}[htb]
 					\begin{center}
-						\includegraphics[height=150pt]{../img/inversion.PNG}
+						\includegraphics[height=150pt]{../img/inversion.png}
 					\end{center}
 				\end{figure}	
+
+				\centering{\tiny{\textbf{Source}: \url{https://resources.oreilly.com/examples/0636920415947/blob/master/Attack_Cheat_Sheet.png}}}
 
 			\end{frame}
 		
@@ -285,9 +351,11 @@ Simply knowing if a person was in, or not in, a training dataset can be a violat
 			
 				\begin{figure}[htb]
 					\begin{center}
-						\includegraphics[height=150pt]{../img/membership.PNG}
+						\includegraphics[height=150pt]{../img/membership_inference.png}
 					\end{center}
 				\end{figure}	
+
+				\centering{\tiny{\textbf{Source}: \url{https://resources.oreilly.com/examples/0636920415947/blob/master/Attack_Cheat_Sheet.png}}}
 
 			\end{frame}
 			
@@ -327,16 +395,18 @@ Adversarial example attacks can also be enhanced, tested, and hardened using mod
 			
 				\begin{figure}[htb]
 					\begin{center}
-						\includegraphics[height=150pt]{../img/adversary.PNG}
+						\includegraphics[height=150pt]{../img/adversarial.png}
 					\end{center}
 				\end{figure}	
-
+			
+				\centering{\tiny{\textbf{Source}: \url{https://resources.oreilly.com/examples/0636920415947/blob/master/Attack_Cheat_Sheet.png}}}
+			
 			\end{frame}	
 			
 			\begin{frame}
 		
 				\frametitle{Adversarial Example Attacks: \textbf{Defenses}}		
-				\small
+				\footnotesize
 				\begin{itemize}
 					\item \textbf{Anomaly detection}: See Slide \ref{slide:watermark_defense}. 
 					\item \textbf{Authentication}: See Slide \ref{slide:inversion_defense}. 
@@ -344,6 +414,7 @@ Adversarial example attacks can also be enhanced, tested, and hardened using mod
 					\item \textbf{Fair or private models}: See Slide \ref{slide:data_poisoning_defense}.
 					\item \textbf{Throttling}: See Slide \ref{slide:inversion_defense}. 
 					\item \textbf{Model monitoring}: Watch your model in real-time for strange prediction behavior.
+					\item \textbf{Robust ML}: See slide \ref{slide:data_poisoning_defense}.
 					\item \textbf{White-hat sensitivity analysis}: Try to trick your own model by seeing its outcome on many different combinations of input data values.
 					\item \textbf{White-hat surrogate models}: See Slide \ref{slide:inversion_defense}. 
 				\end{itemize}
@@ -372,10 +443,12 @@ Bad actors learn ...
 			
 				\begin{figure}[htb]
 					\begin{center}
-						\includegraphics[height=150pt]{../img/imperson.PNG}
+						\includegraphics[height=150pt]{../img/impersonation.png}
 					\end{center}
 				\end{figure}	
-				
+			
+				\centering{\tiny{\textbf{Source}: \url{https://resources.oreilly.com/examples/0636920415947/blob/master/Attack_Cheat_Sheet.png}}}
+			
 			\end{frame}
 			
 			\begin{frame}
@@ -386,6 +459,7 @@ Bad actors learn ...
 					\Large
 					\item \textbf{Authentication}: See Slide \ref{slide:inversion_defense}. 
 					\item \textbf{Disparate impact analysis}: See Slide \ref{slide:data_poisoning_defense}.
+					\item \textbf{Data integrity constraints}: See Slide \ref{slide:watermark_defense}.
 					\item \textbf{Model monitoring}: Watch for duplicate (or more) predictions in real-time. Watch for duplicate (or more) similar input rows in real-time.
 				\end{itemize}
 				
@@ -394,6 +468,7 @@ Bad actors learn ...
 %-------------------------------------------------------------------------------
 	\section{General Concerns \& Solutions}
 %-------------------------------------------------------------------------------
+
 		\subsection{Concerns}
 			\begin{frame}[t, allowframebreaks]	
 		
@@ -404,7 +479,7 @@ Bad actors learn ...
 					\item \textbf{Black-hat eXplainable AI (XAI)}:  While XAI can enable human learning from machine learning, regulatory compliance, and appeal of automated decisions, it can also make ML hacks easier and more damaging \cite{shokri2019privacy}.
 					\item \textbf{Standard attacks}: Like any other public-facing IT service, your model could be exposed to well-known risks such as DDOS or man-in-the-middle attacks.  
 					\item \textbf{Distributed systems and models}: Data and code spread over many machines provides a larger, more complex attack surface for a malicious actor.
-					\item \textbf{Package dependencies}: Any package your modeling pipeline is dependent on could potentially be hacked to conceal an attack payload.
+					\item \textbf{Package dependencies and trojans}: Any package your modeling pipeline is dependent on could potentially be hacked to conceal an attack payload.
 				\end{itemize}
 				\normalsize
 
@@ -423,8 +498,8 @@ Bad actors learn ...
 					\item \textbf{Authenticated access and prediction throttling}: for prediction APIs and other model endpoints.
 					\item \textbf{Benchmark models}: Compare complex model predictions to less complex (and hopefully less hackable) model predictions. For traditional, low signal-to-noise data mining problems, predictions should not be too different. If they are, investigate them.
 					\item \textbf{PETs: Encryption, differential privacy, or federated learning}: Properly implemented, these technologies can thwart many types of attacks.
-					\item \textbf{Incident response plans}: Be prepared for ML systems to fail or be attacked.
 					\item \textbf{Interpretable, fair, or private models}: In addition to models like LFR and PATE, also checkout \href{https://github.com/h2oai/h2o-3/blob/master/h2o-py/demos/H2O_tutorial_gbm_monotonicity.ipynb}{monotonic GBMs}, \href{https://christophm.github.io/interpretable-ml-book/rulefit.html}{Rulefit}, \href{https://github.com/IBM/AIF360}{AIF360}, and the \href{https://users.cs.duke.edu/~cynthia/code.html}{Rudin group} at Duke.
+					\item \textbf{Security best practices}: Bug bounties, incident response plans, red-teaming, etc. 
 				\end{itemize}
 			\end{frame}
 			
@@ -442,7 +517,7 @@ Bad actors learn ...
 						\end{itemize}
 					\item \textbf{Model debugging and testing, and white-hat hacking}: Test your models for accuracy, fairness, and privacy before deploying them. Train white-hat surrogate models and apply XAI techniques to them to see what hackers can see. 
 					\item \textbf{Robust ML}: Researchers are developing new ML training approaches that create models which are more difficult to attack. 
-					\item \textbf{System monitoring and profiling}: Use a meta anomaly detection system on your entire production modeling system’s operating statistics — e.g. number of predictions in some time period, latency, CPU, memory and disk loads, number of concurrent users, etc. — then closely monitor for anomalies.
+					\item \textbf{System monitoring and profiling}: Watch out for random, duplicate, or training data. Use a meta anomaly detection system on your entire production modeling system’s operating statistics — e.g. number of predictions in some time period, latency, CPU, memory and disk loads, number of concurrent users, etc. — then closely monitor for anomalies.
 				\end{itemize}
 				\normalsize
 			\end{frame}
