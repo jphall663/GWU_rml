@@ -174,9 +174,11 @@ Python:
   * [*Hacking Smart Machines with Smarter Ones: How to Extract Meaningful Data from Machine Learning Classifiers*](https://arxiv.org/pdf/1306.4447.pdf)
 
 * **Links from Lecture 4**:
-  * [BIML Interactive Risk Tool](https://berryvilleiml.com/interactive/)
   * [Mitre Adversarial Threat Matrix](https://github.com/mitre/advmlthreatmatrix)
-  * [Robust ML](https://www.robust-ml.org/)    
+  * [Robust ML](https://www.robust-ml.org/)   
+  * [ISIS 'still evading detection on Facebook', report says](https://www.bbc.com/news/technology-53389657) 
+  * [Researchers bypass airport and payment facial recognition systems using masks](https://www.engadget.com/2019-12-16-facial-recognition-fooled-masks.html)
+  * [Slight Street Sign Modifications Can Completely Fool Machine Learning Algorithms](https://spectrum.ieee.org/cars-that-think/transportation/sensors/slight-street-sign-modifications-can-fool-machine-learning-algorithms)
 
 ***   
 
