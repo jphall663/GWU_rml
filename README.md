@@ -147,6 +147,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 * [Lecture Notes](tex/lecture_4.pdf)
 * Software Example: [Attacking a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_4.ipynb) 
+* [Assignment 4](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_4.pdf) 
 
 ### Lecture 4 Suggested Software
 
