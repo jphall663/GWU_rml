@@ -15,13 +15,13 @@
 
 \hypersetup{
     colorlinks=true,
-    urlcolor=[rgb]{0,0,0.61},
-    linkcolor=[rgb]{0,0,0.61}}
+    urlcolor=[rgb]{1,0,1},
+    linkcolor=[rgb]{1,0,1}}
 \definecolor{magenta}{RGB}{255, 0, 255}
 
 \usepackage[natbib=true,style=numeric,backend=bibtex,useprefix=true]{biblatex}
 
-\definecolor{OwlGreen}{RGB}{51,0,102} % easier to see
+\definecolor{OwlGreen}{RGB}{75,0,130} % easier to see
 \setbeamertemplate{bibliography item}{\insertbiblabel}
 \setbeamerfont{caption}{size=\footnotesize}
 \setbeamertemplate{frametitle continuation}{}
@@ -36,26 +36,12 @@
 \setbeamertemplate{footline}{%
     \raisebox{5pt}{\makebox{\hfill\makebox[20pt]{\color{gray}
           \scriptsize\insertframenumber}}}\hspace*{5pt}}
-          
-          
-%-------------------------------------------------------------------------------
 
-\usepackage{epigraph}
-\setlength\epigraphwidth{14cm}
-\setlength\epigraphrule{0pt}
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{}
-\makeatother
-
-%--------------------------------------------------------------------------------------------
-          
 \author{Patrick Hall}
-\title{Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
+\title{Responsible Machine Learning}
 \subtitle{Lecture 5: Machine Learning Model Debugging}
 \institute{The George Washington University}
 \date{\today}
-
 
 \begin{document}
 	
@@ -68,98 +54,65 @@
 		\tableofcontents{}
 		
 	\end{frame}
-	
-	
+
 %-------------------------------------------------------------------------------
-	\section{Overview}
+	\section{What?}
 %-------------------------------------------------------------------------------
 
-		\subsection*{} %just for progress indicator
-			
-		\begin{frame}
+	\begin{frame}
 		
-			\frametitle{A Responsible Machine Learning Workflow\footnote{\href{https://www.mdpi.com/2078-2489/11/3/137/htm}{\textit{A Responsible Machine Learning Workflow}}}}
-			
-			\begin{figure}[htb]
-				\begin{center}
-					\includegraphics[height=150pt]{../img/rml_diagram_lec4_hilite.png}
-					\label{fig:blueprint}
-				\end{center}
-			\end{figure}		
-					
-		\end{frame}	
-
-		\begin{frame}
+		\frametitle{What is Model Debugging?}
 		
-			\frametitle{What is Model Debugging?}
+		\begin{itemize}
+			\item Model debugging is an emergent discipline focused on discovering and remediating errors in the internal mechanisms and outputs of machine learning models.\footnote{\tiny{See \url{https://debug-ml-iclr2019.github.io/} for numerous model debugging approaches.}} 
+			\item Model debugging attempts to test machine learning models like software (because the models are software).
+			\item Model debugging is similar to regression diagnostics, but for machine learning models.
+			\item Model debugging \textbf{promotes trust directly} and \textbf{enhances interpretability as a side-effect}.
+		\end{itemize}
 		
-			\begin{itemize}
-				\item Model debugging is an emergent discipline focused on discovering and remediating errors in the internal mechanisms and outputs of machine learning models.\footnote{\tiny{See \url{https://debug-ml-iclr2019.github.io/} for numerous model debugging approaches.}} 
-				\item Model debugging attempts to test machine learning models like code (because the models are code).
-				\item Model debugging promotes trust directly and enhances interpretability as a side-effect.
-				\item Model debugging is similar to regression diagnostics, but for nonlinear machine learning models.
-			\end{itemize}
-		
-		\end{frame}
-
+	\end{frame}
 	
-		\begin{frame}[t]
+%		\begin{frame}[t]
 
- 				\frametitle{Trust and Understanding}
-      
- 				\begin{figure}
-   				\begin{center}
-     					\includegraphics[height=130pt]{../img/trust_understanding.png}
-   				\end{center}
- 				\end{figure}
-
- 			Trust and understanding in machine learning are different but complementary goals, and they are technically feasible \textit{today}.
+%  			\frametitle{Trust and Understanding}
+          
+%  			\begin{figure}[htb]
+%    				\begin{center}
+%      					\includegraphics[height=130pt]{img/trust_understanding.png}
+%    				\end{center}
+%  			\end{figure}
+  
+%  			Trust and understanding in machine learning are different but complementary goals, and they are technically feasible \textit{today}.
     
+%		\end{frame}
+
+%-------------------------------------------------------------------------------
+	\section{Why?}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+		\subsection{AI Incidents}
+%-------------------------------------------------------------------------------
+
+		\begin{frame}[t]{Why Debug?}
+			\vspace{-20pt}
+  			\begin{figure}[t]
+    				\begin{center}
+      					\includegraphics[height=145pt]{../img/ai_incidents.png}
+    				\end{center}
+  			\end{figure}
+			\vspace{-10pt}
+\centering{\scriptsize{\textbf{AI incidents}: The Partnership on AI Incident Database contains over 1,200 incident reports.\footnote{\tiny{See \url{https://incidentdatabase.ai/} to access the database.}}}}
+
 		\end{frame}
 
 %-------------------------------------------------------------------------------
-	\section{Why Debug}
-%-------------------------------------------------------------------------------
-
-%-------------------------------------------------------------------------------
-		\subsection*{}
+		\subsection{Inadequate Assessment }
 %-------------------------------------------------------------------------------	
 
 			\begin{frame}
-				
-				\frametitle{Reminder: What is Machine Learning?}
-				
-					\begin{center}
-						\includegraphics[height=110pt]{../img/ml.png}\\
-						\vspace{5pt}
-						Adapted from: \href{https://www.manning.com/books/deep-learning-with-python}{Deep Learning with Python}.
-					\end{center}
 
-			\end{frame}
-
-
-			\begin{frame}
-				
-				\frametitle{Why Debug?}
-				
-				\begin{itemize}
-					
-					\item Machine learning models can discriminate, leak private data, get hacked or make silly mistakes.
-					
-					\item Machine learning pipelines are not magically immune from the bugs and security vulnerabilities that affect all other software.
-					
-					\item AI incidents can cause harm to organizations, consumers, and the public.
-			
-				\end{itemize}
-			
-			\epigraph{“If builders built houses the way programmers built programs, the first woodpecker to come along would destroy civilization.”}{--- \textup{\href{https://en.wikiquote.org/wiki/Gerald_Weinberg}{Gerald Weinberg}}}
-				
-			\end{frame}
-
-
-			\begin{frame}
-
-					\frametitle{Why Debug: Inadequate Assessment}
+					\frametitle{Why Debug?}
 
 					\begin{columns}
 						
@@ -173,7 +126,7 @@
 							\item No evidence of over- or under-fitting.
 							\item Better validation logloss than benchmark GLM.
 							\item Decision threshold selected by maximization of F1 statistic.
-							\item BUT traditional assessment can be inadequate ... 
+							\item BUT \textbf{traditional assessment can be inadequate!} 
 						\end{itemize}\normalsize
 						
 						\vspace{20pt}
@@ -201,11 +154,15 @@
 							
 			\end{frame}
 
+%-------------------------------------------------------------------------------
+		\subsection{Inaccuracy}
+%-------------------------------------------------------------------------------
+
 			\begin{frame}
 		
-				\frametitle{Why Debug: Inaccuracy}
+				\frametitle{Why Debug?}
 		
-					\footnotesize{Machine learning models can be \textbf{inaccurate}.}
+					\footnotesize{Machine learning models can be \textbf{unnecessary}.}
 					\begin{columns}
 				
 						\column{0.5\linewidth}
@@ -217,7 +174,7 @@
 						\vspace{11pt}
 						\column{0.5\linewidth}
 						\centering
-						\includegraphics[height=118pt]{../img/lecture_5.png}\\
+						\includegraphics[height=118pt]{../img/resid.png}\\
 						\vspace{7pt}
 						\tiny{$g_{\text{mono}}$ also struggles to predict default for favorable statuses, $-2  \leq \texttt{PAY\_0}  < 2$, and often cannot predict on-time payment\\when recent payments are late, $\text{PAY\_0} \geq 2$}.
 				
@@ -225,12 +182,16 @@
 					\normalsize
 			
 			\end{frame}
-		
+	
+%-------------------------------------------------------------------------------
+		\subsection{Sociological Biases}
+%-------------------------------------------------------------------------------	
+	
 			\begin{frame}[label={slide:disp}]
 		
-				\frametitle{Why Debug: Discrimination}
+				\frametitle{Why Debug?}
 		
-				\footnotesize{Machine learning models can perpetuate \textbf{sociological discrimination} \cite{barocas-hardt-narayanan}.}
+				\footnotesize{Machine learning models can perpetuate \textbf{sociological biases} \cite{barocas-hardt-narayanan}.}
 				\vspace{10pt}	
 				\begin{figure}
 					\begin{center}
@@ -241,16 +202,19 @@
 				\normalsize
 		
 			\end{frame}
-		
+	
+%-------------------------------------------------------------------------------
+		\subsection{Security Vulnerabilities}
+%-------------------------------------------------------------------------------	
 % Hackers, competitors, or malicious or extorted insiders can manipulate model outcomes, steal models, and steal data!
 			\begin{frame}[t]
 		
-				\frametitle{Why Debug: Security Vulnerabilities}
+				\frametitle{Why Debug?}
 		
-				\footnotesize{Machine learning models have \textbf{security vulnerabilities} \cite{security_of_ml}, \cite{membership_inference}, \cite{model_stealing}}.\footnote{\tiny{See \url{https://github.com/jphall663/secure_ML_ideas} for full size image and more information.}}
+				\footnotesize{Machine learning models can have \textbf{security vulnerabilities} \cite{security_of_ml}, \cite{membership_inference}, \cite{model_stealing}}.\footnote{\tiny{See \url{https://bit.ly/3jyYtzi} for full size image.}}
 				\begin{figure}[]
 					\begin{center}
-						\includegraphics[height=135pt]{../img/cheatsheet_blue.png}
+						\includegraphics[height=135pt]{../img/Attack_Cheat_Sheet.png}
 					\end{center}
 				\end{figure}	
 				\vspace{-17pt}
@@ -259,7 +223,7 @@
 			\end{frame}
 
 %-------------------------------------------------------------------------------
-	\section{Methods of Debugging}
+	\section{How?}
 %-------------------------------------------------------------------------------
 
 %-------------------------------------------------------------------------------
@@ -268,12 +232,12 @@
 	
 			\begin{frame}
 		
-				\frametitle{How to Debug Models}
+				\frametitle{How to Debug Models?}
 		
-				\footnotesize{As part of a holistic, low-risk approach to machine learning}.\footnote{\tiny{See \url{https://github.com/jphall663/hc_ml} for more information.}}
+				\footnotesize{As part of a holistic, low-risk approach to machine learning \cite{information}.}
 				\begin{figure}
 					\begin{center}
-						\includegraphics[height=140pt]{../img/rml_diagram_no_hilite.png}
+						\includegraphics[height=150pt]{../img/rml_diagram_no_hilite.png}
 					\end{center}
 				\end{figure}	
 				\normalsize
@@ -296,7 +260,6 @@
 				\vspace{-10pt}
 				\begin{itemize}	
 					\item \scriptsize Training data is very sparse for $\text{PAY\_0} > 2$.\\
-					\item Residuals of partial dependence confirm over-emphasis on $\text{PAY\_0}$.
 					\item ICE curves indicate that partial dependence is likely trustworthy and empirically confirm monotonicity, but also expose adversarial attack vulnerabilities.
 					\item Partial dependence and ICE indicate $g_{\text{mono}}$ likely learned very little for $\text{PAY\_0} \geq 2$.
 					\item $\text{PAY\_0} = $ \texttt{missing} gives lowest probability of default.
@@ -309,20 +272,21 @@
 				\frametitle{\textbf{Sensitivity Analysis}: Search for Adversarial Examples}
 				\begin{figure}
 					\begin{center}
-						\includegraphics[height=135pt]{../img/sa_max_prob.png}
+						\includegraphics[height=130pt]{../img/sa_max_prob.png}
 					\end{center}
 				\end{figure}
-				\tiny{Adversary search confirms multiple avenues of attack and exposes a potential flaw in $g_{\text{mono}}$ scoring logic: default is predicted for customer's who make payments above their credit limit. (Try the \href{https://github.com/tensorflow/cleverhans}{cleverhans} package for finding adversarial examples.)}
+			
+				\tiny{Adversary search confirms multiple avenues of attack and exposes a potential flaw in $g_{\text{mono}}$ inductive logic: default is predicted for customer's who make payments above their credit limit. (Try heuristics, evolutionary learning or packages like \href{https://github.com/tensorflow/cleverhans}{cleverhans} to generate adversarial examples.)}
 					
-				\framebreak
-				\vspace{-5pt}
-				\begin{figure}
-					\begin{center}
-						\includegraphics[height=135pt]{../img/sa_max_prob_demo.png}
-					\end{center}
-				\end{figure}
-				\vspace{-5pt}
-				\tiny{$g_{\text{mono}}$ appears to prefer younger, unmarried customers, which should be investigated further with disparate impact analysis - see slide \ref{slide:disp} - and could expose the lender to impersonation attacks. (Try the \href{https://github.com/IBM/AIF360}{AIF360}, \href{https://github.com/dssg/aequitas}{aequitas}, or \href{https://github.com/LASER-UMASS/Themis}{themis} packages for disparate impact audits.)}
+				%\framebreak
+				%\vspace{-5pt}
+				%\begin{figure}
+				%	\begin{center}
+				%		\includegraphics[height=135pt]{img/sa_max_prob_demo.png}
+				%	\end{center}
+				%\end{figure}
+				%\vspace{-5pt}
+				%\tiny{$g_{\text{mono}}$ appears to prefer younger, unmarried customers, which should be investigated further with disparate impact analysis - see slide \ref{slide:disp} - and could expose the lender to impersonation attacks. (Try the \href{https://github.com/IBM/AIF360}{AIF360}, \href{https://github.com/dssg/aequitas}{aequitas}, or \href{https://github.com/LASER-UMASS/Themis}{themis} packages for disparate impact audits.)}
 		
 			\end{frame}			
 			
@@ -346,6 +310,25 @@
 				\normalsize
 		
 			\end{frame}
+
+			\begin{frame}[t]
+				
+				\frametitle{\textbf{Sensitivity Analysis}: Underspecification}
+				\vspace{-15pt}
+				\begin{figure}
+					\begin{center}
+						\includegraphics[height=110pt]{../img/under_spec.png}
+					\end{center}
+				\end{figure}	
+				\vspace{-10pt}
+				\begin{itemize}\scriptsize
+					\item Without domain-informed constraints ML models suffer from  \textit{underspecification} \cite{underspec}.
+					\item Explicit tests for underspecification involve assessing model performance stability across perturbed computational hyperparameters: seeds, threads, number of GPUs, etc.
+					\item Likely due to monotonicity constraints, $g_{\text{mono}}$ performance appears stable across random seeds. 
+				\end{itemize}
+				\normalsize
+				
+			\end{frame}
 			
 %-------------------------------------------------------------------------------
 		\subsection{Residual Analysis}
@@ -365,24 +348,37 @@
 				\tiny For $\text{PAY\_0}$:
 				\begin{itemize}
 					\item Notable change in accuracy and error characteristics for $\text{PAY\_0} \geq 2$. 
-					\item 100\% false positive rate for $\text{PAY\_0} \geq 2$!
+					\item Varying performance across segments can be an indication of underspecification. 
 				\end{itemize}
-				For $\text{SEX}$, accuracy and error characteristics vary little across individuals represented in the training data. Non-discrimination should be confirmed by disparate impact analysis.
+				For $\text{SEX}$, accuracy and error characteristics vary little across individuals represented in the training data. Non-discrimination should be confirmed by more involved disparate impact analysis.
 		
 			\end{frame}
 
-			\begin{frame}[t]
-		
-				\frametitle{\textbf{Residual Analysis}: Mean Local Feature Contributions}
-				\vspace{-15pt}
+			\begin{frame}
+	
+				\frametitle{\textbf{Residual Analysis}: Local Contributions to Logloss}
+	
 				\begin{figure}
 					\begin{center}
-						\includegraphics[height=125pt]{../img/global_high_low.png}
+						\includegraphics[height=130pt]{../img/local.png}
 					\end{center}
 				\end{figure}	
-				\scriptsize{Exact local Shapley feature contributions \cite{shapley}, which are available at scoring time for unlabeled data, are noticeably different for low and high residual predictions. (Both monotonicity constraints and Shapley values are available in \href{https://www.github.com/h2oai/h2o-3}{h2o-3} and \href{https://www.github.com/dmlc/xgboost}{XGBoost}.)} 
-		
+				\scriptsize{Exact, local feature contributions to logloss can be calculated, enabling ranking of features contributing to logloss residuals for \textbf{each prediction}. Shapley contributions to XGBoost logloss can be calculated using the \href{https://github.com/slundberg/shap}{shap} package. This is a \textbf{time-consuming} calculation.}
+				
 			\end{frame}
+
+			%\begin{frame}[t]
+		
+			%	\frametitle{\textbf{Residual Analysis}: Mean Local Feature Contributions}
+			%	\vspace{-15pt}
+			%	\begin{figure}
+			%		\begin{center}
+			%			\includegraphics[height=125pt]{img/global_high_low.png}
+			%		\end{center}
+			%	\end{figure}	
+			%	\scriptsize{Local Shapley feature contributions \cite{shapley}, which are available at inference time for unlabeled data, are noticeably different for low and high residual predictions. (Both monotonicity constraints and Shapley values are available in \href{https://www.github.com/h2oai/h2o-3}{h2o-3} and \href{https://www.github.com/dmlc/xgboost}{XGBoost}.)} 
+		
+			%\end{frame}
 
 			\begin{frame}[t]
 		
@@ -394,20 +390,8 @@
 					\end{center}
 				\end{figure}
 				\vspace{-8pt}	
-				\scriptsize{Globally important features $\text{PAY\_3}$ and $\text{PAY\_2}$ are more important, on average, to the loss than to the predictions. (Shapley contributions to XGBoost logloss can be calculated using the \href{https://github.com/slundberg/shap}{shap} package. This is a \textbf{time-consuming} calculation.)} 
+				\scriptsize{Globally important features $\text{PAY\_3}$ and $\text{PAY\_2}$ are more important, on average, to the loss than to the predictions.} 
 		
-			\end{frame}
-
-			\begin{frame}
-		
-				\frametitle{\textbf{Residual Analysis}: Local Contributions to Logloss}
-		
-				\begin{figure}
-					\begin{center}
-						\includegraphics[height=130pt]{../img/local.png}
-					\end{center}
-				\end{figure}	
-				Exact, local feature contributions to logloss can be calculated, enabling ranking of features contributing to logloss residuals for \textbf{each prediction}.
 			\end{frame}
 
 			\begin{frame}[t]
@@ -444,67 +428,97 @@
 
 			\begin{frame}
 		
-				\frametitle{\textbf{Remediation}: for $g_{\text{mono}}$}
+				\frametitle{\textbf{Remediation}: $g_{\text{mono}}$}
 				
 				\begin{itemize}\scriptsize
 					\item \textbf{Over-emphasis of $\text{PAY\_0}$}:
 					\begin{itemize}\scriptsize
 						\item Engineer features for payment trends or stability.
-						\item Missing value injection during training or scoring.
+						\item Strong regularization or missing value injection during training or inference.
 					\end{itemize}
 					\item \textbf{Sparsity of $\text{PAY\_0} > 2$ training data}: Increase observation weights. 
-					\item \textbf{Payments $\geq$ credit limit}: Scoring-time model assertion \cite{kangdebugging}. 
+					\item \textbf{Payments $\geq$ credit limit}: Inference-time model assertion \cite{kangdebugging}. 
 					\item \textbf{Disparate impact}: Adversarial de-biasing \cite{zhang2018mitigating} or model selection by minimal disparate impact. 
 					\item \textbf{Security vulnerabilities}: API throttling, authentication, real-time model monitoring. 
 					\item \textbf{Large logloss importance}: Evaluate dropping non-robust features.
 					\item \textbf{Poor accuracy vs. benchmark GLM}: Blend $g_{\text{mono}}$ and GLM for probabilities $\in (\sim0.2, \sim0.6)$.
 					\item \textbf{Miscellaneous strategies}: 
 					\begin{itemize}\scriptsize
-						\item Local feature importance and decision tree rules can indicate additional scoring-time model assertions, e.g. alternate treatment for locally non-robust features in known high-residual ranges of the learned response function. 
-						\item Incorporate local feature contributions to logloss into training or scoring processes.
+						\item Local feature importance and decision tree rules can indicate additional inference-time model assertions, e.g., alternate treatment for locally non-robust features in known high-residual ranges of the learned response function. 
+						\item Incorporate local feature contributions to logloss into training or inference processes.
 					\end{itemize}
 				\end{itemize}
 				\normalsize
 
 			\end{frame}		
 			
-			\begin{frame}
-		
-				\frametitle{\textbf{Remediation}: General Strategies}
+			\begin{frame}[t]{\textbf{Remediation}: General Strategies}
 
-				\begin{itemize}
-					\item Calibration to past data.
-					\item Data collection or simulation for model blindspots.
-					\item Detection and elimination of non-robust features.
-					\item Missing value injection during training or scoring.
-					\item Model or model artifact editing.
-				\end{itemize}				
+				\begin{columns}[t]
+					
+					\column{0.5\linewidth}
+					Technical: 
+					\begin{itemize}\small
+						\item Calibration to past data
+						\item Data augmentation
+						\item Discrimination remediation
+						\item Experimental design
+						\item Interpretable models
+						\item Model or model artifact editing
+						\item Model assertions
+						\item Model monitoring
+						\item Monotonicity and interaction constraints
+						\item Strong regularization or missing value injection during training or inference
+					\end{itemize}	
+					
+					\column{0.5\linewidth}
+					Process:
+					\begin{itemize}\small
+						\item Appeal and override
+						\item Bug bounties
+						\item Demographic and professional diversity
+						\item Domain expertise
+						\item Incident response plans
+						\item Model risk management
+						\begin{itemize}
+							\item Effective challenge and human review
+						\end{itemize}
+						\item Software quality assurance
+						\item Red-teaming
+					\end{itemize}
+				\end{columns}
+
+			
 				
 			\end{frame}
 
-
-
 %-------------------------------------------------------------------------------
-	\section{Acknowledgements} 
+\section{Acknowledgements} 
 %-------------------------------------------------------------------------------
 
-		\begin{frame}
-			
-			\frametitle{Acknowledgments}
-			
-				Thanks to Lisa Song for her continued assistance in developing these course materials.\\
-				\vspace{10pt}
-				Some materials \copyright\hspace{1pt}Patrick Hall and the H2O.ai team 2017-2020.  
-			
-		\end{frame}	
-
-		\begin{frame}[t, allowframebreaks]
+\begin{frame}
 	
-			\frametitle{References}	
+	\frametitle{Acknowledgments}
+	
+	\centering{Some materials \copyright\hspace{1pt}Patrick Hall and the H2O.ai team 2017-2020.}  
+	
+\end{frame}	
+%-------------------------------------------------------------------------------
+%	\section{References}
+%-------------------------------------------------------------------------------
 
-			Advanced code examples for this presentation:\\
-			\small{\url{https://www.github.com/jphall663/interpretable_machine_learning_with_python}}\\
-			\noindent \small{\url{https://www.github.com/jphall663/responsible_xai}}
+% which code for which slide
+
+	\begin{frame}[t, allowframebreaks]
+	
+		\frametitle{References}	
+		
+			This presentation:\\
+			\tiny{\url{https://www.github.com/jphall663/jsm_2019}}\\
+			\vspace{10pt}
+			\normalsize Code examples for this presentation:\\
+			\tiny{\url{https://www.github.com/jphall663/interpretable_machine_learning_with_python}}\\
+			\noindent\tiny{\url{https://www.github.com/jphall663/responsible_xai}}
 								
 		\framebreak		
 		
