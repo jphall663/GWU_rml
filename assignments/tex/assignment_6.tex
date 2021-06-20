@@ -1,0 +1,149 @@
+% Copyright Patrick Hall 2021
+
+\documentclass[fleqn]{article}
+\renewcommand\refname{}
+\title{Responsible Machine Learning\\\Large{Final Assessment}\\\Large{20 points}}
+\author{\copyright Patrick Hall 2021}
+
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{MnSymbol}
+\usepackage{enumerate}
+\usepackage{setspace}
+\usepackage[colorlinks, breaklinks=true]{hyperref} 
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{csvsimple}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{verbatim}
+\usepackage{mdframed}
+\usepackage{changepage}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\begin{document}
+
+\maketitle
+
+\noindent In your final assessment, you will work with your group to create a model card for your best model following the instructions below. A rubric and example model cards are provided to help you better understand the requirements for this assessment.\\
+
+\noindent Please let me know immediately if you find typos or mistakes in this assignment or related materials. 
+
+\section{Background and Examples.}
+
+Documentation is an important transparency mechanism that enables many other elements of responsible ML. Model cards are a new and easy way to document key details about models. Model documentation helps data scientists communicate about their models so that their co-workers can maintain the model over time and respond quickly to any incidents. Model documentation is also required by regulation in certain cases.\\ 
+
+\noindent\textbf{Examples}:
+\begin{itemize}
+	\item \href{https://arxiv.org/pdf/1810.03993.pdf}{\textit{Model Cards for Model Reporting}}
+	\item \href{https://modelcards.withgoogle.com/about}{Model Cards (Google)}
+\end{itemize}
+
+\section{Instructions and Rubric.}
+
+This is a pure technical writing assignment. Very little introduction, narrative, or conclusion text is necessary. You may make copious use of bullet points, charts, and tables. (But remember that all charts and tables should have descriptions!)\\
+
+\noindent Your model card must include the following sections: Intended use, Training data,
+Evaluation data, Model details, Quantitative analysis, Ethical considerations. The focus of the model card should be your best performing model. You should briefly address your other models as ``alternative approaches'' in the Quantitative analysis section, and point to why your main model is a better choice.\\
+ 
+\noindent \textbf{Rubric}:
+
+\begin{itemize}
+	\item Structure (6 pts.)
+	\begin{itemize}
+		\item Name and contact information for all group members. (Feel free to anonymize for this assignment. The idea for the real-world is to ``sign'' your work and make it easy to find yourself if there are problems in the future, i.e., \textbf{\textit{accountability}}) (1 pt.) 
+		\item Clearly delineated sections for:
+		\begin{itemize}
+			\item Intended use ($\frac{1}{2}$ pt.)
+			\item Training data ($\frac{1}{2}$ pt.)
+			\item Evaluation data ($\frac{1}{2}$ pt.)
+			\item Model details ($\frac{1}{2}$ pt.)
+			\item Quantitative analysis ($\frac{1}{2}$ pt.)
+			\item Ethical considerations ($\frac{1}{2}$ pt.)
+		\end{itemize}
+		\item Correct and informative external links (e.g., to training and evaluation data) ($\frac{1}{2}$ pt.)
+		\item Correct use and introduction of abbreviations ($\frac{1}{2}$ pt.)
+		\item Charts or tables:
+		\begin{itemize}
+			\item Meaningful and informative use of charts or tables ($\frac{1}{2}$ pt.)
+			\item Proper description of charts or tables ($\frac{1}{2}$ pt.)
+		\end{itemize}
+	\end{itemize}
+	\item Content (13 pts.)
+	\begin{itemize}
+		\item Intended use (2 pts.)
+		\begin{itemize}
+			\item Describe the business value of your model
+			\item Describe how your model is designed to be used
+			\item Describe the intended users for your model
+			\item State whether your model can or cannot be used for any additional purposes
+		\end{itemize}
+		\item Training data (2 pts.)
+		\begin{itemize}
+			\item State the source of your training data
+			\item State how training data was divided into training and validation data 
+			\item State the number of rows in training and validation data
+			\item Define the meaning of all training data columns
+			\item Define the meaning of all engineered columns 
+		\end{itemize}
+		\item Evaluation data (2 pts.)
+		\begin{itemize}
+			\item State the source of evaluation (or “test”) data
+			\item State the number of rows in evaluation (or “test”) data
+			\item State any differences in columns between training and evaluation (or “test”) data
+		\end{itemize}
+		\item Model details (2 pts.)
+		\begin{itemize}
+			\item State the columns used as inputs in the \textit{best} model
+			\item State the columns used as targets in the \textit{best} model
+			\item State the type of the \textit{best} model
+			\item State the software used to implement the \textit{best} model
+			\item State the version of the modeling software for the \textit{best} model
+			\item State the hyperparameters or other settings of the \textit{best} model
+		\end{itemize}
+		\item Quantitative analysis (3 pts.)
+		\begin{itemize} 
+			\item State the metrics used to evaluate the \textit{best} model
+			\item State the values of the metrics for training, validation, and evaluation (or “test”) data -- evaluation (or “test”) metrics come from the most recent class full evaluation results, link under Assignment 1.
+			\item Provide at least one plot or table from each weekly assignment for a total of at least six plots, that must include the global variable importance and partial dependence of the \textit{best} model.
+			\item Address other alternative models considered
+		\end{itemize}
+		\item Ethical considerations (2 pts.)
+		\begin{itemize}
+			\item Describe potential negative impacts of using your model: 
+			\begin{itemize}
+			\item Consider math or software problems
+			\item Consider real-world risks: who, what, when and how?
+			\end{itemize}
+			\item Describe potential uncertainties relating to the impacts of using your model:
+			\begin{itemize} 
+				\item Consider math or software problems
+				\item Consider real-world risks: who, what, when and how?
+			\end{itemize}
+			\item Describe any unexpected or results
+		\end{itemize}
+	\end{itemize}
+	\item Grammar and spelling (1 pt.)
+	\begin{itemize} 
+		\item Correct grammar and punctuation ($\frac{1}{2}$ pt.)
+		\item Correct spelling ($\frac{1}{2}$ pt.)
+	\end{itemize}
+\end{itemize}
+
+
+\section{Model Card as GitHub \texttt{README.md}.}
+
+Your deliverable for this assignment is to update your group's GitHub repository to include your model card as the GitHub repository's \texttt{README.md} file.\\
+
+\noindent \textbf{Your deliverable is due Saturday, June 26\textsuperscript{th}, at 11:59:59 PM ET.}\\
+
+\end{document}
+
