@@ -210,7 +210,12 @@ Python:
   * [*Real-World Strategies for Model Debugging*](https://towardsdatascience.com/strategies-for-model-debugging-aa822f1097ce)
 
 * **Links from Lecture 5**:
-
+  
+  * [AI Incident Tracker](https://github.com/jphall663/awesome-machine-learning-interpretability/blob/master/README.md#ai-incident-tracker)
+  * [AI Incident Database](https://incidentdatabase.ai/)
+  * [Debugging Machine Learning Models](https://debug-ml-iclr2019.github.io/)
+  * [_Underspecification Presents Challenges for Credibility inModern Machine Learning_](https://arxiv.org/pdf/2011.03395.pdf)
+  
 ***   
 
 ## Lecture 6: Responsible Machine Learning Best Practices 
