@@ -1,0 +1,57 @@
+% Copyright Patrick Hall 2021
+
+\documentclass[fleqn]{article}
+\renewcommand\refname{}
+\title{Responsible Machine Learning\\\Large{Assignment 5}\\\Large{10 points}}
+\author{\copyright Patrick Hall 2021}
+
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{MnSymbol}
+\usepackage{enumerate}
+\usepackage{setspace}
+\usepackage[colorlinks, breaklinks=true]{hyperref} 
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{csvsimple}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{verbatim}
+\usepackage{mdframed}
+\usepackage{changepage}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\begin{document}
+
+\maketitle
+
+\noindent In Assignment 5, you will work with your group to debug your best model following the instructions below. A \href{https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/assignment_5/assign_5_template.ipynb?flush_cache=true}{template} has been provided with examples of simple sensitivity and residual analysis exercises. For those of you who use Python virtual environments, a basic \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/requirements.txt}{\texttt{requirements.txt}} file is also available for the template.\\
+
+\noindent Please let me know immediately if you find typos or mistakes in this assignment or related materials. 
+
+\section{Test How this Lending Model Performs in Recession Conditions.}
+
+Cells 7--8 demonstrate a basic stress-testing exercise, in which recession conditions are simulated and model performance is re-estimated under these conditions. Generally, lending model performance degrades quickly when recession conditions arise. You should see that our EBM models are no exception to this rule.\\
+
+\section{Conduct Residual Analysis and Remediate Discovered Bugs.}
+
+Cells 9--15 use a basic residual analysis procedure to find outliers and identify a fundamental problem with our data and EBM model. Once these problems are identified, you should be able to increase your model performance by accounting for them.\\
+
+\section{Submit Code Results.}
+
+Your deliverable for this assignment is to update your group's GitHub repository to reflect this debugging exercise. Stress-testing is worth 5 points. Remediating your model by removing outliers and handling data imbalance, to increase validation AUC, is worth 5 points.\\
+
+\noindent \textbf{Your deliverables are due Sunday, June 26\textsuperscript{th}, at 11:59:59 PM ET.}\\
+
+\noindent Note that you may also improve Assignment 1 or Assignment 3 scores throughout the Summer I Session to improve your ranking, your Assignment 1 grade, your Assignment 3 grade, and your final project grade.
+
+\end{document}
+
