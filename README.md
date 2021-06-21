@@ -227,6 +227,7 @@ Python:
 ### Lecture 6 Class Materials
 
 * [Lecture Notes](tex/lecture_6.pdf)
+* [Assignment 6 (Final Assessment)](assignments/tex/assignment_6.pdf)
 
 ### Lecture 6 Suggested Software
 
