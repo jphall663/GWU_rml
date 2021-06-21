@@ -192,6 +192,7 @@ Python:
 
 * [Lecture Notes](tex/lecture_5.pdf)
 * Software Example: [Debugging a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_5.ipynb) 
+* [Assignment 5](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_5.pdf)
 
 ### Lecture 5 Suggested Software
 
