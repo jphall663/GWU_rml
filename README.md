@@ -24,7 +24,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Lecture Notes](tex/lecture_1.pdf)
 * [Assignment 1](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_1.pdf) 
   * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb)
-  * [Full evaluations results](https://github.com/jphall663/GWU_rml/blob/master/assignments/model_eval_2021_06_20_14_05_30.csv)
+  * [Full evaluations results](https://github.com/jphall663/GWU_rml/blob/master/assignments/model_eval_2021_06_21_17_40_14.csv)
 * Software Examples:
   * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb?flush_cache=true)
   * [Simple Explainable Boosting Machine Example](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1_ebm_example.ipynb?flush_cache=true)
