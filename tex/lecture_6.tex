@@ -183,7 +183,7 @@
 					\column{0.5\linewidth}
 					\vspace{-5pt}
 					\begin{itemize}
-						\item OSS: IBM \href{https://github.com/IBM/AIF360}{AIF360}
+						\item OSS: IBM \href{https://github.com/IBM/AIF360}{AIF360} and \href{https://github.com/IBM/differential-privacy-library}{diffprivlib}
 						\item References: \citefield{kamiran2012data}{title}; \citefield{feldman2015certifying}{title}; \citefield{calmon2017optimized}{title}; \citefield{agrawal2000privacy}{title}; \citefield{ji2014differential}{title}
 					\end{itemize}
 				
@@ -307,7 +307,8 @@
 					\scriptsize
 					{\begin{itemize}
 						\item Eliminating errors in model predictions by testing: adversarial examples, explanation of residuals, random attacks and ``what-if'' analysis.
-						\item OSS: \href{https://github.com/tensorflow/cleverhans}{cleverhans}, \href{https://github.com/SauceCat/PDPbox}{pdpbox}, \href{https://pair-code.github.io/what-if-tool/index.html}{what-if tool}
+						\item OSS: \href{https://github.com/tensorflow/cleverhans}{cleverhans}, \href{https://github.com/SauceCat/PDPbox}{pdpbox}, \href{https://pair-code.github.io/what-if-tool/index.html}{what-if tool},
+						\href{https://github.com/MadryLab/robustness}{robustness}
 						\item References: \citefield{amershi2015modeltracker}{title}; \citefield{papernot2018marauder}{title}; \citefield{security_of_ml}{title}
 					\end{itemize}}
 					\normalsize
@@ -322,7 +323,7 @@
 			
 				\begin{figure}[htb]
 					\begin{center}
-						\includegraphics[height=160pt]{../img/cheatsheet_blue.png}
+						\includegraphics[height=160pt]{../img/Attack_Cheat_Sheet.png}
 					\end{center}
 				\end{figure}	
 			\end{frame}
@@ -399,7 +400,15 @@
 					\vspace{-5pt}
 					\begin{itemize}
 						\item Monitor models for accuracy, disparate impact, privacy violations or security vulnerabilities in real-time; track model and data lineage.
-						\item OSS: \href{https://github.com/mlflow/mlflow}{mlflow}, \href{https://github.com/mitdbg/modeldb}{modeldb}, \href{https://github.com/EthicalML/awesome-machine-learning-operations}{awesome-machine-learning-ops metalist}
+						\item OSS: 
+						\href{https://dvc.org/}{DVC},
+						\href{https://gigantum.com/}{gigantum}, 
+						\href{https://www.kubeflow.org/docs/pipelines/overview/pipelines-overview/}{KubeFlow},
+						\href{https://github.com/mlflow/mlflow}{mlflow}, 
+						\href{https://github.com/mitdbg/modeldb}{modeldb},
+						\href{link:https://www.tensorflow.org/tfx/guide/mlmd}{TensorFlow ML Metadata}, 
+						\href{https://www.tensorflow.org/tfx}{TensorFlow TFX},
+						\href{https://github.com/EthicalML/awesome-machine-learning-operations}{awesome-machine-learning-ops metalist}
 						\item Reference: \citefield{vartak2016m}{title}
 					\end{itemize}
 					
@@ -516,10 +525,14 @@
 			\begin{itemize}
 				
 				\item \textbf{"Dog-fooding"}: If possible, test your ML system on yourself or internally at your organization. Don't feel comfortable using it on yourself? Maybe you shouldn't release it. 
-				
+
+				\item \textbf{Documentation}: Documentation ends up being the primary physical implementation of many risk controls. 
+
 				\item \textbf{Domain Expertise}: Success in ML almost always requires input from humans with deep understanding of the problem domain. 
 				
 				\item \textbf{Effective Challenge and Human Review}: Nearly all aspects of ML workflows should involve challenges and questioning from group members. This can be in the form of human interrogation of ML-related processes or in the form of challenger models. 
+				
+				\item \textbf{Executive Oversight}: An empowered executive with a staff and budget can exert a strong influence over organizational use of ML.
 				
 			\end{itemize}
 			
@@ -529,9 +542,11 @@
 			
 			\frametitle{Process Solutions}	
 				
-			\begin{itemize}	
+			\begin{itemize}
 				
 				\item \textbf{Incident Response Plans}: Complex ML systems \textit{will} fail. Being prepared for failures or attacks can be the difference between a major incident and a minor disruption.
+				
+				\item \textbf{Incentives}: Model builders, testers, auditors, and executives all have different roles to play in the implementation of responsible ML and should be incentivized to play the correct role.
 				
 				\item \textbf{Legal Privilege}: Consider use of privilege to minimize risk when dealing with ML-related legal and compliance issues.
 				
