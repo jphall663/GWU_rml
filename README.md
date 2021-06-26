@@ -244,6 +244,8 @@ Python:
     
 * **Links from Lecture 6**:
 
+  * [_PredictingGoodProbabilitiesWithSupervisedLearning_](https://www.cs.cornell.edu/~alexn/papers/calibration.icml05.crc.rev3.pdf)
+
 
 ***   
 
