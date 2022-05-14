@@ -2,7 +2,7 @@
 
 Materials for a technical, nuts-and-bolts course about increasing transparency, fairness, security and privacy in machine learning.
 
-* Lecture 1: Interpretable Machine Learning Models
+* Lecture 1: Self-explainable Machine Learning Models
 * Lecture 2: Post-hoc Explanation
 * Lecture 3: Discrimination Testing and Remediation
 * Lecture 4: Machine Learning Security
@@ -13,25 +13,28 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ***
 
-## Lecture 1: Interpretable Machine Learning Models
+## Lecture 1: Self-explainable Machine Learning Models
 
 ![Histogram, partial dependence, and ICE for a monotonic GBM and a credit card customer's most recent repayment status](/img/ebm.png)
 <sub><sup>**Source:** [Simple Explainable Boosting Machine Example](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1_ebm_example.ipynb?flush_cache=true)</sup></sub>
 
 ### Lecture 1 Class Materials
 
-* [Syllabus](https://raw.githubusercontent.com/jphall663/GWU_rml/master/Syllabus_PH_Responsible_Machine_Learning_MSBA_v4.pdf)
+* [Syllabus](https://github.com/jphall663/GWU_rml/blob/master/Syllabus_PH_Responsible_Machine_Learning_MSBA_v4.pdf)
 * [Lecture Notes](tex/lecture_1.pdf)
 * [Assignment 1](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_1.pdf) 
   * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb)
-  * [Full evaluations results](https://github.com/jphall663/GWU_rml/blob/master/assignments/model_eval_2021_06_25_13_04_19.csv)
+  * [Full evaluations results]()
 * Software Examples:
-  * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb?flush_cache=true)
+  * [Building from Penalized GLM to Monotonic GBM (simple)](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb?flush_cache=true)
+  * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/glm_mgbm_gbm.ipynb?flush_cache=true)
   * [Simple Explainable Boosting Machine Example](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1_ebm_example.ipynb?flush_cache=true)
+  * [PiML Credit Card Data Example](https://colab.research.google.com/github/SelfExplainML/PiML-Toolbox/blob/main/examples/Example_TaiwanCredit.ipynb)
 
 
 ### Lecture 1 Suggested Software
 
+* Python [PiML-Toolbox](https://github.com/SelfExplainML/PiML-Toolbox)
 * Python [explainable boosting machine (EBM)/GA2M](https://github.com/interpretml/interpret)
 * R [`gam`](https://cran.r-project.org/web/packages/gam/index.html)
 * `h2o` [penalized GLM](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/glm.html) (R and Python)
@@ -42,17 +45,17 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 1 Suggested Reading
 
 * **Introduction and Background**: 
-  * [*Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead*](https://www.nature.com/articles/s42256-019-0048-x) 
+  * [*Designing Inherently Interpretable Machine Learning Models*](https://arxiv.org/pdf/2111.01743.pdf)
+  * [*Psychological Foundations of Explainability and Interpretability in Artificial Intelligence*](https://nvlpubs.nist.gov/nistpubs/ir/2021/NIST.IR.8367.pdf)
   * **[Responsible Artificial Intelligence](https://www.springer.com/gp/book/9783030303709)** - Sections 2.1-2.5, Chapter 7
-  
-* **Interpretable Machine Learning Techniques**:
+  * [*Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead*](https://www.nature.com/articles/s42256-019-0048-x) 
+
+* **Self-explainaing Machine Learning Techniques**:
   * **Interpretable Machine Learning** - [Chapter 4](https://christophm.github.io/interpretable-ml-book/simple.html)
   * [*Accurate Intelligible Models with Pairwise Interactions*](http://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf)
   * [*This Looks Like That: Deep Learning for Interpretable Image Recognition*](https://arxiv.org/pdf/1806.10574.pdf)
 
 * **Links from Lecture 1**:
-  * [EU AI Regulation Proposal](https://digital-strategy.ec.europa.eu/en/library/proposal-regulation-laying-down-harmonised-rules-artificial-intelligence)
-  * [FTC Guidance (2021)](https://www.ftc.gov/news-events/blogs/business-blog/2021/04/aiming-truth-fairness-equity-your-companys-use-ai)
 
 ***
 
