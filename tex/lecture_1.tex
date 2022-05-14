@@ -65,7 +65,7 @@
 
 \author{Patrick Hall}
 \title{Introduction to Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
-\subtitle{Lecture 1: Interpretable Machine Learning Models}
+\subtitle{Lecture 1: Self-explainable Machine Learning Models}
 \institute{The George Washington University}
 \date{\today}
 
@@ -96,18 +96,18 @@
 		\begin{itemize}
 			\item{Grading:}
 				\begin{itemize}
-					\item{$\frac{1}{3}$ Weekly Assignments}
-					\item{$\frac{1}{3}$ GitHub or Kaggle kernel model card (\cite{model_cards})}
-                    \item{$\frac{1}{3}$ Public Kaggle leaderboard score}
+					\item{$\frac{6}{10}$ Weekly Assignments}
+					\item{$\frac{3}{10}$ GitHub model card (\cite{model_cards})}
+                    \item{$\frac{1}{10}$ Class participation}
 				\end{itemize}
 			\item{Project:}	
 				\begin{itemize}
-					\item{Kaggle competition using techniques from class}
+					\item{HMDA data using techniques from class}
 					\item{Individual or group (no more than 4 members)}
 					\item Groups randomly assigned by instructor, with consideration of time zone
 				\end{itemize}
 			\item{Syllabus}
-			\item{Webex office hours: ??}
+			\item{Webex office hours: 8:30 PM Tues (??)}
 			\item{Class resources: \url{https://jphall663.github.io/GWU_rml/}}	
 		\end{itemize}		
 			
@@ -119,7 +119,7 @@
 		\frametitle{Overview}
 		
 		\begin{itemize}
-			\item{\textbf{Class 1}: Interpretable Models}
+			\item{\textbf{Class 1}: Self-explainable Models}
 			\item{\textbf{Class 2}: Post-hoc Explanations}
 			\item{\textbf{Class 3}: Fairness}
 			\item{\textbf{Class 4}: Security}
@@ -173,7 +173,7 @@
 		
 		\begin{frame}
 	
-			\frametitle{A Responsible ML Workflow: Interpretable Models}		
+			\frametitle{A Responsible ML Workflow: Self-explainable Models}		
 			
 			\begin{figure}[htb]
 				\begin{center}
@@ -187,19 +187,27 @@
 
 		\begin{frame}
 	
-			\frametitle{Interpretable ML Models}			
+			\frametitle{Self-explainable ML Models}			
+					
+			\textbf{Interpretation}: a high-level, meaningful mental representation that contextualizes a stimulus and leverages human background knowledge. An interpretable model should provide users with a description of what a data point or model output means \textit{in context} (\cite{broniatowski2021psychological}).\\
 			
+			\vspace{10pt}
+			
+			\textbf{Explanation}: a low-level, detailed mental representation that seeks to describe some complex process. An ML explanation is a description of how some model mechanism or output \textit{came to be} (\cite{broniatowski2021psychological}).
+			
+		\end{frame}
+			
+		\begin{frame}
+	
+			\frametitle{Self-explainable ML Models}			
+	
 			\small
 			
-			\cite{been_kim1}, define interpretable as, ``the ability to explain or to present in understandable terms to a human.'' Later \cite{broniatowski2021psychological} used Fuzzy-Trace theory to link \textit{interpretability} to high-level contextualization based on purpose, values, and preferences, versus low-level technical \textit{explanations}. 
+			There are many types of self-explainable ML models. Some might be directly interpretable to non-technical consumers. Some are only explainable to highly-skilled data scientists. Interpretability is not an on-and-off switch.
 			
 			\vspace{10pt}
 			
-			There are many types of interpretable ML models. Some might be directly interpretable to non-technical consumers. Some are only interpretable to highly-skilled data scientists. Interpretability is not an on-and-off switch.
-			
-			\vspace{10pt}
-			
-			Interpretable models are crucial for documentation, explanation of predictions to consumers, finding and fixing discrimination, and debugging other problems in ML modeling pipelines. Simply put, \textbf{it is very difficult to mitigate risks you don't understand}.
+			Self-explainable models are crucial for risk management, documentation, compliance, explanation of predictions to consumers, finding and fixing discrimination, debugging other problems in ML modeling pipelines. Simply put, \textbf{it is very difficult to mitigate risks you don't understand}.
 			
 			\vspace{10pt}
 			
@@ -207,6 +215,24 @@
 			
 			\normalsize
 			
+		\end{frame}	
+
+		\begin{frame}
+	
+			\frametitle{Some Characteristics of Self-explainable ML Models\\ (\small{\cite{sudjianto2021designing})}}			
+			
+			\small
+			
+			\begin{itemize}
+				\item \textbf{Additivity}: Whether/how model takes the additive or modular form. Additive decomposition of feature effects tends to be more explainable.
+				\item \textbf{Sparsity}: Whether/how features or model components are regularized. Having fewer features or components tends to be more explainable.
+				\item \textbf{Linearity}: Whether/how feature effects are linear. Linear or constant feature effects are easy to explain.
+				\item \textbf{Smoothness}: Whether/how feature effects are continuous and smooth. Continuous and smooth feature effects are relatively easy to explain.
+				\item \textbf{Monotonicity}: Whether/how feature effects can be modeled to be monotone. When increasing/decreasing effects are desired by expert knowledge they are easy to explain.
+				\item \textbf{Visualizability}: Whether/how the feature effects can be directly visualized. Visualization facilitates the final model diagnostics and explanation.
+			\end{itemize}
+			
+			\normalsize
 			
 		\end{frame}	
 
@@ -477,7 +503,7 @@
 		
 		\begin{frame}
 		
-			\frametitle{A Burgeoning Ecosystem of Interpretable Machine Learning Models}		
+			\frametitle{A Burgeoning Ecosystem of Self-explainable Machine Learning Models}		
 			
 			\begin{itemize}
 				\item \href{https://www.mdpi.com/2078-2489/11/3/137}{Explainable Neural Network} (XNN) (\cite{wf_xnn})
