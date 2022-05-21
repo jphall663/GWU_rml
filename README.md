@@ -65,7 +65,11 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 2 Class Materials
 
 * [Lecture Notes](tex/lecture_2.pdf) 
-* Software Example: [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) 
+* Software Examples: 
+  * [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) 
+  * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/glm_mgbm_gbm.ipynb?flush_cache=true)
+  * [Monotonic XGBoost models, partial dependence, individual conditional expectation plots, and Shapley explanations](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/xgboost_pdp_ice.ipynb)
+  * [Decision tree surrogates, LOCO, and ensembles of explanations](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/dt_surrogate_loco.ipynb)
 * [Assignment 2](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_2.pdf) 
 
 ### Lecture 2 Suggested Software
@@ -75,6 +79,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [`alibi`](https://github.com/SeldonIO/alibi)
   * [`interpret`](https://github.com/interpretml/interpret)
   * [`shap`](https://github.com/slundberg/shap)
+  * [PiML-Toolbox](https://github.com/SelfExplainML/PiML-Toolbox)
   * [`tf-explain`](https://github.com/sicara/tf-explain)
 * R:
   * [`DALEX`](https://cran.r-project.org/web/packages/DALEX/index.html)
