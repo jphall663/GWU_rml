@@ -79,7 +79,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [`alibi`](https://github.com/SeldonIO/alibi)
   * [`interpret`](https://github.com/interpretml/interpret)
   * [`shap`](https://github.com/slundberg/shap)
-  * [PiML-Toolbox](https://github.com/SelfExplainML/PiML-Toolbox)
+  * [`PiML-Toolbox`](https://github.com/SelfExplainML/PiML-Toolbox)
   * [`tf-explain`](https://github.com/sicara/tf-explain)
 * R:
   * [`DALEX`](https://cran.r-project.org/web/packages/DALEX/index.html)
