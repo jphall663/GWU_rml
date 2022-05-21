@@ -92,7 +92,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [**Responsible Artificial Intelligence**](https://www.springer.com/gp/book/9783030303709) - Chapter 4
   
 * **Post-hoc Explanation Techniques**:
-  * **Interpretable Machine Learning** - [Chapter 5](https://christophm.github.io/interpretable-ml-book/agnostic.html) and [Chapter 6](https://christophm.github.io/interpretable-ml-book/example-based.html)
+  * **Interpretable Machine Learning** - [Chapter 6](https://christophm.github.io/interpretable-ml-book/agnostic.html) and [Chapter 7](https://christophm.github.io/interpretable-ml-book/example-based.html)
   * [*Towards Better Understanding of Gradient-based Attribution Methods for Deep Neural Networks*](https://arxiv.org/pdf/1711.06104.pdf)
 
 ***
