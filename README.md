@@ -55,8 +55,6 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [*Accurate Intelligible Models with Pairwise Interactions*](http://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf)
   * [*This Looks Like That: Deep Learning for Interpretable Image Recognition*](https://arxiv.org/pdf/1806.10574.pdf)
 
-* **Links from Lecture 1**:
-
 ***
 
 ## Lecture 2: Post-hoc Explanation
