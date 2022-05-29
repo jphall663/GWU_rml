@@ -190,7 +190,7 @@
 		\begin{equation}
 		\label{eq:shap_contrib}
 		\begin{aligned}
-		\phi_{j} = \underbrace{\sum_{S \subseteq \mathcal{P} \setminus \{j\}}\frac{|S|!(\mathcal{P} -|S| -1)!}{\mathcal{P}!}}_\text{weighted average over all subsets in \textbf{X}}\underbrace{[(S \cup \{j\}) - g_x(S)]}_{g\text{ "without" }x_j}
+		\phi_{j} = \underbrace{\sum_{S \subseteq \mathcal{P} \setminus \{j\}}\frac{|S|!(\mathcal{P} -|S| -1)!}{\mathcal{P}!}}_\text{weighted average over all subsets in \textbf{X}}\underbrace{[g_x(S \cup \{j\}) - g_x(S)]}_{g\text{ "without" }x_j}
 		\end{aligned}
 		\end{equation}
 		
