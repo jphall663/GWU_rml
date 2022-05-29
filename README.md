@@ -121,6 +121,7 @@ Python:
 * **Introduction and Background**:
 
   * **Fairness and Machine Learning** - [Introduction](https://fairmlbook.org/introduction.html)
+  * [NIST SP1270: Towards a Standard for Identifying and Managing Bias in Artificial Intelligence(https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf)
   * [*Fairness Through Awareness*](https://arxiv.org/pdf/1104.3913.pdf)
   
 * **Discrimination Testing and Remediation Techniques**:
