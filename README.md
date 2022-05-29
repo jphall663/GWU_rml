@@ -121,7 +121,7 @@ Python:
 * **Introduction and Background**:
 
   * **Fairness and Machine Learning** - [Introduction](https://fairmlbook.org/introduction.html)
-  * [NIST SP1270: Towards a Standard for Identifying and Managing Bias in Artificial Intelligence(https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf)
+  * [NIST SP1270: Towards a Standard for Identifying and Managing Bias in Artificial Intelligence](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf)
   * [*Fairness Through Awareness*](https://arxiv.org/pdf/1104.3913.pdf)
   
 * **Discrimination Testing and Remediation Techniques**:
@@ -133,10 +133,6 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
   * [*Fairness Beyond Disparate Treatment & Disparate Impact: Learning Classification Without Disparate Mistreatment*](https://arxiv.org/pdf/1610.08452.pdf)
   * [*Learning Fair Representations*](http://proceedings.mlr.press/v28/zemel13.pdf)
   * [*Mitigating Unwanted Biases with Adversarial Learning*](https://dl.acm.org/doi/pdf/10.1145/3278721.3278779)
-
-* **Links from Lecture 3**:
-  * [_Millions of black people affected by racial bias in health-care algorithms_](https://www.nature.com/articles/d41586-019-03228-6)
-  * [Dealing with Bias and Fairness in AI/ML/Data Science Systems](https://docs.google.com/presentation/d/17o_NzplYua5fcJFuGcy1V1-5GFAHk7oHAF4dN44NkUE/edit)
 
 ***   
 
