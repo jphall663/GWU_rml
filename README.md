@@ -236,6 +236,8 @@ Python:
 
 * **Introduction and Background**:
 
+  * [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
+  * [Interagency Guidance on Model Risk Management (SR 11-7)](https://www.federalreserve.gov/supervisionreg/srletters/sr1107a1.pdf)
   * [Eight Principles of Responsible Machine Learning](https://ethical.institute/principles.html)
   * [Principles for Accountable Algorithms and a Social Impact Statement for Algorithms](https://www.fatml.org/resources/principles-for-accountable-algorithms)
   * [Responsible AI Practices](https://ai.google/responsibilities/responsible-ai-practices/)
