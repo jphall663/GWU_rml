@@ -24,12 +24,12 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Lecture Notes](tex/lecture_1.pdf)
 * [Assignment 1](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_1.pdf) 
   * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb)
-  * [Full evaluations results](https://github.com/jphall663/GWU_rml/blob/master/assignments/model_eval_2022_05_27_09_41_34.csv)
+  * [Full evaluations results](https://github.com/jphall663/GWU_rml/blob/master/assignments/model_eval_2022_06_13_09_47_08.csv)
 * Software Examples:
   * [Building from Penalized GLM to Monotonic GBM (simple)](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb?flush_cache=true)
   * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/glm_mgbm_gbm.ipynb?flush_cache=true)
   * [Simple Explainable Boosting Machine Example](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1_ebm_example.ipynb?flush_cache=true)
-  * [PiML Credit Card Data Example](https://colab.research.google.com/github/SelfExplainML/PiML-Toolbox/blob/main/examples/Example_TaiwanCredit.ipynb)
+  * [PiML Assignment 1 Example](https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/group6_PiML_example.ipynb) and simple [requirements.txt](https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/piml_requirements.txt)
 
 
 ### Lecture 1 Suggested Software
@@ -236,6 +236,8 @@ Python:
 
 * **Introduction and Background**:
 
+  * [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
+  * [Interagency Guidance on Model Risk Management (SR 11-7)](https://www.federalreserve.gov/supervisionreg/srletters/sr1107a1.pdf)
   * [Eight Principles of Responsible Machine Learning](https://ethical.institute/principles.html)
   * [Principles for Accountable Algorithms and a Social Impact Statement for Algorithms](https://www.fatml.org/resources/principles-for-accountable-algorithms)
   * [Responsible AI Practices](https://ai.google/responsibilities/responsible-ai-practices/)
