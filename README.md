@@ -266,6 +266,8 @@ brew cask install adoptopenjdk8
 
 * [Install Mac command line developer tools](https://www.cnet.com/how-to/install-command-line-developer-tools-in-os-x/)
 
+* Install Graphviz: `$ brew install graphviz`
+
 * Install Git: `$ brew install git`
 
 1. Clone this repository with the examples: `$ git clone https://github.com/jphall663/GWU_rml.git`
