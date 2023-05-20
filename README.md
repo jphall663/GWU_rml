@@ -2,7 +2,7 @@
 
 Materials for a technical, nuts-and-bolts course about increasing transparency, fairness, security and privacy in machine learning.
 
-* Lecture 1: Self-explainable Machine Learning Models
+* Lecture 1: Explainable Machine Learning Models
 * Lecture 2: Post-hoc Explanation
 * Lecture 3: Discrimination Testing and Remediation
 * Lecture 4: Machine Learning Security
@@ -13,7 +13,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ***
 
-## Lecture 1: Self-explainable Machine Learning Models
+## Lecture 1: Explainable Machine Learning Models
 
 ![Histogram, partial dependence, and ICE for a monotonic GBM and a credit card customer's most recent repayment status](/img/ebm.png)
 <sub><sup>**Source:** [Simple Explainable Boosting Machine Example](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1_ebm_example.ipynb?flush_cache=true) (Jupyter)</sup></sub>
