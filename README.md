@@ -61,7 +61,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * **Elements of Statistical Learning** - Chapters 3,4, and 9
   * [*Fast Interpretable Greedy-Tree Sums (FIGS)*](https://arxiv.org/pdf/2201.11931.pdf)
   * **Interpretable Machine Learning** - [Chapter 5](https://christophm.github.io/interpretable-ml-book/simple.html)
-  * [*GAMI-Net: An explainable neural network based on generalized additive models with structured interactions*](https://www.sciencedirect.com/science/article/abs/pii/S0031320321003484)
+  * [*GAMI-Net: An Explainable Neural Network Based on Generalized Additive Models with Structured Interactions*](https://www.sciencedirect.com/science/article/abs/pii/S0031320321003484)
   * [*Neural Additive Models: Interpretable Machine Learning with Neural Nets*](https://proceedings.neurips.cc/paper_files/paper/2021/file/251bd0442dfcc53b5a761e050f8022b8-Paper.pdf)
   * [*A Responsible Machine Learning Workflow with Focus on Interpretable Models, Post-hoc Explanation, and Discrimination Testing*](https://www.mdpi.com/2078-2489/11/3/137)
   * [*This Looks Like That: Deep Learning for Interpretable Image Recognition*](https://arxiv.org/pdf/1806.10574.pdf)
