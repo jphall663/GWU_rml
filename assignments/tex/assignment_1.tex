@@ -3,7 +3,7 @@
 \documentclass[fleqn]{article}
 \renewcommand\refname{}
 \title{Responsible Machine Learning\\\Large{Assignment 1}\\\Large{10 points}}
-\author{\copyright Patrick Hall 2022}
+\author{\copyright Patrick Hall 2021--2023}
 
 \usepackage{graphicx}
 \usepackage{fullpage}
@@ -33,7 +33,36 @@
 
 \maketitle
 
-\noindent In Assignment 1, you will work with your group to train interpretable machine learning (ML) models following the instructions below. A \href{https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/assignment_1/assign_1_template.ipynb?flush_cache=true}{template} has been provided as an example of how to train and compare a few different interpretable models. For those of you who use Python virtual environments, a basic \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/requirements.txt}{\texttt{requirements.txt}} file is also available for the template.\\
+\noindent In Assignment 1, you will train explainable machine learning (ML) models following the instructions below. A \href{https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/assignment_1/assign_1_template.ipynb?flush_cache=true}{template} has been provided as an example of how to train and compare a few different explainable models. For those of you who use Python virtual environments, a basic \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/requirements.txt}{requirements.txt} file is also available for the template.\\
+
+\noindent Assuming you have Python 3 installed, setting up the environment and running the template may look something like this:\\ 
+\noindent \texttt{\$ python3 -m pip install --user --upgrade pip}\\
+\noindent \texttt{\$ python3 -m pip install --user virtualenv}\\
+\noindent \texttt{\$ git clone https://github.com/jphall663/GWU\_rml.git}\\
+\noindent \texttt{\$ cd assignments}\\
+\noindent \texttt{\$ python3 -m venv env\_rml}\\
+\noindent \texttt{\$ source env\_rml/bin/activate}\\
+\noindent \texttt{\$ python3 -m pip install -r requirements.txt}\\
+\noindent \texttt{\$ env\_rml/bin/jupyter notebook}\\
+
+\noindent (Note that using h2o locally will require Java to be installed.)\\
+
+\noindent Some of you may find it easier to use \href{https://selfexplainml.github.io/PiML-Toolbox/_build/html/index.html}{PiML} and/or Colab. If you'd like to try them on your own machine, a simple \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/group6_PiML_example.ipynb}{PiML example} and \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/piml_requirements.txt}{requirements.txt} are available from class resources. Follow examples from the PiML website to use PiML on Colab. To load data into PiML, use Pandas and Google Colab functions:\\
+\noindent \texttt{import io}\\
+\noindent \texttt{from google.colab import files}\\
+\noindent \texttt{uploaded = files.upload() \# upload training and test data}\\
+\noindent \texttt{import pandas as pd}\\
+\noindent \texttt{train = pd.read\_csv(io.StringIO(uploaded['hmda\_train\_preprocessed.csv'].decode('utf-8')))}\\
+\noindent \texttt{!pip install piml}\\
+\noindent \texttt{from piml import Experiment}\\
+\noindent \texttt{exp = Experiment()}\\
+\noindent \texttt{exp.data\_loader(data=train)}\\
+
+\noindent Generating predictions in PiML looks something like this:\\
+\noindent \texttt{preds = exp.experiment.registered\_pipeline['EBM'].predict\_proba(train[x\_names].values)[:, 1]}\\
+
+\noindent Installing packages like \texttt{h2o} or \texttt{interpret} in Colab looks something like this:\\
+\noindent  \texttt{!pip install h2o}\\ 
 
 \noindent Please let me know immediately if you find typos or mistakes in this assignment or related materials. 
 
@@ -72,9 +101,9 @@ Load the data into modeling software. Training data contains 160338 rows and 23 
 
 \noindent Training data should be used to create training and validation partitions. Test data will only be used to evaluate your models by the instructor. See cell 7 in the template.
 
-\section{Train Interpretable Models}
+\section{Train Explainable Models}
 
-Train at least two types of interpretable models, ensuring best practices like reproducibility, validation-based early-stopping, and grid search are used. (Scikit-learn does not necessarily make applying such best practices easy.) You are encouraged to try packages like \href{https://docs.h2o.ai/h2o/latest-stable/h2o-docs/downloading.html}{\texttt{h2o}}, \href{https://github.com/interpretml/interpret}{\texttt{interpret}}, and \href{https://xgboost.readthedocs.io/en/latest/install.html}{\texttt{XGBoost}}, but you may use any interpretable or self-explainable approach on which you will be able to apply explanation, discrimination testing and remediation, and model debugging approaches in coming weeks. Please reach out with questions about appropriate modeling techniques.\\
+Train at least two types of explainable models, ensuring best practices like reproducibility, validation-based early-stopping, and grid search are used. (Scikit-learn does not necessarily make applying such best practices easy.) You are encouraged to try packages like \href{https://docs.h2o.ai/h2o/latest-stable/h2o-docs/downloading.html}{\texttt{h2o}}, \href{https://github.com/interpretml/interpret}{\texttt{interpret}}, and \href{https://xgboost.readthedocs.io/en/latest/install.html}{\texttt{XGBoost}}, but you may use any explainable approach on which you will be able to apply explanation, discrimination testing and remediation, and model debugging approaches in coming weeks. Please reach out with questions about appropriate modeling techniques.\\
 
 \noindent The template contains examples for elastic net logistic regression using \texttt{h2o} (see cells 8--10), monotonic gradient boosting machines (GBM) using \texttt{XGBoost} (see cells 12--14), and explainable boosting machines (EBM) using \texttt{interpret} (see cells 16--18). 
 
@@ -84,10 +113,10 @@ Your deliverable for this assignment has two parts. Each part is worth 5 points.
 
 \begin{itemize}
 	\item You must check in your code to a public GitHub repository by the deadline below. Code should be available as a commented script, Jupyter notebook, R markdown or other polished and professional format. 
-	\item You must create submission files with output probabilities for each row of the test data. The submission file should have one column named \texttt{phat}. Each model should have a separate submission file named using a \texttt{<group\_indentifier>\_<model\_type>.csv} convention, similar to the \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/ph_best_glm.csv}{example submission file}. See cells 11, 15, and 19 for examples of writing submission files. Your group's submission will be ranked using the cross-validated ranking method discussed during Lecture 1. The remaining five points for the assignment will be issued based on this ranking. You will have opportunities to increase your rank each week of the class. 
+	\item You must create submission files with output probabilities for each row of the test data. The submission file should have one column named \texttt{phat}. Each model should have a separate submission file named using a \texttt{<personal\_or\_group\_indentifier>\_<model\_type>.csv} convention, similar to the \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/ph_glm.csv}{example submission file}. See cells 11, 15, and 19 for examples of writing submission files. Your group's submission will be ranked using the cross-validated ranking method discussed during Lecture 1. The remaining five points for the assignment will be issued based on this ranking. You will have opportunities to increase your rank each week of the class. 
 \end{itemize}
 
-\noindent \textbf{Your deliverables are due Wednesday, May 25\textsuperscript{th}, at 11:59:59 PM ET.}\\
+\noindent \textbf{Your deliverables are due Wednesday, May 31\textsuperscript{st}, at 11:59:59 PM ET.}\\
 
 \noindent Please send an email to \href{mailto:jphall@gwu.edu}{\texttt{jphall@gwu.edu}} by that deadline with the link to your group's GitHub page and with your zipped submission files. 
 
