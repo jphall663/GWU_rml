@@ -56,19 +56,17 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [*Psychological Foundations of Explainability and Interpretability in Artificial Intelligence*](https://nvlpubs.nist.gov/nistpubs/ir/2021/NIST.IR.8367.pdf)
   * [*Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead*](https://arxiv.org/pdf/1811.10154.pdf) 
 
-* **Self-explainaing Machine Learning Techniques**:
+* **Explainable Machine Learning Techniques**:
   * [*Accurate Intelligible Models with Pairwise Interactions*](http://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf)
-  * **Elements of Statistical Learning** - Chapters 
+  * **Elements of Statistical Learning** - Chapters 3,4, and 9
+  * [*Fast Interpretable Greedy-Tree Sums (FIGS)*](https://arxiv.org/pdf/2201.11931.pdf)
   * **Interpretable Machine Learning** - [Chapter 5](https://christophm.github.io/interpretable-ml-book/simple.html)
+  * [*GAMI-Net: An explainable neural network based on generalized additive models with structured interactions*](https://www.sciencedirect.com/science/article/abs/pii/S0031320321003484)
+  * [*Neural Additive Models: Interpretable Machine Learning with Neural Nets*](https://proceedings.neurips.cc/paper_files/paper/2021/file/251bd0442dfcc53b5a761e050f8022b8-Paper.pdf)
+  * [*A Responsible Machine Learning Workflow with Focus on Interpretable Models, Post-hoc Explanation, and Discrimination Testing*](https://www.mdpi.com/2078-2489/11/3/137)
   * [*This Looks Like That: Deep Learning for Interpretable Image Recognition*](https://arxiv.org/pdf/1806.10574.pdf)
-
-FIGS: Fast Interpretable Greedy-Tree Sums (Tan, et al. 2022)
-XGB1: Extreme Gradient Boosted Trees of Depth 1, with optimal binning (Chen and Guestrin, 2016; Navas-Palencia, 2020)
-XGB2: Extreme Gradient Boosted Trees of Depth 2, with effect purification (Chen and Guestrin, 2016; Lengerich, et al. 2020)
-EBM: Explainable Boosting Machine (Nori, et al. 2019; Lou, et al. 2013)
-GAMI-Net: Generalized Additive Model with Structured Interactions (Yang, Zhang and Sudjianto, 2021)
-ReLU-DNN: Deep ReLU Networks using Aletheia Unwrapper and Sparsification (Sudjianto, et al. 2020)
-
+  * [*Unwrapping The Black Box of Deep ReLU Networks: Interpretability, Diagnostics, and Simplification*](https://arxiv.org/pdf/2011.04041.pdf)
+  
 ***
 
 ## Lecture 2: Post-hoc Explanation
