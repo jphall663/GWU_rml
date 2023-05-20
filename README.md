@@ -1,6 +1,6 @@
 ## GWU_DNSC 6290: Course Outline
 
-Materials for a technical, nuts-and-bolts course about increasing transparency, fairness, security and privacy in machine learning.
+Materials for a technical, nuts-and-bolts course about increasing transparency, fairness, robustness, and security in machine learning.
 
 * Lecture 1: Explainable Machine Learning Models
 * Lecture 2: Post-hoc Explanation
