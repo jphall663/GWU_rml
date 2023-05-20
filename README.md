@@ -20,7 +20,11 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ### Lecture 1 Class Materials
 
-* [Syllabus](https://github.com/jphall663/GWU_rml/blob/master/tentative_syllabus_ph_responsible_machine_learning_msba_v5.pdf)
+* Introduction: 
+  * [Syllabus](https://github.com/jphall663/GWU_rml/blob/master/tentative_syllabus_ph_responsible_machine_learning_msba_v5.pdf)
+  * [Basic Data Manipulation](https://github.com/jphall663/GWU_data_mining/blob/master/01_basic_data_prep/01_basic_data_prep.md)
+  * [Primer on Technical Malpractice](https://docs.google.com/presentation/d/1cZeaoIp4cQsVY_gj2a5Pg7ygexepQZRS-ZEn6n2QqEU/edit?usp=sharing)
+  * [Whiteboard Notation](https://docs.google.com/presentation/d/1Axf9dizaE3XvGRelBHfsnAlMUPFuMExQ2WNVwQBKMrw/edit?usp=sharing)
 * [Lecture Notes](tex/lecture_1.pdf)
 * [Assignment 1](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_1.pdf) 
   * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb)
