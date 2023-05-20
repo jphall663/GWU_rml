@@ -65,7 +65,7 @@
 
 \author{Patrick Hall}
 \title{Introduction to Responsible Machine Learning\footnote{\tiny{This material is shared under a \href{https://creativecommons.org/licenses/by/4.0/deed.ast}{CC By 4.0 license} which allows for editing and redistribution, even for commercial purposes. However, any derivative work should attribute the author.}}}
-\subtitle{Lecture 1: Self-explainable Machine Learning Models}
+\subtitle{Lecture 1: Explainable Machine Learning Models}
 \institute{The George Washington University}
 \date{\today}
 
@@ -107,7 +107,7 @@
 					\item Groups randomly assigned by instructor, with consideration of time zone
 				\end{itemize}
 			\item{Syllabus}
-			\item{Webex office hours: 8:30 PM Tues (??)}
+			\item{Office hours: (??)}
 			\item{Class resources: \url{https://jphall663.github.io/GWU_rml/}}	
 		\end{itemize}		
 			
@@ -119,7 +119,7 @@
 		\frametitle{Overview}
 		
 		\begin{itemize}
-			\item{\textbf{Class 1}: Self-explainable Models}
+			\item{\textbf{Class 1}: Explainable Models}
 			\item{\textbf{Class 2}: Post-hoc Explanations}
 			\item{\textbf{Class 3}: Fairness}
 			\item{\textbf{Class 4}: Security}
@@ -132,29 +132,48 @@
 
 %-------------------------------------------------------------------------------
 	\section{Introduction}
+		\subsection*{} % for slide tracking
 %-------------------------------------------------------------------------------
 	
-		\subsection*{}
-
 		\begin{frame}
 	
 			\frametitle{Responsible Artificial Intelligence}
 	
-			\epigraph{“Responsible Artificial Intelligence is about human responsibility for the development of intelligent systems along fundamental human principles and values, to ensure human-flourishing and well-being in a sustainable world.”}{--- \textup{Virginia Dignum}, \textbf{Responsible Artificial Intelligence}}
+
+			\epigraph{``The designing and building of intelligent systems that receive signals from the environment and take actions that affect that environment.''}{--- \citet{russell2010artificial}, \href{https://aima.cs.berkeley.edu/}{Artificial Intelligence: A Modern Approach}}
+
+			\epigraph{``Responsible Artificial Intelligence is about human responsibility for the development of intelligent systems along fundamental human principles and values, to ensure human-flourishing and well-being in a sustainable world.''}{--- \citet{dignum2019responsible}, Responsible Artificial Intelligence} 
 	
 		\end{frame}		
 
 		\begin{frame}
 	
+			\frametitle{Risk and Responsibility}
+	
+				\small{The \href{https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf}{NIST AI Risk Management Framework} (\citet{tabassi2023artificial}) characterizes risk as, ``Composite measure of an event’s probability of occurring and the magnitude or degree of the consequences of the corresponding event. \textbf{The impacts, or consequences, of AI systems can be positive, negative, or both and can result in opportunities or threats.}''}\\
+				\vspace{10pt}
+				\small{The \href{https://artificialintelligenceact.eu/}{Draft European Union AI Act} categorizes the following ML applications as high risk: biometric identification; management of critical infrastructure; education; employment; essential services, both public (e.g., public assistance) and private (e.g., credit lending); law enforcement; immigration and border control; criminal justice; and the democratic process.}\\
+				\vspace{10pt}
+				\small{Increased financial, legal, regulatory, or ethical considerations in high-risk applications require practitioners to act with greater responsibility.}
+
+		\end{frame}	
+
+		\begin{frame}
+
 			\frametitle{What About Machine Learning?}
-			
-			\begin{figure}[htb]
-				\begin{center}
-					\includegraphics[height=150pt]{../img/cs_stat.png}
-					\label{fig:cs_stat}
-				\end{center}
-			\end{figure}		
-			
+
+			\begin{columns}
+		
+				\column{0.5\linewidth}
+					\textit{``[A] field of study that gives computers the ability to learn without being explicitly programmed.''\\ \hspace{20pt} --- \textup{Arthur Samuel}, circa 1960}
+	
+				\column{0.5\linewidth}
+						\centering
+						\includegraphics[height=150pt]{../img/cs_stat.png}
+						\label{fig:cs_stat}
+
+			\end{columns}
+	
 		\end{frame}	
 
 		\begin{frame}
@@ -165,7 +184,7 @@
 				\begin{center}
 					\includegraphics[height=150pt]{../img/rml_diagram_no_hilite.png}\\\vspace{5pt}
 					\label{fig:blueprint_nohl}
-					\scriptsize{\textbf{Source:} \href{https://www.mdpi.com/2078-2489/11/3/137/htm}{\textit{A Responsible Machine Learning Workflow}}.}
+					\scriptsize{\textbf{Source:} \href{https://www.mdpi.com/2078-2489/11/3/137/htm}{\textit{A Responsible Machine Learning Workflow}}. (\citet{rml_workflow})}
 				\end{center}
 			\end{figure}
 		
@@ -173,13 +192,13 @@
 		
 		\begin{frame}
 	
-			\frametitle{A Responsible ML Workflow: Self-explainable Models}		
+			\frametitle{A Responsible ML Workflow: Explainable Models}		
 			
 			\begin{figure}[htb]
 				\begin{center}
 					\includegraphics[height=150pt]{../img/rml_diagram_lec1_hilite.png}\\\vspace{5pt}
 					\label{fig:blueprint_l1hl}
-					\scriptsize{\textbf{Source:} \href{https://www.mdpi.com/2078-2489/11/3/137/htm}{\textit{A Responsible Machine Learning Workflow}}.}
+					\scriptsize{\textbf{Source:} \href{https://www.mdpi.com/2078-2489/11/3/137/htm}{\textit{A Responsible Machine Learning Workflow}}. (\citet{rml_workflow})}
 				\end{center}
 			\end{figure}		
 					
@@ -187,7 +206,7 @@
 
 		\begin{frame}
 	
-			\frametitle{Self-explainable ML Models}			
+			\frametitle{Explainable ML Models}			
 					
 			\textbf{Interpretation}: a high-level, meaningful mental representation that contextualizes a stimulus and leverages human background knowledge. An interpretable model should provide users with a description of what a data point or model output means \textit{in context} (\cite{broniatowski2021psychological}).\\
 			
@@ -199,15 +218,15 @@
 			
 		\begin{frame}
 	
-			\frametitle{Self-explainable ML Models}			
+			\frametitle{Explainable ML Models}			
 	
 			\small
 			
-			There are many types of self-explainable ML models. Some might be directly interpretable to non-technical consumers. Some are only explainable to highly-skilled data scientists. Interpretability is not an on-and-off switch.
+			There are many types of explainable ML models. Some might be directly interpretable to non-technical consumers. Some are only explainable to highly-skilled data scientists. Interpretability is not an on-and-off switch.
 			
 			\vspace{10pt}
 			
-			Self-explainable models are crucial for risk management, documentation, compliance, explanation of predictions to consumers, finding and fixing discrimination, and  debugging other problems in ML modeling pipelines. Simply put, \textbf{it is very difficult to mitigate risks you don't understand}.
+			Explainable models are crucial for risk management, documentation, compliance, explanation of predictions to consumers, finding and fixing discrimination, and  debugging other problems in ML modeling pipelines. Simply put, \textbf{it is very difficult to mitigate risks you don't understand}.
 			
 			\vspace{10pt}
 			
@@ -219,7 +238,7 @@
 
 		\begin{frame}
 	
-			\frametitle{Some Characteristics of Self-explainable ML Models\\ (\small{\cite{sudjianto2021designing})}}			
+			\frametitle{Some Characteristics of Explainable ML Models\\ (\small{\cite{sudjianto2021designing})}}			
 			
 			\small
 			
@@ -344,11 +363,38 @@
 		%\end{frame}		
 							
 %-------------------------------------------------------------------------------
-	\section{Penalized GLM}
-%-------------------------------------------------------------------------------
-	
+	\section{The GAM Family}
 		\subsection*{}
+%-------------------------------------------------------------------------------
 
+		\begin{frame}
+	
+		\frametitle{The GAM Family of Explainable Models (fANOVA)}	
+				
+			\begin{flalign}
+			&\begin{aligned}\label{eq:glm1}
+			g^{\text{GLM}}(\mathbf{x}) &= \beta_0 + \beta_1 x_0 + \beta_2 x_1 + \dots + \beta_P x_{P-1}
+			\end{aligned}&&
+			\end{flalign}
+			
+			\begin{flalign}
+			&\begin{aligned}\label{eq:gam1}
+			g^{\text{GAM}}(\mathbf{x}) &= \beta_0 + \beta_1 g_0(x_0) + \beta_2 g_1(x_1) + \dots + \beta_P g_{P-1}(x_{P-1})
+			\end{aligned}&&
+			\end{flalign}
+	
+			\begin{flalign}
+			&\begin{aligned}\label{eq:ga2m1}
+			g^{\text{GA2M}}(\mathbf{x}) = \beta_0 + \beta_1 g_0(x_0) + \beta_2 g_1(x_1) + \dots + \beta_P g_{P-1}(x_{P-1}) + \dots +\\
+ 			\beta_{0,1} g_{0,1}(x_0, x_1) + \dots + \beta_{P-2,P-1} g_{P-2,P-1}(x_{P-2}, x_{P-1})
+			\end{aligned}&&
+			\end{flalign}
+
+		
+		\vspace{10pt} 
+		\noindent \small{Where shape functions are fit with traditional spline techniques in GAM and GA2M, and shape functions are fit with boosting and neural networks in GA2M variants like explainable boosting machines (EBMs) and neural additive models (NAMs), respectively}.
+		
+		\end{frame}
 
 		\begin{frame}
 	
@@ -357,7 +403,7 @@
 		Generalized linear models (GLM) have the same basic functional form as more traditional linear models, e.g. ...
 				
 		\begin{equation}
-			\begin{aligned}\label{eq:gbm}
+			\begin{aligned}\label{eq:glm2}
 			g^{\text{GLM}}(\mathbf{x}) &= \beta_0 + \beta_1 x_0 + \beta_2 x_1 + \dots + \beta_P x_{P-1}
 			\end{aligned}
 		\end{equation}	
@@ -402,12 +448,6 @@
 								
 		\end{frame}				
 
-%-------------------------------------------------------------------------------
-	\section{GAMs and EBMs}
-%-------------------------------------------------------------------------------
-
-	\subsection*{}
-
 	\begin{frame}
 		
 		\frametitle{Generalized Additive Models and Explainable Boosting Machines}
@@ -418,17 +458,17 @@
 		
 		\begin{equation}
 			\begin{aligned}\label{eq:gam}
-			g^{\text{GAM}}(\mathbf{x}) &= \beta_0 + \beta_1 g_0(x_0) + \beta_2 g_1(x_1) + \dots + \beta_P g_{p-1}(x_{P-1})
+			g^{\text{GAM}}(\mathbf{x}) &= \beta_0 + \beta_1 g_0(x_0) + \beta_2 g_1(x_1) + \dots + \beta_P g_{P-1}(x_{P-1})
 			\end{aligned}
 		\end{equation}	
 		
 		GAMs use spline approaches to fit each $g_j$.\\
 		\vspace{10pt}
-		Later \cite{ga2m} introduced an efficient technique for finding interaction terms ($\beta_{jk} g_{(j-1)(k-1)}(x_j \cdot x_k)$) to include in GAMs. This highly accurate technique was given the acronym GA2M.\\
+		Later \cite{ga2m} introduced an efficient technique for finding interaction terms ($\beta_{j,k} g_{(j-1),(k-1)}(x_{j-1}, x_{k-1})$) to include in GAMs. This highly accurate technique was given the acronym GA2M.\\
 		\vspace{10pt}
-		Recently Microsoft Research introduced the Explainable Boosting Machine (EBM) in the \href{https://github.com/interpretml/interpret/}{interpret} package, in which GBMs are used to fit each $g_j$ and $g_{jk}$. Higher order interactions are allowed, but used infrequently in practice. \\
+		Recently Microsoft Research introduced the explainable boosting machine (EBM) in the \href{https://github.com/interpretml/interpret/}{interpret} package, in which GBMs are used to fit each $g_{j-1}$ and $g_{(j-1),(k-1)}$. Higher order interactions are allowed, but used infrequently in practice. \\
 		\vspace{10pt}
-		Because each input feature, or combination thereof, is treated separately and in an additive fashion, interpretability is very high. 
+		Because each input feature, or combination thereof, is treated separately and in an additive fashion, explainability is very high. 
 		
 	\end{frame}
 
@@ -444,6 +484,18 @@
 		\end{figure}
 	
 	\end{frame}
+
+	\begin{frame}
+	
+		\frametitle{Generalized Additive Models and Neural Networks}
+		
+		\noindent Researchers have also put forward GA2M variants in which each $g_{j-1}$ and $g_{(j-1),(k-1)}$ shape function is fit by neural networks, e.g., GAMI-Net (\citet{yang2021gami}) and neural additive models (\citet{agarwal2021neural}).\\
+		\vspace{10pt} 
+		\noindent See the \href{https://selfexplainml.github.io/PiML-Toolbox/_build/html/index.html}{PiML package} for an excellent implementation of GAMI-Net and other explainable models. 
+		 
+	\end{frame}
+
+
 %-------------------------------------------------------------------------------
 	\section{Monotonic GBM}
 %-------------------------------------------------------------------------------
@@ -503,7 +555,7 @@
 		
 		\begin{frame}
 		
-			\frametitle{A Burgeoning Ecosystem of Self-explainable Machine Learning Models}		
+			\frametitle{A Burgeoning Ecosystem of Explainable Machine Learning Models}		
 			
 			\begin{itemize}
 				\item \href{https://www.mdpi.com/2078-2489/11/3/137}{Explainable Neural Network} (XNN) (\cite{wf_xnn})
@@ -546,8 +598,6 @@
 		\includegraphics[height=130pt]{../img/cv_ranking.png}\vspace{5pt}
 		\scriptsize{Three models are ranked across different metrics and folds. The model with the highest rank, on average, across metrics and folds is the best model, \texttt{gbm11} in this case.}
 		
-
-		
 	\end{columns}
 	
 \end{frame}	
@@ -563,10 +613,6 @@
 	\frametitle{Acknowledgments}		
 	
 	Thanks to Lisa Song for her assistance in developing these course materials.\\
-	\vspace{10pt}
-	Some materials \copyright\hspace{1pt}Patrick Hall and the H2O.ai team 2017-2020. 
-	
-	
 	
 \end{frame}
 		
