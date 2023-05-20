@@ -29,14 +29,9 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Assignment 1](assignments/tex/assignment_1.pdf): 
   * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb)
   * [Full evaluations results]()
-* Software Examples:
-  * [Building from Penalized GLM to Monotonic GBM (simple)](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb?flush_cache=true)
-  * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/glm_mgbm_gbm.ipynb?flush_cache=true)
-  * [Simple Explainable Boosting Machine Example](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1_ebm_example.ipynb?flush_cache=true)
-  * [PiML Assignment 1 Example](https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/group6_PiML_example.ipynb) and simple [requirements.txt](https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/piml_requirements.txt)
+* Reading: _Machine Learning for High-Risk Applications_, Chapter 2 (pp. 33 - 50) and Chapter 6 (pp. 189 - 217)
 
-
-### Lecture 1 Suggested Software
+### Lecture 1 Additional Software Tools
 
 * Python [PiML-Toolbox](https://github.com/SelfExplainML/PiML-Toolbox)
 * Python [explainable boosting machine (EBM)/GA2M](https://github.com/interpretml/interpret)
@@ -46,18 +41,33 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * R [`rpart`](https://cran.r-project.org/web/packages/rpart/index.html)
 * Python [`skope-rules`](https://github.com/scikit-learn-contrib/skope-rules)
 
-### Lecture 1 Suggested Reading
+### Lecture 1 Additional Software Examples
+
+* [Building from Penalized GLM to Monotonic GBM (simple)](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb?flush_cache=true)
+* [Building from Penalized GLM to Monotonic GBM](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/glm_mgbm_gbm.ipynb?flush_cache=true)
+* [Simple Explainable Boosting Machine Example](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1_ebm_example.ipynb?flush_cache=true)
+* [PiML Assignment 1 Example](https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/group6_PiML_example.ipynb) and simple [requirements.txt](https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/piml_requirements.txt)
+
+### Lecture 1 Additional Reading
 
 * **Introduction and Background**: 
+  * [*An Introduction to Machine Learning Interpretability*](https://h2o.ai/content/dam/h2o/en/marketing/documents/2019/08/An-Introduction-to-Machine-Learning-Interpretability-Second-Edition.pdf) 
   * [*Designing Inherently Interpretable Machine Learning Models*](https://arxiv.org/pdf/2111.01743.pdf)
   * [*Psychological Foundations of Explainability and Interpretability in Artificial Intelligence*](https://nvlpubs.nist.gov/nistpubs/ir/2021/NIST.IR.8367.pdf)
-  * **[Responsible Artificial Intelligence](https://www.springer.com/gp/book/9783030303709)** - Sections 2.1-2.5, Chapter 7
   * [*Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead*](https://arxiv.org/pdf/1811.10154.pdf) 
 
 * **Self-explainaing Machine Learning Techniques**:
-  * **Interpretable Machine Learning** - [Chapter 5](https://christophm.github.io/interpretable-ml-book/simple.html)
   * [*Accurate Intelligible Models with Pairwise Interactions*](http://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf)
+  * **Elements of Statistical Learning** - Chapters 
+  * **Interpretable Machine Learning** - [Chapter 5](https://christophm.github.io/interpretable-ml-book/simple.html)
   * [*This Looks Like That: Deep Learning for Interpretable Image Recognition*](https://arxiv.org/pdf/1806.10574.pdf)
+
+FIGS: Fast Interpretable Greedy-Tree Sums (Tan, et al. 2022)
+XGB1: Extreme Gradient Boosted Trees of Depth 1, with optimal binning (Chen and Guestrin, 2016; Navas-Palencia, 2020)
+XGB2: Extreme Gradient Boosted Trees of Depth 2, with effect purification (Chen and Guestrin, 2016; Lengerich, et al. 2020)
+EBM: Explainable Boosting Machine (Nori, et al. 2019; Lou, et al. 2013)
+GAMI-Net: Generalized Additive Model with Structured Interactions (Yang, Zhang and Sudjianto, 2021)
+ReLU-DNN: Deep ReLU Networks using Aletheia Unwrapper and Sparsification (Sudjianto, et al. 2020)
 
 ***
 
