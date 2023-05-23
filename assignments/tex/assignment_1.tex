@@ -35,7 +35,7 @@
 
 \noindent In Assignment 1, you will train explainable machine learning (ML) models following the instructions below. A \href{https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/assignment_1/assign_1_template.ipynb?flush_cache=true}{template} has been provided as an example of how to train and compare a few different explainable models. For those of you who use Python virtual environments, a basic \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/requirements.txt}{requirements.txt} file is also available for the template.\\
 
-\noindent Assuming you have Python 3 installed, setting up the environment and running the template may look something like this:\\ 
+\noindent Ensure Python 3, Git and Java are installed, then set up the environment and run the template using commands like this:\\ 
 \noindent \texttt{\$ python3 -m pip install --user --upgrade pip}\\
 \noindent \texttt{\$ python3 -m pip install --user virtualenv}\\
 \noindent \texttt{\$ git clone https://github.com/jphall663/GWU\_rml.git}\\
@@ -45,7 +45,7 @@
 \noindent \texttt{\$ python3 -m pip install -r requirements.txt}\\
 \noindent \texttt{\$ env\_rml/bin/jupyter notebook}\\
 
-\noindent (Note that using h2o locally will require Java to be installed.)\\
+
 
 \noindent Some of you may find it easier to use \href{https://selfexplainml.github.io/PiML-Toolbox/_build/html/index.html}{PiML} and/or Colab. If you'd like to try them on your own machine, a simple \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/group6_PiML_example.ipynb}{PiML example} and \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/piml_requirements.txt}{requirements.txt} are available from class resources. Follow examples from the PiML website to use PiML on Colab. To load data into PiML, use Pandas and Google Colab functions:\\
 \noindent \texttt{import io}\\
@@ -103,7 +103,7 @@ Load the data into modeling software. Training data contains 160338 rows and 23 
 
 \section{Train Explainable Models}
 
-Train at least two types of explainable models, ensuring best practices like reproducibility, validation-based early-stopping, and grid search are used. (Scikit-learn does not necessarily make applying such best practices easy.) You are encouraged to try packages like \href{https://docs.h2o.ai/h2o/latest-stable/h2o-docs/downloading.html}{\texttt{h2o}}, \href{https://github.com/interpretml/interpret}{\texttt{interpret}}, and \href{https://xgboost.readthedocs.io/en/latest/install.html}{\texttt{XGBoost}}, but you may use any explainable approach on which you will be able to apply explanation, discrimination testing and remediation, and model debugging approaches in coming weeks. Please reach out with questions about appropriate modeling techniques.\\
+Train at least two types of explainable models, ensuring best practices like reproducibility, validation-based early-stopping, and grid search are used. (Scikit-learn does not necessarily make applying such best practices easy.) You are encouraged to try packages like \href{https://selfexplainml.github.io/PiML-Toolbox/_build/html/index.html}{PiML}, \href{https://docs.h2o.ai/h2o/latest-stable/h2o-docs/downloading.html}{\texttt{h2o}}, \href{https://github.com/interpretml/interpret}{\texttt{interpret}}, and \href{https://xgboost.readthedocs.io/en/latest/install.html}{\texttt{XGBoost}}, but you may use any explainable approach on which you will be able to apply explanation, discrimination testing and remediation, and model debugging approaches in coming weeks. Please reach out with questions about appropriate modeling techniques.\\
 
 \noindent The template contains examples for elastic net logistic regression using \texttt{h2o} (see cells 8--10), monotonic gradient boosting machines (GBM) using \texttt{XGBoost} (see cells 12--14), and explainable boosting machines (EBM) using \texttt{interpret} (see cells 16--18). 
 
