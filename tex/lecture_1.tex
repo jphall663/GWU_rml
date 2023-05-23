@@ -262,7 +262,7 @@
 			
 			\begin{itemize}
 				\item{\textbf{Pearson correlation}: Measurement of the linear relationship between two input $X_j$ features; takes on values between -1 and +1, including 0.}
-				\item{\textbf{Shapley value}: a quantity, based in Game Theory, that accurately decomposes the outcomes of complex systems, like ML models, into individual components.}
+				\item{\textbf{Shapley value}: a quantity, based in game theory, that accurately decomposes the outcomes of complex systems, like ML models, into individual components.}
 				\item{\textbf{Partial dependence and individual conditional expectation (ICE)}: Visualizations of the behavior of $X_j$ under some model $g$.}
 			\end{itemize}			
 		
@@ -399,7 +399,7 @@
 	
 		\frametitle{Anatomy of Elastic Net Regression}	
 				
-		Generalized linear models (GLM) have the same basic functional form as more traditional linear models, e.g. ...
+		Penalized linear models have the same basic functional form as more traditional linear models, e.g. ...
 				
 		\begin{equation}
 			\begin{aligned}\label{eq:glm2}
@@ -463,9 +463,9 @@
 		
 		GAMs use spline approaches to fit each $g_j$.\\
 		\vspace{10pt}
-		Later \cite{ga2m} introduced an efficient technique for finding interaction terms ($\beta_{j,k} g_{(j-1),(k-1)}(x_{j-1}, x_{k-1})$) to include in GAMs. This highly accurate technique was given the acronym GA2M.\\
+		Later \cite{ga2m} introduced an efficient technique for finding interaction terms ($\beta_{j,k} g_{j,k}(x_j, x_k)$) to include in GAMs. This highly accurate technique was given the acronym GA2M.\\
 		\vspace{10pt}
-		Recently Microsoft Research introduced the explainable boosting machine (EBM) in the \href{https://github.com/interpretml/interpret/}{interpret} package, in which GBMs are used to fit each $g_{j-1}$ and $g_{(j-1),(k-1)}$. Higher order interactions are allowed, but used infrequently in practice. \\
+		Recently Microsoft Research introduced the explainable boosting machine (EBM) in the \href{https://github.com/interpretml/interpret/}{interpret} package, in which GBMs are used to fit each $g_{j}$ and $g_{j,k}$. Higher order interactions are allowed, but used infrequently in practice. \\
 		\vspace{10pt}
 		Because each input feature, or combination thereof, is treated separately and in an additive fashion, explainability is very high. 
 		
@@ -488,7 +488,7 @@
 	
 		\frametitle{Generalized Additive Models and Neural Networks}
 		
-		\noindent Researchers have also put forward GA2M variants in which each $g_{j-1}$ and $g_{(j-1),(k-1)}$ shape function is fit by neural networks, e.g., GAMI-Net (\citet{yang2021gami}) and neural additive models (\citet{agarwal2021neural}).\\
+		\noindent Researchers have also put forward GA2M variants in which each $g_{j}$ and $g_{j, k}$ shape function is fit by neural networks, e.g., GAMI-Net (\citet{yang2021gami}) and neural additive models (\citet{agarwal2021neural}).\\
 		\vspace{10pt} 
 		\noindent See the \href{https://selfexplainml.github.io/PiML-Toolbox/_build/html/index.html}{PiML package} for an excellent implementation of GAMI-Net and other explainable models. 
 		 
@@ -587,6 +587,7 @@
 		\begin{itemize}
 			\item Generally speaking, standard ML evaluation -- including Kaggle leaderboards, are poor ways to assess ML model performance.
 			\item However, \cite{caruana2004kdd} puts forward a robust model evaluation and selection technique based on cross-validation and ranking. 
+			\item PiML contains excellent real-world model validation approaches as well.
 		\end{itemize}
 	
 		\column{0.6\linewidth}
