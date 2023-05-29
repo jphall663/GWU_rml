@@ -3,7 +3,6 @@
 \documentclass[fleqn]{article}
 \renewcommand\refname{}
 \title{Responsible Machine Learning\\\Large{Assignment 2}\\\Large{10 points}}
-\author{\copyright Patrick Hall 2022}
 
 \usepackage{graphicx}
 \usepackage{fullpage}
@@ -33,7 +32,9 @@
 
 \maketitle
 
-\noindent In Assignment 2, you will work with your group to analyze and explain interpretable machine learning (ML) models following the instructions below. A \href{https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/assignment_2/assign_2_template.ipynb?flush_cache=true}{template} has been provided as an example of how to explain and compare a few different interpretable models. For those of you who use Python virtual environments, a basic \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/requirements.txt}{\texttt{requirements.txt}} file is also available for the template.\\
+\noindent In Assignment 2, you will work with your group to analyze and explain machine learning (ML) models from Assignment 1 following the instructions below. A \href{https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/assignment_2/assign_2_template.ipynb?flush_cache=true}{template} has been provided as an example of how to explain and compare a few different models. For those of you who use Python virtual environments, a basic \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/requirements.txt}{\texttt{requirements.txt}} file is also available for the template.\\
+
+\noindent Also, note that \href{https://github.com/SelfExplainML/PiML-Toolbox}{PiML} makes it easy to calculate global feature importance, local feature importance, and plot feature behavior--i.e., to fullfil the requirements for this assignment--but may take some custom coding for Section \ref{local_fi}.\\
 
 \noindent For each section below, you should be trying to think through whether the explanatory results make sense from a domain knowledge perspective, as well as the differences between your models and if those are logical and/or informative.\\
 
@@ -43,7 +44,7 @@
 
 Use regression coefficients, Shapley values, or other reputable techniques to calculate global feature importance for your models. The template uses coefficients from the elastic net GLM -- extracted in cell 12, Shapley values for the monotonic GBM -- calculated in cell 19--20, and local feature scores for the EBM -- extracted in cells 27--28, to create global feature importance. (Depending on your package version, \texttt{interpret} can calculate these quantities much more directly using the \texttt{predict\_and\_explain()} function.) Plot these values as bar charts, ideally comparing how your models treat input features differently, as in cell 30 of the template.\\
 
-\section{Calculate and Plot Local Feature Importance.}
+\section{Calculate and Plot Local Feature Importance.}\label{local_fi}
 
 Using approaches similar to those in Section \ref{global_fi}, calculate local feature importance for your models at three percentiles of predicted probability. Cell 10 of the template provides a simple function for calculating percentiles, and percentiles for each models' predictions are found in cells 11, 18, and 26.\\
 
@@ -57,7 +58,7 @@ To enable analysis of feature behavior under each model, the template calculates
 
 Your deliverable for this assignment is to update your group's GitHub repository to reflect this explanatory analysis. Feature importance plots for all models and features are worth 3 points for global and 3 points for local. Feature behavior plots for all models and features are worth 4 pts., for a total of 10 pts.\\
 
-\noindent \textbf{Your deliverables are due Wednesday, June 1\textsuperscript{st}, at 11:59:59 PM ET.}\\
+\noindent \textbf{Your deliverables are due Wednesday, June 7\textsuperscript{th}, at 11:59:59 PM ET.}\\
 
 \noindent Note that you may also improve Assignment 1 scores throughout the Summer I Session to improve your ranking, your Assignment 1 grade, and your final project grade.
 
