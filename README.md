@@ -146,7 +146,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [_“Why Should I Trust You?” Explaining the Predictions of Any Classifier_](https://www.kdd.org/kdd2016/papers/files/rfp0573-ribeiroA.pdf)
 
 * **Problems with Post-hoc Explanation**:
-  * [*General Pitfalls of Model-Agnostic Interpretation Methods*](link:https://oreil.ly/On9uS)
+  * [*General Pitfalls of Model-Agnostic Interpretation Methods*](https://oreil.ly/On9uS)
   * [_Limitations of Interpretable Machine Learning Methods_](https://oreil.ly/VHMWh)
   * [*When Not to Trust Your Explanations*](https://oreil.ly/9Oxa6)
 
