@@ -145,7 +145,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [_Visualizing the Effects of Predictor Variables in Black Box Supervised Learning Models_](https://arxiv.org/pdf/1612.08468.pdf)
   * [_“Why Should I Trust You?” Explaining the Predictions of Any Classifier_](https://www.kdd.org/kdd2016/papers/files/rfp0573-ribeiroA.pdf)
 
-* **Problems with Psot-hoc Explanation**:
+* **Problems with Post-hoc Explanation**:
   * [*General Pitfalls of Model-Agnostic Interpretation Methods*](link:https://oreil.ly/On9uS)
   * [_Limitations of Interpretable Machine Learning Methods_](https://oreil.ly/VHMWh)
   * [*When Not to Trust Your Explanations*](https://oreil.ly/9Oxa6)
