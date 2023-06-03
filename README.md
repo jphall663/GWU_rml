@@ -4,7 +4,7 @@ Materials for a technical, nuts-and-bolts course about increasing transparency, 
 
 * Lecture 1: Explainable Machine Learning Models
 * Lecture 2: Post-hoc Explanation
-* Lecture 3: Discrimination Testing and Remediation
+* Lecture 3: Bias Testing and Remediation
 * Lecture 4: Machine Learning Security
 * Lecture 5: Machine Learning Model Debugging
 * Lecture 6: Responsible Machine Learning Best Practices
@@ -152,7 +152,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ***
 
-## Lecture 3: Discrimination Testing and Remediation
+## Lecture 3: Bias Testing and Remediation
 
 ![Two hundred neural networks from a random grid search trained on the UCI Credit Card Default dataset](/img/lecture_3.png)
 <sub><sup>**Source:** [Lecture 3 Notes](tex/lecture_3.pdf)</sup></sub>
