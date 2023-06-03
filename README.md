@@ -121,7 +121,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * **Python, R or other**:
   * [h2o-3](https://oreil.ly/GtGvK)
 
-### Lecture 2 Additional Software Examples: 
+### Lecture 2 Additional Software Examples 
   * [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) 
   * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/glm_mgbm_gbm.ipynb?flush_cache=true)
   * [Monotonic XGBoost models, partial dependence, individual conditional expectation plots, and Shapley explanations](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/xgboost_pdp_ice.ipynb)
@@ -160,27 +160,40 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 3 Class Materials
 
 * [Lecture Notes](tex/lecture_3.pdf) 
-* Software Example: [Testing a Constrained Model for Discrimination and Remediating Discovered Discrimination](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_3.ipynb) 
-* [Assignment 3](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_3.pdf) 
+* [Assignment 3](assignments/tex/assignment_3.pdf) 
+* Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 4 and Chapter 10
 
-### Lecture 3 Suggested Software
+### Lecture 3 Additional Software Tools
 
-Python:
+* **Python**:
+  * [aequitas](https://github.com/dssg/aequitas)
+  * [AIF360](https://github.com/IBM/AIF360)
+  * [Algorithmic Fairness](https://oreil.ly/JNzqk)
+  * [fairlearn](https://oreil.ly/jYjCi)
+  * [fairml](https://oreil.ly/DCkZ5)
+  * [solas-ai-disparity](https://oreil.ly/X9fd6)
+  * [tensorflow/fairness-indicators](https://oreil.ly/dHBSL)
+  * [Themis](https://github.com/LASER-UMASS/Themis)
 
-  * [`aequitas`](https://github.com/dssg/aequitas)
-  * [`AIF360`](https://github.com/IBM/AIF360)
-  * [`Themis`](https://github.com/LASER-UMASS/Themis)
+* **R**:
+  * [AIF360](https://oreil.ly/J53bZ)
+  * [fairmodels](https://oreil.ly/nSv8B)
+  * [fairness](https://oreil.ly/Dequ9)
   
-### Lecture 3 Suggested Reading
+### Lecture 3 Additional Software Examples
+* [Increase Fairness in Your Machine Learning Project with Disparate Impact Analysis using Python and H2O](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/dia.ipynb)
+* [Testing a Constrained Model for Discrimination and Remediating Discovered Discrimination](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_3.ipynb) 
+
+### Lecture 3 Additional Reading
 
 * **Introduction and Background**:
-
+  * [*50 Years of Test (Un)fairness: Lessons for Machine Learning*](https://oreil.ly/fTlda)
   * **Fairness and Machine Learning** - [Introduction](https://fairmlbook.org/introduction.html)
   * [NIST SP1270: _Towards a Standard for Identifying and Managing Bias in Artificial Intelligence_](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf)
   * [*Fairness Through Awareness*](https://arxiv.org/pdf/1104.3913.pdf)
-  
-* **Discrimination Testing and Remediation Techniques**:
 
+* **Discrimination Testing and Remediation Techniques**:
+  * [*An Empirical Comparison of Bias Reduction Methods on Real-World Problems in High-Stakes Policy Settings*](https://oreil.ly/vmxPz)
   * [*Certifying and Removing Disparate Impact*](https://arxiv.org/pdf/1412.3756.pdf)
   * [*Data Preprocessing Techniques for Classification Without
 Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8.pdf)  
