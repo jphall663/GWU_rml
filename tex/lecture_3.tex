@@ -315,19 +315,37 @@
 			\begin{itemize}
 				\item \textbf{Misallocation/disparate impact, e.g.}:			
 						\begin{itemize}\small
-							\item Adverse impact ratio: $\frac{\text{\% accepted}_p }{ \text{\% accepted}_r}$ 
-							\item Marginal effect: $\text{\% accepted}_p - \text{\% accepted}_r$
-							\item Standardized mean difference: $\frac{\bar{\hat{y}}_p - \bar{\hat{y}}_r}{\sigma_{\hat{y}}}$
+							\item Adverse impact ratio: $\frac{\text{\% accepted}_p }{ \text{\% accepted}_c}$ 
+							\item Marginal effect: $\text{\% accepted}_p - \text{\% accepted}_c$
+							\item Standardized mean difference: $\frac{\bar{\hat{y}}_p - \bar{\hat{y}}_c}{\sigma_{\hat{y}}}$
 						\end{itemize}
-				\item \textbf{Different quality of service/validity, e.g.}: $\frac{\text{quality}_p}{\text{quality}_r}$
+				\item \textbf{Different quality of service/validity, e.g.}: $\frac{\text{quality}_p}{\text{quality}_c}$
 			\end{itemize}
 			\noindent 
-			\scriptsize{where, $p \equiv \text{protected group}$ and $r \equiv \text{reference group}$ (often white males).}\\
+			\scriptsize{where, $p \equiv \text{protected group}$ and $c \equiv \text{control group}$ (often white males).}\\
 			\vspace{5pt}
 			\normalsize{There are many other, sometimes conflicting, mathematical definitions of discrimination. 
 				See \href{https://www.youtube.com/watch?v=wqamrPkF5kk}{21 Definitions of Fairness and Their Politics}.}
 			
 		\end{frame}
+
+		\begin{frame}				
+		
+			\frametitle{Example AIR Calculation}
+			
+			\centering
+			\includegraphics[scale=0.15]{../img/air1.png}
+			
+		\end{frame}	
+
+		\begin{frame}				
+		
+			\frametitle{Example AIR Calculation}
+			
+			\centering
+			\includegraphics[scale=0.15]{../img/air2.png}
+			
+		\end{frame}	
 		
 		\begin{frame}				
 		
