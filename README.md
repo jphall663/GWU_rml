@@ -239,7 +239,6 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 * **Introduction and Background**:
 
   * [*A Marauder’s Map of Security and Privacy in Machine Learning*](https://arxiv.org/pdf/1811.01134.pdf)
-  * [Adversarial Threat Landscape for Artificial-Intelligence Systems](https://oreil.ly/KxEbC)
   * [BIML Interactive Machine Learning Risk Framework](https://berryvilleiml.com/interactive/)
   * [FTC's "Start with Security" guidelines](https://oreil.ly/jmeja)
   * [Mitre Adversarial Threat Matrix](https://github.com/mitre/advmlthreatmatrix)
