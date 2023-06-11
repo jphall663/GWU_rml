@@ -20,13 +20,13 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ### Lecture 1 Class Materials
 
-* Introduction: 
+* Introduction:
   * [Syllabus](https://github.com/jphall663/GWU_rml/blob/master/syllabus_ph_responsible_machine_learning_msba_v5.1.pdf)
   * [Basic Data Manipulation](https://github.com/jphall663/GWU_data_mining/blob/master/01_basic_data_prep/01_basic_data_prep.md)
   * [Primer on Technical Malpractice](https://docs.google.com/presentation/d/1cZeaoIp4cQsVY_gj2a5Pg7ygexepQZRS-ZEn6n2QqEU/edit?usp=sharing)
   * [Whiteboard Notation](https://docs.google.com/presentation/d/1Axf9dizaE3XvGRelBHfsnAlMUPFuMExQ2WNVwQBKMrw/edit?usp=sharing)
 * [Lecture Notes](tex/lecture_1.pdf)
-* [Assignment 1](assignments/tex/assignment_1.pdf): 
+* [Assignment 1](assignments/tex/assignment_1.pdf):
   * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb)
   * [Full evaluations results](assignments/model_eval_2023_06_01_11_08_41.csv)
 * Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 2 (pp. 33 - 50) and Chapter 6 (pp. 189 - 217)
@@ -51,7 +51,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [rpart](https://cran.r-project.org/web/packages/rpart/index.html)
   * [RuleFit](https://oreil.ly/K-qc4)
 
-* **Python, R or other**: 
+* **Python, R or other**:
   * [h2o-3](https://oreil.ly/PPUk5)
   * [Rudin Group code](https://oreil.ly/QmRFF)
   * [xgboost](https://github.com/dmlc/xgboost)
@@ -62,14 +62,15 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/glm_mgbm_gbm.ipynb?flush_cache=true)
 * [Simple Explainable Boosting Machine Example](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1_ebm_example.ipynb?flush_cache=true)
 * [PiML Assignment 1 Example](https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/group6_PiML_example.ipynb) and simple [requirements.txt](https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/piml_requirements.txt)
+* _Machine Learning for High-risk Applications_: [Use Cases](https://oreil.ly/machine-learning-high-risk-apps-code) (Chapter 6)
 
 ### Lecture 1 Additional Reading
 
-* **Introduction and Background**: 
-  * [*An Introduction to Machine Learning Interpretability*](https://h2o.ai/content/dam/h2o/en/marketing/documents/2019/08/An-Introduction-to-Machine-Learning-Interpretability-Second-Edition.pdf) 
+* **Introduction and Background**:
+  * [*An Introduction to Machine Learning Interpretability*](https://h2o.ai/content/dam/h2o/en/marketing/documents/2019/08/An-Introduction-to-Machine-Learning-Interpretability-Second-Edition.pdf)
   * [*Designing Inherently Interpretable Machine Learning Models*](https://arxiv.org/pdf/2111.01743.pdf)
   * [*Psychological Foundations of Explainability and Interpretability in Artificial Intelligence*](https://nvlpubs.nist.gov/nistpubs/ir/2021/NIST.IR.8367.pdf)
-  * [*Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead*](https://arxiv.org/pdf/1811.10154.pdf) 
+  * [*Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead*](https://arxiv.org/pdf/1811.10154.pdf)
 
 * **Explainable Machine Learning Techniques**:
   * [*Accurate Intelligible Models with Pairwise Interactions*](http://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf)
@@ -81,7 +82,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [*A Responsible Machine Learning Workflow with Focus on Interpretable Models, Post-hoc Explanation, and Discrimination Testing*](https://www.mdpi.com/2078-2489/11/3/137)
   * [*This Looks Like That: Deep Learning for Interpretable Image Recognition*](https://arxiv.org/pdf/1806.10574.pdf)
   * [*Unwrapping The Black Box of Deep ReLU Networks: Interpretability, Diagnostics, and Simplification*](https://arxiv.org/pdf/2011.04041.pdf)
-  
+
 ***
 
 ## Lecture 2: Post-hoc Explanation
@@ -91,9 +92,9 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ### Lecture 2 Class Materials
 
-* [Lecture Notes](tex/lecture_2.pdf) 
-* [Assignment 2](assignments/tex/assignment_2.pdf) 
-* Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 2 (pp. 50 - 80) and Chapter 6 (pp. 208 - 230) 
+* [Lecture Notes](tex/lecture_2.pdf)
+* [Assignment 2](assignments/tex/assignment_2.pdf)
+* Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 2 (pp. 50 - 80) and Chapter 6 (pp. 208 - 230)
 
 ### Lecture 2 Additional Software Tools
 
@@ -107,7 +108,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [shap](https://github.com/slundberg/shap)
   * [PiML-Toolbox](https://github.com/SelfExplainML/PiML-Toolbox)
   * [tf-explain](https://github.com/sicara/tf-explain)
-  
+
 * **R**:
   * [ALEPlot](https://oreil.ly/OSfUT)
   * [DALEX](https://cran.r-project.org/web/packages/DALEX/index.html)
@@ -121,18 +122,19 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * **Python, R or other**:
   * [h2o-3](https://oreil.ly/GtGvK)
 
-### Lecture 2 Additional Software Examples 
-  * [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb) 
+### Lecture 2 Additional Software Examples
+  * [Global and Local Explanations of a Constrained Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb)
   * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/glm_mgbm_gbm.ipynb?flush_cache=true)
   * [Monotonic XGBoost models, partial dependence, individual conditional expectation plots, and Shapley explanations](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/xgboost_pdp_ice.ipynb)
   * [Decision tree surrogates, LOCO, and ensembles of explanations](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/dt_surrogate_loco.ipynb)
-  
+  * _Machine Learning for High-risk Applications_: [Use Cases](https://oreil.ly/machine-learning-high-risk-apps-code) (Chapter 6)
+
 ### Lecture 2 Additional Reading
 
-* **Introduction and Background**: 
+* **Introduction and Background**:
   * [*On the Art and Science of Explainable Machine Learning*](https://oreil.ly/myVr8)
   * [*Proposed Guidelines for the Responsible Use of Explainable Machine Learning*](https://arxiv.org/pdf/1906.03533.pdf)
-  
+
 * **Post-hoc Explanation Techniques**:
   * [_A Unified Approach to Interpreting Model Predictions_](https://papers.nips.cc/paper_files/paper/2017/file/8a20a8621978632d76c43dfd28b67767-Paper.pdf)
   * [_Anchors: High-Precision Model-Agnostic Explanations_](https://homes.cs.washington.edu/~marcotcr/aaai18.pdf)
@@ -159,8 +161,8 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ### Lecture 3 Class Materials
 
-* [Lecture Notes](tex/lecture_3.pdf) 
-* [Assignment 3](assignments/tex/assignment_3.pdf) 
+* [Lecture Notes](tex/lecture_3.pdf)
+* [Assignment 3](assignments/tex/assignment_3.pdf)
 * Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 4 and Chapter 10
 
 ### Lecture 3 Additional Software Tools
@@ -179,10 +181,11 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [AIF360](https://oreil.ly/J53bZ)
   * [fairmodels](https://oreil.ly/nSv8B)
   * [fairness](https://oreil.ly/Dequ9)
-  
+
 ### Lecture 3 Additional Software Examples
 * [Increase Fairness in Your Machine Learning Project with Disparate Impact Analysis using Python and H2O](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/dia.ipynb)
-* [Testing a Constrained Model for Discrimination and Remediating Discovered Discrimination](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_3.ipynb) 
+* [Testing a Constrained Model for Discrimination and Remediating Discovered Discrimination](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_3.ipynb)
+* _Machine Learning for High-risk Applications_: [Use Cases](https://oreil.ly/machine-learning-high-risk-apps-code) (Chapter 10)
 
 ### Lecture 3 Additional Reading
 
@@ -212,40 +215,54 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 ### Lecture 4 Class Materials
 
 * [Lecture Notes](tex/lecture_4.pdf)
-* Software Example: [Attacking a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_4.ipynb) 
-* [Assignment 4](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_4.pdf) 
+* [Assignment 4](assignments/tex/assignment_4.pdf)
+* Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 5 and Chapter 11
 
-### Lecture 4 Suggested Software
+### Lecture 4 Additional Software Tools
 
-Python:
+* [adversarial-robustness-toolbox](https://oreil.ly/5eXYi)
+* [counterfit](https://oreil.ly/4WM4P)
+* [cleverhans](https://github.com/tensorflow/cleverhans)
+* [foolbox](https://github.com/bethgelab/foolbox)
+* [ml_privacy_meter](https://oreil.ly/HuHxf)
+* [NIST de-identification tools](https://oreil.ly/M8xhr)
+* [robustness](https://github.com/MadryLab/robustness)
+* [tensorflow/privacy](https://oreil.ly/hkurv)
 
-  * [`cleverhans`](https://github.com/tensorflow/cleverhans)
-  * [`foolbox`](https://github.com/bethgelab/foolbox)
-  * [`robustness`](https://github.com/MadryLab/robustness)
-  
-### Lecture 4 Suggested Reading
+#### Lecture 4 Additional Software Examples
+
+* [Attacking a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_4.ipynb)
+* _Machine Learning for High-risk Applications_: [Use Cases](https://oreil.ly/machine-learning-high-risk-apps-code) (Chapter 11)
+
+### Lecture 4 Additional Reading
 
 * **Introduction and Background**:
 
   * [*A Marauder’s Map of Security and Privacy in Machine Learning*](https://arxiv.org/pdf/1811.01134.pdf)
+  * [Adversarial Threat Landscape for Artificial-Intelligence Systems](https://oreil.ly/KxEbC)
   * [BIML Interactive Machine Learning Risk Framework](https://berryvilleiml.com/interactive/)
+  * [FTC's "Start with Security" guidelines](https://oreil.ly/jmeja)
+  * [Mitre Adversarial Threat Matrix](https://github.com/mitre/advmlthreatmatrix)
+  * [NIST Computer Security Resource Center](https://oreil.ly/pncXb)
   * [*The Security of Machine Learning*](https://people.eecs.berkeley.edu/~adj/publications/paper-files/SecML-MLJ2010.pdf)
   * [*Proposals for model vulnerability and security*](https://www.oreilly.com/content/proposals-for-model-vulnerability-and-security/)
 
-  
-* **Machine Learning Attacks**:
+* **Machine Learning Attacks and Countermeasures**:
 
   * [*Membership Inference Attacks Against Machine Learning Models*](https://arxiv.org/pdf/1610.05820.pdf)
   * [*Stealing Machine Learning Models via Prediction APIs*](https://arxiv.org/pdf/1609.02943.pdf)
   * [*Model Inversion Attacks that Exploit Confidence Information and Basic Countermeasures*](https://dl.acm.org/doi/pdf/10.1145/2810103.2813677)
   * [*Hacking Smart Machines with Smarter Ones: How to Extract Meaningful Data from Machine Learning Classifiers*](https://arxiv.org/pdf/1306.4447.pdf)
+  * [Robust ML](https://www.robust-ml.org/)  
+  * [*Sponge Examples: Energy-latency Attacks on Neural Networks*](https://arxiv.org/pdf/2006.03463.pdf)
 
-* **Links from Lecture 4**:
-  * [Mitre Adversarial Threat Matrix](https://github.com/mitre/advmlthreatmatrix)
-  * [Robust ML](https://www.robust-ml.org/)   
-  * [ISIS 'still evading detection on Facebook', report says](https://www.bbc.com/news/technology-53389657) 
+* **Examples of Real-world Attacks**:
+
+  * [Fraudsters Cloned Company Director’s Voice In $35 Million Heist, Police Find](https://www.forbes.com/sites/thomasbrewster/2021/10/14/huge-bank-fraud-uses-deep-fake-voice-tech-to-steal-millions/?sh=7f3ba4bd7559)
+  * [ISIS 'still evading detection on Facebook', report says](https://www.bbc.com/news/technology-53389657)
   * [Researchers bypass airport and payment facial recognition systems using masks](https://www.engadget.com/2019-12-16-facial-recognition-fooled-masks.html)
   * [Slight Street Sign Modifications Can Completely Fool Machine Learning Algorithms](https://spectrum.ieee.org/cars-that-think/transportation/sensors/slight-street-sign-modifications-can-fool-machine-learning-algorithms)
+  * [These students figured out their tests were graded by AI — and the easy way to cheat](https://www.theverge.com/2020/9/2/21419012/edgenuity-online-class-ai-grading-keyword-mashing-students-school-cheating-algorithm-glitch)
 
 ***   
 
@@ -257,7 +274,7 @@ Python:
 ### Lecture 5 Class Materials
 
 * [Lecture Notes](tex/lecture_5.pdf)
-* Software Example: [Debugging a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_5.ipynb) 
+* Software Example: [Debugging a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_5.ipynb)
 * [Assignment 5](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_5.pdf)
 
 ### Lecture 5 Suggested Software
@@ -266,8 +283,8 @@ Python:
 * [`SALib`](https://github.com/SALib/SALib) (Python)
 * [`themis-ml`](https://github.com/cosmicBboy/themis-ml) (Python)
 * [`What-if Tool`](https://pair-code.github.io/what-if-tool/index.html) (Browser)
-  
-  
+
+
 ### Lecture 5 Suggested Reading
 
 * **Introduction and Background**:
@@ -277,16 +294,16 @@ Python:
   * [*Real-World Strategies for Model Debugging*](https://towardsdatascience.com/strategies-for-model-debugging-aa822f1097ce)
 
 * **Links from Lecture 5**:
-  
+
   * [AI Incident Tracker](https://github.com/jphall663/awesome-machine-learning-interpretability/blob/master/README.md#ai-incident-tracker)
   * [AI Incident Database](https://incidentdatabase.ai/)
   * [Debugging Machine Learning Models](https://debug-ml-iclr2019.github.io/)
   * [_Underspecification Presents Challenges for Credibility in Modern Machine Learning_](https://arxiv.org/pdf/2011.03395.pdf)
-  
+
 ***   
 
-## Lecture 6: Responsible Machine Learning Best Practices 
- 
+## Lecture 6: Responsible Machine Learning Best Practices
+
 ![A responsible machine learning workingflow](/img/rml_diagram_no_hilite.png)
 
 <sub><sup>A Responsible Machine Learning Workflow Diagram. **Source:** [*Information*, 11(3) (March 2020)](https://www.mdpi.com/2078-2489/11/3).</sup></sub>
@@ -309,7 +326,7 @@ Python:
   * [Eight Principles of Responsible Machine Learning](https://ethical.institute/principles.html)
   * [Principles for Accountable Algorithms and a Social Impact Statement for Algorithms](https://www.fatml.org/resources/principles-for-accountable-algorithms)
   * [Responsible AI Practices](https://ai.google/responsibilities/responsible-ai-practices/)
-    
+
 * **Links from Lecture 6**:
 
   * [_Predicting Good Probabilities With Supervised Learning_](https://www.cs.cornell.edu/~alexn/papers/calibration.icml05.crc.rev3.pdf)
