@@ -3,7 +3,6 @@
 \documentclass[fleqn]{article}
 \renewcommand\refname{}
 \title{Responsible Machine Learning\\\Large{Assignment 4}\\\Large{10 points}}
-\author{\copyright Patrick Hall 2021}
 
 \usepackage{graphicx}
 \usepackage{fullpage}
@@ -39,7 +38,7 @@
 
 \section{Conduct a white-hat model extraction attack.}
 
-Cells 10--16 demonstrate a simple, but effective, model extraction attack. My example model extraction attack uses a single decision tree, that I then plot and use to craft adversarial examples. I'd like for you to try a decision tree extraction attack, but you don't have to use my code. I imagine getting \texttt{graphviz} installed could be difficult for some, so feel free to use your favorite kind of decision tree if the template code proves difficult to run. (Basic instructions for installing \texttt{graphviz} are available at the bottom of the \href{https://jphall663.github.io/GWU_rml/}{class website}.)\\
+Cells 10--16 demonstrate a simple, but effective, model extraction attack. My example model extraction attack uses a single decision tree, that I then plot and use to craft adversarial examples. Please conduct a decision tree extraction attack, but you don't have to use my code. (Getting \texttt{graphviz} installed could be difficult for some, so feel free to use your favorite kind of decision tree if the template code proves difficult to run. Basic instructions for installing \texttt{graphviz} are available in resources associated with the \href{https://github.com/jphall663/GWU_rml/blob/master/py3.6_local_install.md}{class website}.)\\
 
 \noindent You may call \texttt{predict()} on your best model only one time to perform the extraction attack.
  
@@ -53,9 +52,9 @@ Cells 17--20 use the information from the extracted decision tree to craft highl
 
 Your deliverable for this assignment is to update your group's GitHub repository to reflect this ``red-teaming'' exercise. The model extraction attack is worth 5 points, and the adversarial examples are worth another 5 points. \\
 
-\noindent In the real world, after performing this analysis, you would want to contact your manager and your organization's IT security team to discuss the vulnerability. You would argue to put in place authentication on the vulnerable model end point and also argue that monitoring the model's production scoring queue for random data and training data would be advisable, if possible.\\
+\noindent In the real world, after performing this red-teaming exercise, you would want to contact your manager and your organization's IT security team to discuss any discovered vulnerabilities. Countermeasures to discuss with business and IT colleagues may relate to authentication on the vulnerable model API endpoint, throttling/rate-limiting of the vulnerable model API and monitoring the model's production scoring queue for random data and training data, if possible.\\
 
-\noindent \textbf{Your deliverables are due Saturday, June 18\textsuperscript{th}, at 11:00 AM ET.}\\
+\noindent \textbf{Your deliverables are due Saturday, June 21\textsuperscript{st}, at 11:59 PM ET.}\\
 
 \noindent Note that you may also improve Assignment 1 or 3 scores throughout the Summer I Session to improve your ranking, your Assignment 1 grade, your Assignment 3 grade, and your final project grade. Moving forward, you'll need to be able to show that your new predictions preserve AIR $>$ 0.8 for all protected groups.
 
