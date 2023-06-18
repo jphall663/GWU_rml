@@ -278,17 +278,17 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 ### Lecture 5 Additional Software Tools
 
-**Python**:
+* **Python**:
   * [mlextend](https://oreil.ly/j27C_)
   * [PiML](https://oreil.ly/7QLK1)
   * [SALib](https://oreil.ly/djeTQ)
   * [themis-ml](https://github.com/cosmicBboy/themis-ml)
 
-**R**:
+* **R**:
   * [DALEX](https://cran.r-project.org/web/packages/DALEX/index.html) 
   * [drifter](https://oreil.ly/Pur4F)
 
-**Other**:
+* **Other**:
   * [manifold](https://oreil.ly/If0n5)
   * [What-If Tool](https://oreil.ly/1n-Fl)
 
