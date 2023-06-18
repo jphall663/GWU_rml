@@ -317,6 +317,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
   * [*DQI: Measuring Data Quality in NLP*](https://oreil.ly/aa7rv)
   * [*Identifying and Overcoming Common Data Mining Mistakes*](https://oreil.ly/w19Qm)
   * [PiML User Guide: Diagnostic Suite](https://selfexplainml.github.io/PiML-Toolbox/_build/html/guides/testing.html)
+  * [_Predicting Good Probabilities With Supervised Learning_](https://www.cs.cornell.edu/~alexn/papers/calibration.icml05.crc.rev3.pdf)
   * [_Underspecification Presents Challenges for Credibility in Modern Machine Learning_](https://arxiv.org/pdf/2011.03395.pdf)
 
 ***   
@@ -345,7 +346,3 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
   * [Eight Principles of Responsible Machine Learning](https://ethical.institute/principles.html)
   * [Principles for Accountable Algorithms and a Social Impact Statement for Algorithms](https://www.fatml.org/resources/principles-for-accountable-algorithms)
   * [Responsible AI Practices](https://ai.google/responsibilities/responsible-ai-practices/)
-
-* **Links from Lecture 6**:
-
-  * [_Predicting Good Probabilities With Supervised Learning_](https://www.cs.cornell.edu/~alexn/papers/calibration.icml05.crc.rev3.pdf)
