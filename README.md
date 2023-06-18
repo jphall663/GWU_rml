@@ -273,30 +273,50 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 ### Lecture 5 Class Materials
 
 * [Lecture Notes](tex/lecture_5.pdf)
-* Software Example: [Debugging a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_5.ipynb)
-* [Assignment 5](https://raw.githubusercontent.com/jphall663/GWU_rml/master/assignments/tex/assignment_5.pdf)
+* [Assignment 5](assignments/tex/assignment_5.pdf) 
+* Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 3 and Chapter 8
+* 
+### Lecture 5 Additional Software Tools
 
-### Lecture 5 Suggested Software
+**Python**:
+  * [mlextend](https://oreil.ly/j27C_)
+  * [PiML](https://oreil.ly/7QLK1)
+  * [SALib](https://oreil.ly/djeTQ)
+  * [themis-ml](https://github.com/cosmicBboy/themis-ml)
 
-* [`DALEX`](https://cran.r-project.org/web/packages/DALEX/index.html) (R)
-* [`SALib`](https://github.com/SALib/SALib) (Python)
-* [`themis-ml`](https://github.com/cosmicBboy/themis-ml) (Python)
-* [`What-if Tool`](https://pair-code.github.io/what-if-tool/index.html) (Browser)
+**R**:
+  * [DALEX](https://cran.r-project.org/web/packages/DALEX/index.html) 
+  * [drifter](https://oreil.ly/Pur4F)
 
+**Other**:
+  * [manifold](https://oreil.ly/If0n5)
+  * [What-If Tool](https://oreil.ly/1n-Fl)
 
-### Lecture 5 Suggested Reading
+### Lecture 5 Additional Software Examples
+
+* [Advanced residual analysis example](https://oreil.ly/Poe20)
+* [Advanced sensitivity analysis example](https://oreil.ly/QPFFx)
+* [Basic sensitivity and residual analysis example](https://oreil.ly/Tcu65)
+* [Debugging a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_5.ipynb)
+* _Machine Learning for High-risk Applications_: [Use Cases](https://oreil.ly/machine-learning-high-risk-apps-code) (Chapter 8)
+
+### Lecture 5 Additional Reading
 
 * **Introduction and Background**:
 
-  * [Debugging Machine Learning Models](https://debug-ml-iclr2019.github.io/)
-  * [*Why you should care about debugging machine learning models*](https://www.oreilly.com/radar/why-you-should-care-about-debugging-machine-learning-models/)
-  * [*Real-World Strategies for Model Debugging*](https://towardsdatascience.com/strategies-for-model-debugging-aa822f1097ce)
-
-* **Links from Lecture 5**:
-
-  * [AI Incident Tracker](https://github.com/jphall663/awesome-machine-learning-interpretability/blob/master/README.md#ai-incident-tracker)
   * [AI Incident Database](https://incidentdatabase.ai/)
   * [Debugging Machine Learning Models](https://debug-ml-iclr2019.github.io/)
+  * [*Overview of Debugging ML Models*](https://oreil.ly/xZGoN)
+  * [*Real-World Strategies for Model Debugging*](https://towardsdatascience.com/strategies-for-model-debugging-aa822f1097ce)
+  * [*Safe and Reliable Machine Learning*](https://oreil.ly/mLU8l)
+  * [*Why you should care about debugging machine learning models*](https://www.oreilly.com/radar/why-you-should-care-about-debugging-machine-learning-models/)
+   
+* **Debugging Approaches and Information**:
+
+  * [*A Comprehensive Study on Deep Learning Bug Characteristics*](https://oreil.ly/89R6O)
+  * [*DQI: Measuring Data Quality in NLP*](https://oreil.ly/aa7rv)
+  * [*Identifying and Overcoming Common Data Mining Mistakes*](https://oreil.ly/w19Qm)
+  * [PiML User Guide: Diagnostic Suite](https://selfexplainml.github.io/PiML-Toolbox/_build/html/guides/testing.html)
   * [_Underspecification Presents Challenges for Credibility in Modern Machine Learning_](https://arxiv.org/pdf/2011.03395.pdf)
 
 ***   
