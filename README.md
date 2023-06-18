@@ -275,7 +275,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 * [Lecture Notes](tex/lecture_5.pdf)
 * [Assignment 5](assignments/tex/assignment_5.pdf) 
 * Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 3 and Chapter 8
-* 
+
 ### Lecture 5 Additional Software Tools
 
 **Python**:
