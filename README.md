@@ -27,8 +27,8 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [Whiteboard Notation](https://docs.google.com/presentation/d/1Axf9dizaE3XvGRelBHfsnAlMUPFuMExQ2WNVwQBKMrw/edit?usp=sharing)
 * [Lecture Notes](tex/lecture_1.pdf)
 * [Assignment 1](assignments/tex/assignment_1.pdf):
-  * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb)
-  * [Full evaluations results](assignments/model_eval_2023_06_01_11_08_41.csv)
+  * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb?flush_cache=true)
+  * [Full evaluations results](assignments/model_eval_2023_06_19_21_04_44.csv)
 * Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 2 (pp. 33 - 50) and Chapter 6 (pp. 189 - 217)
 
 ### Lecture 1 Additional Software Tools
