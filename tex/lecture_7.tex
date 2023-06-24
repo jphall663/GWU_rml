@@ -215,7 +215,7 @@
 					\item Salient risks today are \textcolor{red}{not}:
 						\begin{itemize}
 							\item Acceleration
-							\item Aquiring resources
+							\item Acquiring resources
 							\item Avoiding being shutdown
 							\item Emergent capabilities
 							\item Replication 
@@ -300,8 +300,8 @@
 				\column{0.5\linewidth}
 				\vspace{-5pt}
 				\begin{itemize}
-					\item \textbf{BBQ}	: Stereotypes in question answering.
-					\item \textbf{Winogende}: LM output versus employment statistics.
+					\item \textbf{BBQ}: Stereotypes in question answering.
+					\item \textbf{Winogender}: LM output versus employment statistics.
 					\item \textbf{Real toxicity prompts}: 100k prompts to elicit toxic output.
 					\item \textbf{TruthfulQA}: Assess the ability to make true statements.
 				\end{itemize}
@@ -389,7 +389,7 @@
 		\begin{frame}
 			
 			\frametitle{Engineer Adversarial Prompts}
-			\framesubtitle{Known prompt engineering strategies}
+			\framesubtitle{Some known prompt engineering strategies}
 			
 			\begin{columns}
 				\column{0.4\textwidth}
@@ -403,11 +403,12 @@
 				\column{0.6\textwidth}
 				\begin{itemize}
 					\item \small{\textcolor{red}{Counterfactuals}: Repeated prompts with different entities or subjects from different demographic groups.}
-					\item \small{\textcolor{red}{Location awareness}: Prompts that reveal a prompter's location or expose location tracking.}
+					%\item \small{\textcolor{red}{Location awareness}: Prompts that reveal a prompter's location or expose location tracking.}
+					\item \small{\textcolor{red}{Logic-overloading}: Exploiting the inability of ML systems to reliably perform reasoning tasks.}
+					\item \small{\textcolor{red}{Pros-and-cons}: Eliciting the “pros” of problematic topics.}
 					\item \small{\textcolor{red}{Reverse psychology}: Falsely presenting a good-faith need for negative or problematic language.}
 					\item \small{\textcolor{red}{Role-playing}: Adopting a character that would reasonably make problematic statements.}
 					%\item \small{\textcolor{red}{Time perplexity}: Exploiting ML’s inability to understand the passage of time or the occurrence of real-world events over time.}
-					\item \small{\textcolor{red}{Logic-overloading}: Exploiting the inability of ML systems to reliably perform reasoning tasks.}
 				\end{itemize}
 				\vspace{10pt}
 				\hspace{12pt}\small{Various sources, e.g., \cite{Adversa}.}
