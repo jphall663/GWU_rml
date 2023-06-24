@@ -334,17 +334,16 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 * [Lecture Notes](tex/lecture_6.pdf)
 * [Assignment 6 (Final Assessment)](assignments/tex/assignment_6.pdf)
+* Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 1 and Chapter 12
 
-### Lecture 6 Suggested Software
+### Lecture 6 Additional Software Tools and Examples
 
 * [Awesome Machine Learning Interpretability](https://github.com/jphall663/awesome-machine-learning-interpretability)
 
-### Lecture 6 Suggested Reading
+### Lecture 6 Additional Reading
 
 * **Introduction and Background**:
-
+  * [*A Responsible Machine Learning Workflow with Focus on Interpretable Models, Post-hoc Explanation, and Discrimination Testing*](https://www.mdpi.com/2078-2489/11/3/137)
   * [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
   * [Interagency Guidance on Model Risk Management (SR 11-7)](https://www.federalreserve.gov/supervisionreg/srletters/sr1107a1.pdf)
-  * [Eight Principles of Responsible Machine Learning](https://ethical.institute/principles.html)
-  * [Principles for Accountable Algorithms and a Social Impact Statement for Algorithms](https://www.fatml.org/resources/principles-for-accountable-algorithms)
   * [Responsible AI Practices](https://ai.google/responsibilities/responsible-ai-practices/)
