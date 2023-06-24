@@ -373,7 +373,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 ### Lecture 7 Additional Reading
 
 * **Introduction and Background**:
-  * [Taxonomy of Risks posed by Language Models](https://dl.acm.org/doi/pdf/10.1145/3531146.3533088)
+  * [_Taxonomy of Risks posed by Language Models_](https://dl.acm.org/doi/pdf/10.1145/3531146.3533088)
 
 
 
