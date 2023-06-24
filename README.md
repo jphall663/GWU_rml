@@ -364,7 +364,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 ### Lecture 7 Additional Tools
 
 * [BBQ Benchmark](https://github.com/nyu-mll/bbq)
-* [DAIR.AI](Prompt Engineering Guide](https://www.promptingguide.ai)
+* [DAIR.AI Prompt Engineering Guide](https://www.promptingguide.ai)
 * [PAI’s Responsible Practices for Synthetic Media](https://syntheticmedia.partnershiponai.org/)
 *	[Real Toxicity Prompts](https://allenai.org/data/real-toxicity-prompts)
 * [Truthful QA](https://github.com/sylinrl/TruthfulQA)
