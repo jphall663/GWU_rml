@@ -8,6 +8,7 @@ Materials for a technical, nuts-and-bolts course about increasing transparency, 
 * Lecture 4: Machine Learning Security
 * Lecture 5: Machine Learning Model Debugging
 * Lecture 6: Responsible Machine Learning Best Practices
+* Lecture 7: Preliminary Risk Mitigation Proposals for Language Models
 
 Corrections or suggestions? Please file a [GitHub issue](https://github.com/jphall663/GWU_rml/issues/new).
 
@@ -347,3 +348,33 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
   * [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
   * [Interagency Guidance on Model Risk Management (SR 11-7)](https://www.federalreserve.gov/supervisionreg/srletters/sr1107a1.pdf)
   * [Responsible AI Practices](https://ai.google/responsibilities/responsible-ai-practices/)
+
+***  
+
+## Lecture 7: Preliminary Risk Mitigation Proposals for Language Models
+
+![Past language model incidents.](/img/pastincidents.jpg)
+
+<sub><sup>A number of headlines and images relating to language model incidents. **Source:** [Lecture 7 notes](tex/lecture_7.pdf).</sup></sub>
+
+### Lecture 7 Class Materials
+
+* [Lecture Notes](tex/lecture_7.pdf)
+
+### Lecture 7 Additional Tools
+
+* [BBQ Benchmark](https://github.com/nyu-mll/bbq)
+* [DAIR.AI](Prompt Engineering Guide](https://www.promptingguide.ai)
+* [PAI’s Responsible Practices for Synthetic Media](https://syntheticmedia.partnershiponai.org/)
+*	[Real Toxicity Prompts](https://allenai.org/data/real-toxicity-prompts)
+* [Truthful QA](https://github.com/sylinrl/TruthfulQA)
+*	[Winogender Schemas](https://github.com/rudinger/winogender-schemas)
+
+### Lecture 7 Additional Reading
+
+* **Introduction and Background**:
+  * [Taxonomy of Risks posed by Language Models](https://dl.acm.org/doi/pdf/10.1145/3531146.3533088)
+
+
+
+
