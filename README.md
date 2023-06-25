@@ -8,7 +8,7 @@ Materials for a technical, nuts-and-bolts course about increasing transparency, 
 * Lecture 4: Machine Learning Security
 * Lecture 5: Machine Learning Model Debugging
 * Lecture 6: Responsible Machine Learning Best Practices
-* Lecture 7: Preliminary Risk Mitigation Proposals for Language Models
+* Lecture 7: Risk Mitigation Proposals for Language Models
 
 Corrections or suggestions? Please file a [GitHub issue](https://github.com/jphall663/GWU_rml/issues/new).
 
@@ -351,7 +351,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 ***  
 
-## Lecture 7: Preliminary Risk Mitigation Proposals for Language Models
+## Lecture 7: Risk Mitigation Proposals for Language Models
 
 ![Past language model incidents.](/img/pastincidents.jpg)
 
