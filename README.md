@@ -29,7 +29,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Lecture Notes](tex/lecture_1.pdf)
 * [Assignment 1](assignments/tex/assignment_1.pdf):
   * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb?flush_cache=true)
-  * [Full evaluations results](assignments/model_eval_2023_06_21_12_52_47.csv)
+  * [Full evaluations results](assignments/model_eval_2023_06_28_21_00_17.csv)
 * Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 2 (pp. 33 - 50) and Chapter 6 (pp. 189 - 217)
 
 ### Lecture 1 Additional Software Tools
@@ -165,7 +165,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Lecture Notes](tex/lecture_3.pdf)
 * [Assignment 3](assignments/tex/assignment_3.pdf)
   * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb?flush_cache=true)
-  * [Full evaluations results](assignments/model_eval_2023_06_21_12_52_47.csv)
+  * [Full evaluations results](assignments/model_eval_2023_06_28_21_00_17.csv)
 * Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 4 and Chapter 10
 
 ### Lecture 3 Additional Software Tools
