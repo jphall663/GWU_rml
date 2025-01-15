@@ -8,11 +8,11 @@
 \usecolortheme[snowy, cautious]{owl}
 
 % Remove headline and navigation in the header
-\setbeamertemplate{headline}{}
-\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{headline}{}
+%\setbeamertemplate{navigation symbols}{}
 
 % navigation symbol
-%\usenavigationsymbolstemplate{}
+\usenavigationsymbolstemplate{}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -34,11 +34,13 @@
 \setbeamertemplate{bibliography item}{}
 \setbeamerfont{caption}{size=\footnotesize}
 \setbeamertemplate{frametitle continuation}{}
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \renewcommand*{\bibfont}{\scriptsize}
 \addbibresource{lecture_7.bib}
 
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+
 
 \setbeamertemplate{footline}{%
     \raisebox{5pt}{\makebox{\hfill\makebox[20pt]{\color{gray}
@@ -69,8 +71,51 @@
 
 
 	%-------------------------------------------------------------------------------
-	\section{Know What We're Talking About}
+	\section{Technical Primer}
 	%-------------------------------------------------------------------------------
+		\subsection*{} % for slide tracking
+		
+		\begin{frame}
+			\frametitle{Term Embedding (like \texttt{Word2Vec}, \cite{NIPS2013_9aa42b31})}
+			\centering
+			\includegraphics[height=200pt]{../img/embed.png}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{\small{Sequence-to-sequence Learning with Recurrent Neural Networks\\ (RNNs, \cite{NIPS2014_a14ac55a})}}
+			\frametitle{Term Embedding (like \texttt{Word2Vec}, \cite{NIPS2013_9aa42b31})}
+			\centering
+			\includegraphics[height=200pt]{../img/rnn.png}
+		\end{frame}		
+
+		\begin{frame}
+			\frametitle{Self-Attention Basics (\cite{NIPS2017_3f5ee243})}
+			\centering
+			\includegraphics[height=200pt]{../img/attn.png}
+		\end{frame}	
+		
+		\begin{frame}
+			\frametitle{Transformer Basics (\cite{NIPS2017_3f5ee243})}
+			\centering
+			\includegraphics[height=200pt]{../img/trans.png}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{GPT-2 Small (\cite{radford2019language})}
+			\centering
+			\includegraphics[height=200pt]{../img/gpt2.png}
+		\end{frame}	
+
+		\begin{frame}
+			\frametitle{Retrieval Augmented Generation (RAG, \cite{lewis2020retrieval})}
+			\centering
+			\includegraphics[height=200pt]{../img/rag.png}
+		\end{frame}	
+		
+	%-------------------------------------------------------------------------------
+	\section{Risk Management}
+	%-------------------------------------------------------------------------------
+		\subsection*{} % for slide tracking				
 
 		\begin{frame}
 	
@@ -91,7 +136,7 @@
 			\scriptsize{Check out the new NIST Trustworthy AI Glossary: \url{https://airc.nist.gov/AI_RMF_Knowledge_Base/Glossary.}}
 
 		\end{frame}
-
+		
 		\begin{frame}
 			
 			\frametitle{Know What We're Talking About}
@@ -115,85 +160,67 @@
 		
 		\end{frame}
 
-
-% INSERT NEW SLIDE HERE WITH SECTION AUDIT SUPPLY CHAIN <AI TAKE A OF (HUMAN) WORK>
-
-
-	%-------------------------------------------------------------------------------
-	\section{Audit Supply Chains}
-	%-------------------------------------------------------------------------------
-
-\begin{frame}
-	
-	\frametitle{Audit Supply Chains}
-	\framesubtitle{AI takes a lot of (human) work}
-	
-	\begin{columns}
-	
-	\column{0.5\linewidth}
-		Consider:
-		\begin{itemize}
-			\item Data poisoning and malware.
-			\item Ethical labor practices.
-			\item Localization and data privacy compliance. 
-			\item Geopolitical stability. 
-			\item Software and hardware vulnerabilities.
-			\item Third-party vendors. 
-		\end{itemize}
-	
-	\column{0.5\linewidth}
-		\centering
-		\includegraphics[height=110pt]{../img/Audit_SC.png}\\
-
-		\scriptsize{\tiny{Cover art for the recent NY Magazine article, \textit{AI Is A Lot Of Work: As the technology becomes ubiquitous, a vast tasker underclass is emerging — and not going anywhere.}}}
-		\par\noindent\rule{100pt}{0.4pt}\\
-		%\vspace{5pt}
-
-	\end{columns}
-
-	\noindent\scriptsize{Image source: \url{https://nymag.com/intelligencer/article/ai-artificial-intelligence-humans-technology-business-factory.html}}
-
-	
-\end{frame}
-
-
-
-	%-------------------------------------------------------------------------------
-	\section{Select a Standard}
-	%-------------------------------------------------------------------------------
-
-			\begin{frame}
+		\begin{frame}
+			
+			\frametitle{Audit Supply Chains}
+			\framesubtitle{AI takes a lot of (human) work}
+			
+			\begin{columns}
+			
+			\column{0.5\linewidth}
+				Consider:
+				\begin{itemize}
+					\item Data poisoning and malware.
+					\item Ethical labor practices.
+					\item Localization and data privacy compliance. 
+					\item Geopolitical stability. 
+					\item Software and hardware vulnerabilities.
+					\item Third-party vendors. 
+				\end{itemize}
+			
+			\column{0.5\linewidth}
+				\centering
+				\includegraphics[height=110pt]{../img/Audit_SC.png}\\
+		
+				\scriptsize{\tiny{Cover art for the recent NY Magazine article, \textit{AI Is A Lot Of Work: As the technology becomes ubiquitous, a vast tasker underclass is emerging — and not going anywhere.}}}
+				\par\noindent\rule{100pt}{0.4pt}\\
+				%\vspace{5pt}
+		
+			\end{columns}
+		
+			\noindent\scriptsize{Image source: \url{https://nymag.com/intelligencer/article/ai-artificial-intelligence-humans-technology-business-factory.html}}
+		
+			
+		\end{frame}
+		
+		\begin{frame}
+			
+			\frametitle{Select a Standard}
+			\framesubtitle{Audits Assess Adherence to a Standard}		
+			
+			\begin{columns}
+				\column{0.5\linewidth}
+				\centering
+				\includegraphics[height=120pt]{../img/NIST_RMF_img1.png}\\
+				\scriptsize{The NIST AI Risk Management Framework puts forward guidance across mapping, measuring, managing and governing risk in sophisticated AI systems.}
 				
-				\frametitle{Select a Standard}
-				\framesubtitle{Audits Assess Adherence to a Standard}		
+				\par\noindent\rule{100pt}{0.4pt}\\
+				\vspace{5pt}
+				\scriptsize{\tiny{Source: \url{https://pages.nist.gov/AIRMF/}}}
 				
-				\begin{columns}
-					\column{0.5\linewidth}
-					\centering
-					\includegraphics[height=120pt]{../img/NIST_RMF_img1.png}\\
-					\scriptsize{The NIST AI Risk Management Framework puts forward guidance across mapping, measuring, managing and governing risk in sophisticated AI systems.}
-					
-					\par\noindent\rule{100pt}{0.4pt}\\
-					\vspace{5pt}
-					\scriptsize{\tiny{Source: \url{https://pages.nist.gov/AIRMF/}}}
-					
-					\column{0.5\linewidth}
-					\vspace{-5pt}
-					\begin{itemize}
-						\item NIST AI Risk Management Framework
-						\item EU AI Act Conformity
-						\item Data privacy laws or policies
-						\item Nondiscrimination laws
-					\end{itemize}
-				\end{columns}
+				\column{0.5\linewidth}
+				\vspace{-5pt}
+				\begin{itemize}
+					\item Data privacy laws or policies
+					\item EU AI Act Conformity
+					\item ISO Standards
+					\item NIST AI Risk Management Framework
+					\item Nondiscrimination laws
+				\end{itemize}
+			\end{columns}
 
-			\end{frame}
-
-
-	%-------------------------------------------------------------------------------
-	\section{Adopt An Adversarial Mindset}
-	%-------------------------------------------------------------------------------
-
+		\end{frame}
+		
 		\begin{frame}
 			
 			\frametitle{Adopt An Adversarial Mindset}
@@ -225,11 +252,6 @@
 					
 		\end{frame}
 		
-
-	%-------------------------------------------------------------------------------
-	\section{Review Past Incidents}
-	%-------------------------------------------------------------------------------
-
 		\begin{frame}
 			
 			\frametitle{Past Incidents}
@@ -237,12 +259,7 @@
 			\includegraphics[height=210pt]{../img/pastincidents.jpg}
 								
 		\end{frame}
-
-
-	%-------------------------------------------------------------------------------
-	\section{Enumerate Harm and Prioritize Risks}
-	%-------------------------------------------------------------------------------
-
+		
 		\begin{frame}
 			
 			\frametitle{Enumerate Harm and Priortize Risks}
@@ -293,18 +310,12 @@
 			\end{columns}
 					
 		\end{frame}
-
-
-	%-------------------------------------------------------------------------------
-	\section{Dig Into Data Quality}
-	%-------------------------------------------------------------------------------
-	% \multicolumn{n}{pos}{item} n=#colmns to be spanned pos=l,c,r; item=tobe printed
-
+		
 		\begin{frame}[t]
 			
 			\frametitle{Dig Into Data Quality}
 			\framesubtitle{Garbage In, Garbage Out}
-
+	
 			\begin{table}[]
 			\scriptsize
 			\begin{tabular}{|c|ll|}
@@ -319,24 +330,20 @@
 			Train/test differences & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}• Cross-validation\\ • Annotation patterns\end{tabular}} & \begin{tabular}[c]{@{}l@{}}• Negative set similarity \\ • Preserving holdout data\end{tabular}  \\ \hline
 			\end{tabular}
 			\end{table}
-
+	
 			\centering
 			\scriptsize{Source: "DQI: Measuring Data Quality in NLP,”  \\  \url{https://arxiv.org/pdf/2005.00816.pdf}. (\cite{mishra2020dqi})}
-
-
+	
+	
 		\end{frame}
-
-
-	%-------------------------------------------------------------------------------
-	\section{Apply Benchmarks}
-	%-------------------------------------------------------------------------------
-
+		
 		\begin{frame}
 			
 			\frametitle{Apply Benchmarks}
 			\framesubtitle{Public resources for systematic, quantitative testing}
 			
 			\begin{columns}
+				
 				\column{0.5\linewidth}
 				\vspace{-5pt}
 				\begin{itemize}
@@ -349,17 +356,13 @@
 				\centering
 				\newline  \newline  \newline
 				\includegraphics[height=120pt]{../img/apply_benchmark.png} 
-				\newline
-				%\small{Source: https://twitter.com/defcon.}
+		
 			\end{columns}
+			\vspace{10pt}
+			\small{Note that many benchmarks are now combined into large ``eval'' suites, such as \texttt{Big-bench}, \texttt{HELM}, or \texttt{Decoding Trust}}.
 					
 		\end{frame}
-
-
-	%-------------------------------------------------------------------------------
-	\section{Use Supervised ML Assessments}
-	%-------------------------------------------------------------------------------
-
+		
 		\begin{frame}
 			
 			\frametitle{Use Supervised ML Assessments}
@@ -381,15 +384,10 @@
 					\item Assessed differences in binary NER classifier performance across languages.
 				\end{itemize}
 			\end{columns}
+			\vspace{10pt}
+			\small{Or, more broadly, supervised ML assessments are highly effective when language models are used as classifiers.}
 					
 		\end{frame}
-
-
-	%-------------------------------------------------------------------------------
-	%\section{Engineer Adversarial Prompts}
-	%-------------------------------------------------------------------------------
-
-		
 		
 		%\begin{frame}
 			
@@ -420,12 +418,7 @@
 			%\end{columns}
 					
 		%\end{frame}
-
-
-	%-------------------------------------------------------------------------------
-	\section{Engineer Adversarial Prompts}
-	%-------------------------------------------------------------------------------
-
+		
 		\begin{frame}
 			
 			\frametitle{Engineer Adversarial Prompts}
@@ -435,33 +428,28 @@
 				\column{0.4\textwidth}
 				\centering
 				\newline
-				\includegraphics[width=\textwidth]{../img/GPT_Adv_Prmpt3_crop.jpg} 
+				\includegraphics[height=180pt]{../img/GPT_Adv_Prmpt3_crop.jpg} 
 				\newline
 				\tiny{ChatGPT output June, 2023. Courtesy Lisa Song.}
 				%\vspace{-5pt}
 
 				\column{0.6\textwidth}
 				\begin{itemize}
-					\item \small{\textcolor{red}{Counterfactuals}: Repeated prompts with different entities or subjects from different demographic groups.}
+					\item \small{\textbf{Counterfactuals}: Repeated prompts with different entities or subjects from different demographic groups.}
 					%\item \small{\textcolor{red}{Location awareness}: Prompts that reveal a prompter's location or expose location tracking.}
-					\item \small{\textcolor{red}{Logic-overloading}: Exploiting the inability of ML systems to reliably perform reasoning tasks.}
-					\item \small{\textcolor{red}{Pros-and-cons}: Eliciting the “pros” of problematic topics.}
-					\item \small{\textcolor{red}{Reverse psychology}: Falsely presenting a good-faith need for negative or problematic language.}
-					\item \small{\textcolor{red}{Role-playing}: Adopting a character that would reasonably make problematic statements.}
+					\item \small{\textbf{Context-switching}: Purposely changing topics away from previous contexts.}
+					\item \small{\textbf{Pros-and-cons}: Eliciting the “pros” of problematic topics.}
+					\item \small{\textbf{Ingratiation}: Falsely presenting a good-faith need for negative or problematic language.}
+					\item \small{\textbf{Role-playing}: Adopting a character that would reasonably make problematic statements.}
 					%\item \small{\textcolor{red}{Time perplexity}: Exploiting ML’s inability to understand the passage of time or the occurrence of real-world events over time.}
 				\end{itemize}
 				\vspace{10pt}
-				\hspace{12pt}\small{Various sources, e.g., \cite{Adversa}.}
+				\hspace{12pt}\tiny{Various sources, e.g., \cite{Adversa}, \cite{li2024llm}.}
 			
 			\end{columns}
 					
 		\end{frame}
-
-
-	%-------------------------------------------------------------------------------
-	\section{Don't Forget Security}
-	%-------------------------------------------------------------------------------
-
+		
 		\begin{frame}
 			
 			\frametitle{Don't Forget Security}
@@ -473,29 +461,29 @@
 				\begin{itemize}
 				\item Examples LM Attacks:
 					\begin{itemize}
-						\item \textcolor{red}{Prompt engineering}: adversarial prompts.
-						\item \textcolor{red}{Prompt injection}: malicious information injected into prompts over networks.
+						\item \textbf{Prompt engineering}: adversarial prompts.
+						\item \textbf{Prompt injection}: malicious information injected into prompts over networks.
 					\end{itemize}
 				\end{itemize}
 
 				\begin{itemize}
 				\item Example LM Attacks:
 					\begin{itemize}
-						\item \textcolor{red}{Membership inference}: exfiltrate training data.
-						\item \textcolor{red}{Model extraction}: exfilterate model.
-						\item \textcolor{red}{Data poisoning}: manipulate training data to alter outcomes.
+						\item \textbf{Membership inference}: exfiltrate training data.
+						\item \textbf{Model extraction}: exfilterate model.
+						\item \textbf{Data poisoning}: manipulate training data to alter outcomes.
 					\end{itemize}
 				\end{itemize}
 
 				\begin{itemize}				
 				\item Basics still apply:
 					\begin{itemize}
-						\item \textcolor{red}{Data breaches}
-						\item \textcolor{red}{Vulnerable/compromised dependencies}
+						\item Data breaches
+						\item Vulnerable/compromised dependencies
 					\end{itemize}
 				\end{itemize}
 				\vspace{5pt}
-			    \hspace{12pt}\tiny{Various sources, e.g., \cite{Adversa}, \cite{prompt_injection}.}
+ \hspace{12pt}\tiny{Various sources, e.g., \cite{Adversa}, \cite{prompt_injection}.}
 			
 				\column{0.4\textwidth}
 				\centering
@@ -506,12 +494,7 @@
 			\end{columns}
 					
 		\end{frame}
-
-
-	%-------------------------------------------------------------------------------
-	\section{Acknowledge Uncertainty}
-	%-------------------------------------------------------------------------------
-
+		
 		\begin{frame}
 			
 			\frametitle{Acknowledge Uncertainty}
@@ -531,16 +514,14 @@
 
 				\column{0.5\textwidth}
 				\begin{itemize}
-					\item Random attacks:
+					\item \textbf{Multiple measurements}: Construct variance estimates for risk measures.
+					\item \textbf{Random attacks}:
 						\begin{itemize}
 							\item Expose LMs to huge amounts of random inputs.
 							\item Use other LMs to generate absurd prompts.
 						\end{itemize}
-					\item Chaos testing:
-						\begin{itemize}
-							\item Break things; observe what happens.
-						\end{itemize}
-					\item Monitor:
+					\item \textbf{Chaos testing}: Break things; observe what happens.
+					\item \textbf{Monitor}:
 						\begin{itemize}
 							\item Inputs and outputs.
 							\item Drift and anomalies.
@@ -550,13 +531,7 @@
 			\end{columns}
 					
 		\end{frame}
-
-
-
-%-------------------------------------------------------------------------------
-	\section{Engage Stakeholders}
-	%-------------------------------------------------------------------------------
-
+		
 		\begin{frame}
 			
 			\frametitle{Engage Stakeholders}
@@ -588,148 +563,135 @@
 			\end{columns}
 					
 		\end{frame}
-
-
-%-------------------------------------------------------------------------------
-	\section{Mitigate Risks}
-%-------------------------------------------------------------------------------
-
-		\begin{frame}
+		
+		\begin{frame}[t]
 			
-			\frametitle{Mitigate Risks}
-			\framesubtitle{Now What??}
+			\frametitle{Now What??}
+			\framesubtitle{Manage Risks}
 			
 			\begin{columns}
 				
-				\column{0.33\textwidth}
+				\column{0.25\textwidth}
 					\vspace{5pt}
 					\centering
 					\includegraphics[height=100pt]{../img/buzzer.png}
 				
-				\column{0.33\textwidth}
+				\column{0.5\textwidth}
 					\textbf{YES:}
-					\begin{itemize}\tiny
-						\item Abuse detection
-						\item Accessibility
-						\item Clear instructions
-						\item Content filters
-						\item Disclosure of AI interactions
-						\item Dynamic blocklists
-						\item Ground truth training data
-						\item Kill switches					
-						\item Incident response plans
-						\item Monitoring
-						\item Pre-approved responses
-						\item Red-teaming
-						\item Session limits
-						\item Strong meta-prompts
-						\item User feedback mechanisms
-						\item Watermarking
-					\end{itemize}
+					
+					\begin{columns}
+						
+						\column{0.25\textwidth}
+						\begin{itemize}\tiny
+							\item Abuse detection
+							\item Accessibility
+							\item Benchmarking
+							\item Citation						
+							\item Clear instructions
+							\item Content filters
+							\item Content provenance						
+							\item Data retention
+							\item Disclosure of AI interactions
+							\item Dynamic blocklists
+							\item Field-testing
+						\end{itemize}
+						
+						\column{0.25\textwidth}
+						\begin{itemize}\tiny
+							\item Ground truth training data
+							\item Kill switches					
+							\item Incident response plans
+							\item Monitoring
+							\item Pre-approved responses
+							\item Rate-limiting/throttling 
+							\item Retrieval augmented generation (RAG) approaches
+							\item Red-teaming
+							\item Session limits
+							\item Strong system prompts
+							\item User feedback mechanisms
+						\end{itemize}
+						
+					\end{columns}
 			
-				\column{0.33\textwidth}
+				\column{0.25\textwidth}
 					\textbf{NO:}
-					\begin{itemize}\small
+					\begin{itemize}\tiny
 						\item Anonymous use
+						\item Anthropomorphization 
 						\item Bots
 						\item Internet access
 						\item Minors
 						\item Personal/sensitive training data
 						\item Regulated use cases
-						\item Undisclosed data collection
+						\item Undisclosed data collection or secondary use
 					\end{itemize}
 					\vspace{5pt}
-					\scriptsize{Various sources, e.g.,\\ \cite{weidinger2022taxonomy}.}
+					\tiny{Various sources, e.g.,\\ \cite{weidinger2022taxonomy}, \cite{ai2024artificial}.}
 					
-					
-				
 			\end{columns}
 					
+		\end{frame}	
+
+	%-------------------------------------------------------------------------------
+	\section{Acknowledgments} 
+	%-------------------------------------------------------------------------------
+	
+		\begin{frame}
+			
+			\frametitle{Acknowledgments}
+			
+			Thanks to Lisa Song for her continued assistance in developing these course materials.
+			
+		\end{frame}	
+
+
+	%-------------------------------------------------------------------------------
+	%\section{References} % section not needed, handled by printbib command
+	%-------------------------------------------------------------------------------
+		
+		\begin{frame}[t, allowframebreaks]
+		
+			\frametitle{References}	
+					
+			\printbibliography
+			
 		\end{frame}
 
 
-%-------------------------------------------------------------------------------
-\section{Acknowledgments} 
-%-------------------------------------------------------------------------------
-
-\begin{frame}
-	
-	\frametitle{Acknowledgments}
-	
-	Thanks to Lisa Song for her continued assistance in developing these course materials.
-	
-\end{frame}	
-
-
-%-------------------------------------------------------------------------------
-%	\subsection{Questions}
-%------------------------------------------------------------------------------
-
-%		\begin{frame}
-
-%			\frametitle{Open Conceptual Questions}		
-
-%			\begin{itemize}
-%				\item How much automation is appropriate, 100\%?
-%				\item How to automate learning by iteration, reinforcement learning?
-%				\item How to implement human appeals, is it productizable?
-%			\end{itemize}
-			
-%		\end{frame}
-
-%-------------------------------------------------------------------------------
-	\section{References}
-%-------------------------------------------------------------------------------
-
-	\begin{frame}[t, allowframebreaks]
-	
-		\frametitle{References}	
-				
-		\printbibliography
-		
-	\end{frame}
-
-
-%-------------------------------------------------------------------------------
+	%-------------------------------------------------------------------------------
  	\section{Resources} 
-%-------------------------------------------------------------------------------
+	%-------------------------------------------------------------------------------
+		\subsection*{} % for slide tracking
 
-\begin{frame}
-	
-	\frametitle{Resources}
-	\framesubtitle{Tools}
-	
-	\begin{itemize}\small
-		\item Alicia Parrish, et al. BBQ Benchmark, available at \url{https://github.com/nyu-mll/bbq}.
-		\item Allen AI Institute, Real Toxicity Prompts, available at \url{https://allenai.org/data/real-toxicity-prompts}.
-		\item DAIR.AI, “Prompt Engineering Guide,” available at \url{https://www.promptingguide.ai}.
-		\item NIST, AI Risk Management Framework, available at \url{https://www.nist.gov/itl/ai-risk-management-framework}.
-		\item Partnership on AI, “Responsible Practices for Synthetic Media,” available at \url{https://syntheticmedia.partnershiponai.org/}. 
-		\item Rachel Rudiger et al., Winogender Schemas, available at \url{https://github.com/rudinger/winogender-schemas}.
-		\item Stephanie Lin et al., Truthful QA, available at \url{https://github.com/sylinrl/TruthfulQA}.
-	\end{itemize}	
-	
-\end{frame}	
+		\begin{frame}
+			
+			\frametitle{Resources}
+			\framesubtitle{Tools}
+			
+			\begin{itemize}\small
+				\item Alicia Parrish, et al. BBQ Benchmark, available at \url{https://github.com/nyu-mll/bbq}.
+				\item Allen AI Institute, Real Toxicity Prompts, available at \url{https://allenai.org/data/real-toxicity-prompts}.
+				\item DAIR.AI, “Prompt Engineering Guide,” available at \url{https://www.promptingguide.ai}.
+				\item NIST, AI Risk Management Framework, available at \url{https://www.nist.gov/itl/ai-risk-management-framework}.
+				\item Partnership on AI, “Responsible Practices for Synthetic Media,” available at \url{https://syntheticmedia.partnershiponai.org/}. 
+				\item Rachel Rudiger et al., Winogender Schemas, available at \url{https://github.com/rudinger/winogender-schemas}.
+				\item Stephanie Lin et al., Truthful QA, available at \url{https://github.com/sylinrl/TruthfulQA}.
+			\end{itemize}	
+			
+		\end{frame}	
 
-
-%-------------------------------------------------------------------------------
-	\section{Resources} 
-%-------------------------------------------------------------------------------
-
-\begin{frame}
-	
-	\frametitle{Resources}
-	\framesubtitle{Incident databases}
-	
-	\begin{itemize}
-		\item AI Incident database: \url{https://incidentdatabase.ai/}.
-		\item The Void: \url{https://www.thevoid.community/}.
-		\item AIAAIC: \url{https://www.aiaaic.org/}.
-		\item Avid database: \url{https://avidml.org/database/}.
-	\end{itemize}	
-	
-\end{frame}
-
-
+		\begin{frame}
+			
+			\frametitle{Resources}
+			\framesubtitle{Incident databases}
+			
+			\begin{itemize}
+				\item AI Incident database: \url{https://incidentdatabase.ai/}.
+				\item The Void: \url{https://www.thevoid.community/}.
+				\item AIAAIC: \url{https://www.aiaaic.org/}.
+				\item Avid database: \url{https://avidml.org/database/}.
+			\end{itemize}	
+			
+		\end{frame}
 
 \end{document}
