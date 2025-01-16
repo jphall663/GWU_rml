@@ -18,4 +18,5 @@ tests/out*
 *.toc
 best_mgbm*
 stolen_dt*
-
+assignments/Python-*
+assignments/python-*

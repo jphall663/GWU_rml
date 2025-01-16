@@ -332,7 +332,7 @@
 			\end{table}
 	
 			\centering
-			\scriptsize{Source: "DQI: Measuring Data Quality in NLP,”  \\  \url{https://arxiv.org/pdf/2005.00816.pdf}. (\cite{mishra2020dqi})}
+			\scriptsize{Source: "DQI: Measuring Data Quality in NLP,”\\\url{https://arxiv.org/pdf/2005.00816.pdf}. (\cite{mishra2020dqi})}
 	
 	
 		\end{frame}
@@ -346,11 +346,12 @@
 				
 				\column{0.5\linewidth}
 				\vspace{-5pt}
-				\begin{itemize}
+				\begin{itemize}\small
 					\item \textbf{BBQ}: Stereotypes in question answering.
 					\item \textbf{Winogender}: LM output versus employment statistics.
 					\item \textbf{Real toxicity prompts}: 100k prompts to elicit toxic output.
 					\item \textbf{TruthfulQA}: Assess the ability to make true statements.
+					\item Beware of task contamination (\cite{li2024task}). 
 				\end{itemize}
 				\column{0.5\linewidth}
 				\centering
@@ -575,46 +576,40 @@
 					\vspace{5pt}
 					\centering
 					\includegraphics[height=100pt]{../img/buzzer.png}
-				
-				\column{0.5\textwidth}
-					\textbf{YES:}
+			
+						
+				\column{0.25\textwidth}
+					\begin{itemize}\tiny
+						\item Abuse detection
+						\item Accessibility
+						\item Benchmarking
+						\item Citation						
+						\item Clear instructions
+						\item Content filters
+						\item Content provenance						
+						\item Data retention
+						\item Disclosure of AI interactions
+						\item Dynamic blocklists
+						\item Field-testing
+					\end{itemize}
 					
-					\begin{columns}
-						
-						\column{0.25\textwidth}
-						\begin{itemize}\tiny
-							\item Abuse detection
-							\item Accessibility
-							\item Benchmarking
-							\item Citation						
-							\item Clear instructions
-							\item Content filters
-							\item Content provenance						
-							\item Data retention
-							\item Disclosure of AI interactions
-							\item Dynamic blocklists
-							\item Field-testing
-						\end{itemize}
-						
-						\column{0.25\textwidth}
-						\begin{itemize}\tiny
-							\item Ground truth training data
-							\item Kill switches					
-							\item Incident response plans
-							\item Monitoring
-							\item Pre-approved responses
-							\item Rate-limiting/throttling 
-							\item Retrieval augmented generation (RAG) approaches
-							\item Red-teaming
-							\item Session limits
-							\item Strong system prompts
-							\item User feedback mechanisms
-						\end{itemize}
-						
-					\end{columns}
+				\column{0.25\textwidth}
+					\begin{itemize}\tiny
+						\item Ground truth training data
+						\item Kill switches					
+						\item Incident response plans
+						\item Monitoring
+						\item Pre-approved responses
+						\item Rate-limiting/throttling 
+						\item Retrieval augmented generation (RAG) approaches
+						\item Red-teaming
+						\item Session limits
+						\item Strong system prompts
+						\item User feedback mechanisms
+					\end{itemize}
 			
 				\column{0.25\textwidth}
-					\textbf{NO:}
+					\textbf{Restrict:}
 					\begin{itemize}\tiny
 						\item Anonymous use
 						\item Anthropomorphization 
@@ -626,9 +621,10 @@
 						\item Undisclosed data collection or secondary use
 					\end{itemize}
 					\vspace{5pt}
-					\tiny{Various sources, e.g.,\\ \cite{weidinger2022taxonomy}, \cite{ai2024artificial}.}
 					
 			\end{columns}
+			\vspace{10pt}
+			\tiny{Various sources, e.g., \cite{weidinger2022taxonomy}, \cite{ai2024artificial}.}
 					
 		\end{frame}	
 
