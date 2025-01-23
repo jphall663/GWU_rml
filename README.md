@@ -363,12 +363,9 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 ### Lecture 7 Additional Tools
 
-* [BBQ Benchmark](https://github.com/nyu-mll/bbq)
+* [NIST AI RMF Retrieval Augmented Generation (RAG) Example](https://drive.google.com/file/d/1cJm1hQLL5Z8tWABTR0ZxLy0114xSHsNr/view?usp=sharing)
 * [DAIR.AI Prompt Engineering Guide](https://www.promptingguide.ai)
 * [PAI’s Responsible Practices for Synthetic Media](https://syntheticmedia.partnershiponai.org/)
-*	[Real Toxicity Prompts](https://allenai.org/data/real-toxicity-prompts)
-* [Truthful QA](https://github.com/sylinrl/TruthfulQA)
-*	[Winogender Schemas](https://github.com/rudinger/winogender-schemas)
 
 ### Lecture 7 Additional Reading
 
