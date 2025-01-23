@@ -353,7 +353,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 ## Lecture 7: Risk Mitigation Proposals for Language Models
 
-![Past language model incidents.](/img/pastincidents.jpg)
+![Past language model incidents.](/img/rag.png)
 
 <sub><sup>A number of headlines and images relating to language model incidents. **Source:** [Lecture 7 notes](tex/lecture_7.pdf).</sup></sub>
 
