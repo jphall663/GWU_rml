@@ -355,7 +355,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 ![Past language model incidents.](/img/rag.png)
 
-<sub><sup>A number of headlines and images relating to language model incidents. **Source:** [Lecture 7 notes](tex/lecture_7.pdf).</sup></sub>
+<sub><sup>A diagram for retrieval augmented generation. **Source:** [Lecture 7 notes](tex/lecture_7.pdf).</sup></sub>
 
 ### Lecture 7 Class Materials
 
@@ -370,9 +370,6 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 ### Lecture 7 Additional Reading
 
 * **Introduction and Background**:
+  * [_Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile_](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf) 
   * [_Taxonomy of Risks posed by Language Models_](https://dl.acm.org/doi/pdf/10.1145/3531146.3533088)
   * [_On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?_](https://dl.acm.org/doi/10.1145/3442188.3445922)
-
-
-
-
