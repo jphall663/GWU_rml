@@ -363,7 +363,7 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 ### Lecture 7 Additional Tools
 
-* [NIST AI RMF Retrieval Augmented Generation (RAG) Example](https://drive.google.com/file/d/1cJm1hQLL5Z8tWABTR0ZxLy0114xSHsNr/view?usp=sharing)
+* [NIST AI RMF Retrieval Augmented Generation (RAG) Example](https://drive.google.com/drive/folders/1eR4iNqP2bbQHtnQx7Sj8_VhS_AeWPzBo?usp=sharing)
 * [DAIR.AI Prompt Engineering Guide](https://www.promptingguide.ai)
 * [PAI’s Responsible Practices for Synthetic Media](https://syntheticmedia.partnershiponai.org/)
 
