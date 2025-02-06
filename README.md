@@ -34,7 +34,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [Full evaluations results]()
 * Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 2 (pp. 33 - 50) and Chapter 6 (pp. 189 - 217)
   * Check availablity through GWU Libraries access to O'Reilly Safari
-* [Lecture 1 Additional Materials](am1_md)
+* [Lecture 1 Additional Materials](additional_materials/am1.md)
 
 ***
 
