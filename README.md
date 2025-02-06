@@ -31,7 +31,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Software Example](https://drive.google.com/file/d/1PnDSsNYRh1JNqZ3wyPgCA-KQxBop7y4L/view?usp=sharing)
 * [Assignment 1](assignments/tex/assignment_1.pdf):
   * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb?flush_cache=true)
-  * [Full evaluations results](assignments/model_eval_2023_06_28_21_00_17.csv)
+  * [Full evaluations results]()
 * Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 2 (pp. 33 - 50) and Chapter 6 (pp. 189 - 217)
 
 ### Lecture 1 Additional Software Tools
