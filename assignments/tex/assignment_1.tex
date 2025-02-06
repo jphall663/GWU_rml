@@ -32,38 +32,7 @@
 
 \maketitle
 
-\noindent In Assignment 1, you will train explainable machine learning (ML) models following the instructions below. A \href{https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/assignment_1/assign_1_template.ipynb?flush_cache=true}{template} has been provided as an example of how to train and compare a few different explainable models. For those of you who use Python virtual environments, a basic \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/requirements.txt}{requirements.txt} file is also available for the template.\\
-
-\noindent Ensure Python 3, Git and Java are installed, then set up the environment and run the template using commands like this:\\ 
-\noindent \texttt{\$ python3 -m pip install --user --upgrade pip}\\
-\noindent \texttt{\$ python3 -m pip install --user virtualenv}\\
-\noindent \texttt{\$ git clone https://github.com/jphall663/GWU\_rml.git}\\
-\noindent \texttt{\$ cd assignments}\\
-\noindent \texttt{\$ python3 -m venv env\_rml}\\
-\noindent \texttt{\$ source env\_rml/bin/activate}\\
-\noindent \texttt{\$ python3 -m pip install -r requirements.txt}\\
-\noindent \texttt{\$ env\_rml/bin/jupyter notebook}\\
-
-
-
-\noindent Some of you may find it easier to use \href{https://selfexplainml.github.io/PiML-Toolbox/_build/html/index.html}{PiML} and/or Colab. If you'd like to try them on your own machine, a simple \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/group6_PiML_example.ipynb}{PiML example} and \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/piml_requirements.txt}{requirements.txt} are available from class resources. Follow examples from the PiML website to use PiML on Colab. To load data into PiML, use Pandas and Google Colab functions:\\
-\noindent \texttt{import io}\\
-\noindent \texttt{from google.colab import files}\\
-\noindent \texttt{uploaded = files.upload() \# upload training and test data}\\
-\noindent \texttt{import pandas as pd}\\
-\noindent \texttt{train = pd.read\_csv(io.StringIO(uploaded['hmda\_train\_preprocessed.csv'].decode('utf-8')))}\\
-\noindent \texttt{!pip install piml}\\
-\noindent \texttt{from piml import Experiment}\\
-\noindent \texttt{exp = Experiment()}\\
-\noindent \texttt{exp.data\_loader(data=train)}\\
-
-\noindent Generating predictions in PiML looks something like this:\\
-\noindent \texttt{preds = exp.experiment.registered\_pipeline['EBM'].predict\_proba(train[x\_names].values)[:, 1]}\\
-
-\noindent Installing packages like \texttt{h2o} or \texttt{interpret} in Colab looks something like this:\\
-\noindent  \texttt{!pip install h2o}\\ 
-
-\noindent Please let me know immediately if you find typos or mistakes in this assignment or related materials. 
+\noindent In Assignment 1, you will train explainable machine learning (ML) models following the instructions below. A \href{https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/assignment_1/assign_1_template.ipynb?flush_cache=true}{template} has been provided as an example of how to train and compare a few different explainable models. Ensure Python 3, Git and Java are installed. Please let me know immediately if you find typos or mistakes in this assignment or related materials. 
 
 \section{Download Data.}
 
@@ -115,7 +84,7 @@ Your deliverable for this assignment has two parts. Each part is worth 5 points.
 	\item You must create submission files with output probabilities for each row of the test data. The submission file should have one column named \texttt{phat}. Each model should have a separate submission file named using a \texttt{<personal\_or\_group\_indentifier>\_<model\_type>.csv} convention, similar to the \href{https://github.com/jphall663/GWU_rml/blob/master/assignments/assignment_1/ph_glm.csv}{example submission file}. See cells 11, 15, and 19 for examples of writing submission files. Your group's submission will be ranked using the cross-validated ranking method discussed during Lecture 1. The remaining five points for the assignment will be issued based on this ranking. You will have opportunities to increase your rank each week of the class. 
 \end{itemize}
 
-\noindent \textbf{Your deliverables are due Wednesday, May 31\textsuperscript{st}, at 11:59:59 PM ET.}\\
+\noindent \textbf{Your deliverables are due XX, XX XX\textsuperscript{XX}, at 11:59:59 PM ET.}\\
 
 \noindent Please send an email to \href{mailto:jphall@gwu.edu}{\texttt{jphall@gwu.edu}} by that deadline with the link to your group's GitHub page and with your zipped submission files. 
 
