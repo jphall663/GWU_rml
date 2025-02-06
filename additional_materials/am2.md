@@ -40,7 +40,7 @@
 * **Post-hoc Explanation Techniques**:
   * [_A Unified Approach to Interpreting Model Predictions_](https://papers.nips.cc/paper_files/paper/2017/file/8a20a8621978632d76c43dfd28b67767-Paper.pdf)
   * [_Anchors: High-Precision Model-Agnostic Explanations_](https://homes.cs.washington.edu/~marcotcr/aaai18.pdf)
-  * **Elements of Statistical Learning** - [Section 10.13](https://hastie.su.domains/ElemStatLearn/)
+  * [**Elements of Statistical Learning**](https://hastie.su.domains/ElemStatLearn/) - Section 10.13
   * [_Extracting Tree-Structured Representations of Trained Networks_](https://proceedings.neurips.cc/paper/1995/file/45f31d16b1058d586fc3be7207b58053-Paper.pdf)
   * [_Interpretability via Model Extraction_](https://arxiv.org/pdf/1706.09773.pdf)
   * **Interpretable Machine Learning** - [Chapter 6](https://christophm.github.io/interpretable-ml-book/agnostic.html) and [Chapter 7](https://christophm.github.io/interpretable-ml-book/example-based.html)
