@@ -41,7 +41,7 @@
 
 * **Explainable Machine Learning Techniques**:
   * [*Accurate Intelligible Models with Pairwise Interactions*](http://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf)
-  * **Elements of Statistical Learning** - Chapters 3,4, and 9
+  * [**Elements of Statistical Learning**](https://hastie.su.domains/ElemStatLearn/) - Chapters 3,4, and 9
   * [*Fast Interpretable Greedy-Tree Sums (FIGS)*](https://arxiv.org/pdf/2201.11931.pdf)
   * **Interpretable Machine Learning** - [Chapter 5](https://christophm.github.io/interpretable-ml-book/simple.html)
   * [*GAMI-Net: An Explainable Neural Network Based on Generalized Additive Models with Structured Interactions*](https://www.sciencedirect.com/science/article/abs/pii/S0031320321003484)
