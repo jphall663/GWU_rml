@@ -46,8 +46,11 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 2 Class Materials
 
 * [Lecture Notes](tex/lecture_2.pdf)
+* [Software Example](https://colab.research.google.com/drive/1X7hagDcdMEU_YrGxsAXrUZo1hWCVN--H?usp=sharing)
 * [Assignment 2](assignments/tex/assignment_2.pdf)
-* Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 2 (pp. 50 - 80) and Chapter 6 (pp. 208 - 230)
+* Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 2 (pp. 50 - 80) and Chapter 6 (pp. 208 - 230)
+  * Check availablity through GWU Libraries access to O'Reilly Safari
+* [Lecture 2 Additional Materials](additional_materials/am2.md)
 
 ### Lecture 2 Additional Software Tools
 
