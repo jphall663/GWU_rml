@@ -14,6 +14,12 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ***
 
+## Preliminary Materials
+ * [Syllabus](https://docs.google.com/document/d/1msxf4_n9G3g5ejwvtE112FuW2a4UMo6b0ukgS8V0rA8/edit?usp=drive_link)
+ * [Basic Data Manipulation](https://github.com/jphall663/GWU_data_mining/blob/master/01_basic_data_prep/01_basic_data_prep.md)
+ * [Primer on Technical Malpractice](https://docs.google.com/presentation/d/1cZeaoIp4cQsVY_gj2a5Pg7ygexepQZRS-ZEn6n2QqEU/edit?usp=sharing)
+ * [Whiteboard Notation](https://docs.google.com/presentation/d/1Axf9dizaE3XvGRelBHfsnAlMUPFuMExQ2WNVwQBKMrw/edit?usp=sharing)
+
 ## Lecture 1: Explainable Machine Learning Models
 
 ![Histogram, partial dependence, and ICE for a monotonic GBM and a credit card customer's most recent repayment status](/img/ebm.png)
@@ -21,12 +27,8 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ### Lecture 1 Class Materials
 
-* Introduction:
-  * [Syllabus](https://github.com/jphall663/GWU_rml/blob/master/syllabus_ph_responsible_machine_learning_msba_v5.1.pdf)
-  * [Basic Data Manipulation](https://github.com/jphall663/GWU_data_mining/blob/master/01_basic_data_prep/01_basic_data_prep.md)
-  * [Primer on Technical Malpractice](https://docs.google.com/presentation/d/1cZeaoIp4cQsVY_gj2a5Pg7ygexepQZRS-ZEn6n2QqEU/edit?usp=sharing)
-  * [Whiteboard Notation](https://docs.google.com/presentation/d/1Axf9dizaE3XvGRelBHfsnAlMUPFuMExQ2WNVwQBKMrw/edit?usp=sharing)
 * [Lecture Notes](tex/lecture_1.pdf)
+* [Software Example](https://drive.google.com/file/d/1PnDSsNYRh1JNqZ3wyPgCA-KQxBop7y4L/view?usp=sharing)
 * [Assignment 1](assignments/tex/assignment_1.pdf):
   * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb?flush_cache=true)
   * [Full evaluations results](assignments/model_eval_2023_06_28_21_00_17.csv)
@@ -353,9 +355,9 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 ## Lecture 7: Risk Mitigation Proposals for Language Models
 
-![Past language model incidents.](/img/pastincidents.jpg)
+![Past language model incidents.](/img/rag.png)
 
-<sub><sup>A number of headlines and images relating to language model incidents. **Source:** [Lecture 7 notes](tex/lecture_7.pdf).</sup></sub>
+<sub><sup>A diagram for retrieval augmented generation. **Source:** [Lecture 7 notes](tex/lecture_7.pdf).</sup></sub>
 
 ### Lecture 7 Class Materials
 
@@ -363,19 +365,13 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 
 ### Lecture 7 Additional Tools
 
-* [BBQ Benchmark](https://github.com/nyu-mll/bbq)
+* [NIST AI RMF Retrieval Augmented Generation (RAG) Example](https://drive.google.com/drive/folders/1eR4iNqP2bbQHtnQx7Sj8_VhS_AeWPzBo?usp=sharing)
 * [DAIR.AI Prompt Engineering Guide](https://www.promptingguide.ai)
 * [PAI’s Responsible Practices for Synthetic Media](https://syntheticmedia.partnershiponai.org/)
-*	[Real Toxicity Prompts](https://allenai.org/data/real-toxicity-prompts)
-* [Truthful QA](https://github.com/sylinrl/TruthfulQA)
-*	[Winogender Schemas](https://github.com/rudinger/winogender-schemas)
 
 ### Lecture 7 Additional Reading
 
 * **Introduction and Background**:
+  * [_Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile_](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf) 
   * [_Taxonomy of Risks posed by Language Models_](https://dl.acm.org/doi/pdf/10.1145/3531146.3533088)
   * [_On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?_](https://dl.acm.org/doi/10.1145/3442188.3445922)
-
-
-
-
