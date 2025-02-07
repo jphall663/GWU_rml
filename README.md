@@ -175,6 +175,11 @@ Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8
 ### Lecture 5 Class Materials
 
 * [Lecture Notes](tex/lecture_5.pdf)
+* Software Examples:
+  * Sensitivity Analysis:
+    * [Adversarial Example Search](https://colab.research.google.com/drive/1GBRrcZCoNJRYj5MI0iKKkXKUhg0vYUtB?usp=drive_link)
+    * [Stress Testing](https://colab.research.google.com/drive/1S9pABlR7xs_VZAKraKT7pBSoXsuzZbaC?usp=sharing)
+  * [Residual Analysis](https://colab.research.google.com/drive/1e8CXl23qpYsUL4nbEjX0MCsjhbHEPBVR?usp=sharing)  
 * [Assignment 5](assignments/tex/assignment_5.pdf) 
 * Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 3 and Chapter 8
 
