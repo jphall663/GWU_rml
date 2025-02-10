@@ -62,7 +62,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 3 Class Materials
 
 * [Lecture Notes](tex/lecture_3.pdf)
-* [Software Example]()
+* [Software Example](https://colab.research.google.com/drive/1PHGCYRTAgiYbvC1fjd6xaLbg1nr2x0aH?usp=sharing)
 * [Assignment 3](assignments/tex/assignment_3.pdf)
   * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb?flush_cache=true)
   * [Full evaluations results](assignments/model_eval_2023_06_28_21_00_17.csv)
