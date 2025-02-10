@@ -33,7 +33,7 @@
   * [*Certifying and Removing Disparate Impact*](https://arxiv.org/pdf/1412.3756.pdf)
   * [*Data Preprocessing Techniques for Classification Without
 Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8.pdf)  
-  * [*Decision Theory for Discrimination-aware Classification*](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.722.3030&rep=rep1&type=pdf)
+  * [*Decision Theory for Discrimination-aware Classification*](https://ieeexplore.ieee.org/document/6413831)
   * [*Fairness Beyond Disparate Treatment & Disparate Impact: Learning Classification Without Disparate Mistreatment*](https://arxiv.org/pdf/1610.08452.pdf)
   * [*Learning Fair Representations*](http://proceedings.mlr.press/v28/zemel13.pdf)
   * [*Mitigating Unwanted Biases with Adversarial Learning*](https://dl.acm.org/doi/pdf/10.1145/3278721.3278779)
