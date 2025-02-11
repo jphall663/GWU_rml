@@ -36,7 +36,7 @@
 
 * **Examples of Real-world Attacks**:
 
-  * [Fraudsters Cloned Company Director’s Voice In $35 Million Heist, Police Find](https://www.forbes.com/sites/thomasbrewster/2021/10/14/huge-bank-fraud-uses-deep-fake-voice-tech-to-steal-millions/?sh=7f3ba4bd7559)
+  * [Finance worker pays out $25 million after video call with deepfake ‘chief financial officer’](https://www.cnn.com/2024/02/04/asia/deepfake-cfo-scam-hong-kong-intl-hnk/index.html)
   * [ISIS 'still evading detection on Facebook', report says](https://www.bbc.com/news/technology-53389657)
   * [Researchers bypass airport and payment facial recognition systems using masks](https://www.engadget.com/2019-12-16-facial-recognition-fooled-masks.html)
   * [Slight Street Sign Modifications Can Completely Fool Machine Learning Algorithms](https://spectrum.ieee.org/cars-that-think/transportation/sensors/slight-street-sign-modifications-can-fool-machine-learning-algorithms)
