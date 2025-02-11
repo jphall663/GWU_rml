@@ -160,7 +160,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 * [Lecture Notes](tex/lecture_6.pdf)
 * [Assignment 6 (Final Assessment)](assignments/tex/assignment_6.pdf)
-* Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 1 and Chapter 12
+* Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 1 and Chapter 12
 * [Lecture 6 Additional Materials](additional_materials/am6.md)
 
 ***
