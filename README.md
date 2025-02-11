@@ -176,23 +176,13 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ## Lecture 7: Risk Mitigation Proposals for Language Models
 
-![Past language model incidents.](/img/rag.png)
+![An illustration of retrieval augmented generation (RAG).](/img/rag.png)
 
 <sub><sup>A diagram for retrieval augmented generation. **Source:** [Lecture 7 notes](tex/lecture_7.pdf).</sup></sub>
 
 ### Lecture 7 Class Materials
 
 * [Lecture Notes](tex/lecture_7.pdf)
-
-### Lecture 7 Additional Tools
-
-* [NIST AI RMF Retrieval Augmented Generation (RAG) Example](https://drive.google.com/drive/folders/1eR4iNqP2bbQHtnQx7Sj8_VhS_AeWPzBo?usp=sharing)
-* [DAIR.AI Prompt Engineering Guide](https://www.promptingguide.ai)
-* [PAI’s Responsible Practices for Synthetic Media](https://syntheticmedia.partnershiponai.org/)
-
-### Lecture 7 Additional Reading
-
-* **Introduction and Background**:
-  * [_Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile_](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf) 
-  * [_Taxonomy of Risks posed by Language Models_](https://dl.acm.org/doi/pdf/10.1145/3531146.3533088)
-  * [_On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?_](https://dl.acm.org/doi/10.1145/3442188.3445922)
+* [Software Example](https://drive.google.com/drive/folders/1eR4iNqP2bbQHtnQx7Sj8_VhS_AeWPzBo?usp=sharing)
+* Reading: [_Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile_](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf), pgs. 1-12, 47-53 
+* [Lecture 7 Additional Materials](additional_materials/am7.md)
