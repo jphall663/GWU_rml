@@ -85,7 +85,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [Data Poisoning](https://colab.research.google.com/drive/13hs11eJAEsX3ZAHA6oH1Lmi4I-dH7d1G?usp=sharing)
   * [Backdoor Attack](https://colab.research.google.com/drive/1QRCSW42L6wDs6ML9VgQu-xAbpdny4Mq1?usp=sharing)  
 * [Assignment 4](assignments/tex/assignment_4.pdf)
-* Reading: [_Machine Learning for High-Risk Applications_](https://pages.dataiku.com/oreilly-responsible-ai), Chapter 5 and Chapter 11
+* Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 5 and Chapter 11
 * [Lecture 4 Additional Materials](additional_materials/am4.md)
 
 ***   
