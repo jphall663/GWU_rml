@@ -1,4 +1,4 @@
-## GWU_DNSC 6290: Course Outline
+## GWU_DNSC 6330: Course Outline
 
 Materials for a technical, nuts-and-bolts course about increasing transparency, fairness, robustness, and security in machine learning.
 
