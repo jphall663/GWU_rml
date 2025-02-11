@@ -1,6 +1,7 @@
 ### Lecture 7 Additional Software Tools
 
 * [garak](https://github.com/NVIDIA/garak)
+* [PyRIT](https://github.com/Azure/PyRIT)
 
 ### Lecture 7 Additional Resources
 
