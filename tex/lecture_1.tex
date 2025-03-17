@@ -96,18 +96,18 @@
 		\begin{itemize}
 			\item{Grading:}
 				\begin{itemize}
-					\item{$\frac{6}{10}$ Weekly Assignments}
+					\item{$\frac{5}{10}$ Weekly Assignments}
 					\item{$\frac{3}{10}$ GitHub model card (\cite{model_cards})}
-                    \item{$\frac{1}{10}$ Class participation}
+                    \item{$\frac{2}{10}$ Weekly Quizzes}
 				\end{itemize}
 			\item{Project:}	
 				\begin{itemize}
 					\item{HMDA data using techniques from class}
 					\item{Individual or group (no more than 4 members)}
-					\item Groups randomly assigned by instructor, with consideration of time zone
+					\item Groups randomly assigned by instructor
 				\end{itemize}
 			\item{Syllabus}
-			\item{Office hours: (??)}
+			\item{Office hours: F, 3-5 PM, Funger 412}
 			\item{Class resources: \url{https://jphall663.github.io/GWU_rml/}}	
 		\end{itemize}		
 			
@@ -124,7 +124,9 @@
 			\item{\textbf{Class 3}: Fairness}
 			\item{\textbf{Class 4}: Security}
 			\item{\textbf{Class 5}: Model Debugging}
-			\item{\textbf{Class 6}: Best Practices}
+			\item{\textbf{Class 6}: Supervised ML Best Practices}
+			\item{\textbf{Class 7}: Risk Management for LLMs }
+			
 		\end{itemize}
 			
 					
@@ -151,7 +153,9 @@
 	
 				\small{The \href{https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf}{NIST AI Risk Management Framework} (\citet{tabassi2023artificial}) characterizes risk as a ``composite measure of an event’s probability of occurring and the magnitude or degree of the consequences of the corresponding event. \textbf{The impacts, or consequences, of AI systems can be positive, negative, or both and can result in opportunities or threats.}''}\\
 				\vspace{10pt}
-				\small{The \href{https://artificialintelligenceact.eu/}{Draft European Union AI Act} categorizes the following ML applications as high risk: biometric identification; management of critical infrastructure; education; employment; essential services, both public (e.g., public assistance) and private (e.g., credit lending); law enforcement; immigration and border control; criminal justice; and the democratic process.}\\
+				\small{The \href{https://artificialintelligenceact.eu/}{European Union AI Act} categorizes the following ML applications as high risk: biometric identification; management of critical infrastructure; education; employment; essential services, both public (e.g., public assistance) and private (e.g., credit lending); law enforcement; immigration and border control; criminal justice; and the democratic process.}\\
+				\vspace{10pt}
+				\small{The \href{https://artificialintelligenceact.eu/}{European Union AI Act} bans outright manipulative or exploitative uses of AI; biometric categorization and real-time biometric identification; criminal risk assessment; inferring emotions (at work or school); social credit scoring; compiling facial recognition databases.}\\
 				\vspace{10pt}
 				\small{Increased financial, legal, regulatory, or ethical considerations in high-risk applications should inspire practitioners to act with greater responsibility.}
 
@@ -490,7 +494,7 @@
 		
 		\noindent Researchers have also put forward GA2M variants in which each $g_{j}$ and $g_{j, k}$ shape function is fit by neural networks, e.g., GAMI-Net (\citet{yang2021gami}) and neural additive models (\citet{agarwal2021neural}).\\
 		\vspace{10pt} 
-		\noindent See the \href{https://selfexplainml.github.io/PiML-Toolbox/_build/html/index.html}{PiML package} for an excellent implementation of GAMI-Net and other explainable models. 
+		\noindent See the \href{https://selfexplainml.github.io/PiML-Toolbox/_build/html/index.html}{PiML package} for an implementation of GAMI-Net and other explainable models. 
 		 
 	\end{frame}
 
@@ -587,7 +591,7 @@
 		\begin{itemize}
 			\item Generally speaking, standard ML evaluation -- including Kaggle leaderboards, are poor ways to assess ML model performance.
 			\item However, \cite{caruana2004kdd} puts forward a robust model evaluation and selection technique based on cross-validation and ranking. 
-			\item PiML contains excellent real-world model validation approaches as well.
+			\item PiML contains real-world model validation approaches as well.
 		\end{itemize}
 	
 		\column{0.6\linewidth}
