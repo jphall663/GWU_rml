@@ -157,10 +157,11 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 * To run the homework templates:
   * Create a folder called `assignments` in the `DNSC_6330_Software` folder
-  * Download then upload the notebook `assignment_1.ipynb` into the `assignments` folder
+  * Download then upload the notebook `assign_1_template.ipynb` into the `assignments` folder
   * Create a folder called `data` in the `DNSC_6330_Software` folder
   * Download the assignment data from the class GitHub: https://github.com/jphall663/GWU_rml/tree/master/assignments/data
   * Unzip the data files into CSV files and upload them into the `data` folder
+  * In the `assignment_1.ipynb` add a cell before cell 1 that installs `h2o` and `interpret`: `!pip install interpret h2o`
   * In the `assignment_1.ipynb` add a cell before cell 3 that connects the notebook to the data:
 
 ```
@@ -170,7 +171,7 @@ drive.mount('/content/drive/', force_remount=True)
 %cd drive/My\ Drive/DNSC_6330_Software/assignments/
 %ls
 ```
-
+* Whenever asked, allow Colab to connect to your Google drive
 * In the end the `DNSC_6330_Software` folder should look like: 
 
 ```
@@ -183,5 +184,5 @@ DNSC_6330_Software
   └ hmda_train_preprocessed.csv
   └ hmda_test_preprocessed.csv
 └ assignments
-  └ assignment_1.ipynb
+  └ assign_1_template.ipynb
  ```
