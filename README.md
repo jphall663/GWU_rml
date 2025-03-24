@@ -149,7 +149,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 `Save a Copy In Drive` menu options, or download the class notebook and upload to your folder
   * In cell 1 of the `01_Explainable_AI_Models.ipynb` update the path to the `Lecture_01` folder:
     * likely `%cd drive/My\ Drive/DNSC_6330_Software/Lecture_01/`
-    * Use the `%cd` and '%ls' commands to find your folder if needed
+    * Use the `%cd` and `%ls` commands to find your folder if needed
     * Generally the `drive.mount('/content/drive/', force_remount=True)` command can only be used once in a Colab session, so use `%cd` and '%ls' commands in a different cell or restart your colab session if you see strange errors
   * Download the example data from: https://drive.google.com/drive/folders/1BPXxGp0QAKRl1ZP6Vd1xKuCwitiLyuy6?usp=sharing
   * Download some necessary Python code from: https://drive.google.com/drive/folders/1jYZvT1j5khFnJC5NSqNeGiCNoOeib9YK?usp=sharing
