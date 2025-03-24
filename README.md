@@ -214,4 +214,4 @@ drive.mount('/content/drive/', force_remount=True)
 
 * Add new assignment templates into the `assignments` folder
 * Add new code examples to `Lecture_XX/XX_notebook_name.iypnb` folders
-  * For lecture 2 that would be `Lecture_02/` 
+  * For Lecture 2 that would be `Lecture_02/02_Explainable_AI_Post_Hoc.ipynb` 
