@@ -137,3 +137,51 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Software Example](https://drive.google.com/drive/folders/1eR4iNqP2bbQHtnQx7Sj8_VhS_AeWPzBo?usp=sharing)
 * Reading: [_Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile_](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf), pgs. 1-12, 47-53 
 * [Lecture 7 Additional Materials](additional_materials/am7.md)
+
+
+## Example instructions for using class software in Google Colab
+
+* Create a folder in your GWU Google Drive `My Drive` called `DNSC_6330_Software`
+
+* To run the lecture examples: 
+  * Create a folder named `Lecture_01` inside the `DNSC_6330_Software`
+  * Save a copy of the class `01_Explainable_AI_Models.ipynb` notebook into the `Lecture_01` folder by using the `File` ->  
+`Save a Copy In Drive` menu options, or download the class notebook and upload to your folder
+  * In cell 1 of the `01_Explainable_AI_Models.ipynb` update the path to the `Lecture_01` folder:
+    * likely `%cd drive/My\ Drive/DNSC_6330_Software/Lecture_01/`
+    * Use the `%cd` and '%ls' commands to find your folder if needed
+    * Generally the `drive.mount('/content/drive/', force_remount=True)` command can only be used once in a Colab session, so use `%cd` and '%ls' commands in a different cell or restart your colab session if you see strange errors
+  * Download the example data from: https://drive.google.com/drive/folders/1BPXxGp0QAKRl1ZP6Vd1xKuCwitiLyuy6?usp=sharing
+  * Download some necessary Python code from: https://drive.google.com/drive/folders/1jYZvT1j5khFnJC5NSqNeGiCNoOeib9YK?usp=sharing
+  * Upload these folders into the `DNSC_6330_Software` folder
+
+* To run the homework templates:
+  * Create a folder called `assignments` in the `DNSC_6330_Software` folder
+  * Download then upload the notebook `assignment_1.ipynb` into the `assignments` folder
+  * Create a folder called `data` in the `DNSC_6330_Software` folder
+  * Download the assignment data from the class GitHub: https://github.com/jphall663/GWU_rml/tree/master/assignments/data
+  * Unzip the data files into CSV files and upload them into the `data` folder
+  * In the `assignment_1.ipynb` add a cell before cell 3 that connects the notebook to the data:
+
+```
+from google.colab import drive
+drive.mount('/content/drive/', force_remount=True)
+# may need to be updated to location on your drive
+%cd drive/My\ Drive/DNSC_6330_Software/assignments/
+%ls
+```
+
+* In the end the `DNSC_6330_Software` folder should look like: 
+
+```
+DNSC_6330_Software
+└ Lecture_1
+  └ 01_Explainable_AI_Models.ipynb 
+└ Data
+└ hmrl_book  
+└ data
+  └ hmda_train_preprocessed.csv
+  └ hmda_test_preprocessed.csv
+└ assignments
+  └ assignment_1.ipynb
+ ```
