@@ -151,8 +151,8 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
     * likely `%cd drive/My\ Drive/DNSC_6330_Software/Lecture_01/`
     * Use the `%cd` and `%ls` commands to find your folder if needed
     * Generally the `drive.mount('/content/drive/', force_remount=True)` command can only be used once in a Colab session, so use `%cd` and `%ls` commands in a different cell or restart your colab session if you see strange errors
-  * Download the example data from: https://drive.google.com/drive/folders/1jYZvT1j5khFnJC5NSqNeGiCNoOeib9YK?usp=sharing
-  * Download some necessary Python code from: https://drive.google.com/drive/folders/1BPXxGp0QAKRl1ZP6Vd1xKuCwitiLyuy6?usp=sharing
+  * Download the example data from: https://drive.google.com/drive/folders/1jYZvT1j5khFnJC5NSqNeGiCNoOeib9YK?usp=sharing (Click triangle beside `Data` at top -> Download, then unzip and upload into `DNSC_6330_Software` folder)
+  * Download some necessary Python code from: https://drive.google.com/drive/folders/1BPXxGp0QAKRl1ZP6Vd1xKuCwitiLyuy6?usp=sharing (Click triangle beside `hrml_book` at top -> Download, then unzip and upload into `DNSC_6330_Software` folder)
   * Upload these folders into the `DNSC_6330_Software` folder
 
 * To run the homework templates:
