@@ -172,17 +172,46 @@ drive.mount('/content/drive/', force_remount=True)
 %ls
 ```
 * Whenever asked, allow Colab to connect to your Google drive
+* Delete any `__pycache__` folders you see
 * In the end the `DNSC_6330_Software` folder should look like: 
 
 ```
 DNSC_6330_Software
-└ Lecture_1
-  └ 01_Explainable_AI_Models.ipynb 
-└ Data
-└ hmrl_book  
-└ data
-  └ hmda_train_preprocessed.csv
-  └ hmda_test_preprocessed.csv
-└ assignments
-  └ assign_1_template.ipynb
- ```
+├── assignments
+│   ├── assign_1_template.ipynb
+├── data
+│   ├── hmda_test_preprocessed.csv
+│   └── hmda_train_preprocessed.csv
+├── Data
+│   ├── backdoor_testing
+│   │   ├── constrained_backdoor_output.csv
+│   │   ├── constrained_output.csv
+│   │   ├── overfit_backdoor_output.csv
+│   │   ├── overfit_output.csv
+│   │   └── test_data.csv
+│   ├── credit_line_increase.csv
+│   ├── data_dictionary.csv
+│   └── synthetic_data.csv
+├── hrml_book
+│   ├── explain.py
+│   └── partial_dep_ice.ipynb
+└── Lecture_01
+    └── 01_Explainable_AI_Models.ipynb
+
+```
+* You can use the following commands in a colab notebook to check your file structure:
+
+```
+from google.colab import drive
+drive.mount('/content/drive/', force_remount=True)
+# may need to be updated to location on your drive
+%cd drive/My\ Drive/DNSC_6330_Software/
+```
+
+`!apt-get -y install tree`
+
+`! tree`
+
+* Add new assignment templates into the `assignments` folder
+* Add new code examples to `Lecture_XX/XX_notebook_name.iypnb` folders
+  * For lecture 2 that would be `Lecture_02/` 
