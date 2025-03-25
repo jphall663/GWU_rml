@@ -137,3 +137,81 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Software Example](https://drive.google.com/drive/folders/1eR4iNqP2bbQHtnQx7Sj8_VhS_AeWPzBo?usp=sharing)
 * Reading: [_Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile_](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf), pgs. 1-12, 47-53 
 * [Lecture 7 Additional Materials](additional_materials/am7.md)
+
+
+## Example instructions for using class software in Google Colab
+
+* Create a folder in your GWU Google Drive `My Drive` called `DNSC_6330_Software`
+
+* To run the lecture examples: 
+  * Create a folder named `Lecture_01` inside the `DNSC_6330_Software`
+  * Save a copy of the class `01_Explainable_AI_Models.ipynb` notebook into the `Lecture_01` folder by using the `File` ->  
+`Save a Copy In Drive` menu options, or download the class notebook and upload to your folder
+  * In cell 1 of the `01_Explainable_AI_Models.ipynb` update the path to the `Lecture_01` folder:
+    * likely `%cd drive/My\ Drive/DNSC_6330_Software/Lecture_01/`
+    * Use the `%cd` and `%ls` commands to find your folder if needed
+    * Generally the `drive.mount('/content/drive/', force_remount=True)` command can only be used once in a Colab session, so use `%cd` and `%ls` commands in a different cell or restart your colab session if you see strange errors
+  * Download the example data from: https://drive.google.com/drive/folders/1jYZvT1j5khFnJC5NSqNeGiCNoOeib9YK?usp=sharing (Click triangle beside `Data` at top -> Download, then unzip and upload into `DNSC_6330_Software` folder)
+  * Download some necessary Python code from: https://drive.google.com/drive/folders/1BPXxGp0QAKRl1ZP6Vd1xKuCwitiLyuy6?usp=sharing (Click triangle beside `hrml_book` at top -> Download, then unzip and upload into `DNSC_6330_Software` folder)
+  * Upload these folders into the `DNSC_6330_Software` folder
+
+* To run the homework templates:
+  * Create a folder called `assignments` in the `DNSC_6330_Software` folder
+  * Download then upload the notebook `assign_1_template.ipynb` into the `assignments` folder
+  * Create a folder called `data` in the `DNSC_6330_Software` folder
+  * Download the assignment data from the class GitHub: https://github.com/jphall663/GWU_rml/tree/master/assignments/data
+  * Unzip the data files into CSV files and upload them into the `data` folder
+  * In the `assignment_1.ipynb` add a cell before cell 1 that installs `h2o` and `interpret`: `!pip install interpret h2o`
+  * In the `assignment_1.ipynb` add a cell before cell 3 that connects the notebook to the data:
+
+```
+from google.colab import drive
+drive.mount('/content/drive/', force_remount=True)
+# may need to be updated to location on your drive
+%cd drive/My\ Drive/DNSC_6330_Software/assignments/
+%ls
+```
+* Whenever asked, allow Colab to connect to your Google drive
+* Delete any `__pycache__` folders you see
+* In the end the `DNSC_6330_Software` folder should look like: 
+
+```
+DNSC_6330_Software
+├── assignments
+│   ├── assign_1_template.ipynb
+├── data
+│   ├── hmda_test_preprocessed.csv
+│   └── hmda_train_preprocessed.csv
+├── Data
+│   ├── backdoor_testing
+│   │   ├── constrained_backdoor_output.csv
+│   │   ├── constrained_output.csv
+│   │   ├── overfit_backdoor_output.csv
+│   │   ├── overfit_output.csv
+│   │   └── test_data.csv
+│   ├── credit_line_increase.csv
+│   ├── data_dictionary.csv
+│   └── synthetic_data.csv
+├── hrml_book
+│   ├── explain.py
+│   └── partial_dep_ice.ipynb
+└── Lecture_01
+    └── 01_Explainable_AI_Models.ipynb
+
+```
+* You can use the following commands in a colab notebook to check your file structure:
+
+```
+from google.colab import drive
+drive.mount('/content/drive/', force_remount=True)
+# may need to be updated to location on your drive
+%cd drive/My\ Drive/DNSC_6330_Software/
+```
+
+`!apt-get -y install tree`
+
+`! tree`
+
+* Add new assignment templates into the `assignments` folder
+* Add new code examples to `Lecture_XX/XX_notebook_name.iypnb` folders
+  * For Lecture 2 that would be `Lecture_02/02_Explainable_AI_Post_Hoc.ipynb` 
