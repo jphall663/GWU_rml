@@ -88,7 +88,7 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 				\begin{itemize}
 					\item cause commercial or social chaos.
 					\item commit corporate espionage.
-					\item induce beneficial outcomes from a predictive or pattern recognition model or induce negative outcomes for others. %(loans, insurance policies, jobs, favorable criminal risk assessments, or others)
+					\item induce beneficial outcomes from a model or induce negative outcomes for others. %(loans, insurance policies, jobs, favorable criminal risk assessments, or others)
 					\item steal intellectual property including models and data.
 				\end{itemize}	
 			\end{frame}
@@ -111,7 +111,8 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 						\item Surrogate model inversion
 						\item Membership inference
 						\item Adversarial examples
-						\item Impersonation 
+						\item Prompt injection
+						\item Impersonation/evasion 
 						\item General concerns						
 					\end{itemize}	
 
@@ -212,7 +213,7 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 			
 			\end{frame}
 			
-			\begin{frame}
+			\begin{frame}[label={slide:data_poisoning}]
 		
 				\frametitle{Data Poisoning Attacks: \textbf{How?}}		
 			
@@ -228,10 +229,12 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 		
 			\begin{frame}[label={slide:data_poisoning_defense}]
 		
-				\frametitle{Data Poisoning Attacks: \textbf{Defenses}}
+				\frametitle{Data Poisoning Attacks: \textbf{Countermeasures}}
 				
-				\begin{itemize}
-					\item \textbf{Disparate impact analysis}: Use tools like \href{https://github.com/dssg/aequitas}{aequitas}, \href{https://github.com/IBM/AIF360}{AIF360}, or your own fair lending tools, to look for discrimination in your model’s predictions. 
+				\begin{itemize}\small
+					\item \textbf{Content moderation and guardrails}: External human or technical mechanisms to police AI-generated predictions or content.
+					\item \textbf{Disparate impact analysis}: Use tools like \href{https://github.com/dssg/aequitas}{aequitas}, \href{https://github.com/IBM/AIF360}{AIF360}, or your own fair lending tools, to look for discrimination in your model’s predictions. \
+					\item \textbf{EULA and TOS}: Make users sign a contract wherein they agree not to hack AI systems before they access AI systems. 
 					\item \textbf{Fair or private models}: E.g., learning fair representations (LFR), private aggregation of teacher ensembles (PATE) \cite{pate}, \cite{lfr}.
 					\item \textbf{Reject on negative impact (RONI) analysis}: See: \textit{\citefield{security_of_ml}{title}} \cite{security_of_ml}. 		
 					\item \textbf{Residual analysis}: especially those that indicate unexpected beneficial predictions.
@@ -271,7 +274,7 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 		
 			\begin{frame}[label={slide:watermark_defense}]
 		
-				\frametitle{Backdoors and Watermarks: \textbf{Defenses}}
+				\frametitle{Backdoors and Watermarks: \textbf{Countermeasures}}
 				\begin{itemize}
 				\item \textbf{Anomaly detection}: Screen your production scoring queue with an autoencoder, a type of machine learning (ML) model that can detect anomalous data. 
 				\item \textbf{Data integrity constraints}: Don’t allow impossible or unrealistic combinations of data into your production scoring queue.
@@ -316,11 +319,12 @@ Due to lax security or a distributed attack on your model API or other model end
 		
 			\begin{frame}[label={slide:inversion_defense}]
 		
-				\frametitle{Surrogate Model Inversion Attacks: \textbf{Defenses}}
+				\frametitle{Surrogate Model Inversion Attacks: \textbf{Countermeasures}}
 				\begin{itemize}
 					\item \textbf{Authentication}: Authenticate users of your model’s API or other endpoints.
 					\item \textbf{Defensive watermarks}: Add subtle or unusual information to your model’s predictions to aid in forensic analysis if your model is hacked or stolen.
-					\item \textbf{Throttling}: Consider artificially slowing down your prediction response times, especially after anomalous behavior is detected.
+					\item \textbf{EULA and TOS}: See Slide \ref{slide:data_poisoning_defense}.
+					\item \textbf{Throttling/rate-limiting}: Consider artificially slowing down your prediction response times, especially after anomalous behavior is detected.
 					\item \textbf{White-hat surrogate models}: Train your own surrogate models as a white-hat hacking exercise to see what an attacker could learn about your public models.
 				\end{itemize}
 				
@@ -362,11 +366,12 @@ Simply knowing if a person was in, or not in, a training dataset can be a violat
 			
 			\begin{frame}
 		
-				\frametitle{Membership Inference Attacks: \textbf{Defenses}}		
+				\frametitle{Membership Inference Attacks: \textbf{Countermeasures}}		
 			
 				\begin{itemize}
 					\Large
-					\item See Slide \ref{slide:inversion_defense}.
+				\item See Slide \ref{slide:inversion_defense}.
+				\item \textbf{EULA and TOS}: See Slide \ref{slide:data_poisoning_defense}.
 				\item \textbf{Monitor for training data}: Monitor your production scoring queue for data that closely resembles any individual used to train your model. Real-time scoring of rows that are extremely similar or identical to data used in training, validation, or testing should be recorded and investigated.
 				\end{itemize}
 
@@ -406,14 +411,15 @@ Adversarial example attacks can also be enhanced, tested, and hardened using mod
 			
 			\begin{frame}
 		
-				\frametitle{Adversarial Example Attacks: \textbf{Defenses}}		
+				\frametitle{Adversarial Example Attacks: \textbf{Countermeasures}}		
 				\footnotesize
 				\begin{itemize}
 					\item \textbf{Anomaly detection}: See Slide \ref{slide:watermark_defense}. 
 					\item \textbf{Authentication}: See Slide \ref{slide:inversion_defense}. 
 					\item \textbf{Benchmark models}: Always compare complex model predictions to trusted linear model predictions. If the two model’s predictions diverge beyond some acceptable threshold, review the prediction before you issue it.
+					\item \textbf{EULA and TOS}: See Slide \ref{slide:data_poisoning_defense}.
 					\item \textbf{Fair or private models}: See Slide \ref{slide:data_poisoning_defense}.
-					\item \textbf{Throttling}: See Slide \ref{slide:inversion_defense}. 
+					\item \textbf{Throttling/rate-limiting}: See Slide \ref{slide:inversion_defense}. 
 					\item \textbf{Model monitoring}: Watch your model in real-time for strange prediction behavior.
 					\item \textbf{Robust ML}: See slide \ref{slide:data_poisoning_defense}.
 					\item \textbf{White-hat sensitivity analysis}: Try to trick your own model by seeing its outcome on many different combinations of input data values.
@@ -421,6 +427,71 @@ Adversarial example attacks can also be enhanced, tested, and hardened using mod
 				\end{itemize}
 				\normalsize
 			\end{frame}
+
+%-------------------------------------------------------------------------------
+		\subsection{Prompt Injection}
+%-------------------------------------------------------------------------------
+
+			\begin{frame}
+	
+				\frametitle{Prompt Injection Attacks: \textbf{What?}}	
+				
+				\indent For fun or fame, or to cause legal or reputational damage to an organization, language model, chatbot, or agent users ... 
+				
+				\begin{itemize}
+					\item employ various strategies to circumvent language model ``alignment,'' content moderation, or guardrails (direct). 
+					\item change online resources from which language models, chatbots, or agents are likely to draw, e.g., websites or auxiliary databases (indirect). 
+				\end{itemize}
+					
+				Direct prompt injection is a specific instance of an adversarial example attack (see Slide \ref{slide:adversary}). Indirect prompt injection may be more similar to data poisoning (see Slide \ref{slide:data_poisoning}). 
+
+			\end{frame}
+
+			\begin{frame}
+	
+				\frametitle{Prompt Injection Attacks: \textbf{How?}}		
+	
+	
+				\begin{columns}
+					\column{0.4\textwidth}
+						\centering
+						\newline
+						\includegraphics[height=170pt]{../img/GPT_Adv_Prmpt3_crop.jpg} 
+						\newline
+						\tiny{ChatGPT output June, 2023. Courtesy Lisa Song.}
+					%\vspace{-5pt}
+					
+					\column{0.6\textwidth}
+						\begin{itemize}
+							\item \small{\textbf{Counterfactuals}: Repeated prompts with different entities or subjects from different demographic groups.}
+							%\item \small{\textcolor{red}{Location awareness}: Prompts that reveal a prompter's location or expose location tracking.}
+							\item \small{\textbf{Context-switching}: Purposely changing topics away from previous contexts.}
+							\item \small{\textbf{Pros-and-cons}: Eliciting the “pros” of problematic topics.}
+							\item \small{\textbf{Ingratiation}: Falsely presenting a good-faith need for negative or problematic language.}
+							\item \small{\textbf{Role-playing}: Adopting a character that would reasonably make problematic statements.}
+							%\item \small{\textcolor{red}{Time perplexity}: Exploiting ML’s inability to understand the passage of time or the occurrence of real-world events over time.}
+						\end{itemize}
+						\vspace{10pt}
+						\hspace{12pt}\tiny{Various sources, e.g., \cite{Adversa}, \cite{li2024llm}.}
+		
+	\end{columns}
+	
+			\end{frame}
+			
+			\begin{frame}
+	
+				\frametitle{Prompt Injection Attacks: \textbf{Countermeasures}}	
+				\begin{itemize}
+					\item \textbf{Authentication}: See Slide \ref{slide:inversion_defense}. 
+					\item \textbf{Content moderation and guardrails}: See Slide 
+					\ref{slide:data_poisoning_defense}.
+					\item \textbf{Disclosure of AI interactions}: Users should always be made aware they are interacting with an AI system that can make mistakes. 
+					\item \textbf{EULA and TOS}: See Slide \ref{slide:data_poisoning_defense}.
+					\item \textbf{Pre-approved responses}: Use language models to match to many different pre-approved responses, instead of enabling them to generate free-form text. 
+					\item \textbf{Strong system prompts}: System instructions should be used to mitigate against well known prompt injection approaches. 
+					\item \textbf{Throttling/rate-limiting}: See Slide \ref{slide:inversion_defense}. 				
+				\end{itemize}
+			\end{frame}		
 
 %-------------------------------------------------------------------------------
 		\subsection{Impersonation}
@@ -435,6 +506,8 @@ Bad actors learn ...
 					\item by inversion or adversarial example attacks (see Slides \ref{slide:inversion}, \ref{slide:adversary}), the attributes favored by your model and then impersonate them.
 					\item by disparate impact analysis (see Slide \ref{slide:data_poisoning_defense}), that your model is discriminatory (e.g. \href{https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing}{Propublica and COMPAS}, \href{https://medium.com/@Joy.Buolamwini/response-racial-and-gender-bias-in-amazon-rekognition-commercial-ai-system-for-analyzing-faces-a289222eeced}{Gendershades and Rekognition}), and impersonate your model's privileged class to receive a favorable outcome.\footnote{This presentation makes no claim on the quality of the analysis in Angwin et al. (2016), which has been criticized, but is simply stating that such cracking is possible \cite{angwin16,}, \cite{flores2016false}.}
 				\end{itemize}
+				
+				Note that \textit{evasion} attacks, in which an attacker changes their data to avoid an ML-based security system, are similar to impersonation attacks and very common.  
 				
 			\end{frame}
 
@@ -454,13 +527,14 @@ Bad actors learn ...
 			
 			\begin{frame}
 		
-				\frametitle{Impersonation Attacks: \textbf{Defenses}}		
+				\frametitle{Impersonation Attacks: \textbf{Countermeasures}}		
 			
 				\begin{itemize}
 					\Large
 					\item \textbf{Authentication}: See Slide \ref{slide:inversion_defense}. 
 					\item \textbf{Disparate impact analysis}: See Slide \ref{slide:data_poisoning_defense}.
 					\item \textbf{Data integrity constraints}: See Slide \ref{slide:watermark_defense}.
+					\item \textbf{EULA and TOS}: See Slide \ref{slide:data_poisoning_defense}.
 					\item \textbf{Model monitoring}: Watch for duplicate (or more) predictions in real-time. Watch for duplicate (or more) similar input rows in real-time.
 				\end{itemize}
 				
@@ -480,7 +554,7 @@ Bad actors learn ...
 					\item \textbf{Black-hat eXplainable AI (XAI)}:  While XAI can enable human learning from machine learning, regulatory compliance, and appeal of automated decisions, it can also make ML hacks easier and more damaging \cite{shokri2019privacy}.
 					\item \textbf{Standard attacks}: Like any other public-facing IT service, your model could be exposed to well-known risks such as DDOS or man-in-the-middle attacks.  
 					\item \textbf{Distributed systems and models}: Data and code spread over many machines provides a larger, more complex attack surface for a malicious actor.
-					\item \textbf{Package dependencies and trojans}: Any package your modeling pipeline is dependent on could potentially be hacked to conceal an attack payload.
+					\item \textbf{Package dependencies and malware}: Any package your modeling pipeline is dependent on could potentially be hacked to conceal an attack payload.
 				\end{itemize}
 				\normalsize
 
@@ -550,9 +624,9 @@ Bad actors learn ...
 			\begin{itemize}
 				\item ML hacking is still probably rare and exotic, but new XAI techniques can make nearly all ML attacks easier and more damaging.
 				\item Beware of insider threats, especially organized extortion of insiders. 
-				\item Open, public prediction APIs are a privacy and security nightmare. 
+				\item Open, public AI APIs can be a privacy and security nightmare. 
 				\item Your competitors could be gaming or stealing your public predictive models. Do your end user license agreements (EULA) or terms of service (TOS) explicitly prohibit this?
-				\item Best practices around IT security, model management, and model monitoring are good defenses.
+				\item Best practices around IT security, model management, and model monitoring are good countermeasures.
 			\end{itemize}
 		
 		\end{frame}
