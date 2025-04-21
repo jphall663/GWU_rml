@@ -163,6 +163,7 @@
 					\vspace{-5pt}
 					\begin{itemize}
 						\item OSS: \href{https://cran.r-project.org/web/packages/elasticnet/index.html}{elasticnet}, \href{https://index.pocketcluster.io/featuretools-featuretools.html}{Feature Tools}
+						\item \href{https://docs.h2o.ai/driverless-ai/1-10-lts/docs/userguide/transformations.html}{H2o.ai feature transformation list}
 						\item References: \citefield{zou2006sparse}{title}; \citefield{kanter2016label}{title}; \citefield{t_closeness}{title}
 					\end{itemize}
 				
@@ -182,7 +183,7 @@
 				
 					\column{0.5\linewidth}
 					\vspace{-5pt}
-					\begin{itemize}
+					\begin{itemize}\small
 						\item OSS: IBM \href{https://github.com/IBM/AIF360}{AIF360} and \href{https://github.com/IBM/differential-privacy-library}{diffprivlib}
 						\item References: \citefield{kamiran2012data}{title}; \citefield{feldman2015certifying}{title}; \citefield{calmon2017optimized}{title}; \citefield{agrawal2000privacy}{title}; \citefield{ji2014differential}{title}
 					\end{itemize}
@@ -206,7 +207,7 @@
 					\small
 					\begin{itemize}
 						\item OSS: \href{https://github.com/interpretml/interpret}{\citefield{ga2m}{title} (GA2M/EBM)}; \href{https://users.cs.duke.edu/~cynthia/code.html}{Rudin Group models} e.g. \citefield{sbrl}{title} (SBRL); Monotonic gradient boosting machines in \href{https://github.com/h2oai/h2o-3/blob/master/h2o-py/demos/H2O_tutorial_gbm_monotonicity.ipynb}{H2O-3} or \href{https://xiaoxiaowang87.github.io/monotonicity_constraint/}{XGBoost}; \href{https://docs.pymc.io/}{pymc3}
-						\item References: \citefield{pate}{title}; \citefield{zhang2018mitigating}{title}; \citefield{pearl2011bayesian}{title}; \citefield{wf_xnn}{title} (XNN)
+						\item References: \citefield{pate}{title}; \citefield{zhang2018mitigating}{title}; \citefield{pearl2011bayesian}{title}; \citefield{wf_xnn}{title} (XNN); \citefield{nori2021accuracy}{title}; \citefield{title}{agarwal2021neural}
 					\end{itemize}
 					\normalsize
 				
@@ -342,7 +343,7 @@
 					\vspace{-5pt}
 					\begin{itemize}
 						\item Social bias testing should include group fairness tests and should attempt to consider individual fairness. 
-						\item OSS: \href{https://github.com/dssg/aequitas}{aequitas}, IBM \href{https://github.com/IBM/AIF360}{AIF360}, \href{https://github.com/LASER-UMASS/Themis}{themis}
+						\item OSS: \href{https://github.com/SolasAI/solas-ai-disparity}{solas-ai-disparity}, \href{https://github.com/dssg/aequitas}{aequitas}, IBM \href{https://github.com/IBM/AIF360}{AIF360}, \href{https://github.com/LASER-UMASS/Themis}{themis}
 						\item References: \citefield{dwork2012fairness}{title}; \citefield{kamiran2012decision}{title}; \citefield{hardt2016equality}{title}; \citefield{feldman2015certifying}{title} 
 					\end{itemize}
 					
@@ -361,7 +362,7 @@
 					\end{figure}	
 	
 				\vspace{-10pt}
-				\scriptsize{Your model will be wrong. Stake-holders need to understand and be prepared for the human and financial costs of these wrong decisions.}	
+				\scriptsize{Your model will be wrong. Estimate how much wrong decisions or bad usage will cost. Stake-holders need to understand and be prepared for the human and financial costs of these poor outcomes.}	
 					
 			\end{frame}
 	
@@ -378,7 +379,7 @@
 					\column{0.5\linewidth}
 					\vspace{-5pt}
 					\begin{itemize}
-						\item Reference: \citefield{model_cards}{title}
+						\item Reference: \citefield{model_cards}{title}, \citefield{pushkarna2022data}{title}
 						\item Documentation of considered alternative approaches typically necessary for compliance.
 					\end{itemize}
 					
@@ -457,7 +458,7 @@
 				\end{figure}	
 	
 				%\vspace{-10pt}
-				\footnotesize{When a model becomes absolutely or relatively inaccurate, unfair, or insecure it must be taken out of service, but saved in an executable and reproducible manner.}
+				\footnotesize{When a model becomes absolutely or relatively inaccurate, unfair, or insecure it must be taken out of service, but saved in an executable and reproducible manner. Alternatively, how will major services changes be communicated?}
 	
 			\end{frame}
 	
@@ -514,6 +515,8 @@
 				
 				\item \textbf{Diversity of Experience}: Ensure data and ML teams are staffed with individuals that can share different demographic, technical, and professional perspectives. 
 				
+				\item \textbf{"Dog-fooding"}: If possible, test your ML system on yourself or internally at your organization. Don't feel comfortable using it on yourself? Maybe you shouldn't release it. 
+				
 			\end{itemize}
 					
 		\end{frame}
@@ -523,8 +526,6 @@
 			\frametitle{Process Solutions}
 			
 			\begin{itemize}
-				
-				\item \textbf{"Dog-fooding"}: If possible, test your ML system on yourself or internally at your organization. Don't feel comfortable using it on yourself? Maybe you shouldn't release it. 
 
 				\item \textbf{Documentation}: Documentation ends up being the primary physical implementation of many risk controls. 
 
@@ -533,6 +534,8 @@
 				\item \textbf{Effective Challenge and Human Review}: Nearly all aspects of ML workflows should involve challenges and questioning from group members. This can be in the form of human interrogation of ML-related processes or in the form of challenger models. 
 				
 				\item \textbf{Executive Oversight}: An empowered executive with a staff and budget can exert a strong influence over organizational use of ML.
+				
+				\item \textbf{Incident Response Plans}: Complex ML systems \textit{will} fail. Being prepared for failures or attacks can be the difference between a major incident and a minor disruption.
 				
 			\end{itemize}
 			
@@ -544,8 +547,6 @@
 				
 			\begin{itemize}
 				
-				\item \textbf{Incident Response Plans}: Complex ML systems \textit{will} fail. Being prepared for failures or attacks can be the difference between a major incident and a minor disruption.
-				
 				\item \textbf{Incentives}: Model builders, testers, auditors, and executives all have different roles to play in the implementation of responsible ML and should be incentivized to play the correct role.
 				
 				\item \textbf{Legal Privilege}: Consider use of privilege to minimize risk when dealing with ML-related legal and compliance issues.
@@ -553,6 +554,8 @@
 				\item \textbf{Model Risk Management}: The established practice of model risk management can be expanded outside of financial services.
 				
 				\item \textbf{Red-teaming}: Establish a group or hire third-parties to act as adversaries and find problems (discrimination, opacity, vulnerabilities, privacy harms, etc.) in your organization's public-facing ML systems.
+				
+				\item \textbf{Whistleblower Protections}: Establish policies that protect individuals within an organization who speak out against poor design, implementation, or usage of AI. 
 				
 			\end{itemize}
 			
