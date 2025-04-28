@@ -220,7 +220,7 @@ drive.mount('/content/drive/', force_remount=True)
   * Click the Lecture 7 [Software Example](https://drive.google.com/drive/folders/1eR4iNqP2bbQHtnQx7Sj8_VhS_AeWPzBo)
   * Click the small triangle at the right of `RAG_Example` and click `Download` 
   * Extract the downloaded zip file with a name like `RAG_Example-20250428T160138Z-001.zip` into a folder with a name like `RAG_Example-20250428T160138Z-001`
-  * Inside the `RAG_Example-20250428T160138Z-001` folder be a folder named `RAG_Example`, upload the `RAG_Example-20250428T160138Z-001/RAG_Example` to the `DNSC_6330_Software` folder on your G-Drive
+  * Inside the `RAG_Example-20250428T160138Z-001` folder should be a folder named `RAG_Example`, upload the `RAG_Example-20250428T160138Z-001/RAG_Example` to the `DNSC_6330_Software` folder on your G-Drive
   * Click on the `DNSC_6330_Software/RAG_Example/07_RAG_query.ipynb` and open it with Colab
   * To run the last session notebook (`07_RAG_query.ipynb`), you will need an access token from HuggingFace.co
     * Create a free Hugging Face account (https://huggingface.co/)
