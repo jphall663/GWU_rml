@@ -226,7 +226,7 @@ drive.mount('/content/drive/', force_remount=True)
     * Create a free Hugging Face account (https://huggingface.co/)
     * Generate an access token (Profile -> Access Tokens)
     * Preserve the text of the token somewhere secure, as you may not be able to see it again after it is granted
-    * In the `07_RAG_query.ipynb` create a new secret (by clicking on the key icon on left) named `HF_TOKEN` and populated with the Hugging Face access token. Grant the notebook access to the secret by toggle the switch at left of the secret.
+    * In the `07_RAG_query.ipynb` notebook create a new secret (by clicking on the key icon on left) named `HF_TOKEN` and populated with the Hugging Face access token. Grant the notebook access to the secret by toggle the switch at left of the secret.
   * At the top of the notebook, update the path to your `DNSC_6330_software` folder, something similar to: `%cd drive/My\ Drive/DNSC_6330_Software/RAG_Example`
   * After adjusting these settings the notebook should run without errors
     
