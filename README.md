@@ -220,13 +220,13 @@ drive.mount('/content/drive/', force_remount=True)
   * Click the Lecture 7 [Software Example](https://drive.google.com/drive/folders/1eR4iNqP2bbQHtnQx7Sj8_VhS_AeWPzBo)
   * Click the small triangle at the right of `RAG_Example` and click `Download` 
   * Extract the downloaded zip file with a name like `RAG_Example-20250428T160138Z-001.zip` into a folder with a name like `RAG_Example-20250428T160138Z-001`
-  * Inside the `RAG_Example-20250428T160138Z-001` folder should be a folder named `RAG_Example`, upload the `RAG_Example-20250428T160138Z-001/RAG_Example` to the `DNSC_6330_Software` folder on your G-Drive
+  * Inside the `RAG_Example-20250428T160138Z-001` folder should be a folder named `RAG_Example`, upload the `RAG_Example-20250428T160138Z-001/RAG_Example` folder to the `DNSC_6330_Software` folder on your G-Drive
   * Click on the `DNSC_6330_Software/RAG_Example/07_RAG_query.ipynb` and open it with Colab
   * To run the last session notebook (`07_RAG_query.ipynb`), you will need an access token from HuggingFace.co
     * Create a free Hugging Face account (https://huggingface.co/)
     * Generate an access token (Profile -> Access Tokens)
     * Preserve the text of the token somewhere secure, as you may not be able to see it again after it is granted
     * In the `07_RAG_query.ipynb` create new secret (by clicking on the key icon on left) named `HF_TOKEN` and populated with the Hugging Face access token. Grant the notebook access to the secret by toggle the switch at left of the secret.
-    * At the top of the notebook, update the path to your `DNSC_6330_software` folder, something similar to: `%cd drive/My\ Drive/DNSC_6330_Software/RAG_Example`
+  * At the top of the notebook, update the path to your `DNSC_6330_software` folder, something similar to: `%cd drive/My\ Drive/DNSC_6330_Software/RAG_Example`
   * After adjusting these settings the notebook should run without errors
     
