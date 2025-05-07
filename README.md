@@ -15,7 +15,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ***
 
 ## Preliminary Materials
- * [Syllabus](https://docs.google.com/document/d/1msxf4_n9G3g5ejwvtE112FuW2a4UMo6b0ukgS8V0rA8/edit?usp=drive_link)
+ * [Syllabus](https://docs.google.com/document/d/1haEpRcM3oaZrVBPcGxv9_bqlhpNOYEoYlsAFL6gomlE/edit?usp=sharing)
  * [Basic Data Manipulation](https://github.com/jphall663/GWU_data_mining/blob/master/01_basic_data_prep/01_basic_data_prep.md)
  * [Primer on Technical Malpractice](https://docs.google.com/presentation/d/1cZeaoIp4cQsVY_gj2a5Pg7ygexepQZRS-ZEn6n2QqEU/edit?usp=sharing)
  * [Whiteboard Notation](https://docs.google.com/presentation/d/1Axf9dizaE3XvGRelBHfsnAlMUPFuMExQ2WNVwQBKMrw/edit?usp=sharing)
