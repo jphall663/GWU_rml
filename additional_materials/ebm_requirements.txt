@@ -1,6 +1,0 @@
-interpret
-jupyter
-numpy 
-pandas
-sklearn
-xlrd

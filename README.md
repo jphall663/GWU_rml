@@ -7,15 +7,15 @@ Materials for a technical, nuts-and-bolts course about increasing transparency, 
 * Lecture 3: Bias Testing and Remediation
 * Lecture 4: Machine Learning Security
 * Lecture 5: Machine Learning Model Debugging
-* Lecture 6: Responsible Machine Learning Best Practices
-* Lecture 7: Risk Mitigation Proposals for Language Models
+* Lecture 6: Foundation Models for Structured Data
+* Lecture 7: Responsible Machine Learning Best Practices
 
 Corrections or suggestions? Please file a [GitHub issue](https://github.com/jphall663/GWU_rml/issues/new).
 
 ***
 
 ## Preliminary Materials
- * [Syllabus](https://docs.google.com/document/d/1haEpRcM3oaZrVBPcGxv9_bqlhpNOYEoYlsAFL6gomlE/edit?usp=sharing)
+ * [Syllabus](https://docs.google.com/document/d/1msxf4_n9G3g5ejwvtE112FuW2a4UMo6b0ukgS8V0rA8/edit?usp=drive_link)
  * [Basic Data Manipulation](https://github.com/jphall663/GWU_data_mining/blob/master/01_basic_data_prep/01_basic_data_prep.md)
  * [Primer on Technical Malpractice](https://docs.google.com/presentation/d/1cZeaoIp4cQsVY_gj2a5Pg7ygexepQZRS-ZEn6n2QqEU/edit?usp=sharing)
  * [Whiteboard Notation](https://docs.google.com/presentation/d/1Axf9dizaE3XvGRelBHfsnAlMUPFuMExQ2WNVwQBKMrw/edit?usp=sharing)
@@ -29,12 +29,12 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 * [Lecture Notes](tex/lecture_1.pdf)
 * [Software Example](https://drive.google.com/file/d/1PnDSsNYRh1JNqZ3wyPgCA-KQxBop7y4L/view?usp=sharing)
-* [Assignment 1](assignments/tex/assignment_1.pdf):
-  * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb?flush_cache=true)
-  * [Full evaluations results](assignments/model_eval_2025_03_27_14_06_12.csv)
+* [Assignment 1](assignment/tex/assignment_1.pdf):
+  * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignment/eval.ipynb?flush_cache=true)
+  * [Full evaluations results](assignment/model_eval_2025_03_27_14_06_12.csv)
 * Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 2 (pp. 33 - 50) and Chapter 6 (pp. 189 - 217)
   * Check availablity through GWU Libraries access to O'Reilly Safari
-* [Lecture 1 Additional Materials](additional_materials/am1.md)
+* [Lecture 1 Additional Material](additional_material/am1.md)
 
 ***
 
@@ -47,10 +47,10 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 * [Lecture Notes](tex/lecture_2.pdf)
 * [Software Example](https://colab.research.google.com/drive/1X7hagDcdMEU_YrGxsAXrUZo1hWCVN--H?usp=sharing)
-* [Assignment 2](assignments/tex/assignment_2.pdf)
+* [Assignment 2](assignment/tex/assignment_2.pdf)
 * Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 2 (pp. 50 - 80) and Chapter 6 (pp. 208 - 230)
   * Check availablity through GWU Libraries access to O'Reilly Safari
-* [Lecture 2 Additional Materials](additional_materials/am2.md)
+* [Lecture 2 Additional Material](additional_material/am2.md)
   
 ***
 
@@ -63,12 +63,12 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 * [Lecture Notes](tex/lecture_3.pdf)
 * [Software Example](https://colab.research.google.com/drive/1PHGCYRTAgiYbvC1fjd6xaLbg1nr2x0aH?usp=sharing)
-* [Assignment 3](assignments/tex/assignment_3.pdf)
-  * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignments/eval.ipynb?flush_cache=true)
-  * [Full evaluations results](assignments/model_eval_2025_04_14_10_28_13.csv)
+* [Assignment 3](assignment/tex/assignment_3.pdf)
+  * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignment/eval.ipynb?flush_cache=true)
+  * [Full evaluations results](assignment/model_eval_2025_04_14_10_28_13.csv)
 * Reading [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 4 and Chapter 10
   * Check availablity through GWU Libraries access to O'Reilly Safari
-* [Lecture 3 Additional Materials](additional_materials/am3.md)
+* [Lecture 3 Additional Material](additional_material/am3.md)
 
 ***   
 
@@ -84,9 +84,9 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [Attacks for Red-teaming](https://colab.research.google.com/drive/1X1t1wqqVk8dlz1ubb0VBcLP_KFdP3HsE?usp=sharing)
   * [Data Poisoning](https://colab.research.google.com/drive/13hs11eJAEsX3ZAHA6oH1Lmi4I-dH7d1G?usp=sharing)
   * [Backdoor Attack](https://colab.research.google.com/drive/1QRCSW42L6wDs6ML9VgQu-xAbpdny4Mq1?usp=sharing)  
-* [Assignment 4](assignments/tex/assignment_4.pdf)
+* [Assignment 4](assignment/tex/assignment_4.pdf)
 * Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 5 and Chapter 11
-* [Lecture 4 Additional Materials](additional_materials/am4.md)
+* [Lecture 4 Additional Material](additional_material/am4.md)
 
 ***   
 
@@ -103,43 +103,40 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
     * [Adversarial Example Search](https://colab.research.google.com/drive/1GBRrcZCoNJRYj5MI0iKKkXKUhg0vYUtB?usp=drive_link)
     * [Stress Testing](https://colab.research.google.com/drive/1S9pABlR7xs_VZAKraKT7pBSoXsuzZbaC?usp=sharing)
   * [Residual Analysis](https://colab.research.google.com/drive/1e8CXl23qpYsUL4nbEjX0MCsjhbHEPBVR?usp=sharing)  
-* [Assignment 5](assignments/tex/assignment_5.pdf) 
+* [Assignment 5](assignment/tex/assignment_5.pdf)
 * Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 3 and Chapter 8
   * Check availablity through GWU Libraries access to O'Reilly Safari
-* [Lecture 5 Additional Materials](additional_materials/am5.md)
+* [Lecture 5 Additional Material](additional_material/am5.md)
 
 ***   
 
-## Lecture 6: Responsible Machine Learning Best Practices
+## Lecture 6: Foundation Models for Structured Data
 
-![A responsible machine learning workingflow](/img/rml_diagram_no_hilite.png)
+Lecture 6 is a placeholder for the replacement material.
 
-<sub><sup>A Responsible Machine Learning Workflow Diagram. **Source:** [*Information*, 11(3) (March 2020)](https://www.mdpi.com/2078-2489/11/3).</sup></sub>
-
-### Lecture 6 Class Materials
-
-* [Lecture Notes](tex/lecture_6.pdf)
-* [Assignment 6 (Final Assessment)](assignments/tex/assignment_6.pdf)
-* Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 1 and Chapter 12
-* [Lecture 6 Additional Materials](additional_materials/am6.md)
+* [Placeholder lecture notes](tex/lecture_6.pdf)
 
 ***
 
-## Lecture 7: Risk Mitigation Proposals for Language Models
+## Lecture 7: Responsible Machine Learning Best Practices
 
-![An illustration of retrieval augmented generation (RAG).](/img/rag.png)
+![A responsible machine learning workflow](/img/rml_diagram_no_hilite.png)
 
-<sub><sup>A diagram for retrieval augmented generation. **Source:** [Lecture 7 notes](tex/lecture_7.pdf).</sup></sub>
+<sub><sup>A Responsible Machine Learning Workflow Diagram. **Source:** [*Information*, 11(3) (March 2020)](https://www.mdpi.com/2078-2489/11/3).</sup></sub>
 
 ### Lecture 7 Class Materials
 
 * [Lecture Notes](tex/lecture_7.pdf)
-* [Software Example](https://drive.google.com/drive/folders/1eR4iNqP2bbQHtnQx7Sj8_VhS_AeWPzBo?usp=sharing)
-* Reading: [_Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile_](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf), pgs. 1-12, 47-53 
-* [Lecture 7 Additional Materials](additional_materials/am7.md)
+* [Assignment 6 (Final Assessment)](assignment/tex/assignment_6.pdf)
+* Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 1 and Chapter 12
+* [Lecture 7 Additional Material](additional_material/am7.md)
 
 
 ## Example instructions for using class software in Google Colab
+
+For a local checkout of this repository, use the uv setup in
+[`python_environment.md`](python_environment.md).
+The Colab steps below apply to copies of the hosted Google Drive notebooks.
 
 * Create a folder in your GWU Google Drive `My Drive` called `DNSC_6330_Software`
 
@@ -156,10 +153,10 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * Upload these folders into the `DNSC_6330_Software` folder
 
 * To run the homework templates:
-  * Create a folder called `assignments` in the `DNSC_6330_Software` folder
-  * Download then upload the notebook `assign_1_template.ipynb` into the `assignments` folder
+  * Create a folder called `assignment` in the `DNSC_6330_Software` folder
+  * Download then upload the notebook `assign_1_template.ipynb` into the `assignment` folder
   * Create a folder called `data` in the `DNSC_6330_Software` folder
-  * Download the assignment data from the class GitHub: https://github.com/jphall663/GWU_rml/tree/master/assignments/data
+  * Download the assignment data from the class GitHub: https://github.com/jphall663/GWU_rml/tree/master/assignment/data
   * Unzip the data files into CSV files and upload them into the `data` folder
   * In the `assignment_1.ipynb` add a cell before cell 1 that installs `h2o` and `interpret`: `!pip install interpret h2o`
   * In the `assignment_1.ipynb` add a cell before cell 3 that connects the notebook to the data:
@@ -168,7 +165,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 from google.colab import drive
 drive.mount('/content/drive/', force_remount=True)
 # may need to be updated to location on your drive
-%cd drive/My\ Drive/DNSC_6330_Software/assignments/
+%cd drive/My\ Drive/DNSC_6330_Software/assignment/
 %ls
 ```
 * Whenever asked, allow Colab to connect to your Google drive
@@ -177,7 +174,7 @@ drive.mount('/content/drive/', force_remount=True)
 
 ```
 DNSC_6330_Software
-├── assignments
+├── assignment
 │   ├── assign_1_template.ipynb
 ├── data
 │   ├── hmda_test_preprocessed.csv
@@ -212,21 +209,10 @@ drive.mount('/content/drive/', force_remount=True)
 
 `! tree`
 
-* Add new assignment templates into the `assignments` folder
+* Add new assignment templates into the `assignment` folder
 * Add new code examples to `Lecture_XX/XX_notebook_name.iypnb` folders
   * For Lecture 2 that would be `Lecture_02/02_Explainable_AI_Post_Hoc.ipynb`
- 
-* For Lecture 7:
-  * Click the Lecture 7 [Software Example](https://drive.google.com/drive/folders/1eR4iNqP2bbQHtnQx7Sj8_VhS_AeWPzBo)
-  * Click the small triangle at the right of `RAG_Example` and click `Download` 
-  * Extract the downloaded zip file with a name like `RAG_Example-20250428T160138Z-001.zip` into a folder with a name like `RAG_Example-20250428T160138Z-001`
-  * Inside the `RAG_Example-20250428T160138Z-001` folder should be a folder named `RAG_Example`, upload the `RAG_Example-20250428T160138Z-001/RAG_Example` folder to the `DNSC_6330_Software` folder on your G-Drive
-  * Click on the `DNSC_6330_Software/RAG_Example/07_RAG_query.ipynb` file and open it with Colab
-  * To run the last session notebook (`07_RAG_query.ipynb`), you will need an access token from HuggingFace.co
-    * Create a free Hugging Face account (https://huggingface.co/)
-    * Generate an access token (Profile -> Access Tokens)
-    * Preserve the text of the token somewhere secure, as you may not be able to see it again after it is granted
-    * In the `07_RAG_query.ipynb` notebook create a new secret (by clicking on the key icon on left) named `HF_TOKEN` and populated with the Hugging Face access token. Grant the notebook access to the secret by toggle the switch at left of the secret.
-  * At the top of the notebook, update the path to your `DNSC_6330_software` folder, something similar to: `%cd drive/My\ Drive/DNSC_6330_Software/RAG_Example`
-  * After adjusting these settings the notebook should run without errors
-    
+
+## Licenses
+
+The software is licensed under the [MIT License](SOFTWARE_LICENSE.txt). Course content is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)](CONTENT_LICENSE.txt).

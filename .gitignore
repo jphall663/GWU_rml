@@ -20,3 +20,12 @@ best_mgbm*
 stolen_dt*
 assignments/Python-*
 assignments/python-*
+deprecated
+prompt
+venv
+.venv
+.venv-h2o
+AGENTS.md
+data/scores
+asset
+*.DS_Store
