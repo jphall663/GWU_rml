@@ -1,3 +1,0 @@
-# Superseded by the uv-managed root pyproject.toml and uv.lock.
-# Use `uv sync` from the repository root. H2O examples require the separate
-# `legacy-h2o` group described in ../python_environment.md.
