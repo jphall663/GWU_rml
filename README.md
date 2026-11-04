@@ -29,7 +29,6 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Software Example](https://drive.google.com/file/d/1PnDSsNYRh1JNqZ3wyPgCA-KQxBop7y4L/view?usp=sharing)
 * [Assignment 1](assignment/tex/assignment_1.pdf):
   * [Model evaluation notebook](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignment/eval.ipynb?flush_cache=true)
-  * [Full evaluations results](assignment/model_eval_2025_03_27_14_06_12.csv)
 * Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 2 (pp. 33 - 50) and Chapter 6 (pp. 189 - 217)
   * Check availablity through GWU Libraries access to O'Reilly Safari
 * [Lecture 1 Additional Material](additional_material/am1.md)
