@@ -15,7 +15,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ***
 
 ## Preliminary Materials
- * [Syllabus]()
+ * [Syllabus](https://docs.google.com/document/d/1P9lpuRmTPtNJ0ZywBnF0QbkgWcBpd0NLeHkp2ydambI/edit?usp=sharing)
  * [Whiteboard Notation](https://docs.google.com/presentation/d/1Axf9dizaE3XvGRelBHfsnAlMUPFuMExQ2WNVwQBKMrw/edit?usp=sharing)
 
 ## Lecture 1: Explainable Machine Learning Models
