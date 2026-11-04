@@ -190,7 +190,7 @@ def hist_mean_pd_ice_plot(x_name, y_name, valid, pd_ice_dict):
     # if variable is *not* high cardinality
     # create histogram directly
     if valid[x_name].nunique() <= 20:
-        mean_df = valid[[x_name, y_name]].groupby(by=x_name).mean()
+        mean_df = valid[[x_name, y_name]].groupby(by=x_name, observed=False).mean()
         freq, bins, _ = ax.hist(valid[x_name], color='k')
 
     # if variable is high cardinality
@@ -198,7 +198,7 @@ def hist_mean_pd_ice_plot(x_name, y_name, valid, pd_ice_dict):
     else:
         temp_df = pd.concat([pd.cut(valid[x_name], pd_ice_dict[x_name][x_name] - 1, duplicates='drop'),
                              valid[y_name]], axis=1)
-        mean_df = temp_df.groupby(by=x_name).mean()
+        mean_df = temp_df.groupby(by=x_name, observed=False).mean()
         del temp_df
         freq, bins, _ = ax.hist(valid[x_name], bins=pd_ice_dict[x_name][x_name] - 1, color='k')
         bins = bins[:-1]

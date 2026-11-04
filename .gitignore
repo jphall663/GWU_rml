@@ -29,3 +29,5 @@ AGENTS.md
 data/scores
 asset
 *.DS_Store
+deprecated*
+best_mgbm*

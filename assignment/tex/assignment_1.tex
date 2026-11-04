@@ -13,7 +13,7 @@
 \usepackage{MnSymbol}
 \usepackage{enumerate}
 \usepackage{setspace}
-\usepackage[colorlinks, breaklinks=true]{hyperref} 
+\usepackage[colorlinks, breaklinks=true]{hyperref}
 \usepackage{float}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -32,7 +32,7 @@
 
 \maketitle
 
-\noindent In Assignment 1, you will train explainable machine learning (ML) models following the instructions below. A \href{https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignment/assignment_1/assign_1_template.ipynb?flush_cache=true}{template} has been provided as an example of how to train and compare a few different explainable models. Ensure Python 3, Git and Java are installed. Please let me know immediately if you find typos or mistakes in this assignment or related materials. 
+\noindent In Assignment 1, you will train an explainable machine learning (ML) model and make predictions on the test data. You may use AI tools to build your model and any associated code, documentation, or other artifacts. Ensure Python 3 and Git are installed.
 
 \section{Download Data.}
 
@@ -43,50 +43,47 @@ Download Home Mortgage Disclosure Act (HMDA) data as zip files from \href{https:
 	\item \texttt{hmda\_test\_preprocessed.zip} -- Zipped CSV HMDA \textit{unlabeled} test data.
 \end{itemize}
 
-\noindent Later you will score the unlabeled test data with your models and submit these scores as part of your assignment deliverable. See cell 3 in the template.
+\noindent Later you will score the unlabeled test data with your models and submit these scores as part of your assignment deliverable.
 
 \section{Load and Explore Data.}
 
 Load the data into modeling software. Training data contains 160338 rows and 23 columns. Test data contains 19831 rows and 22 columns. The features to use for Assignment 1 are as follows:
 
 \begin{itemize}\small
-\item \texttt{high\_priced}: Binary target, whether (1) or not (0) the annual percentage rate (APR) charged for a mortgage is 150 basis points (1.5\%) or more above a survey-based estimate of similar mortgages. (High-priced mortgages are legal, but somewhat punitive to borrowers. High-priced mortgages often fall on the shoulders of minority home owners, and are one of many issues that perpetuates a massive disparity in overall wealth between different demographic groups in the US.)
+\item \texttt{high\_priced}: Binary target, whether (1) or not (0) the annual percentage rate (APR) charged for a mortgage is 150 basis points (1.5\%) or more above a survey-based estimate of similar mortgages. (High-priced mortgages are legal, but somewhat punitive to borrowers. High-priced mortgages often fall on the shoulders of minority homeowners and are one of many issues that perpetuate a massive disparity in overall wealth between different demographic groups in the US.)
 \item \texttt{conforming}: Binary numeric input, whether the mortgage conforms to normal standards (1), or whether the loan is different (0), e.g., jumbo, HELOC, reverse mortgage, etc.
-\item \texttt{debt\_to\_income\_ratio\_std}: Numeric input, standardized debt-to-income ratio for mortgage applicants. 
+\item \texttt{debt\_to\_income\_ratio\_std}: Numeric input, standardized debt-to-income ratio for mortgage applicants.
 \item \texttt{debt\_to\_income\_ratio\_missing}: Binary numeric input, missing marker (1) for \texttt{debt\_to\_income\_ratio\_std}.
-\item \texttt{income\_std}: Numeric input, standardized income for mortgage applicants. 
-\item \texttt{loan\_amount\_std}: Numeric input, standardized amount of the mortgage for applicants. 
+\item \texttt{income\_std}: Numeric input, standardized income for mortgage applicants.
+\item \texttt{loan\_amount\_std}: Numeric input, standardized amount of the mortgage for applicants.
 \item \texttt{intro\_rate\_period\_std}: Numeric input, standardized introductory rate period for mortgage applicants.
-\item \texttt{loan\_to\_value\_ratio\_std}: Numeric input, ratio of the mortgage size to the value of the property for mortgage applicants. 
-\item \texttt{no\_intro\_rate\_period\_std}: Binary numeric input, whether or not a mortgage does not include an introductory rate period.
-\item \texttt{property\_value\_std}: Numeric input, value of the mortgaged property. 
-\item \texttt{term\_360}: Binary numeric input, whether the mortgage is a standard 360 month mortgage (1) or a different type of mortgage (0).
+\item \texttt{loan\_to\_value\_ratio\_std}: Numeric input, ratio of the mortgage size to the value of the property for mortgage applicants.
+\item \texttt{no\_intro\_rate\_period\_std}: Binary numeric input, whether a mortgage does not include an introductory rate period.
+\item \texttt{property\_value\_std}: Numeric input, value of the mortgaged property.
+\item \texttt{term\_360}: Binary numeric input, whether the mortgage is a standard 360-month mortgage (1) or a different type of mortgage (0).
 \end{itemize}
 
-\noindent See cell 4 in the template for modeling roles.\\
+\noindent This data contains no major quality issues, so no preprocessing is required. Familiarize yourself with the data using basic exploration techniques. You may optionally try to improve your model with feature engineering or other preprocessing approaches.\\
 
-\noindent This data contains no major quality issues, so no preprocessing is required. Please familiarize yourself with the data using basic exploration techniques -- see cells 5--6 in the template. You may optionally try to improve your model with feature engineering or other preprocessing approaches.\\
+\noindent Training data should be used to create training and validation partitions. Use the training and validation data to develop and evaluate your model.
 
-\noindent Training data should be used to create training and validation partitions. Test data will only be used to evaluate your models by the instructor. See cell 7 in the template.
+\section{Train an Explainable Model}
 
-\section{Train Explainable Models}
+Train an explainable model using the training data. Use validation data to guide model development and apply appropriate practices such as reproducibility and model selection. Then use the final model to make output-probability predictions for every row of the test data for submission. You are encouraged to use AI tools to build your model and associated artifacts. Your approach should support explanation, discrimination testing and remediation, and model debugging in coming weeks.
 
-Train at least two types of explainable models, ensuring best practices like reproducibility, validation-based early-stopping, and grid search are used. (Scikit-learn does not necessarily make applying such best practices easy.) You are encouraged to try packages like \href{https://docs.h2o.ai/h2o/latest-stable/h2o-docs/downloading.html}{\texttt{h2o}}, \href{https://github.com/interpretml/interpret}{\texttt{interpret}}, and \href{https://xgboost.readthedocs.io/en/latest/install.html}{\texttt{XGBoost}}, but you may use any explainable approach on which you will be able to apply explanation, discrimination testing and remediation, and model debugging approaches in coming weeks. The former PiML example is archived under \texttt{deprecated/assignment/assignment\_1/} and is not part of the supported course environment. Please reach out with questions about appropriate modeling techniques.\\
+\section{Submit Code and Predictions}
 
-\noindent The template contains examples for elastic net logistic regression using \texttt{h2o} (see cells 8--10), monotonic gradient boosting machines (GBM) using \texttt{XGBoost} (see cells 12--14), and explainable boosting machines (EBM) using \texttt{interpret} (see cells 16--18). 
-
-\section{Submit Code Results}
-
-Your deliverable for this assignment has two parts. Each part is worth 5 points. 
+Your deliverable for this assignment has two parts. Each part is worth 5 points.
 
 \begin{itemize}
-	\item You must check in your code to a public GitHub repository by the deadline below. Code should be available as a commented script, Jupyter notebook, R markdown or other polished and professional format. 
-	\item You must create submission files with output probabilities for each row of the test data. The submission file should have one column named \texttt{phat}. Each model should have a separate submission file named using a \texttt{<personal\_or\_group\_indentifier>\_<model\_type>.csv} convention, similar to the \href{https://github.com/jphall663/GWU_rml/blob/master/assignment/assignment_1/ph_glm.csv}{example submission file}. See cells 11, 15, and 19 for examples of writing submission files. Your group's submission will be ranked using the cross-validated ranking method discussed during Lecture 1. The remaining five points for the assignment will be issued based on this ranking. You will have opportunities to increase your rank each week of the class. 
+	\item Check in your code and associated artifacts to a public GitHub repository, or a private repository shared with the instructor (\texttt{jphall663}). Code should be available as a commented script, Jupyter notebook, R Markdown document, or other polished and professional format.
+	\item Create a prediction file with output probabilities for each row of the test data. The file should have one column named \texttt{phat}, and should follow the \texttt{<personal\_or\_group\_identifier>\_<model\_type>.csv} naming convention. See the \href{https://github.com/jphall663/GWU_rml/blob/master/assignment/assignment\_1/ph\_glm.csv}{example submission file}.
 \end{itemize}
 
-\noindent \textbf{Your deliverables are due Wednesday, March 26\textsuperscript{th}, at 11:59:59 PM ET.}\\
+Submit your code link and prediction file to the class evaluation server at a TBD URL by the deadline below. The class evaluation server will rank submissions using the cross-validated ranking method described in the \href{https://nbviewer.org/github/jphall663/GWU_rml/blob/master/assignment/eval.ipynb?flush\_cache=true}{model evaluation notebook}. It will also use an LLM-as-judge to assess whether the submitted model is explainable. The five points for the prediction deliverable will be based on the ranking. You will have opportunities to improve your rank each week of the class.
 
-\noindent Please send an email to \href{mailto:jphall@gwu.edu}{\texttt{jphall@gwu.edu}} by that deadline with the link to your group's GitHub page and with your zipped submission files. 
+\vspace{\baselineskip}
+\noindent \textbf{Your deliverables are due TBD.}
 
 \end{document}
 

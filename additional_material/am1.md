@@ -4,7 +4,6 @@
   * [causalml](https://oreil.ly/XsiMk)
   * [interpret](https://github.com/interpretml/interpret)
   * [imodels](https://oreil.ly/coPjR)
-  * [PiML-Toolbox](https://github.com/SelfExplainML/PiML-Toolbox) (legacy reference; the course example is archived and unsupported)
   * [sklearn-expertsys](https://oreil.ly/igFz6)
   * [skope-rules](https://github.com/scikit-learn-contrib/skope-rules)
   * [tensorflow/lattice](https://oreil.ly/Z9iCS)
@@ -25,18 +24,17 @@
 
 ### Lecture 1 Additional Software Examples
 
-* [Building from Penalized GLM to Monotonic GBM (simple)](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb?flush_cache=true)
+* [Building from Penalized GLM to Monotonic GBM (simple)](https://nbviewer.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb?flush_cache=true)
 * [Building from Penalized GLM to Monotonic GBM](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/glm_mgbm_gbm.ipynb?flush_cache=true)
-* [Simple Explainable Boosting Machine Example](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/deprecated/additional_material/lecture_1_ebm_example.ipynb?flush_cache=true)
-* Archived course example: [PiML Assignment 1 notebook](https://github.com/jphall663/GWU_rml/blob/master/deprecated/assignment/assignment_1/group6_PiML_example.ipynb) and [requirements note](https://github.com/jphall663/GWU_rml/blob/master/deprecated/assignment/assignment_1/piml_requirements.txt). These artifacts are retained for reference and are not part of the supported course environment.
-* _Machine Learning for High-risk Applications_: [Use Cases](https://oreil.ly/machine-learning-high-risk-apps-code) (Chapter 6)
+* [Simple Explainable Boosting Machine Example](https://nbviewer.org/github/jphall663/GWU_rml/blob/master/additional_material/lecture_1_ebm_example.ipynb?flush_cache=true)
+* _Machine Learning for High-Risk Applications_: [Use Cases](https://oreil.ly/machine-learning-high-risk-apps-code) (Chapter 6)
 
 ### Lecture 1 Additional Reading
 
 * **Introduction and Background**:
-  * [*An Introduction to Machine Learning Interpretability*](https://h2o.ai/content/dam/h2o/en/marketing/documents/2019/08/An-Introduction-to-Machine-Learning-Interpretability-Second-Edition.pdf)
+  * [*An Introduction to Machine Learning Interpretability*](https://www.oreilly.com/library/view/an-introduction-to/9781098115487/)
   * [*Designing Inherently Interpretable Machine Learning Models*](https://arxiv.org/pdf/2111.01743.pdf)
-  * [*Psychological Foundations of Explainability and Interpretability in Artificial Intelligence*](https://nvlpubs.nist.gov/nistpubs/ir/2021/NIST.IR.8367.pdf)
+  * [*Psychological Foundations of Explainability and Interpretability in Artificial Intelligence*](https://www.nist.gov/publications/psychological-foundations-explainability-and-interpretability-artificial-intelligence)
   * [*Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead*](https://arxiv.org/pdf/1811.10154.pdf)
 
 * **Explainable Machine Learning Techniques**:

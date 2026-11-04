@@ -162,6 +162,8 @@ def gbm_forward_select_train(orig_x_names, y_name, train, valid, seed_, next_lis
 
     # init loop var
     selected = orig_x_names
+    # SHAP values are floating point; keep the destination columns compatible.
+    coef_frame = coef_frame.astype(float)
 
     for j in range(0, len(next_list) + 1):
 

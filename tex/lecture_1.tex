@@ -96,18 +96,18 @@
 		\begin{itemize}
 			\item{Grading:}
 				\begin{itemize}
-					\item{$\frac{5}{10}$ Weekly Assignments}
-					\item{$\frac{3}{10}$ GitHub model card (\cite{model_cards})}
-                    \item{$\frac{2}{10}$ Weekly Quizzes}
+					\item{30\% Assignments}
+					\item{30\% Quizzes}
+					\item{30\% Final exam}
+					\item{10\% Attendance}
 				\end{itemize}
-			\item{Project:}	
+			\item{Assignment:}
 				\begin{itemize}
 					\item{HMDA data using techniques from class}
 					\item{Individual or group (no more than 4 members)}
-					\item Groups randomly assigned by instructor
 				\end{itemize}
 			\item{Syllabus}
-			\item{Office hours: F, 3-5 PM, Funger 412}
+			\item{Office hours: TBD}
 			\item{Class resources: \url{https://jphall663.github.io/GWU_rml/}}	
 		\end{itemize}		
 			
@@ -233,7 +233,7 @@
 			
 			\vspace{10pt}
 			
-			There is not necessarily a trade-off between accuracy and explainabillity, especially for structured data.
+			There is not necessarily a trade-off between accuracy and explainability, especially for structured data.
 			
 			\normalsize
 			
@@ -490,11 +490,15 @@
 
 	\begin{frame}
 	
-		\frametitle{Generalized Additive Models and Neural Networks}
+		\frametitle{Ecosystem of GAMs}
 		
-		\noindent Researchers have also put forward GA2M variants in which each $g_{j}$ and $g_{j, k}$ shape function is fit by neural networks, e.g., GAMI-Net (\citet{yang2021gami}) and neural additive models (\citet{agarwal2021neural}).\\
-		\vspace{10pt} 
-		\noindent An implementation of GAMI-Net and other explainable models is available in the \href{https://selfexplainml.github.io/PiML-Toolbox/_build/html/index.html}{PiML package}; the course's PiML example is archived under \texttt{deprecated/assignment/assignment\_1/} and is not part of the supported course environment. 
+		\small
+		\begin{itemize}
+			\item Neural additive models (NAMs) use neural networks to learn additive shape functions (\cite{agarwal2021neural}).
+			\item GAMI-Net models additive effects and selected pairwise interactions with neural networks (\cite{yang2021gami}).
+			\item XGB2 variants use functional ANOVA to purify interaction effects and recover identifiable additive models (\cite{lengerich2020purifying}).
+		\end{itemize}
+		\normalsize
 		 
 	\end{frame}
 
@@ -512,7 +516,7 @@
 			Monotonic GBM (MGBM) constrain typical GBM training to consider only tree splits that obey user-defined positive and negative monotone constraints, with respect to each input feature, $X_j$, and a target feature, $\mathbf{y}$, independently. An MGBM remains an additive combination of $B$ trees trained by gradient boosting, $T_b$, and each tree learns a set of splitting rules that respect monotone constraints,  $\Theta^\text{mono}_b$. A trained MGBM model, $g^{\text{MGBM}}$, takes the form:
 			
 			\begin{equation}
-			\begin{aligned}\label{eq:gbm}
+			\begin{aligned}\label{eq:mgbm}
 			g^{\text{MGBM}}(\mathbf{x}) &= \sum_{b=0}^{B-1} T_b\left(\mathbf{x}; \Theta^\text{mono}_b\right)
 			\end{aligned}
 			\end{equation}
@@ -591,7 +595,6 @@
 		\begin{itemize}
 			\item Generally speaking, standard ML evaluation -- including Kaggle leaderboards, are poor ways to assess ML model performance.
 			\item However, \cite{caruana2004kdd} puts forward a robust model evaluation and selection technique based on cross-validation and ranking. 
-			\item PiML contains real-world model validation approaches as well; the course's PiML example is archived and unsupported.
 		\end{itemize}
 	
 		\column{0.6\linewidth}
