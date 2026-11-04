@@ -21,14 +21,14 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ## Lecture 1: Explainable Machine Learning Models
 
 ![Explainable EBM output.](/img/ebm.png)
-<sub><sup>**Source:** [Simple Explainable Boosting Machine Example](https://nbviewer.org/github/jphall663/GWU_rml/blob/master/additional_material/lecture_1_ebm_example.ipynb?flush_cache=true)</sup></sub>
+<sub><sup>**Source:** [Simple Explainable Boosting Machine Example](https://github.com/jphall663/GWU_rml/blob/master/additional_material/lecture_1_ebm_example.ipynb)</sup></sub>
 
 ### Lecture 1 Class Materials
 
 * [Lecture Notes](tex/lecture_1.pdf)
 * Software Examples:
   * [Penalized GLM to Monotonic GBM](https://nbviewer.org/github/jphall663/GWU_rml/blob/master/lecture_1.ipynb?flush_cache=true)
-  * [Explainable Boosting Machine](https://nbviewer.org/github/jphall663/GWU_rml/blob/master/additional_material/lecture_1_ebm_example.ipynb?flush_cache=true)
+  * [Explainable Boosting Machine](https://github.com/jphall663/GWU_rml/blob/master/additional_material/lecture_1_ebm_example.ipynb)
 * [Assignment 1](assignment/tex/assignment_1.pdf):
   * [Model evaluation notebook](https://nbviewer.org/github/jphall663/GWU_rml/blob/master/assignment/eval.ipynb?flush_cache=true)
 * Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 2 (pp. 33 - 50) and Chapter 6 (pp. 189 - 217)

@@ -31,3 +31,4 @@ asset
 *.DS_Store
 deprecated*
 best_mgbm*
+python_environment.md
