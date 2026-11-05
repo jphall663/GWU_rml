@@ -58,6 +58,6 @@ build-backend = "setuptools.build_meta"
 include = ["util*"]
 
 [tool.uv]
-default-groups = ["course", "notebook-execution"]
+default-groups = ["legacy-h2o", "notebook-execution"]
 conflicts = [[{ group = "course" }, { group = "legacy-h2o" }]]
 

@@ -581,7 +581,7 @@ wheels = [
 name = "gwu-rml-course"
 version = "0.1.0"
 source = { editable = "." }
-default-groups = ["course", "notebook-execution"]
+default-groups = ["legacy-h2o", "notebook-execution"]
 
 [package.optional-dependencies]
 neural = [

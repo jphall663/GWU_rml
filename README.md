@@ -124,54 +124,64 @@ Lecture 6 is a placeholder for the replacement material.
 
 ## Using the Course Software
 
-The course notebooks use Python 3.11 and the dependencies recorded in [`pyproject.toml`](pyproject.toml) and [`uv.lock`](uv.lock). Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and [Visual Studio Code](https://code.visualstudio.com/), then clone this repository. In VS Code, install the Python and Jupyter extensions. Run the setup commands below from the repository root; open that folder in VS Code so notebooks can find course data and the `util` package. If the `code` command is unavailable, open the repository folder through **File → Open Folder**.
+Most lecture software examples use H2O-3. Start with the notebooks for Lectures 1–5:
 
-### macOS and Linux
+* [Lecture 1: Explainable Machine Learning Models](lecture_1.ipynb)
+* [Lecture 2: Post-hoc Explanation](lecture_2.ipynb)
+* [Lecture 3: Bias Testing and Remediation](lecture_3.ipynb)
+* [Lecture 4: Machine Learning Security](lecture_4.ipynb)
+* [Lecture 5: Machine Learning Model Debugging](lecture_5.ipynb)
+
+Run notebooks from the repository root so they can find course data and the `util` package. Install [uv](https://docs.astral.sh/uv/getting-started/installation/), [Visual Studio Code](https://code.visualstudio.com/), and the Python and Jupyter extensions. The course environment uses Python 3.11 and dependencies recorded in [`pyproject.toml`](pyproject.toml) and [`uv.lock`](uv.lock).
+
+### Set up the H2O-3 environment
+
+The default course environment uses H2O-3 with NumPy 1. Install a 64-bit Java Development Kit (JDK) using a package manager or OpenJDK distribution for your operating system, then set `JAVA_HOME` to its installation directory. H2O-3 3.46 lists Java 8–17 as supported; OpenJDK build 27 has also worked with these course notebooks, but is outside H2O's published support range ([H2O-3 requirements](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/welcome.html)).
+
+On macOS and Linux:
 
 ```sh
 uv python install 3.11
 uv sync
-code .
-```
-
-On macOS, install the XGBoost OpenMP runtime once with `brew install libomp`. Linux distributions generally provide the OpenMP runtime through their system packages.
-
-### Windows
-
-Open PowerShell in the repository root and run:
-
-```powershell
-uv python install 3.11
-uv sync
-code .
-```
-
-Install the Microsoft Visual C++ Redistributable for XGBoost examples.
-
-Open a notebook and choose **Select Kernel** in the upper-right corner, then select the Python 3.11 environment created in the repository's `.venv` folder (`.venv/bin/python` on macOS/Linux; `.venv\Scripts\python.exe` on Windows). See the [VS Code Jupyter guide](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) for kernel selection details. To use JupyterLab instead, run `uv run jupyter lab` from the repository root.
-
-### Notebooks that use H2O-3
-
-The default course environment uses NumPy 2. H2O-3 uses a separate, mutually exclusive environment with NumPy 1. Install a 64-bit Java 8 runtime for the validated H2O-3 setup, then sync and launch the H2O environment instead of the default one.
-
-On macOS and Linux, create the environment and launch VS Code with Java configured:
-
-```sh
-UV_PROJECT_ENVIRONMENT=.venv-h2o uv sync --group legacy-h2o --no-default-groups
-export JAVA_HOME=/path/to/java8/home
+export JAVA_HOME=/path/to/java/home
 code .
 ```
 
 On Windows PowerShell:
 
 ```powershell
-$env:UV_PROJECT_ENVIRONMENT = ".venv-h2o"
-uv sync --group legacy-h2o --no-default-groups
-$env:JAVA_HOME = "C:\Path\To\Java\8"
+$env:JAVA_HOME = "C:\Path\To\Java\Home"
+uv python install 3.11
+uv sync
 code .
 ```
 
-For H2O notebooks, select the Python 3.11 environment in `.venv-h2o` as the notebook kernel (`.venv-h2o/bin/python` on macOS/Linux; `.venv-h2o\Scripts\python.exe` on Windows). Do not install the `course` and `legacy-h2o` groups into the same environment. See [`python_environment.md`](python_environment.md) for environment details and compatibility notes.
+For these notebooks, select the Python 3.11 environment in `.venv` as the notebook kernel (`.venv/bin/python` on macOS/Linux; `.venv\Scripts\python.exe` on Windows). See [`python_environment.md`](python_environment.md) for environment details and compatibility notes.
+
+### Other course notebooks
+
+For notebooks that do not use H2O-3, create a separate NumPy 2 environment. Do not install the `course` and `legacy-h2o` groups into the same environment.
+
+On macOS and Linux:
+
+```sh
+UV_PROJECT_ENVIRONMENT=.venv-numpy2 uv sync --group course --group notebook-execution --no-default-groups
+code .
+```
+
+On Windows PowerShell:
+
+```powershell
+$env:UV_PROJECT_ENVIRONMENT = ".venv-numpy2"
+uv sync --group course --group notebook-execution --no-default-groups
+code .
+```
+
+Select the Python 3.11 environment in `.venv-numpy2` as the notebook kernel (`.venv-numpy2/bin/python` on macOS/Linux; `.venv-numpy2\Scripts\python.exe` on Windows). On macOS, install the XGBoost OpenMP runtime once with `brew install libomp`. Linux distributions generally provide the OpenMP runtime through their system packages. Windows users need the Microsoft Visual C++ Redistributable for XGBoost examples.
+
+To use JupyterLab in the default H2O-3 environment, run `uv run jupyter lab` from the repository root.
+
+See the [VS Code Jupyter guide](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) for kernel selection details.
 
 ## Licenses
 
