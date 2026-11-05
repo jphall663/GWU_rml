@@ -42,7 +42,7 @@
   * [**Elements of Statistical Learning**](https://hastie.su.domains/ElemStatLearn/) - Section 10.13
   * [_Extracting Tree-Structured Representations of Trained Networks_](https://proceedings.neurips.cc/paper/1995/file/45f31d16b1058d586fc3be7207b58053-Paper.pdf)
   * [_Interpretability via Model Extraction_](https://arxiv.org/pdf/1706.09773.pdf)
-  * **Interpretable Machine Learning** - [Chapter 6](https://christophm.github.io/interpretable-ml-book/agnostic.html) and [Chapter 7](https://christophm.github.io/interpretable-ml-book/example-based.html)
+  * **Interpretable Machine Learning** - [Chapter 4](https://christophm.github.io/interpretable-ml-book/agnostic.html)
   * [_Peeking Inside the Black Box: Visualizing Statistical Learning with Plots of Individual Conditional Expectation_](https://arxiv.org/pdf/1309.6392.pdf)
   * [*Towards Better Understanding of Gradient-based Attribution Methods for Deep Neural Networks*](https://arxiv.org/pdf/1711.06104.pdf)
   * [_Visualizing the Effects of Predictor Variables in Black Box Supervised Learning Models_](https://arxiv.org/pdf/1612.08468.pdf)

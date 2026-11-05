@@ -26,13 +26,19 @@
 \usepackage{verbatim}
 \usepackage{mdframed}
 \usepackage{changepage}
-\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage[top=0.75in, bottom=0.75in, left=1in, right=1in]{geometry}
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-2.0ex \@plus -0.5ex \@minus -.2ex}%
+  {1.0ex \@plus .2ex}%
+  {\normalfont\Large\bfseries}}
+\makeatother
 
 \begin{document}
 
 \maketitle
 
-\noindent In Assignment 2, analyze and explain machine learning (ML) models developed for Assignment 1. You may work alone or in a group. Submit your work in a public GitHub repository, or in a private repository shared with the instructor (\texttt{jphall663}). You may use AI tools, but you are responsible for validating and understanding your results.\\
+\noindent In Assignment 2, analyze and explain machine learning (ML) models developed for Assignment 1. Keep your work in a public GitHub repository, or in a private repository shared with the instructor (\texttt{jphall663}). You may use AI tools, but you are responsible for validating and understanding your results.\\
 
 \noindent For each section, consider whether the explanatory results make sense given domain knowledge and whether differences between the models are logical and informative.\\
 
@@ -42,9 +48,7 @@ Use regression coefficients, Shapley values, or another technically sound method
 
 \section{Calculate and Plot Local Feature Importance.}\label{local_fi}
 
-Calculate local feature importance for individuals at the 10\textsuperscript{th}, 50\textsuperscript{th}, and 90\textsuperscript{th} percentiles of predicted probability for each model.\\
-
-Plot the local feature importance values and compare how the models explain individuals at similar points in their predicted probability distributions.
+Calculate local feature importance for individuals at the 10\textsuperscript{th}, 50\textsuperscript{th}, and 90\textsuperscript{th} percentiles of predicted probability for each model. Plot the local feature importance values and compare how the models explain individuals at similar points in their predicted probability distributions.
 
 \section{Calculate and Plot Feature Behavior.}
 
@@ -52,15 +56,18 @@ Plot partial dependence for each main effect feature under each model. You may a
 
 \section{Submit Code Results.}
 
-Submit your explanatory analysis and results in your GitHub repository. Report holdout performance for each model, rank the models using an appropriate holdout metric, and briefly explain the ranking.\\
+
+Submit your code link and prediction file to the class evaluation server at a TBD URL by the deadline below. The class evaluation server will rank submissions using the cross-validated ranking method described in the \href{https://github.com/jphall663/GWU_rml/blob/master/assignment/eval.ipynb}{model evaluation notebook}. It will also use an LLM-as-judge to assess whether the submitted code follows assignment instructions. The four points for the prediction deliverable will be based on the ranking. You will have opportunities to improve your rank each week of the class.
+
+
+Grading rubric:\\
 
 \noindent Global feature importance plots: 2 points.\\
 \noindent Local feature importance plots: 2 points.\\
 \noindent Feature behavior plots: 2 points.\\
 \noindent Ranking on holdout data: 4 points.\\
-\noindent Total: 10 points.\\
 
-\noindent \textbf{Deadline: TBD.}\\
+\noindent \textbf{Due: TBD.}\\
 
 \end{document}
 
