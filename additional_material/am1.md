@@ -29,7 +29,7 @@
 * [Simple Explainable Boosting Machine Example](https://github.com/jphall663/GWU_rml/blob/master/additional_material/lecture_1_ebm_example.ipynb)
 * _Machine Learning for High-Risk Applications_: [Use Cases](https://oreil.ly/machine-learning-high-risk-apps-code) (Chapter 6)
 
-### Lecture 1 Additional Reading
+### Lecture 1 Recommended Additional Reading
 
 * **Introduction and Background**:
   * [*An Introduction to Machine Learning Interpretability*](https://www.oreilly.com/library/view/an-introduction-to/9781098115487/)

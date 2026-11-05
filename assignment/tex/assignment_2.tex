@@ -32,31 +32,35 @@
 
 \maketitle
 
-\noindent In Assignment 2, you will work with your group to analyze and explain machine learning (ML) models from Assignment 1 following the instructions below. A \href{https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/assignment/assignment_2/assign_2_template.ipynb?flush_cache=true}{template} has been provided as an example of how to explain and compare a few different models.\\ 
+\noindent In Assignment 2, analyze and explain machine learning (ML) models developed for Assignment 1. You may work alone or in a group. Submit your work in a public GitHub repository, or in a private repository shared with the instructor (\texttt{jphall663}). You may use AI tools, but you are responsible for validating and understanding your results.\\
 
-\noindent For each section below, you should be trying to think through whether the explanatory results make sense from a domain knowledge perspective, as well as the differences between your models and if those are logical and/or informative.\\
-
-\noindent Please let me know immediately if you find typos or mistakes in this assignment or related materials. 
+\noindent For each section, consider whether the explanatory results make sense given domain knowledge and whether differences between the models are logical and informative.\\
 
 \section{Calculate and Plot Global Feature Importance.}\label{global_fi}
 
-Use regression coefficients, Shapley values, or other reputable techniques to calculate global feature importance for your models. The template uses coefficients from the elastic net GLM -- extracted in cell 12, Shapley values for the monotonic GBM -- calculated in cell 19--20, and local feature scores for the EBM -- extracted in cells 27--28, to create global feature importance. (Depending on your package version, \texttt{interpret} can calculate these quantities much more directly using the \texttt{predict\_and\_explain()} function.) Plot these values as bar charts, ideally comparing how your models treat input features differently, as in cell 30 of the template.\\
+Use regression coefficients, Shapley values, or another technically sound method to calculate global feature importance for your models. Plot the results as bar charts and compare how the models rank and weight input features.\\
 
 \section{Calculate and Plot Local Feature Importance.}\label{local_fi}
 
-Using approaches similar to those in Section \ref{global_fi}, calculate local feature importance for your models at three percentiles of predicted probability. Cell 10 of the template provides a simple function for calculating percentiles, and percentiles for each models' predictions are found in cells 11, 18, and 26.\\
+Calculate local feature importance for individuals at the 10\textsuperscript{th}, 50\textsuperscript{th}, and 90\textsuperscript{th} percentiles of predicted probability for each model.\\
 
-\noindent Calculate local feature importance for the individuals at the 10\textsuperscript{th}, 50\textsuperscript{th}, and 90\textsuperscript{th} percentiles of predicted probability. Local feature importance for these individuals is calculated in cells 13, 21, and 29 of the template. Once you have local feature importance values, plot them to compare how your models treat similar individuals. Cell 31 of the template shows a comparison of local feature importance values across the three percentiles and three models.
+Plot the local feature importance values and compare how the models explain individuals at similar points in their predicted probability distributions.
 
 \section{Calculate and Plot Feature Behavior.}
 
-To enable analysis of feature behavior under each model, the template calculates partial dependence for each main effect feature for each model. (You may optionally plot interaction contour or surface plots for any interaction features, likely discovered by EBM.) You may follow this example or use additional techniques, such as ALE, ICE, or feature scores in EBM. Cell 32 of the template defines a function for partial dependence and cells 33-34 calculate and display the main effect feature behavior across the three models. 
+Plot partial dependence for each main effect feature under each model. You may also plot interaction contours or surfaces, such as interactions identified by EBM. Alternative techniques include accumulated local effects (ALE), individual conditional expectation (ICE), and EBM feature scores.
 
 \section{Submit Code Results.}
 
-Your deliverable for this assignment is to update your group's GitHub repository to reflect this explanatory analysis. Feature importance plots for all models and features are worth 3 points for global and 3 points for local. Feature behavior plots for all models and features are worth 4 pts., for a total of 10 pts.\\
+Submit your explanatory analysis and results in your GitHub repository. Report holdout performance for each model, rank the models using an appropriate holdout metric, and briefly explain the ranking.\\
 
-\noindent \textbf{Your deliverables are due Sunday, March 30\textsuperscript{th}, at 11:59:59 PM ET.}\\
+\noindent Global feature importance plots: 2 points.\\
+\noindent Local feature importance plots: 2 points.\\
+\noindent Feature behavior plots: 2 points.\\
+\noindent Ranking on holdout data: 4 points.\\
+\noindent Total: 10 points.\\
+
+\noindent \textbf{Deadline: TBD.}\\
 
 \end{document}
 

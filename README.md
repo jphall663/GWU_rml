@@ -31,7 +31,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * [Explainable Boosting Machine](https://github.com/jphall663/GWU_rml/blob/master/additional_material/lecture_1_ebm_example.ipynb?flush_cache=true)
 * [Assignment 1](assignment/tex/assignment_1.pdf):
   * [Model evaluation notebook](https://github.com/jphall663/GWU_rml/blob/master/assignment/eval.ipynb)
-* Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 2 (pp. 33 - 50) and Chapter 6 (pp. 189 - 217)
+* Recommended reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 2 (pp. 33 - 50) and Chapter 6 (pp. 189 - 217)
   * Check availablity through GWU Libraries access to O'Reilly Safari
 * [Lecture 1 Additional Material](additional_material/am1.md)
 
@@ -40,14 +40,14 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ## Lecture 2: Post-hoc Explanation
 
 ![A decision tree surrogate model forms a flow chart of a more complex monotonic GBM](/img/lecture_2.png)
-<sub><sup>**Source:** [Global and Local Explanations of a Constrained Model](https://nbviewer.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb?flush_cache=true)</sup></sub>
+<sub><sup>**Source:** [Global and Local Explanations of a Constrained Model](https://github.com/jphall663/GWU_rml/blob/master/lecture_2.ipynb)</sup></sub>
 
 ### Lecture 2 Class Materials
 
 * [Lecture Notes](tex/lecture_2.pdf)
-* [Software Example](https://nbviewer.org/github/jphall663/GWU_rml/blob/master/lecture_2.ipynb?flush_cache=true)
+* [Software Example](https://github.com/jphall663/GWU_rml/blob/master/lecture_2.ipynb)
 * [Assignment 2](assignment/tex/assignment_2.pdf)
-* Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 2 (pp. 50 - 80) and Chapter 6 (pp. 208 - 230)
+* Recommended reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 2 (pp. 50 - 80) and Chapter 6 (pp. 208 - 230)
   * Check availablity through GWU Libraries access to O'Reilly Safari
 * [Lecture 2 Additional Material](additional_material/am2.md)
   
@@ -61,9 +61,9 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 3 Class Materials
 
 * [Lecture Notes](tex/lecture_3.pdf)
-* [Software Example](https://nbviewer.org/github/jphall663/GWU_rml/blob/master/lecture_3.ipynb?flush_cache=true)
+* [Software Example](https://github.com/jphall663/GWU_rml/blob/master/lecture_3.ipynb)
 * [Assignment 3](assignment/tex/assignment_3.pdf)
-  * [Model evaluation notebook](https://nbviewer.org/github/jphall663/GWU_rml/blob/master/assignment/eval.ipynb?flush_cache=true)
+  * [Model evaluation notebook](https://github.com/jphall663/GWU_rml/blob/master/assignment/eval.ipynb)
   * [Full evaluations results](assignment/model_eval_2025_04_14_10_28_13.csv)
 * Reading [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 4 and Chapter 10
   * Check availablity through GWU Libraries access to O'Reilly Safari
@@ -79,7 +79,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 4 Class Materials
 
 * [Lecture Notes](tex/lecture_4.pdf)
-* [Software Example](https://nbviewer.org/github/jphall663/GWU_rml/blob/master/lecture_4.ipynb?flush_cache=true)
+* [Software Example](https://github.com/jphall663/GWU_rml/blob/master/lecture_4.ipynb)
 * [Assignment 4](assignment/tex/assignment_4.pdf)
 * Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 5 and Chapter 11
 * [Lecture 4 Additional Material](additional_material/am4.md)
@@ -94,7 +94,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ### Lecture 5 Class Materials
 
 * [Lecture Notes](tex/lecture_5.pdf)
-* [Software Example](https://nbviewer.org/github/jphall663/GWU_rml/blob/master/lecture_5.ipynb?flush_cache=true)
+* [Software Example](https://github.com/jphall663/GWU_rml/blob/master/lecture_5.ipynb)
 * [Assignment 5](assignment/tex/assignment_5.pdf)
 * Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 3 and Chapter 8
   * Check availablity through GWU Libraries access to O'Reilly Safari

@@ -16,6 +16,8 @@ tests/out*
 *.snm
 *.synctex.gz
 *.toc
+*.fdb_latexmk
+*.fls
 best_mgbm*
 stolen_dt*
 assignments/Python-*
