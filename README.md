@@ -156,8 +156,7 @@ uv sync
 code .
 ```
 
-For these notebooks, select the Python 3.11 environment in `.venv` as the notebook kernel (`.venv/bin/python` on macOS/Linux; `.venv\Scripts\python.exe` on Windows). See [`python_environment.md`](python_environment.md) for environment details and compatibility notes.
-
+For these notebooks, select the Python 3.11 environment in `.venv` as the notebook kernel (`.venv/bin/python` on macOS/Linux; `.venv\Scripts\python.exe` on Windows).
 ### Other course notebooks
 
 For notebooks that do not use H2O-3, create a separate NumPy 2 environment. Do not install the `course` and `legacy-h2o` groups into the same environment.
