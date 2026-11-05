@@ -16,11 +16,11 @@
   * [fairness](https://oreil.ly/Dequ9)
 
 ### Lecture 3 Additional Software Examples
-* [Increase Fairness in Your Machine Learning Project with Disparate Impact Analysis using Python and H2O](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/dia.ipynb)
-* [Testing a Constrained Model for Discrimination and Remediating Discovered Discrimination](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_3.ipynb)
-* _Machine Learning for High-risk Applications_: [Use Cases](https://oreil.ly/machine-learning-high-risk-apps-code) (Chapter 10)
+* [Increase Fairness in Your Machine Learning Project with Disparate Impact Analysis using Python and H2O](https://github.com/jphall663/interpretable_machine_learning_with_python/blob/master/dia.ipynb)
+* [Testing a Constrained Model for Discrimination and Remediating Discovered Discrimination](https://github.com/jphall663/GWU_rml/blob/master/lecture_3.ipynb)
+* _Machine Learning for High-Risk Applications_: [Use Cases](https://oreil.ly/machine-learning-high-risk-apps-code) (Chapter 10)
 
-### Lecture 3 Additional Reading
+### Lecture 3 Recommended Additional Reading
 
 * **Introduction and Background**:
   * [*50 Years of Test (Un)fairness: Lessons for Machine Learning*](https://oreil.ly/fTlda)
@@ -31,8 +31,7 @@
 * **Discrimination Testing and Remediation Techniques**:
   * [*An Empirical Comparison of Bias Reduction Methods on Real-World Problems in High-Stakes Policy Settings*](https://oreil.ly/vmxPz)
   * [*Certifying and Removing Disparate Impact*](https://arxiv.org/pdf/1412.3756.pdf)
-  * [*Data Preprocessing Techniques for Classification Without
-Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8.pdf)  
+  * [*Data Preprocessing Techniques for Classification Without Discrimination*](https://link.springer.com/content/pdf/10.1007/s10115-011-0463-8.pdf)
   * [*Decision Theory for Discrimination-aware Classification*](https://ieeexplore.ieee.org/document/6413831)
   * [*Fairness Beyond Disparate Treatment & Disparate Impact: Learning Classification Without Disparate Mistreatment*](https://arxiv.org/pdf/1610.08452.pdf)
   * [*Learning Fair Representations*](http://proceedings.mlr.press/v28/zemel13.pdf)

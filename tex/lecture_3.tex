@@ -84,7 +84,7 @@
 			\begin{itemize}\small
 				\item \textbf{Responsible practice}: ML can affect millions of people! \cite{obermeyer2019dissecting}
 				\item \textbf{Legal risk}: Non-compliance fines and litigation costs.
-				\item \textbf{Reputational risk}: Upon encountering a perceived unethical ML system, 34\% of consumers are likely to, ``stop interacting with the company.''\footnote{\scriptsize{See: Capgemeni, \textit{Why addressing ethical questions in AI will benefit organizations} (Withdrawn).}}
+				\item \textbf{Reputational risk}: Upon encountering a perceived unethical ML system, 34\% of consumers are likely to, ``stop interacting with the company.''\footnote{\scriptsize{See: Capgemini, \textit{Why addressing ethical questions in AI will benefit organizations} (Withdrawn).}}
 			\end{itemize}
 			
 			\column{0.6\linewidth}
@@ -172,9 +172,9 @@
 
 				\begin{itemize}
 					\item \textbf{Overt discrimination}: Using demographic information in models for the purpose of harming certain demographic groups. (Related to disparate treatment.)
-					\item \textbf{Misallocation of resources}: When model \textit{outputs} disproportionately favor certain demograhic groups over others. (Related to disparate impact, often discussed as a lack of ``statistical parity.'') 
-					\item \textbf{Unequal quality of service}:  When model \textit{performance} favors certain demograhic groups over others. (Related to differential validity.)
-					\item \textbf{Individual or local bias}: When a model treats similar individuals differently based on demogrpahic group membership. 
+					\item \textbf{Misallocation of resources}: When model \textit{outputs} disproportionately favor certain demographic groups over others. (Related to disparate impact, often discussed as a lack of ``statistical parity.'') 
+					\item \textbf{Unequal quality of service}:  When model \textit{performance} favors certain demographic groups over others. (Related to differential validity.)
+					\item \textbf{Individual or local bias}: When a model treats similar individuals differently based on demographic group membership. 
 				\end{itemize}
 
 		\end{frame}
@@ -233,7 +233,7 @@
 
 			\begin{itemize} \small
 				\item \textbf{Denigration}: Derogatory or offensive content.
-				\item \textbf{Erasure}: Minization or deletion of content challenging dominant social paradigms or past harms suffered by marginalized groups.
+				\item \textbf{Erasure}: Minimization or deletion of content challenging dominant social paradigms or past harms suffered by marginalized groups.
 				\item \textbf{Exnomination}: Treating notions like whiteness, maleness, or heterosexuality as central human norms.
 				\item \textbf{Misrecognition}: Mistaking a person’s identity or failing to recognize someone’s humanity.
 				\item \textbf{Stereotyping}: Assigning characteristics to all members of a group.
@@ -303,7 +303,7 @@
 				\item Incomplete or inaccurate data, e.g., under-representation of minorities. See \href{http://gendershades.org/}{Gender Shades} \cite{gender_shades}.
 				\item Accurate but differing distributions of outcomes, correlation, or local dependencies between demographic groups and past outcomes, e.g., traditional FICO credit scores.
 				\item Name or zip code acting as proxies for race.
-				\item Explicit encoding of systemtic biases into training data, e.g., criminal records.
+				\item Explicit encoding of systemic biases into training data, e.g., criminal records.
 			\end{itemize}
 
 		\end{frame}
@@ -370,7 +370,7 @@
 					\item To be conducted after bias is confirmed by standard tests.
 					\item Be aware: lack of demographic features, fairwashing \cite{fair_washing}, and scaffolding \cite{scaffolding}. 
 				\end{itemize}
-				\item \textbf{Multinomial classication}: $\chi^{2}$ or equality of opportunity tests; dimension reduction on $\hat{Y}$ matrix, apply continous outcome tests.
+				\item \textbf{Multinomial classification}: $\chi^{2}$ or equality of opportunity tests; dimension reduction on $\mathbf{\hat{Y}}$ matrix, apply continuous outcome tests.
 				\item \textbf{Unsupervised learning}: Adversarial models on cluster labels or extracted features, discrete outcome tests for cluster labels, and continuous outcome tests for extracted features.
 			\end{itemize}
 		\end{frame}
@@ -426,8 +426,8 @@
 			
 			\noindent \Large \textbf{Fix the predictions}: 
 			\begin{itemize}
-				\item Balance model predictions, e.g., reject-option classification.\cite{kamiran2012decision}\footnote{Re-balancing predictons based on protected class information may give rise to risks relating to disparate treatment, reverse discrimination, or unapproved affirmative action.}	
-				\item Correct or override predictions with model assertions or appeal mechansims.\cite{hall2019guidelines}, \cite{kangdebugging}
+				\item Balance model predictions, e.g., reject-option classification.\cite{kamiran2012decision}\footnote{Re-balancing predictions based on protected class information may give rise to risks relating to disparate treatment, reverse discrimination, or unapproved affirmative action.}	
+				\item Correct or override predictions with model assertions or appeal mechanisms.\cite{hall2019guidelines}, \cite{kangdebugging}
 			\end{itemize}
 			
 		\end{frame}

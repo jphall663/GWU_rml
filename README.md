@@ -63,9 +63,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Lecture Notes](tex/lecture_3.pdf)
 * [Software Example](https://github.com/jphall663/GWU_rml/blob/master/lecture_3.ipynb)
 * [Assignment 3](assignment/tex/assignment_3.pdf)
-  * [Model evaluation notebook](https://github.com/jphall663/GWU_rml/blob/master/assignment/eval.ipynb)
-  * [Full evaluations results](assignment/model_eval_2025_04_14_10_28_13.csv)
-* Reading [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 4 and Chapter 10
+* Recommended reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 4 and Chapter 10
   * Check availablity through GWU Libraries access to O'Reilly Safari
 * [Lecture 3 Additional Material](additional_material/am3.md)
 
