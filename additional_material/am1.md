@@ -24,7 +24,7 @@
 
 ### Lecture 1 Additional Software Examples
 
-* [Building from Penalized GLM to Monotonic GBM](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/glm_mgbm_gbm.ipynb?flush_cache=true)
+* [Building from Penalized GLM to Monotonic GBM](https://github.com/jphall663/interpretable_machine_learning_with_python/blob/master/glm_mgbm_gbm.ipynb)
 * _Machine Learning for High-Risk Applications_: [Use Cases](https://oreil.ly/machine-learning-high-risk-apps-code) (Chapter 6)
 
 ### Lecture 1 Recommended Additional Reading
