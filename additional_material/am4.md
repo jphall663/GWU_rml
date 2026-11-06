@@ -1,18 +1,18 @@
 ### Lecture 4 Additional Software Tools
 
-* [adversarial-robustness-toolbox](https://oreil.ly/5eXYi)
-* [counterfit](https://oreil.ly/4WM4P)
-* [cleverhans](https://github.com/tensorflow/cleverhans)
+* [Adversarial Robustness Toolbox](https://github.com/Trusted-AI/adversarial-robustness-toolbox)
+* [Counterfit](https://github.com/Azure/counterfit)
+* [CleverHans](https://github.com/cleverhans-lab/cleverhans)
 * [foolbox](https://github.com/bethgelab/foolbox)
-* [ml_privacy_meter](https://oreil.ly/HuHxf)
-* [NIST de-identification tools](https://oreil.ly/M8xhr)
+* [Privacy Meter](https://github.com/privacytrustlab/ml_privacy_meter)
+* [NIST SP 800-188: De-Identifying Government Datasets](https://csrc.nist.gov/pubs/sp/800/188/final)
 * [robustness](https://github.com/MadryLab/robustness)
-* [tensorflow/privacy](https://oreil.ly/hkurv)
+* [TensorFlow Privacy](https://github.com/tensorflow/privacy)
 
 #### Lecture 4 Additional Software Examples
 
-* [Attacking a Machine Learning Model](https://nbviewer.jupyter.org/github/jphall663/GWU_rml/blob/master/lecture_4.ipynb)
-* _Machine Learning for High-risk Applications_: [Use Cases](https://oreil.ly/machine-learning-high-risk-apps-code) (Chapter 11)
+* [Attacking a Machine Learning Model](https://github.com/jphall663/GWU_rml/blob/master/lecture_4.ipynb)
+* _Machine Learning for High-Risk Applications_: [Chapter 11 code examples](https://github.com/ml-for-high-risk-apps-book/Machine-Learning-for-High-Risk-Applications-Book) (red-teaming XGBoost)
 
 ### Lecture 4 Additional Reading
 
@@ -20,9 +20,9 @@
 
   * [*A Marauder’s Map of Security and Privacy in Machine Learning*](https://arxiv.org/pdf/1811.01134.pdf)
   * [BIML Interactive Machine Learning Risk Framework](https://berryvilleiml.com/interactive/)
-  * [FTC's "Start with Security" guidelines](https://oreil.ly/jmeja)
+  * [FTC's "Start with Security" guidelines](https://www.ftc.gov/business-guidance/resources/start-security-guide-business)
   * [Mitre Adversarial Threat Matrix](https://github.com/mitre/advmlthreatmatrix)
-  * [NIST Computer Security Resource Center](https://oreil.ly/pncXb)
+  * [NIST Computer Security Resource Center](https://csrc.nist.gov)
   * [*The Security of Machine Learning*](https://people.eecs.berkeley.edu/~adj/publications/paper-files/SecML-MLJ2010.pdf)
   * [*Proposals for model vulnerability and security*](https://www.oreilly.com/content/proposals-for-model-vulnerability-and-security/)
 

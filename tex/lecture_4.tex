@@ -167,7 +167,7 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 		\frametitle{Security Basics}
 		
 		\begin{itemize}
-			\item \textbf{Access Control}: The less people that access sensitive resources the better.
+			\item \textbf{Access Control}: The fewer people that access sensitive resources the better.
 			\item \textbf{Bug Bounties}: When organizations offer monetary rewards to the public for finding vulnerabilities.
 			\item \textbf{Incident Response Plan}: Have incident response plans in place for mission-critical IT infrastructure to quickly address any failures or attacks.
 			\item \textbf{Routine Backups}: Backup important files on a frequent and routine basis to protect against both accidental and malicious data loss.	
@@ -186,7 +186,7 @@ Hackers, malicious or extorted insiders, and their criminal associates or organi
 			\item \textbf{Physical Media}: Avoid the use of physical storage media for sensitive projects if at all possible. 
 			\item \textbf{Red-teaming}: Systems should be tested by experts under adversarial conditions.
 			\item \textbf{Third Parties}: Building an AI system typically requires code, data, and personnel from outside your organization. Sadly, each new entrant to the build out increases your risk. 
-			\item \textbf{Version and Environment Control} To ensure basic security, you'll need to know which changes were made to what files, when and by whom.
+			\item \textbf{Version and Environment Control}: To ensure basic security, you'll need to know which changes were made to what files, when and by whom.
 		\end{itemize}
 		
 	\end{frame}
@@ -552,8 +552,8 @@ Bad actors learn ...
 				\begin{itemize}
 					\item \textbf{Black-box models}: Over time a motivated, malicious actor could learn more about your own black-box model than you know and use this knowledge imbalance to attack your model \cite{papernot2018marauder}.
 					\item \textbf{Black-hat eXplainable AI (XAI)}:  While XAI can enable human learning from machine learning, regulatory compliance, and appeal of automated decisions, it can also make ML hacks easier and more damaging \cite{shokri2019privacy}.
-					\item \textbf{Standard attacks}: Like any other public-facing IT service, your model could be exposed to well-known risks such as DDOS or man-in-the-middle attacks.  
-					\item \textbf{Distributed systems and models}: Data and code spread over many machines provides a larger, more complex attack surface for a malicious actor.
+					\item \textbf{Standard attacks}: Like any other public-facing IT service, your model could be exposed to well-known risks such as DDoS or man-in-the-middle attacks.  
+					\item \textbf{Distributed systems and models}: Data and code spread over many machines provide a larger, more complex attack surface for a malicious actor.
 					\item \textbf{Package dependencies and malware}: Any package your modeling pipeline is dependent on could potentially be hacked to conceal an attack payload.
 				\end{itemize}
 				\normalsize
@@ -573,7 +573,7 @@ Bad actors learn ...
 					\item \textbf{Authenticated access and prediction throttling}: for prediction APIs and other model endpoints.
 					\item \textbf{Benchmark models}: Compare complex model predictions to less complex (and hopefully less hackable) model predictions. For traditional, low signal-to-noise data mining problems, predictions should not be too different. If they are, investigate them.
 					\item \textbf{PETs: Encryption, differential privacy, or federated learning}: Properly implemented, these technologies can thwart many types of attacks.
-					\item \textbf{Interpretable, fair, or private models}: In addition to models like LFR and PATE, also checkout \href{https://github.com/h2oai/h2o-3/blob/master/h2o-py/demos/H2O_tutorial_gbm_monotonicity.ipynb}{monotonic GBMs}, \href{https://christophm.github.io/interpretable-ml-book/rulefit.html}{Rulefit}, \href{https://github.com/IBM/AIF360}{AIF360}, and the \href{https://users.cs.duke.edu/~cynthia/code.html}{Rudin group} at Duke.
+					\item \textbf{Interpretable, fair, or private models}: In addition to models like LFR and PATE, also check out \href{https://github.com/h2oai/h2o-3/blob/master/h2o-py/demos/H2O_tutorial_gbm_monotonicity.ipynb}{monotonic GBMs}, \href{https://christophm.github.io/interpretable-ml-book/rulefit.html}{Rulefit}, \href{https://github.com/IBM/AIF360}{AIF360}, and the \href{https://users.cs.duke.edu/~cynthia/code.html}{Rudin group} at Duke.
 					\item \textbf{Security best practices}: Bug bounties, incident response plans, red-teaming, etc. 
 				\end{itemize}
 			\end{frame}
