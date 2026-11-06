@@ -79,7 +79,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Lecture Notes](tex/lecture_4.pdf)
 * [Software Example](https://github.com/jphall663/GWU_rml/blob/master/lecture_4.ipynb)
 * [Assignment 4](assignment/tex/assignment_4.pdf)
-* Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 5 and Chapter 11
+* Recommended reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 5 and Chapter 11
 * [Lecture 4 Additional Material](additional_material/am4.md)
 
 ***   
@@ -156,7 +156,8 @@ uv sync
 code .
 ```
 
-For these notebooks, select the Python 3.11 environment in `.venv` as the notebook kernel (`.venv/bin/python` on macOS/Linux; `.venv\Scripts\python.exe` on Windows).
+For these notebooks, select the Python 3.11 environment in `.venv` as the notebook kernel (`.venv/bin/python` on macOS/Linux; `.venv\Scripts\python.exe` on Windows). 
+
 ### Other course notebooks
 
 For notebooks that do not use H2O-3, create a separate NumPy 2 environment. Do not install the `course` and `legacy-h2o` groups into the same environment.
