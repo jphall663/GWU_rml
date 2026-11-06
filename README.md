@@ -94,7 +94,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 * [Lecture Notes](tex/lecture_5.pdf)
 * [Software Example](https://github.com/jphall663/GWU_rml/blob/master/lecture_5.ipynb)
 * [Assignment 5](assignment/tex/assignment_5.pdf)
-* Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 3 and Chapter 8
+* Recommended reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 3 and Chapter 8
   * Check availablity through GWU Libraries access to O'Reilly Safari
 * [Lecture 5 Additional Material](additional_material/am5.md)
 
