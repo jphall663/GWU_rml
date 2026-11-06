@@ -24,7 +24,6 @@
   * [h2o-3](https://oreil.ly/GtGvK)
 
 ### Lecture 2 Additional Software Examples
-  * [Global and Local Explanations of a Constrained Model](https://github.com/jphall663/GWU_rml/blob/master/lecture_2.ipynb)
   * [Building from Penalized GLM to Monotonic GBM](https://github.com/jphall663/interpretable_machine_learning_with_python/blob/master/glm_mgbm_gbm.ipynb)
   * [Monotonic XGBoost models, partial dependence, individual conditional expectation plots, and Shapley explanations](https://github.com/jphall663/interpretable_machine_learning_with_python/blob/master/xgboost_pdp_ice.ipynb)
   * [Decision tree surrogates, LOCO, and ensembles of explanations](https://github.com/jphall663/interpretable_machine_learning_with_python/blob/master/dt_surrogate_loco.ipynb)
