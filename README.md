@@ -7,7 +7,7 @@ Materials for a technical, nuts-and-bolts course about increasing transparency, 
 * Lecture 3: Bias Testing and Remediation
 * Lecture 4: Machine Learning Security
 * Lecture 5: Machine Learning Model Debugging
-* Lecture 6: Foundation Models for Structured Data
+* Lecture 6: Foundation Models for Tabular Data
 * Lecture 7: Responsible Machine Learning Best Practices
 
 Corrections or suggestions? Please file a [GitHub issue](https://github.com/jphall663/GWU_rml/issues/new).
@@ -98,15 +98,22 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
   * Check availablity through GWU Libraries access to O'Reilly Safari
 * [Lecture 5 Additional Material](additional_material/am5.md)
 
-***   
-
-## Lecture 6: Foundation Models for Structured Data
-
-Lecture 6 is a placeholder for the replacement material.
-
-* [Placeholder lecture notes](tex/lecture_6.pdf)
-
 ***
+
+## Lecture 6: Foundation Models for Tabular Data
+
+![](img/lecture_6.png)
+<sub><sup>**Source:** </sup></sub>
+
+### Lecture 6 Class Materials
+
+* [Lecture Notes](tex/lecture_6.pdf)
+* [Software Example](https://github.com/jphall663/GWU_rml/blob/master/lecture_6.ipynb)
+* [Assignment 5](assignment/tex/assignment_6.pdf)
+* Recommended reading: 
+* [Lecture 6 Additional Material](additional_material/am6.md)
+
+***   
 
 ## Lecture 7: Responsible Machine Learning Best Practices
 
@@ -117,10 +124,11 @@ Lecture 6 is a placeholder for the replacement material.
 ### Lecture 7 Class Materials
 
 * [Lecture Notes](tex/lecture_7.pdf)
-* [Assignment 6 (Final Assessment)](assignment/tex/assignment_6.pdf)
-* Reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 1 and Chapter 12
+* [Assignment 7](assignment/tex/assignment_7.pdf)
+* Recommended reading: [_Machine Learning for High-Risk Applications_](https://www.oreilly.com/library/view/machine-learning-for/9781098102425/), Chapter 1 and Chapter 12
 * [Lecture 7 Additional Material](additional_material/am7.md)
 
+***
 
 ## Using the Course Software
 

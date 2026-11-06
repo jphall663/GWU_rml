@@ -1,10 +1,11 @@
-### Lecture 7 Additional Software Tools and Examples
+### Lecture 7 Additional Tools and Resources
 
-* [Awesome Machine Learning Interpretability](https://github.com/jphall663/awesome-machine-learning-interpretability)
+* [Hall Research.ai Library](https://hallresearch-ai.github.io/)
 
-### Lecture 7 Additional Reading
+### Lecture 7 Recommended Additional Reading
 
 * **Introduction and Background**:
   * [*A Responsible Machine Learning Workflow with Focus on Interpretable Models, Post-hoc Explanation, and Discrimination Testing*](https://www.mdpi.com/2078-2489/11/3/137)
   * [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
-  * [Interagency Guidance on Model Risk Management (SR 11-7)](https://www.federalreserve.gov/supervisionreg/srletters/sr1107a1.pdf)
+  * [Guidance on Model Risk Management (SR 11-7)](https://web.archive.org/web/*/https://www.federalreserve.gov/supervisionreg/srletters/sr1107a1.pdf)
+    * [(Poorly) Revised Guidance on Model Risk Management (SR 26-2)](https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm)
