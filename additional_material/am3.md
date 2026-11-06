@@ -17,7 +17,6 @@
 
 ### Lecture 3 Additional Software Examples
 * [Increase Fairness in Your Machine Learning Project with Disparate Impact Analysis using Python and H2O](https://github.com/jphall663/interpretable_machine_learning_with_python/blob/master/dia.ipynb)
-* [Testing a Constrained Model for Discrimination and Remediating Discovered Discrimination](https://github.com/jphall663/GWU_rml/blob/master/lecture_3.ipynb)
 * _Machine Learning for High-Risk Applications_: [Use Cases](https://oreil.ly/machine-learning-high-risk-apps-code) (Chapter 10)
 
 ### Lecture 3 Recommended Additional Reading
