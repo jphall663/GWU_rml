@@ -11,7 +11,6 @@
 
 #### Lecture 4 Additional Software Examples
 
-* [Attacking a Machine Learning Model](https://github.com/jphall663/GWU_rml/blob/master/lecture_4.ipynb)
 * _Machine Learning for High-Risk Applications_: [Chapter 11 code examples](https://github.com/ml-for-high-risk-apps-book/Machine-Learning-for-High-Risk-Applications-Book) (red-teaming XGBoost)
 
 ### Lecture 4 Additional Reading
