@@ -26,7 +26,7 @@
   * [AI Incident Database](https://incidentdatabase.ai/)
   * [Debugging Machine Learning Models](https://debug-ml-iclr2019.github.io/)
   * [*Identifying and Eliminating Bugs in Learned Predictive Models*](https://deepmind.google/blog/identifying-and-eliminating-bugs-in-learned-predictive-models/)
-  * [*Real-World Strategies for Model Debugging*](https://towardsdatascience.com/strategies-for-model-debugging-aa822f1097ce)
+  * [*Real-World Strategies for Model Debugging*](https://medium.com/data-science/strategies-for-model-debugging-aa822f1097ce)
   * [*Safe and Reliable Machine Learning*](https://arxiv.org/abs/1904.07204)
   * [*Why you should care about debugging machine learning models*](https://www.oreilly.com/radar/why-you-should-care-about-debugging-machine-learning-models/)
    
