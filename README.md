@@ -124,13 +124,7 @@ Lecture 6 is a placeholder for the replacement material.
 
 ## Using the Course Software
 
-Most lecture software examples use H2O-3. Start with the notebooks for Lectures 1–5:
-
-* [Lecture 1: Explainable Machine Learning Models](lecture_1.ipynb)
-* [Lecture 2: Post-hoc Explanation](lecture_2.ipynb)
-* [Lecture 3: Bias Testing and Remediation](lecture_3.ipynb)
-* [Lecture 4: Machine Learning Security](lecture_4.ipynb)
-* [Lecture 5: Machine Learning Model Debugging](lecture_5.ipynb)
+Most lecture software examples use H2O-3. 
 
 Run notebooks from the repository root so they can find course data and the `util` package. Install [uv](https://docs.astral.sh/uv/getting-started/installation/), [Visual Studio Code](https://code.visualstudio.com/), and the Python and Jupyter extensions. The course environment uses Python 3.11 and dependencies recorded in [`pyproject.toml`](pyproject.toml) and [`uv.lock`](uv.lock).
 
