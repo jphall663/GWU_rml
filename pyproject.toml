@@ -28,6 +28,22 @@ course = [
     "xgboost>=2,<4",
     "xlrd>=2,<3",
 ]
+tabular-neural = [
+    "ipykernel>=6.29,<7",
+    "jupyterlab>=4.2,<5",
+    "matplotlib>=3.8,<4",
+    "nampy @ git+https://github.com/AnFreTh/NAMpy.git@57b875e791f374bbe5e7c0859a8b022c5e5befd8",
+    "notebook>=7.2,<8",
+    "numpy>=1.26,<2",
+    "pandas>=2.2,<3",
+    "pyarrow>=15,<19",
+    "scikit-learn>=1.4,<2",
+    "scipy>=1.11,<2",
+    "structured-data-models>=0.2,<0.3",
+    "tensorflow<=2.15.1",
+    "tensorflow-probability<=0.23",
+    "xlrd>=2,<3",
+]
 legacy-h2o = [
     "h2o>=3.46,<3.47",
     "interpret>=0.6,<0.8",
@@ -59,5 +75,10 @@ include = ["util*"]
 
 [tool.uv]
 default-groups = ["legacy-h2o", "notebook-execution"]
-conflicts = [[{ group = "course" }, { group = "legacy-h2o" }]]
+conflicts = [
+    [{ group = "course" }, { group = "legacy-h2o" }],
+    [{ group = "course" }, { group = "tabular-neural" }],
+    [{ group = "tabular-neural" }, { group = "legacy-h2o" }],
+    [{ extra = "neural" }, { group = "tabular-neural" }],
+]
 

@@ -102,8 +102,8 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 ## Lecture 6: Foundation Models for Tabular Data
 
-![](img/lecture_6.png)
-<sub><sup>**Source:** </sup></sub>
+![Calibration plot for interpretable neural network models.](img/lecture_6.png)
+<sub><sup>**Source: [Lecture 6 notebook](lecture_6.ipynb) ** </sup></sub>
 
 ### Lecture 6 Class Materials
 
@@ -180,6 +180,27 @@ code .
 ```
 
 Select the Python 3.11 environment in `.venv-numpy2` as the notebook kernel (`.venv-numpy2/bin/python` on macOS/Linux; `.venv-numpy2\Scripts\python.exe` on Windows). On macOS, install the XGBoost OpenMP runtime once with `brew install libomp`. Linux distributions generally provide the OpenMP runtime through their system packages. Windows users need the Microsoft Visual C++ Redistributable for XGBoost examples.
+
+### Foundation-model neural notebook
+
+Lecture 6 uses NVIDIA Structured Data Models and NAMpy with PyTorch. Set up a separate Python 3.11 environment; do not install the `legacy-h2o` group into it.
+
+On macOS and Linux:
+
+```sh
+UV_PROJECT_ENVIRONMENT=.venv-tabular-neural uv sync --group tabular-neural --group notebook-execution --no-default-groups
+.venv-tabular-neural/bin/python -m ipykernel install --user --name gwu-rml-tabular-neural --display-name "Python (GWU RML Tabular Neural)"
+```
+
+On Windows PowerShell:
+
+```powershell
+$env:UV_PROJECT_ENVIRONMENT = ".venv-tabular-neural"
+uv sync --group tabular-neural --group notebook-execution --no-default-groups
+.venv-tabular-neural\Scripts\python.exe -m ipykernel install --user --name gwu-rml-tabular-neural --display-name "Python (GWU RML Tabular Neural)"
+```
+
+Select the `Python (GWU RML Tabular Neural)` kernel in VS Code. Kumo Tabular downloads its pretrained weights the first time it runs, so first use requires an internet connection. Kumo uses CUDA or Apple MPS when PyTorch reports it available, and otherwise falls back to CPU. NAMpy uses the devices exposed by the installed TensorFlow build; in the tested environment this was CPU.
 
 To use JupyterLab in the default H2O-3 environment, run `uv run jupyter lab` from the repository root.
 
