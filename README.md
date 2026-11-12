@@ -103,6 +103,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 ## Lecture 6: Foundation Models for Tabular Data
 
 ![Calibration plot for interpretable neural network models.](img/lecture_6.png)
+
 <sub><sup>**Source:** [Lecture 6 notebook](lecture_6.ipynb)</sup></sub>
 
 ### Lecture 6 Class Materials
