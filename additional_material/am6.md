@@ -23,9 +23,8 @@
   * Müller et al. (2022), [*Transformers Can Do Bayesian Inference*](https://openreview.net/forum?id=KSugKcbNf9).
 
 * **Tabular Foundation Models**:
-  * Hollmann et al. (2023), [*TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second*](https://arxiv.org/abs/2207.01848).
   * Hollmann et al. (2025), [*Accurate predictions on small data with a tabular foundation model*](https://www.nature.com/articles/s41586-024-08328-6).
   * Qu et al. (2025), [*TabICL: A Tabular Foundation Model for In-Context Learning on Large Data*](https://proceedings.mlr.press/v267/qu25d.html).
   * Ma et al. (2025), [*TabDPT: Scaling Tabular Foundation Models on Real Data*](https://proceedings.neurips.cc/paper_files/paper/2025/file/fc0e3f908a2116ba529ad0a1530a3675-Paper-Conference.pdf).
-  * NVIDIA (2026), [*NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction*](https://huggingface.co/blog/nvidia/kumo-tabular) — technical overview, accompanied by [model documentation](https://docs.nvidia.com/sdgm/structured-data-models/models/kumo-tabular).
+  * NVIDIA (2026), [*NVIDIA Kumo Tabular model documentation*](https://docs.nvidia.com/sdgm/structured-data-models/models/kumo-tabular).
 
