@@ -110,7 +110,7 @@ Corrections or suggestions? Please file a [GitHub issue](https://github.com/jpha
 
 * [Lecture Notes](tex/lecture_6.pdf)
 * [Software Example](https://github.com/jphall663/GWU_rml/blob/master/lecture_6.ipynb)
-* [Assignment 5](assignment/tex/assignment_5.pdf)
+* [Assignment 6](assignment/tex/assignment_6.pdf)
 * Recommended reading: 
     * [*TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second*](https://arxiv.org/abs/2207.01848).
     * [*NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction*](https://huggingface.co/blog/nvidia/kumo-tabular)

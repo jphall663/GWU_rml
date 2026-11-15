@@ -1,0 +1,62 @@
+% Copyright (c) 2021-2027 Patrick Hall
+
+\documentclass[fleqn]{article}
+\renewcommand\refname{}
+\title{Responsible Machine Learning\\\Large{Assignment 6}\\\Large{10 points}}
+
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{MnSymbol}
+\usepackage{enumerate}
+\usepackage{setspace}
+\usepackage[colorlinks, breaklinks=true]{hyperref} 
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{csvsimple}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{verbatim}
+\usepackage{mdframed}
+\usepackage{changepage}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\begin{document}
+
+\maketitle
+
+\noindent In Assignment 6, work alone or with a group to develop and explain a tabular foundation model (TFM) for the HMDA prediction task from Assignment 1. You may use AI tools, but you are responsible for validating and understanding your results.
+
+\setlength{\parskip}{3pt}
+
+\section{Develop a Tabular Foundation Model.}
+
+Use Kumo, TabPFN, TabICL, or another appropriate pretrained TFM with the target and inputs from Assignment 1. Adapt the \href{https://github.com/jphall663/GWU_rml/blob/master/lecture_6.ipynb}{Lecture 6 notebook} or use software from the \href{https://github.com/jphall663/GWU_rml/blob/master/additional_material/am6.md}{additional materials}. Document the model, package version, context selection, and settings.
+
+Partition labeled data into training and validation sets. Draw context and any explanation-reference rows from training data; use validation data to select settings or fit a combiner or calibrator. Fit preprocessing within the appropriate fitting partition, including within cross-validation folds. Keep test data out of fitting, context, and selection; score it after choices are fixed. Report partition sizes and roles.\\
+
+\noindent Correct TFM use, including data partitioning, is worth 3 points.
+
+\section{Explain Your Model.}
+
+Explain the model whose predictions you submit. Construct an additive model from frozen component-wise TFM predictions, following the lecture example, or use a technically sound explanation method from the additional-materials packages. Plot global importance or shape functions and local contributions for representative validation observations. Discuss domain plausibility and limitations. If using a surrogate, assess its fidelity to the submitted model.\\
+
+\noindent Explainability is worth 3 points.
+
+\section{Submit Code and Results.}
+
+Submit your notebook and test predictions to the class evaluation server at a TBD URL. Keep your work in a public GitHub repository, or a private repository shared with the instructor (\texttt{jphall663}). Include reproducible code, partition details, validation results, explanation plots, and interpretation.
+
+Submit a CSV with one \texttt{phat} probability column in the original test-row order, using Assignment 1's \texttt{<personal\_or\_group\_identifier>\_<model\_type>.csv} naming convention. The server ranks predictions using the \href{https://github.com/jphall663/GWU_rml/blob/master/assignment/eval.ipynb}{model evaluation notebook}. Model ranking is worth 4 points.\\
+
+\noindent \textbf{Your deliverables are due: TBD.}
+
+\end{document}
+
