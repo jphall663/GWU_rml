@@ -11,7 +11,6 @@
 
 ### Lecture 6 Additional Software Examples
 
-* [Lecture 6: Neural Additive Models and Tabular Foundation Models](../lecture_6.ipynb) — frozen single-feature Kumo predictions combined by penalized logistic regression, compared with NAMpy; includes data partitioning, shape plots, and local contributions. See the [course environment instructions](../README.md#foundation-model-neural-notebook) for setup.
 * [NVIDIA Structured Data Models examples](https://github.com/NVIDIA/structured-data-models/tree/main/examples) — official structured-data modeling examples.
 * [TabPFN demonstration notebook](https://github.com/PriorLabs/TabPFN/blob/main/examples/notebooks/TabPFN_Demo_Local.ipynb) — installation, classification, and regression.
 * [TabICL basic usage](https://github.com/soda-inria/tabicl#basic-usage) — classification, regression, and cached inference.
@@ -30,6 +29,3 @@
   * Ma et al. (2025), [*TabDPT: Scaling Tabular Foundation Models on Real Data*](https://proceedings.neurips.cc/paper_files/paper/2025/file/fc0e3f908a2116ba529ad0a1530a3675-Paper-Conference.pdf).
   * NVIDIA (2026), [*NVIDIA Kumo Tabular Sets a New Accuracy-Efficiency Frontier for Tabular Prediction*](https://huggingface.co/blog/nvidia/kumo-tabular) — technical overview, accompanied by [model documentation](https://docs.nvidia.com/sdgm/structured-data-models/models/kumo-tabular).
 
-* **Interpretable Additive Models**:
-  * Agarwal et al. (2021), [*Neural Additive Models: Interpretable Machine Learning with Neural Nets*](https://proceedings.neurips.cc/paper/2021/hash/251bd0442dfcc53b5a761e050f8022b8-Abstract.html).
-  * Lengerich et al. (2020), [*Purifying Interaction Effects with the Functional ANOVA: An Efficient Algorithm for Recovering Identifiable Additive Models*](https://proceedings.mlr.press/v108/lengerich20a.html).
