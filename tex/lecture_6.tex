@@ -1,17 +1,688 @@
-\documentclass{beamer}
-
-\title{Foundation Models for Structured Data}
-\subtitle{Lecture 6}
-\date{}
-
+% Copyright (c) 2026-2027 Patrick Hall (jphall@gwu.edu). CC BY-NC-SA 4.0.
+% Compile from tex/: latexmk -pdf lecture_6.tex (uses BibTeX).
+% Paste the bonus references.bib contents into tex/lecture_6.bib.
+\documentclass[11pt,aspectratio=169,hyperref={colorlinks}]{beamer}
+\usetheme{Singapore}
+\usecolortheme[snowy,cautious]{owl}
+% Colors used explicitly by the pasted bonus diagrams and source notes.
+\definecolor{brand}{RGB}{45,110,191}
+\definecolor{hrgray}{RGB}{100,100,100}
+\definecolor{sourcegray}{RGB}{90,90,90}
+\definecolor{rowpurple}{RGB}{92,62,150}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[american]{babel}
+\usepackage{microtype,graphicx,booktabs,tabularx,tikz,amsmath}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=[rgb]{1,0,1},linkcolor=[rgb]{1,0,1}}
+\definecolor{magenta}{RGB}{255,0,255}
+\definecolor{OwlGreen}{RGB}{75,0,130}
+\usepackage[natbib=true,backend=bibtex,style=authoryear,useprefix=true,maxcitenames=2,maxbibnames=10,doi=false,isbn=false,url=true]{biblatex}
+\addbibresource{lecture_6.bib}
+\DeclareBibliographyCategory{referencesone}
+\DeclareBibliographyCategory{referencestwo}
+\DeclareBibliographyCategory{referencesthree}
+\addtocategory{referencesone}{Muller2022TransformersBayesianInference,Hollmann2023TabPFN,Qu2025TabICL,Ma2025TabDPT,Vaswani2017AttentionAllYou}
+\addtocategory{referencestwo}{Hollmann2025TabPFN,Lengerich2020PurifyingInteractions,NvidiaKumoDocs,NvidiaKumoBlog}
+\addtocategory{referencesthree}{Agarwal2021NeuralAdditiveModels,Caruana2015IntelligibleModels,Erickson2025TabarenaLivingBenchmark}
+\renewcommand*{\bibfont}{\scriptsize}
+\usetikzlibrary{positioning,arrows.meta,fit,calc,shapes.geometric,backgrounds}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{bibliography item}{}
+\setbeamertemplate{frametitle continuation}{}
+\setbeamerfont{caption}{size=\footnotesize}
+\setcounter{tocdepth}{1}
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\setbeamertemplate{footline}{%
+    \raisebox{5pt}{\makebox{\hfill\makebox[20pt]{\color{gray}
+          \scriptsize\insertframenumber}}}\hspace*{5pt}}
+\title{Responsible Machine Learning\footnote{\tiny{\textcopyright\ 2020--2027 Patrick Hall (jphall@gwu.edu). Some rights reserved. Text and copy are licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)}}}
+\subtitle{Lecture 6: Tabular Foundation Models}
+\author{Patrick Hall}
+\institute{The George Washington University}
+\date{\today}
+\newcommand{\slidesource}[1]{\par\vfill\noindent\parbox{\linewidth}{\tiny\color{sourcegray}\raggedright\sloppy Source: #1.}}
+\newcommand{\visualdescription}[1]{\par\vspace{.2em}\noindent\parbox{\linewidth}{\centering\tiny\color{sourcegray}#1}}
+\newcommand{\R}{\mathbb{R}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \begin{document}
+\maketitle
 
-\begin{frame}
-    \titlepage
+\section{A new prediction workflow}
+\begin{frame}{A pretrained model can learn a new table in context}
+\small
+\begin{columns}[c]
+\column{.48\textwidth}
+Traditional supervised learning fits task-specific parameters from labeled rows. A tabular foundation model (TFM) first learns across many tables, then uses a new table's labeled rows as context for predictions.
+\begin{block}{\textbf{At inference:}}
+Supply labeled context and unlabeled query rows. The pretrained weights stay frozen; the model conditions its prediction on the context.
+\end{block}
+Fine-tuning, task-specific, and combination models are also possible, but are separate procedures.
+\column{.48\textwidth}\centering
+\begin{tikzpicture}[>=Latex,node distance=7mm,every node/.style={font=\scriptsize,align=center},b/.style={draw,rounded corners,text width=48mm,minimum height=9mm}]
+\node[b,fill=blue!8](pre){many training tasks $\longrightarrow$ pretrained weights $\theta$};
+\node[b,fill=green!10,below=of pre](ctx){new task: labeled context $D_C=(X_C,y_C)$};
+\node[b,fill=orange!12,below=of ctx](q){query features $X_Q$};
+\node[b,fill=purple!10,below=of q](pred){prediction $\hat y_Q=g_\theta(D_C,X_Q)$};
+\draw[->,thick](pre)--(ctx);\draw[->,thick](ctx)--(q);\draw[->,thick](q)--(pred);
+\end{tikzpicture}
+\visualdescription{Pretraining sets weights; labeled examples in the new task condition a frozen model at prediction time.}
+\end{columns}
+\slidesource{Müller et al. (2022), \href{https://openreview.net/forum?id=KSugKcbNf9}{\emph{Transformers Can Do Bayesian Inference};} Qu et al. (2025), \href{https://proceedings.mlr.press/v267/qu25d.html}{\emph{TabICL}}}
 \end{frame}
 
-\begin{frame}{Placeholder}
-    Lecture content forthcoming.
+\begin{frame}{Tabular foundation models use different transfer strategies}
+\small
+\begin{tabularx}{\linewidth}{@{}p{.21\linewidth}p{.31\linewidth}Y@{}}
+\toprule
+Strategy & What pretraining learns & Example \tabularnewline
+\midrule
+Synthetic-table pretraining & Predictive rules across generated tables & TabPFN; TabICL; Kumo Tabular \tabularnewline[.45em]
+Real-table pretraining & Representations and patterns across observed tables & TabDPT and other real-data approaches \tabularnewline[.45em]
+Hybrid or continued pretraining & Combine synthetic tasks with real-table signals & Several evolving systems \tabularnewline
+\bottomrule
+\end{tabularx}
+\medskip
+\begin{block}{\textbf{Distinct tasks:}}
+\textbf{Pretraining} updates shared model weights across tasks. \textbf{In-context learning} uses labeled examples at inference without weight updates. \textbf{Fine-tuning} updates weights for a downstream task.
+\end{block}
+\slidesource{Hollmann et al. (2023), \href{https://arxiv.org/abs/2207.01848}{TabPFN}; Qu et al. (2025), \href{https://proceedings.mlr.press/v267/qu25d.html}{TabICL}; Ma et al. (2025), \href{https://proceedings.neurips.cc/paper_files/paper/2025/file/fc0e3f908a2116ba529ad0a1530a3675-Paper-Conference.pdf}{TabDPT}}
+\end{frame}
+
+\begin{frame}{Synthetic pretraining samples many plausible table-generating worlds}
+\small
+\begin{columns}[c]
+\column{.47\textwidth}
+Sample a data-generating process, draw a table, split its rows, and train the model to predict held-out targets from labeled examples. Kumo reports about 35M, 71M, and 137M generated tables for its small, medium, and large models.
+\begin{itemize}\itemsep.4em
+\item Vary functions, noise, feature dependencies, scales, and task type.
+\item Diverse tasks teach reusable prediction procedures.
+\item Synthetic data is common, but not universal across TFMs.
+\end{itemize}
+\column{.51\textwidth}\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[>=Latex,every node/.style={font=\scriptsize,align=center},
+  p/.style={draw,rounded corners,text width=19mm,minimum height=12mm},
+  f/.style={draw,rounded corners,text width=25mm,minimum height=7mm},
+  t/.style={draw,rounded corners,text width=21mm,minimum height=12mm}]
+\node[p,fill=blue!8](prior) at (0,0){sample a generative process $P$};
+\node[f,fill=green!9](f1) at (3,1.25){$y=\sin(x_1)+\epsilon$};
+\node[f,fill=green!9](f2) at (3,.4){$y=x_1x_2+\epsilon$};
+\node[f,fill=green!9](f3) at (3,-.4){$y=I(x_1>x_2)+\epsilon$};
+\node[f,fill=green!9](f4) at (3,-1.25){$\cdots$ other functions};
+\node[t,fill=orange!14](tasks) at (6.3,0){sampled tables and prediction tasks};
+\coordinate (split) at (1.35,0);
+\coordinate (join) at (4.7,0);
+\draw (prior.east)--(split);
+\foreach \f in {f1,f2,f3,f4}{\draw[->](split)|-(\f.west);\draw(\f.east)-|(join);}
+\draw[->](join)--(tasks.west);
+\end{tikzpicture}%
+}
+\visualdescription{A sampled generative process branches into example functions and many others, producing tables for context-to-query training tasks.}
+\end{columns}
+\slidesource{Hollmann et al. (2025), \href{https://www.nature.com/articles/s41586-024-08328-6}{\emph{Accurate predictions on small data with a tabular foundation model}}; Qu et al. (2025), \href{https://proceedings.mlr.press/v267/qu25d.html}{TabICL}; NVIDIA (2026), \href{https://huggingface.co/blog/nvidia/kumo-tabular}{Kumo pretraining data}}
+\end{frame}
+
+\begin{frame}{Context rows and query rows play different roles}
+\small
+\begin{columns}[c]
+\column{.49\textwidth}
+\begin{block}{Separate data roles}
+\begin{itemize}\itemsep.25em
+\item Context: condition the prediction.
+\item Validation: select context size, preprocessing, or ensemble.
+\item Calibration/combination data: fit a separate mapping, or cross-fit within validation.
+\item Test: final, untouched evaluation.
+\end{itemize}
+\end{block}
+\column{.49\textwidth}\centering
+\begin{tikzpicture}[every node/.style={font=\scriptsize,align=center},cell/.style={draw,minimum width=14mm,minimum height=7mm}]
+\node[cell,fill=gray!12](h){row};\node[cell,right=0pt of h](a){income};\node[cell,right=0pt of a](b){balance};\node[cell,right=0pt of b](c){default};
+\node[cell,below=0pt of h,fill=green!12](r1){context};\node[cell,right=0pt of r1,fill=green!5](r1a){42};\node[cell,right=0pt of r1a,fill=green!5](r1b){120};\node[cell,right=0pt of r1b,fill=green!18](r1c){0};
+\node[cell,below=0pt of r1,fill=green!12](r2){context};\node[cell,right=0pt of r2,fill=green!5](r2a){55};\node[cell,right=0pt of r2a,fill=green!5](r2b){280};\node[cell,right=0pt of r2b,fill=green!18](r2c){1};
+\node[cell,below=0pt of r2,fill=orange!15](r3){query};\node[cell,right=0pt of r3,fill=orange!5](r3a){39};\node[cell,right=0pt of r3a,fill=orange!5](r3b){90};\node[cell,right=0pt of r3b,fill=orange!5](r3c){?};
+
+\end{tikzpicture}
+\visualdescription{Green rows supply labeled context; the orange row supplies features only.}
+\end{columns}
+\medskip
+Like few-shot prompting, labeled examples condition a prediction. These context rows are input evidence, not gradient-training rows.
+\slidesource{Qu et al. (2025), \href{https://proceedings.mlr.press/v267/qu25d.html}{\emph{TabICL}}; data roles shown are a general evaluation design}
+\end{frame}
+
+\section{Kumo Tabular architecture}
+\begin{frame}{Kumo turns each cell into a feature-group token}
+\small
+\begin{columns}[c]
+\column{.53\textwidth}
+For a cell value $x_{ij}$ in row $i$, feature $j$, a learned Fourier map provides a cell encoding of width $d_{\text{cell}}$:
+\[
+{\scriptstyle \phi(x_{ij})=[\sin(\omega_1x_{ij}),\cos(\omega_1x_{ij}),\ldots,\sin(\omega_Fx_{ij}),\cos(\omega_Fx_{ij})]}
+\]
+Overlapping groups of three cell encodings are concatenated, then a learned projection maps each group to a Phase 1 token of width $d_{\text{model}}$. A label embedding is added for labeled context rows for phases 1 and 2 of Kumo.
+\column{.44\textwidth}\centering
+\begin{tikzpicture}[every node/.style={font=\scriptsize,align=center},c/.style={draw,minimum width=12mm,minimum height=7mm}]
+\node[c,fill=blue!10](x1){$x_1$};\node[c,right=0pt of x1,fill=blue!10](x2){$x_2$};\node[c,right=0pt of x2,fill=blue!10](x3){$x_3$};\node[c,right=0pt of x3,fill=blue!10](x4){$x_4$};\node[c,right=0pt of x4,fill=blue!10](x5){$x_5$};
+\draw[very thick,brand,rounded corners]($(x1.north west)+(-1mm,1mm)$)rectangle($(x3.south east)+(1mm,-1mm)$);
+\draw[very thick,orange,rounded corners]($(x3.north west)+(-1mm,1mm)$)rectangle($(x5.south east)+(1mm,-1mm)$);
+\node[below=1mm of x3](g){overlapping groups};
+\node[below=of g,draw,fill=green!10,text width=52mm](e){cell Fourier encodings $\rightarrow$\\group concatenation $\rightarrow$\\project to $d_{\text{model}}$};
+\draw[->](g)--(e);
+\end{tikzpicture}
+\visualdescription{Overlapping groups concatenate cell encodings before a learned projection produces a $d_{\text{model}}$-wide Phase 1 token.}
+\end{columns}
+\medskip
+Example dimensions: three 16-wide cell encodings concatenate into a 48-wide feature-group input, then a learned projection produces a 32-wide Phase 1 token ($d_{\text{model}}=32$).
+\slidesource{NVIDIA, \href{https://huggingface.co/blog/nvidia/kumo-tabular}{\emph{Kumo Tabular architecture overview}}; model details, \href{https://docs.nvidia.com/sdgm/structured-data-models/models/kumo-tabular}{official documentation}}
+\end{frame}
+
+\begin{frame}{Attention routes information with learned queries, keys, and values}
+\small
+\begin{columns}[c]
+\column{.46\textwidth}
+
+Given vectors $x_i$, learned projections produce $q_i=W_Qx_i$, $k_i=W_Kx_i$, $v_i=W_Vx_i$; $d_k$ is the key-vector dimension.\\
+
+\medskip
+Attention weights compare a query to keys:
+\[
+\alpha_{ij}=\operatorname{softmax}_j(q_i^\top k_j/\sqrt{d_k}),\quad o_i=\sum_j\alpha_{ij}v_j.
+\]
+\medskip
+{\scriptsize\color{sourcegray}\textbf{Note:} Query means attention vector, not query row.}
+\column{.51\textwidth}\centering
+\begin{tikzpicture}[>=Latex,node distance=7mm,every node/.style={font=\scriptsize,align=center},b/.style={draw,rounded corners,text width=19mm,minimum height=8mm}]
+\node[b,fill=gray!10](in){input\\vectors $x_j$};
+\node[b,fill=blue!10,below left=of in](q){query $q_i$};\node[b,fill=green!10,below=of in](k){keys $k_j$};\node[b,fill=orange!12,below right=of in](v){values $v_j$};
+\node[b,fill=purple!10,below=13mm of k](out){weighted sum $o_i$};
+\draw[->](in)--(q);\draw[->](in)--(k);\draw[->](in)--(v);\draw[->](q)--(out);\draw[->](k)--(out);\draw[->](v)--(out);
+\end{tikzpicture}
+\visualdescription{Queries choose which values to combine by matching against keys. Outputs carry the selected values to the next layer.}
+\end{columns}
+\slidesource{Vaswani et al. (2017), \href{https://arxiv.org/abs/1706.03762}{\emph{Attention Is All You Need}}}
+\end{frame}
+
+\begin{frame}{How attention selects and carries information}
+\footnotesize
+\begin{columns}[c]
+\column{.54\textwidth}
+\begin{itemize}\itemsep.25em\scriptsize
+\item For each representation $x_i$, the model computes a query $q_i = W_Q x_i$.
+\item For each representation $x_j$, it computes a key $k_j = W_K x_j$.
+\item The dot product $q_i^\top k_j$ is a learned compatibility score; larger scores receive larger attention weights.
+\item The value $v_j = W_V x_j$ is the information carried by token $j$, with learned adjustments. 
+\item During training, $W_Q$, $W_K$, and $W_V$ are adjusted so attention can favor information useful for the model's objective.
+\item The attention output $o_i$ is transformed by an output projection, then added to $x_i$ through a residual connection before further processing.
+\end{itemize}
+\column{.43\textwidth}
+\begin{block}{Intuition}\scriptsize
+Think of $q_i$ as a signal about what token $i$ needs, and $k_j$ as a signal about what another token $j$ can offer. The value $v_j$ is the learned information from token $j$ that attention can pass along. A stronger match between $q_i$ and $k_j$ gives $v_j$ more weight in the ongoing transformation process. The output $o_i$ combines these weighted values.\\
+\vspace{8pt}
+A later step combines this result with the original representation $x_i$ through a residual connection, helping preserve the input signal as it passes through deeper layers. Subsequent layers continue transforming token representations into forms useful for predicting the desired label or outcome.
+\end{block}
+\end{columns}
+\slidesource{Vaswani et al. (2017), \href{https://arxiv.org/abs/1706.03762}{\emph{Attention Is All You Need}}}
+\end{frame}
+
+\begin{frame}{Kumo alternates attention across features and across rows}
+\small
+\begin{columns}[c]
+\column{.48\textwidth}
+\begin{block}{\textbf{Row attention:}}
+Within each row, feature-group tokens attend across groups. This lets representations combine signals from different columns and learn relationships among them.
+\end{block}
+\begin{block}{\textbf{Column attention:}}
+At a feature-group position, rows exchange information through learned summary (``inducing'') vectors, helping the model learn the column's value distribution. Only context rows are information sources; query rows do not contribute keys or values.
+\end{block}
+\column{.49\textwidth}\centering
+\begin{tikzpicture}[every node/.style={font=\tiny,align=center},c/.style={draw,minimum width=8mm,minimum height=5.4mm},h/.style={draw,rounded corners,minimum width=17mm,minimum height=5.4mm}]
+\foreach \i/\y/\fillcolor in {1/1.65/green!10,2/1.05/green!10,3/.45/green!10,4/-.15/green!10,5/-.95/orange!10,6/-1.55/orange!10}{
+  \foreach \j/\x/\label in {1/0/$G_{\i,1}$,2/.8/$G_{\i,2}$,3/1.6/$G_{\i,3}$,dots/2.4/$\cdots$,last/3.2/$G_{\i,P}$}{
+    \node[c,fill=\fillcolor] (r\i-g\j) at (\x,\y){\label};
+  }
+  \node[h,fill=\fillcolor] (h\i) at (5.1,\y){$[\mathrm{CLS}_{i,1};\ldots;\mathrm{CLS}_{i,4}]$};
+  \draw[->,purple!70!black,thick] (r\i-glast.east)--(h\i.west);
+}
+\node[font=\scriptsize] at (1.6,2.72){Phase 1 input:\\feature-group tokens};
+\node[font=\scriptsize] at (5.1,2.45){Phase 1 output:\\4 CLS tokens per row};
+\foreach \j in {1,2,3,last}{\draw[->,black,thick] (r1-g\j.north)--++(0,4mm);}
+\draw[rowpurple,very thick,<->] ($(r2-g1.north west)+(0,1.5mm)$)--($(r2-glast.north east)+(0,1.5mm)$);
+\draw[orange!80!black,very thick,<->] ($(r1-g1.east)+(1mm,0)$)--($(r4-g1.east)+(1mm,0)$);
+\end{tikzpicture}
+\visualdescription{$G_{i,j}$ denotes a feature-encoded group in row $i$ and group position $j\in\{1,\ldots,P\}$; these feature-group tokens are the data input to Phase 1, where \textcolor{rowpurple}{row attention} and four learned CLS tokens produce $[\mathrm{CLS}_{i,1};\ldots;\mathrm{CLS}_{i,4}]$; \textcolor{orange!80!black}{column attention} reads only the green context rows at each group.}
+\end{columns}
+\slidesource{NVIDIA, \href{https://huggingface.co/blog/nvidia/kumo-tabular}{\emph{Kumo Tabular}}; \href{https://docs.nvidia.com/sdgm/structured-data-models/models/kumo-tabular}{model documentation}}
+\end{frame}
+
+\begin{frame}{Phase 1 encodes each row into four summary vectors}
+\footnotesize
+\begin{columns}[c]
+\column{.49\textwidth}\centering
+\begin{tikzpicture}[>=Latex,every node/.style={font=\tiny,align=center},
+ b/.style={draw,rounded corners,text width=51mm,minimum height=5mm},
+ t/.style={draw,rounded corners,minimum width=8mm,minimum height=5mm},
+ f/.style={t,font=\fontsize{4.5}{5}\selectfont},
+ sum/.style={draw,circle,inner sep=0pt,minimum size=2.5mm}]
+\node[t,fill=green!10] (g1) at (0,.3) {$G_{i,1}$};
+\node at (.95,.3) {$\cdots$};
+\node[t,fill=green!10] (gP) at (1.9,.3) {$G_{i,P}$};
+\node[t,fill=green!10] (cls1) at (3,.3) {$\mathrm{CLS}_1$};
+\node at (3.95,.3) {$\cdots$};
+\node[t,fill=green!10] (cls4) at (4.9,.3) {$\mathrm{CLS}_4$};
+\node[b,fill=orange!12,text=orange!80!black] (col) at (2.45,-.75) {column attention (context rows only)};
+\node[b,fill=blue!8,text=brand] (row) at (2.45,-2) {row attention across groups and CLS};
+\foreach \n/\x in {g1/0,gP/1.9}{
+  \node[sum] (c\n) at (\x,-1.23) {$+$};
+  \draw[->,orange!80!black] (\n.south)--(\n.south |- col.north);
+  \draw[->,brand] (col.south -| c\n.north)--(c\n.north);
+  \begin{scope}[on background layer]
+  \draw[->] (\n.south)-- ++(-.48,-.12) |- (c\n.west);
+  \end{scope}
+  \draw[brand] (c\n.south)--(\x,-1.55);
+}
+\begin{scope}[on background layer]
+\foreach \n/\x in {cls1/3,cls4/4.9}{\draw[brand] (\n.south)--(\x,-1.55);}
+\end{scope}
+\foreach \n/\x/\label in {g1/0/\mathrm{FFN}_1,gP/1.9/\mathrm{FFN}_P,cls1/3/\mathrm{FFN}^{\mathrm{CLS}}_1,cls4/4.9/\mathrm{FFN}^{\mathrm{CLS}}_4}{
+  \coordinate (r\n) at (\x,-1.55);
+  \node[sum] (a\n) at (\x,-2.48) {$+$};
+  \node[f,fill=gray!10] (f\n) at (\x,-3.1) {$\label$};
+  \node[sum] (z\n) at (\x,-3.58) {$+$};
+  \draw[->,brand] (r\n)--(r\n |- row.north);
+  \draw[->] (row.south -| a\n.north)--(a\n.north);
+  \begin{scope}[on background layer]
+  \draw[->] (r\n)-- ++(-.48,0) |- (a\n.west);
+  \end{scope}
+  \draw[->] (a\n.south)--(f\n.north);
+  \draw[->] (f\n.south)--(z\n.north);
+  \begin{scope}[on background layer]
+  \draw[->] (a\n.south)-- ++(-.48,-.10) |- (z\n.west);
+  \end{scope}
+}
+\node[text=sourcegray] at (.90,-2.76) {shared\\weights};
+\node at (.95,-3.1) {$\cdots$};
+\node at (3.95,-3.1) {$\cdots$};
+\node[text=brand,font=\fontsize{5}{5.5}\selectfont] at (.77,-3.62) {Row encoder\\block};
+\node[draw=brand,dashed,rounded corners,fit=(col)(zg1)(zcls4),inner sep=3mm] (encoder) {};
+\node[rotate=90,text=sourcegray] at (-.78,-2.2) {residual connections};
+\node[b] (out) at (2.45,-4.5) {repeat row-encoder blocks $\rightarrow$\\disregard feature-group outputs,\\concatenate 4 final CLS};
+\foreach \n in {g1,gP,cls1,cls4}{\draw[->] (z\n.south)--(z\n.south |- out.north);}
+\end{tikzpicture}
+\visualdescription{Alternating attention updates the group stream; each displayed stream receives an FFN application with shared weights, and four CLS summaries form one vector per row.}
+\column{.48\textwidth}
+\scriptsize
+Input cell-group tokens and four learned CLS tokens pass through repeated encoder blocks: column attention, row attention, then normalization, residual paths, and position-wise FFN applications with shared weights.
+\begin{itemize}\itemsep.3em
+\item CLS tokens participate in row attention as summary slots.
+\item They bypass column attention; column attention reads context rows only.
+\item The final feature-group outputs are disregarded in favor of the final CLS vectors.
+\item Concatenate final CLS vectors into a row embedding.
+\item Concatenating 4 final CLS vectors yields one $4d_{\text{model}}$-wide row representation for each context and query row.
+\end{itemize}
+\end{columns}
+\vspace{2mm}
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=west,font=\tiny,text=sourcegray,align=left] at ([xshift=10mm,yshift=3mm]current page.south west) {Source: Architecture reconstructed from NVIDIA Kumo, \href{https://huggingface.co/blog/nvidia/kumo-tabular}{launch overview} and \href{https://docs.nvidia.com/sdgm/structured-data-models/models/kumo-tabular}{model documentation}.};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Phase 2 lets query rows read labeled context}
+\footnotesize
+\begin{columns}[c]
+\column{.52\textwidth}\centering
+\begin{tikzpicture}[>=Latex,every node/.style={font=\tiny,align=center},
+ t/.style={draw,rounded corners,minimum width=8mm,minimum height=5mm},
+ sum/.style={draw,circle,inner sep=0pt,minimum size=2.5mm},
+ b/.style={draw,rounded corners,minimum height=5mm,text width=51mm}]
+\node[text=brand,font=\fontsize{5}{5.5}\selectfont] at (.77,-2.65) {Row decoder\\block};
+\node at (2.45,.43) {row representations from Phase 1: each $4d_{\text{model}}$ wide};
+\node[t,fill=green!14] (c1) at (0,0) {context 1};
+\node at (.95,0) {$\cdots$};
+\node[t,fill=green!14] (c2) at (1.9,0) {context $C$};
+\node[t,fill=orange!16] (q1) at (3,0) {query 1};
+\node at (3.95,0) {$\cdots$};
+\node[t,fill=orange!16] (q2) at (4.9,0) {query $Q$};
+\node[b,fill=blue!8] (attn) at (2.45,-1.05) {attention across rows};
+\foreach \n in {c1,c2,q1,q2}{
+  \draw[->] (\n.south)--(\n.south |- attn.north);
+}
+\node[fill=white,inner sep=1pt,text=green!40!black] at (.97,-.28) {queries, keys,\\values};
+\node[fill=white,inner sep=1pt,text=orange!80!black] at (3.75,-.43) {queries only};
+\foreach \n/\x/\label in {c1/0/1,c2/1.9/C,q1/3/1,q2/4.9/Q}{
+  \node[sum] (a\n) at (\x,-1.52) {$+$};
+  \node[t,fill=gray!10] (f\n) at (\x,-2.12) {$\mathrm{FFN}_{\label}$};
+  \node[sum] (z\n) at (\x,-2.62) {$+$};
+  \draw[->] (attn.south -| a\n.north)--(a\n.north);
+  \draw[->] (a\n.south)--(f\n.north);
+  \draw[->] (f\n.south)--(z\n.north);
+  \draw[->] (\n.south) -- ++(-.48,-.12) |- (a\n.west);
+  \draw[->] (a\n.south) -- ++(-.48,-.10) |- (z\n.west);
+}
+\node[text=sourcegray] at (.90,-1.76) {shared\\weights};
+\node at (.95,-2.12) {$\cdots$};
+\node at (3.95,-2.12) {$\cdots$};
+\node[fit=(attn)(ac1)(zq2),inner sep=3mm] (enc) {};
+\draw[brand,dashed,rounded corners] ([yshift=1.7mm]enc.north west) rectangle (enc.south east);
+\node[rotate=90,text=sourcegray] at (-.78,-1.7) {residual connections};
+\node[b] (repeat) at (2.45,-3.39) {repeat row-decoder blocks};
+\foreach \n in {c1,c2,q1,q2}{\draw[->] (z\n.south)--(z\n.south |- repeat.north);}
+\node[anchor=north,text=sourcegray,text width=25mm] at (.65,-3.91) {disregard final context\\residual stream outputs};
+\node[draw,rounded corners,fill=purple!10,text width=25mm,minimum height=5mm] (head) at (3.95,-4.23) {final query representations\\$\downarrow$ prediction head};
+\draw[->] (repeat.south -| head.north)--(head.north);
+\node[below=2mm of head] (pred) {class probabilities /\\regression quantiles};
+\draw[->] (head)--(pred);
+\end{tikzpicture}
+\visualdescription{Unlabeled queries can only say what they need; context rows can say what they need and provide what they know.}
+\column{.45\textwidth}
+\small
+\begin{itemize}\itemsep.5em
+\item Each token represents an entire row.
+\item Every row reads context; query rows never supply keys or values.
+\item Final query representations feed the prediction head.
+\end{itemize}
+\begin{block}{Why this mask matters}
+\footnotesize
+Query rows cannot change context representations or communicate with other query rows. Their target labels remain withheld, preventing target leakage through the query stream.
+\end{block}
+\end{columns}
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=west,font=\tiny,text=sourcegray,align=left] at ([xshift=10mm,yshift=3mm]current page.south west) {Source: NVIDIA, \href{https://github.com/NVIDIA/structured-data-models/blob/main/sdm/models/kumo/tabular/icl.py}{Kumo Phase 2 implementation} and \href{https://docs.nvidia.com/sdgm/structured-data-models/models/kumo-tabular}{output and architecture documentation}.};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{The full Kumo path has two stages, not two single blocks}
+\centering\scriptsize
+\begin{tikzpicture}[>=Latex,every node/.style={font=\tiny,align=center},
+ panel/.style={draw,rounded corners,minimum height=33mm},
+ card/.style={draw,rounded corners,fill=white,minimum height=5mm},
+ token/.style={draw,minimum width=5mm,minimum height=4mm,font=\fontsize{4.5}{5}\selectfont}]
+\node[panel,fill=blue!5,minimum width=16mm] (input) at (0,0) {};
+\node at (0,1.25) {Table inputs};
+\foreach \y/\fill in {.55/green!14,.1/green!14,-.35/orange!16}{
+  \foreach \x in {-.48,0,.48}{\node[draw,fill=\fill,minimum width=4.8mm,minimum height=4mm] at (\x,\y) {};}
+}
+\node at (0,-.92) {context $X_C,y_C$\\query $X_Q$};
+\node[panel,fill=green!5,minimum width=23mm] (embed) at (2.38,0) {};
+\node at (2.38,1.25) {Cell / group encoding};
+\node[text width=21mm] at (2.38,.2) {Fourier cell encodings\\$\downarrow$\\concatenate groups\\$\downarrow$\\project to token width};
+\node at (2.38,-1.15) {$P$ tokens per row\\each $d_{\text{model}}$ wide};
+\node[panel,fill=orange!5,minimum width=33mm] (phase1) at (5.72,0) {};
+\node at (5.72,1.25) {Phase 1: row encoding};
+\node[card,draw=brand,minimum width=27mm] at (5.87,.64) {};
+\node[card,draw=brand,minimum width=27mm] at (5.79,.56) {};
+\node[card,draw=brand,text width=25mm] at (5.71,.48) {repeated row-encoder blocks};
+\node at (5.72,-.02) {token width: $d_{\text{model}}$};
+\foreach \x/\n in {4.72/1,5.38/2,6.04/3,6.7/4}{
+  \node[token,fill=purple!10] at (\x,-.55) {$\mathrm{CLS}_{\n}$};
+}
+\node at (5.72,-1.15) {concatenate 4 final CLS\\one $4d_{\text{model}}$-wide vector / row};
+\node[panel,fill=yellow!8,minimum width=31mm] (phase2) at (9.6,0) {};
+\node at (9.6,1.25) {Phase 2:\\context-based prediction};
+\foreach \x/\fill/\txt in {8.7/green!14/C,9.3/green!14/C,9.9/orange!16/Q,10.5/orange!16/Q}{
+  \node[token,fill=\fill] at (\x,.65) {$\txt$};
+}
+\node[card,draw=rowpurple,minimum width=25mm] at (9.75,.04) {};
+\node[card,draw=rowpurple,minimum width=25mm] at (9.67,-.04) {};
+\node[card,draw=rowpurple,text width=23mm] at (9.59,-.12) {repeated row-decoder blocks};
+\node at (9.6,-.78) {one token / row\\width: $4d_{\text{model}}$};
+\node[token,fill=orange!16] at (9.3,-1.25) {$Q$};
+\node[token,fill=orange!16] at (9.9,-1.25) {$Q$};
+\node[panel,fill=gray!10,minimum width=18mm] (head) at (12.57,0) {};
+\node at (12.57,1.25) {Prediction head};
+\node[font=\fontsize{5.5}{6.5}\selectfont,text width=17mm] at (12.57,.25) {final query\\representations\\$\downarrow$\\class probabilities /\\regression quantiles};
+\node at (12.57,-1.15) {one output\\per query row};
+\foreach \a/\b in {input/embed,embed/phase1,phase1/phase2,phase2/head}{\draw[->,thick] (\a.east)--(\b.west);}
+\node[text=sourcegray,text width=32mm] at (5.72,-2.03) {feature-group tokens $\rightarrow$\\one representation per row};
+\node[text=sourcegray,text width=31mm] at (9.6,-2.03) {query rows read labeled context};
+\end{tikzpicture}
+\visualdescription{Green denotes context rows and orange denotes query rows. Phase 1 combines feature groups into row representations; Phase 2 uses context to predict query targets.}
+\par
+\vspace{5mm}
+\raggedright
+For each row, Phase 1 processes $P$ feature-group tokens plus 4 CLS tokens, each $d_{\text{model}}$ wide. Phase 2 processes one token per row, shown here with width $4d_{\text{model}}$. The dimensions shown reflect a specific Kumo implementation in late 2026; other models use different configurations, and some project to a different Phase 2 width.
+\smallskip
+
+Exact block counts and widths depend on model size; each phase contains repeated blocks.
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=west,font=\tiny,text=sourcegray,align=left] at ([xshift=10mm,yshift=3mm]current page.south west) {Source: NVIDIA, \href{https://github.com/NVIDIA/structured-data-models/blob/main/sdm/models/kumo/tabular/model.py}{Kumo Tabular architecture implementation} and \href{https://docs.nvidia.com/sdgm/structured-data-models/models/kumo-tabular}{official documentation}.};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Pretraining learns the context-to-query prediction procedure}
+\small
+{\footnotesize
+\begin{enumerate}\itemsep.55em
+\item Sample a training table and divide rows into context and query sets. Supply context labels; withhold query labels.
+\item Process both sets through the row encoder and in-context prediction stages; produce query predictions.
+\item Compare predictions with withheld targets, compute loss, and backpropagate. A gradient-based optimizer updates all trainable components: cell/group encoders (including Fourier frequencies and projections), label embeddings, CLS and summary (``inducing'') vectors, attention projections and learned scaling/gates, normalization parameters, FFNs, any projection between phases, and the prediction head.
+\item Repeat over many sampled tables, tasks, and splits.
+\end{enumerate}
+}
+\begin{block}{\textbf{Frozen inference:}}
+For a new task, provide labeled context and query features, then predict. There is no query-label loss or optimizer step; pretrained weights do not change.
+\end{block}
+\slidesource{Müller et al. (2022), \href{https://openreview.net/forum?id=KSugKcbNf9}{\emph{Transformers Can Do Bayesian Inference}}; Hollmann et al. (2023), \href{https://arxiv.org/abs/2207.01848}{TabPFN}}
+\end{frame}
+
+\begin{frame}{Kumo is one type of prior-data fitted network (PFN)}
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}p{.25\linewidth}XX@{}}
+\toprule
+Design question & Kumo Tabular & Other TFMs (examples)\\\midrule
+Input representation & Learned Fourier cell features; overlapping feature groups; label embeddings & Varies: feature/token encodings and row/column attention designs\\
+Information flow & Alternating row attention and induced column attention, then a context-masked ICL stage & TabPFN/TabICL use their own serialization and attention designs\\
+Pretraining & Broad synthetic prediction tasks in a PFN-style setup & Some use synthetic priors; others pretrain on real tables or combine sources\\
+Deployment & Context-conditioned prediction; task settings and optional ensembles affect use & Context capacity, supported task types, API, fine-tuning, and compute differ\\
+\bottomrule
+\end{tabularx}
+\par
+\medskip
+Architecture family resemblance does not imply identical preprocessing, limits, training priors, or benchmark performance.
+\slidesource{NVIDIA, \href{https://huggingface.co/blog/nvidia/kumo-tabular}{Kumo overview}; Hollmann et al. (2023), \href{https://arxiv.org/abs/2207.01848}{TabPFN}; Qu et al. (2025), \href{https://proceedings.mlr.press/v267/qu25d.html}{TabICL}; Ma et al. (2025), \href{https://proceedings.neurips.cc/paper_files/paper/2025/file/fc0e3f908a2116ba529ad0a1530a3675-Paper-Conference.pdf}{TabDPT}}
+\end{frame}
+
+\section{Using and explaining predictions}
+\begin{frame}{GAMs, GA$^2$Ms, EBMs, and NAMs share additive structure}
+\small
+\[
+\operatorname{link}\{\mathbb{E}(Y\mid x)\}=\beta_0+\sum_j\beta_j g_j(x_j)+\sum_{j<k}\beta_{j,k}g_{j,k}(x_j,x_k)
+\]
+\begin{itemize}\itemsep.5em
+\item A GAM with only $g_j$ has main effects; a GA$^2$M adds selected pairwise interactions $g_{j,k}$.
+\item EBMs fit boosted shape functions (and optionally interactions); NAMs use a separate neural network per feature.
+\item The notebook's Kumo-derived classifier is a main-effects GAM; the comparison NAM uses feature-specific networks.
+\end{itemize}
+Components describe model associations under the chosen inputs, not causes. Correlated predictors can share or shift apparent effects.
+\slidesource{Caruana et al. (2015), \href{https://doi.org/10.1145/2783258.2788613}{\emph{Intelligible Models for HealthCare}}; Agarwal et al. (2021), \href{https://proceedings.neurips.cc/paper/2021/hash/251bd0442dfcc53b5a761e050f8022b8-Abstract.html}{NAM}; Lengerich et al. (2020), \href{https://proceedings.mlr.press/v108/lengerich20a.html}{functional ANOVA}}
+\end{frame}
+
+\begin{frame}{Frozen component-wise TFM predictions can also form an additive model}
+\small
+For each feature $j$, frozen Kumo receives only that feature and the same labeled context rows; it returns $p_j(x_j)$. Convert clipped probabilities to shape-function scores $g_j(x_j)=\operatorname{logit}(p_j(x_j))$, then fit a penalized logistic combiner on separate labeled validation data:
+\[
+\operatorname{logit}\hat p(y=1\mid x)=\beta_0+\sum_{j=1}^{P}\beta_j g_j(x_j).
+\]
+This is a Kumo-derived additive GAM.
+
+\smallskip
+For simplicity, the lecture-example notebook fits a GAM, but the same procedure could include pairwise feature functions to fit a potentially more accurate GA$^2$M. Its combiner standardizes fixed feature scores before fitting.
+\slidesource{Hall (2026), \href{https://github.com/jphall663/GWU_LLM/blob/main/misc/existing_materials/lecture_6.ipynb}{Lecture 6: Neural Additive Models and Tabular Foundation Models notebook}; Lengerich et al. (2020), \href{https://proceedings.mlr.press/v108/lengerich20a.html}{functional ANOVA}; Agarwal et al. (2021), \href{https://proceedings.neurips.cc/paper/2021/hash/251bd0442dfcc53b5a761e050f8022b8-Abstract.html}{NAM}}
+\end{frame}
+
+\begin{frame}{Use validation data to choose settings; reserve test data for evaluation}
+\small
+\begin{columns}[c]
+\column{.52\textwidth}
+\textbf{Predictive settings:}
+\begin{itemize}\itemsep.25em
+\item Which labeled examples form context; context size.
+\item Preprocessing and feature inclusion.
+\item Number of randomized estimator views or ensemble members.
+\end{itemize}
+\textbf{Computational settings:}
+\begin{itemize}\itemsep.25em
+\item Query batch size trades memory for throughput.
+\item Device, model size, and serving route affect feasibility and latency.
+\end{itemize}
+\column{.44\textwidth}
+Kumo offers public pretrained small/medium/large checkpoints through \texttt{sdm.models.KumoTabular} and a hosted NVIDIA service. Sizes span about 27M--216M parameters. Memory and latency depend on context and query batch, so profile on the target device.
+\begin{block}{Split discipline}
+Validation selects settings or fits a combiner/calibrator. Test data estimates final performance once choices are locked.
+\end{block}
+\end{columns}
+\slidesource{NVIDIA, \href{https://docs.nvidia.com/sdgm/structured-data-models/models/kumo-tabular}{Kumo documentation} and \href{https://build.nvidia.com/nvidia/kumo-tabular/modelcard}{model card}; notebook settings are described from its executed output}
+\end{frame}
+
+\begin{frame}{Example notebook manages data partitions carefully}
+\scriptsize
+\begin{columns}[c]
+\column{.36\textwidth}
+The lecture-example notebook used NVIDIA Kumo Tabular \texttt{small} with 19 single-feature functions, eight randomized estimator views, and query batches of 512.
+\begin{itemize}\itemsep.15em
+\item Context and reference samples are random, target-stratified, and disjoint.
+\item Context conditions frozen Kumo; no pretrained weights are updated.
+\item Validation fits the scaler and L2 logistic combiner; 3-fold cross-validation selects the penalty.
+\item Reference means center the shape functions and adjust the intercept, leaving predictions unchanged.
+\item Query batch size 512 is separate from context size 2,048.
+\end{itemize}
+\column{.61\textwidth}\centering
+\begin{tikzpicture}[>=Latex,every node/.style={font=\tiny,align=center},
+ b/.style={draw,rounded corners,text width=21mm,minimum height=7mm}]
+\node[b,fill=green!10,text width=32mm] (tr) at (2.4,0) {18,000 training source rows};
+\node[b,fill=blue!9] (ctx) at (0,-1) {2,048 labeled\\context rows};
+\node[b,fill=orange!12] (ref) at (4.9,-1) {512 reference rows\\outside context};
+\draw[->] (tr.south)--node[above left] {stratified sample}(ctx.north);
+\draw[->] (tr.south)--node[above right] {stratified sample}(ref.north);
+\node[b,fill=cyan!8] (functions) at (0,-2.05) {19 frozen single-feature\\Kumo shape functions};
+\draw[->] (ctx)--(functions);
+\node[b,fill=yellow!16] (val) at (2.45,-2.05) {6,000 validation rows};
+\node[b,fill=purple!10] (fit) at (2.45,-3.15) {fit score scaler +\\L2 logistic combiner\\3-fold CV, then refit};
+\draw[->] (val)--(fit);
+\draw[->] (functions.south) |- node[pos=.75,above] {fixed scores}(fit.west);
+\node[b,fill=orange!6] (center) at (4.9,-3.15) {center shape functions\\using reference means;\\adjust intercept};
+\draw[->] (ref)--node[right,text width=12mm] {score reference\\with frozen\\functions}(center);
+\draw[->] (fit)--(center);
+\node[below=1mm of center,text=sourcegray,text width=23mm] {explanations change;\\predictions unchanged};
+\node[b,fill=gray!12] (test) at (0,-4.5) {6,000 test rows\\held out until final scoring};
+\node[b,fill=red!7] (eval) at (2.45,-4.5) {fixed functions +\\fitted combiner\\$\downarrow$ final quality metrics};
+\draw[->] (test)--(eval);
+\draw[->] (fit)--node[right] {choices fixed}(eval);
+\end{tikzpicture}
+\visualdescription{Training supplies separate context and reference samples; validation fits the combiner, reference data centers explanations, and test data evaluates the fixed model.}
+\end{columns}
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=west,font=\tiny,text=sourcegray] at ([xshift=10mm,yshift=3mm]current page.south west) {Source: Hall (2026), \href{https://github.com/jphall663/GWU_rml/blob/master/lecture_6.ipynb}{Lecture 6 example notebook}.};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Coefficients and shape plots show global patterns}
+\small
+\begin{columns}[c]
+\column{.5\textwidth}
+\includegraphics[width=\linewidth]{../img/pay0_shapes.png}
+\visualdescription{PAY\_0 centered main-effect shape with training support and Kumo-derived GAM/NAM curves.}
+\column{.47\textwidth}
+For the additive classifier, centered curves show each feature's contribution to log-odds. With $g_j$ centered on a stated reference set, global importance can be defined as mean absolute contribution: $I_j=E_{X\sim R}|\beta_j g_j(X_j)|$. The notebook plots shapes but does not report this scalar.
+
+\smallskip
+Absolute or signed regression coefficients can also serve as a simple measure of global importance when component scores are standardized, as in the example notebook.
+\end{columns}
+\slidesource{Hall (2026), \href{https://github.com/jphall663/GWU_LLM/blob/main/misc/existing_materials/lecture_6.ipynb}{Lecture 6 notebook}; Lengerich et al. (2020), \href{https://proceedings.mlr.press/v108/lengerich20a.html}{functional ANOVA}}
+\end{frame}
+
+\begin{frame}{Local feature contributions explain individual predictions}
+\begin{columns}[c]
+\column{.62\textwidth}\centering
+\includegraphics[width=\linewidth,height=.83\textheight,keepaspectratio]{../img/local_contributions.png}
+\par\vspace{-2mm}
+\visualdescription{Signed feature contributions for three example rows; positive and negative bars add to each model's log-odds prediction.}
+\column{.35\textwidth}
+\footnotesize\raggedright
+For one row, the baseline plus signed feature contributions reconstructs its exact model log-odds; the sigmoid maps the total to probability. Contributions do not add on the probability scale.
+\end{columns}
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=west,font=\tiny,text=sourcegray] at ([xshift=10mm,yshift=1.2mm]current page.south west) {Source: Hall (2026), \href{https://github.com/jphall663/GWU_rml/blob/master/lecture_6.ipynb}{Lecture 6 explainable-model notebook}.};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Repeated residual fitting can refine component shapes}
+\scriptsize
+\begin{columns}[c]
+\column{.48\textwidth}
+\begin{itemize}\itemsep.35em
+\item Initialize predictions: $\hat y$.
+\item Cycle through single features in column-index order: compute current residuals, fit $x_j$, and add its shape update to $\hat y$.
+\item Screen interactions once with a tree/GBM; select the top 5 pairs and reuse them on later sweeps.
+\item Cycle through those pairs: recompute residuals, fit each pair, and add its shape update to $\hat y$.
+\item Repeat the entire sequence until convergence.
+\item Repeated updates accumulate into main-effect and pairwise shape functions.
+\item Cyclic residual fitting can capture patterns a one-shot score combiner misses.
+\end{itemize}
+\column{.48\textwidth}\centering
+\begin{tikzpicture}[>=Latex,node distance=4mm,every node/.style={font=\tiny,align=center},b/.style={draw,rounded corners,text width=46mm,minimum height=6mm}]
+\node[b,fill=blue!8](init){initialize predictions: $\hat y$};
+\node[b,fill=green!10,below=of init](main){single features, in column order\\current residuals $\rightarrow$ fit $x_j$\\$\rightarrow$ add shape update to $\hat y$; next $j$};
+\node[b,fill=orange!12,below=of main](screen){tree/GBM screens interactions once\\select top 5 pairs; reuse on later sweeps};
+\node[b,fill=purple!10,below=of screen](pairs){cycle through the 5 interaction terms\\current residuals $\rightarrow$ fit pair\\$\rightarrow$ add shape update to $\hat y$; next pair};
+\node[b,fill=gray!10,below=of pairs](check){converged?};
+\node[below=3mm of check](done){final GAM/GA$^2$M};
+\draw[->](init)--(main);
+\draw[->](main)--(screen);
+\draw[->](screen)--(pairs);
+\draw[->](pairs)--(check);
+\draw[->](check)--node[right]{yes}(done);
+\draw[->](check.east)-- ++(9mm,0) |- node[pos=.25,right,text width=10mm]{no: repeat\\entire sequence}(main.east);
+\end{tikzpicture}
+\par\vspace{.2em}\noindent\hspace*{-4mm}\parbox{\linewidth}{\centering\tiny\color{sourcegray}Each fit uses the residuals after the preceding update; full sweeps revisit single features and screened interaction terms.}
+\end{columns}
+\slidesource{Sudjianto et al. (2026), cyclic residual-fitting approach, unpublished work}
+\end{frame}
+
+\begin{frame}{Choose a TFM as a model to validate, not a default winner}
+\footnotesize
+\begin{columns}[c]
+\column{.50\textwidth}
+\begin{itemize}\itemsep.3em
+\item Define the prediction task, data access, latency and hardware constraints.
+\item Compare a TFM with strong task-appropriate baselines on leakage-safe splits; tabular data benchmarks are not authoritative for your task.
+\item Test sensitivity to context selection, preprocessing, missingness, and context size.
+\item Check calibration, subgroup behavior, shift, explanation stability, and operational cost.
+\item Keep the final test set out of model and setting selection.
+\end{itemize}
+\column{.47\textwidth}\centering
+\makebox[\linewidth][c]{\includegraphics[width=1.15\linewidth,height=.58\textheight,keepaspectratio]{../img/calibration.png}}
+\visualdescription{Test-set calibration compares predicted probabilities with observed default rates.}
+\end{columns}
+\par\vspace{2mm}
+\begin{block}{\textbf{Takeaways:}}
+TFMs move task adaptation into the prediction context. They do not remove the need for careful validation, data governance, or domain judgment.
+\end{block}
+\slidesource{Erickson et al. (2025), \href{https://proceedings.neurips.cc/paper_files/paper/2025/hash/1697e3fb412da11dc9488249f9e7bbc9-Abstract-Datasets_and_Benchmarks_Track.html}{\emph{TabArena}}; Hall (2026), \href{https://github.com/jphall663/GWU_LLM/blob/main/misc/existing_materials/lecture_6.ipynb}{Lecture 6 notebook}}
+\end{frame}
+
+\begin{frame}{Potential far-reaching governance implications of TFMs}
+\small
+\begin{itemize}\itemsep.55em
+\item Reduce costly, inconsistent model building: individual discretion over complexity, tuning, and validation can produce avoidable variation in quality.
+\item Make approved pretrained TFM families the default development pathway; require documented justification for departures.
+\item Standardize documentation, validation, deployment, and monitoring around each approved TFM family.
+\item For higher-risk applications, reuse pretrained predictors through inspectable GAM/GA$^2$M models with main effects and selected interactions.
+\item Focus specialist effort on data quality, application suitability, independent validation, and ongoing monitoring rather than repeatedly building bespoke models.
+\end{itemize}
+\end{frame}
+
+\section{References}
+\begin{frame}[t]{References}
+\nocite{Muller2022TransformersBayesianInference,Hollmann2023TabPFN,Qu2025TabICL,Ma2025TabDPT,Vaswani2017AttentionAllYou}
+\begingroup\hypersetup{hidelinks}\printbibliography[heading=none,category=referencesone]\endgroup
+\end{frame}
+\begin{frame}[t]{References}
+\nocite{Hollmann2025TabPFN,Lengerich2020PurifyingInteractions,NvidiaKumoDocs,NvidiaKumoBlog}
+\begingroup\hypersetup{hidelinks}\printbibliography[heading=none,category=referencestwo]\endgroup
+\end{frame}
+\begin{frame}[t]{References}
+\nocite{Agarwal2021NeuralAdditiveModels,Caruana2015IntelligibleModels,Erickson2025TabarenaLivingBenchmark}
+\begingroup\hypersetup{hidelinks}\printbibliography[heading=none,category=referencesthree]\endgroup
 \end{frame}
 
 \end{document}
